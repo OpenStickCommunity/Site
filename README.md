@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://gp2040-ce.info">
-    <img alt="GP2040-CE" src="https://raw.githubusercontent.com/OpenStickCommunity/GP2040-CE/main/site/docs/assets/images/gp2040-ce-logo.png" />
+    <img alt="GP2040-CE" src="https://raw.githubusercontent.com/OpenStickCommunity/Site/main/docs/assets/images/gp2040-ce-logo.png" />
   </a>
 </p>
 
@@ -33,7 +33,7 @@ Full documentation can be found at <https://gp2040-ce.info>
 ## Features
 
 * Select from 5 input modes: XInput, Nintendo Switch, PS4, PS3 and Keyboard
-* Overclocked polling rate for less than 1 ms of input latency in all modes.
+* Overclocked polling rate for an average of 0.77ms of input latency in Xinput, Switch and Dinput modes and on average 1.72 for Playstation 4/5.
 * Multiple SOCD cleaning modes - Up Priority (a.k.a. Stickless), Neutral, and Second Input Priority.
 * Left and Right stick emulation via D-pad inputs as well as dedicated toggle switches.
 * Dual direction via D-pad + LS/RS.
@@ -91,3 +91,6 @@ Please respect the coding style of the file(s) you are working in, and enforce t
 * [TheTrain](https://github.com/TheTrainGoes/GP2040-Projects) and [Fortinbra](https://github.com/Fortinbra) for helping keep our community chugging along
 * [PassingLink](https://github.com/passinglink/passinglink) for the technical details and code for PS4 implementation
 * [Youssef Habchi](https://youssef-habchi.com/) for allowing us to purchase a license to use Road Rage font for the project
+* [tamanegitaro](https://github.com/tamanegitaro/) and [alirin222](https://github.com/alirin222) for the basis of the mini/classic controller work
+* [Ryzee119](https://github.com/Ryzee119) for the wonderful [ogx360_t4](https://github.com/Ryzee119/ogx360_t4/) and xid_driver library for Original Xbox support
+* [Santroller](https://github.com/Santroller/Santroller) and [GIMX](https://github.com/matlo/GIMX) for technical examples of Xbox One authentication using pass-through
