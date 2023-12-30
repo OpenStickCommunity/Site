@@ -46,7 +46,7 @@
 ## Arduino Sketch
 
 
-A copy of the optamized USB Lag sketch we use can be found [HERE](https://raw.githubusercontent.com/OpenStickCommunity/GP2040-CE/main/site/latency_testing/usblag_optimized.ino) in our latency_testing folder directly, or can be downloaded from FeralAI's original repo [HERE](https://github.com/FeralAI/usblag_optimized?tab=readme-ov-file).  We follow the methodology and setup outlined by inputlag.science which can be found [HERE](https://inputlag.science/controller/methodology). 
+A copy of the optimized USB Lag sketch we use can be found [HERE](https://raw.githubusercontent.com/OpenStickCommunity/Site/main/latency_testing/usblag_optimized.ino) in our latency_testing folder directly, or can be downloaded from FeralAI's original repo [HERE](https://github.com/FeralAI/usblag_optimized?tab=readme-ov-file).  We follow the methodology and setup outlined by inputlag.science which can be found [HERE](https://inputlag.science/controller/methodology). 
 
 
 The changes in this optamized version of the USB Lag sketch are:
