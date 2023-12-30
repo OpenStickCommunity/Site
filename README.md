@@ -58,7 +58,7 @@ Input latency is tested using the methodology outlined at [WydD's inputlag.scien
 | v0.7.5 | All modes (except PS4) | 1 ms | 0.45 ms | 1.28 ms | 0.77 ms | 0.24 ms | 96.27% | 3.73% | 0% |
 | v0.7.5 | PS4 Mode | 1 ms | 1.34 ms | 2.01 ms | 1.72 ms | 0.16 ms | 90.55% | 9.45% | 0% |
 
-Full results can be found in the [GP2040-CE Firmware Latency Test Results](https://raw.githubusercontent.com/OpenStickCommunity/GP2040-CE/main/site/latency_tests/GP2040-CE_Firmware_Latency_Test_Results.xlsx) .xlsx Sheet.
+Full results can be found in the [GP2040-CE Firmware Latency Test Results](https://raw.githubusercontent.com/OpenStickCommunity/Site/main/latency_testing/GP2040-CE_Firmware_Latency_Test_Results.xlsx) .xlsx Sheet.
 
 ## Support
 
