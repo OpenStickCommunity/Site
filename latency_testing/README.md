@@ -12,6 +12,8 @@
   Latency testing methodology and results
 </p>
 
+## Summary
+
 <p>
   This section provides a transparent overview of how we do latency testing for the GP2040-CE project.  It includes information about the hardware setup we use as well has how we calculate our results and copies of those results.  
 </p>
@@ -35,7 +37,7 @@
 </p>
 
 * Arduino MEGA 2560 [Link](https://www.amazon.com/s?k=arduino+mega+2560&crid=2J2XP0ONNYGL2&sprefix=arduino+mega+2560%2Caps%2C96&ref=nb_sb_noss_1)
-* USB Host Shield [Link](https://www.amazon.com/s?k=arduino+host+shield&crid=3LKKHMBPUVXLS&sprefix=arduino+host+shield%2Caps%2C82&ref=nb_sb_noss_1
+* USB Host Shield [Link](https://www.amazon.com/s?k=arduino+host+shield&crid=3LKKHMBPUVXLS&sprefix=arduino+host+shield%2Caps%2C82&ref=nb_sb_noss_1)
 * RP2040 Advanced Breakout Board v5.4E Passthrough Edition [Link](https://github.com/OpenStickCommunity/Hardware/tree/main/RP2040%20Advanced%20Breakout%20Board%20-%20Passthrough)
 * USB-C to USB-A 3.3' cable [Link](https://a.co/d/2USECGQ)
 * USB-C to USB-B 3' cable [Link](https://a.co/d/7vAX8nV)
@@ -43,15 +45,14 @@
 
 ## Arduino Sketch
 
-<p>
-  A copy of the optamized USB Lag sketch we use can be found [HERE](https://raw.githubusercontent.com/OpenStickCommunity/GP2040-CE/main/site/latency_testing/usblag_optimized.ino) in our latency_testing folder directly, or can be downloaded from FeralAI's original repo [HERE](https://github.com/FeralAI/usblag_optimized?tab=readme-ov-file).  We follow the methodology and setup outlined by inputlag.science which can be found [HERE](https://inputlag.science/controller/methodology).  
-</p>
 
-<p>
-  The changes in this optamized version of the USB Lag sketch are:
+A copy of the optamized USB Lag sketch we use can be found [HERE](https://raw.githubusercontent.com/OpenStickCommunity/GP2040-CE/main/site/latency_testing/usblag_optimized.ino) in our latency_testing folder directly, or can be downloaded from FeralAI's original repo [HERE](https://github.com/FeralAI/usblag_optimized?tab=readme-ov-file).  We follow the methodology and setup outlined by inputlag.science which can be found [HERE](https://inputlag.science/controller/methodology). 
+
+
+The changes in this optamized version of the USB Lag sketch are:
   * Tuned core input loop logic to reduce unnecessary overhead - Test results will be around ~0.1ms faster than the original sketch, and very close the results from the MiSTer Input Latency Tester [LINK](https://github.com/misteraddons/inputlatency)
   * See test results immediately after test by pressing =
-</p>
+
 
 ## Result collection methodology
 
