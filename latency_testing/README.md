@@ -50,7 +50,7 @@ A copy of the optamized USB Lag sketch we use can be found [HERE](https://raw.gi
 
 
 The changes in this optamized version of the USB Lag sketch are:
-  * Tuned core input loop logic to reduce unnecessary overhead - Test results will be around ~0.1ms faster than the original sketch, and very close the results from the MiSTer Input Latency Tester [LINK](https://github.com/misteraddons/inputlatency)
+  * Tuned core input loop logic to reduce unnecessary overhead - Test results will be around ~0.1ms faster than the original sketch, and very close the results from the MiSTer Input Latency Tester [Link](https://github.com/misteraddons/inputlatency)
   * See test results immediately after test by pressing =
 
 
