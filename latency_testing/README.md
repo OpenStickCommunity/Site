@@ -15,7 +15,7 @@
 ## Summary
 
 <p>
-  This section provides a transparent overview of how we do latency testing for the GP2040-CE project.  It includes information about the hardware setup we use as well has how we calculate our results and copies of those results.  
+  This section provides a transparent overview of how we do latency testing for the GP2040-CE project.  It includes information about the hardware setup we use, our results, as well has how we calculate our results.  
 </p>
 
 <p>
@@ -25,7 +25,7 @@
 ## Setup
 
 <p>
-  The setup used for testing is comprised of an Sunfounder Arduino MEGA 2560 with a generic USB Host Shield addon and an RP2040 Advanced Breakout Board v5.4E Passthrough Edition.  The RP2040 Advanced Breakout Board v5.4E Passthrough Edition is connected to the USB Host Shield addon with a 3.3' Ugreen USB-C to USB-A cable.  The USB Host Shield addon is connected to the Ardunio MEGA 2560 directly via available header stack.  The Arduino MEGA 2560 is connected to an M1 MacBook Air with a 3' Ugreen USB-C to USB-B cable.  A 1' female to female Depont wire is connected between pin 7 on the USB Host Shield and pin 19 on the RP2040 Advanced Breakout Board v5.4E Passthrough Edition's 20 pin header which is the `up` direction by default.  No other wires or cables are needed.
+  The setup used for testing is comprised of an Sunfounder Arduino MEGA 2560 with a generic USB Host Shield addon and an RP2040 Advanced Breakout Board v5.4E Passthrough Edition.  The RP2040 Advanced Breakout Board v5.4E Passthrough Edition is connected to the USB Host Shield addon with a 3.3' Ugreen USB-C to USB-A cable.  The USB Host Shield addon is connected to the Ardunio MEGA 2560 directly via available header stack.  The Arduino MEGA 2560 is connected to an M1 MacBook Air with a 3' Ugreen USB-C to USB-B cable.  A 1' female to female DuPont wire is connected between pin 7 on the USB Host Shield, and pin 19 on the RP2040 Advanced Breakout Board v5.4E Passthrough Edition's 20 pin header. This is the `up` direction by default.  No other wires or cables are needed.
 </p>
 
 <p>
@@ -49,17 +49,17 @@
 A copy of the optimized USB Lag sketch we use can be found [HERE](https://raw.githubusercontent.com/OpenStickCommunity/Site/main/latency_testing/usblag_optimized.ino) in our latency_testing folder directly, or can be downloaded from FeralAI's original repo [HERE](https://github.com/FeralAI/usblag_optimized?tab=readme-ov-file).  We follow the methodology and setup outlined by inputlag.science which can be found [HERE](https://inputlag.science/controller/methodology). 
 
 
-The changes in this optamized version of the USB Lag sketch are:
-  * Tuned core input loop logic to reduce unnecessary overhead - Test results will be around ~0.1ms faster than the original sketch, and very close the results from the MiSTer Input Latency Tester [Link](https://github.com/misteraddons/inputlatency)
-  * See test results immediately after test by pressing =
+The changes in this optimized version of the USB Lag sketch are:
+  * Tuned core input loop logic to reduce unnecessary overhead - Test results will be around ~0.1ms faster than the original sketch, and very close to the results from the MiSTer Input Latency Tester [Link](https://github.com/misteraddons/inputlatency)
+  * See test results immediately after the test, by pressing =
 
 
 ## Result collection methodology
 
 <p>
-  By default the optamized USB Lag sketch will run a series of 1,000 inputs and measure their latency.  We have found through testing that there can be very small variances in results when comparing mutiple 1,000 input tests together.  As such, we run the optamized USB Lag sketch 10 times in a row and average the averages of each 1,000 individual tests to come up with our average latency.  It is important to note that we still look at the overall highest latency input as our high number, and the lowest overall low latency input as our low number.  We do not average these two results.
+  By default the optimized USB Lag sketch will run a series of 1,000 inputs and measure their latency.  We have found through testing that there can be very small variances in results when comparing sets of 1,000 input tests.  As such, we run the optimized USB Lag sketch 10 times in a row, and average the averages of each set of 1,000 individual tests, to come up with our overall average latency.  It is important to note that we still look at the overall highest latency input as our high number, and the lowest overall low latency input as our low number.  We do not average solely from these two results.
 </p>
 
 <p>
-  It is also important to note that these 10 runs are always conducted back-to-back.  We do not cherry pick good runs which could lead to a deflated and unrealistic overall average latency number.  
+  It is also important to note that these 10 runs of 1,000 input tests are always conducted back-to-back.  We do not cherry pick good runs. Doing so could lead to a deflated and unrealistic overall average latency number.  
 </p>
