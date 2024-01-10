@@ -22,6 +22,20 @@ If you have a setup with per-button RGB LEDs, they can be configured here.
 - `Max Brightness` - Set the maximum brightness for the LEDs. Ranges from 0-255.
 - `Brightness Steps` - The number of levels of brightness to cycle through when turning brightness up and down.
 
+## RGB LED Button Order
+
+:::note
+
+Please note that RGB Button LEDs must be the first LEDs configured. They will start at index 0 on the RGB LED strip.
+
+Also, at the current time, each button can only have one instance in the LED chain. This is the case even if multiple LEDs are assigned per button and multiple buttons are assigned to different GPIO pins.
+
+:::
+
+![GP2040-CE Configurator - RGB LED Button Order](../../assets/images/gpc-rgb-led-button-order.png)
+
+Rearrange the Buttons in the order of the LED Chain. This is different between devices and is determined by manufacturer of the board and LEDs.
+
 ## Player LEDs (XInput)
 
 Available selections for `Player LED Type` are `None`, `PWM` or `RGB`.
@@ -44,15 +58,3 @@ Please note that RGB Player LEDs must be located at an index after the RGB LED B
 
 - `PLED #[1-4] Index` - The index of the LED module on the RGB strip.
 - `RGB PLED Color` - Click the box to reveal a color picker, or manually enter the color.
-
-## RGB LED Button Order
-
-:::note
-
-Please note that RGB Button LEDs must be the first LEDs configured. They will start at index 0 on the RGB LED strip.
-
-:::
-
-![GP2040-CE Configurator - RGB LED Button Order](../../assets/images/gpc-rgb-led-button-order.png)
-
-- `LED Button Order` - Configure which buttons and what order they reside on the LED chain.

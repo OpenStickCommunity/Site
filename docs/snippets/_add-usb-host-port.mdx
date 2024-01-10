@@ -7,6 +7,12 @@ import PinOption from "./_pin-options-USB-Host.mdx";
 
 ### Example Wiring
 
+:::note
+
+While this example wiring guide uses a Raspberry Pi Pico, the general principle applies to **ALL** RP2040 based boards.
+
+:::
+
 ![USB Host Wiring Diagram](../assets/images/gpc-add-ons-example-wiring-diagram-usb-host-port.png)
 
 - `VCC` - Connects to 5V power (Example: VBUS on the Raspberry Pi Pico)
@@ -14,9 +20,11 @@ import PinOption from "./_pin-options-USB-Host.mdx";
 - `D-` - Connects to the `D-` GPIO Pin above, automatically set based on D+. (Example: GPIO1 on the Raspberry Pi Pico)
 - `GND` - Connects to a ground pin, any `GND` pin will work. (Example: GND on the Raspberry Pi Pico)
 
+<br />
+
 :::note
 
-For `D+` and `D-`, any set of GPIO pins can be used from the RP2040. However, there is a requirement that `D-` GPIO must immediately follow `D+`.
+For `D+` and `D-`, any set of GPIO pins can be used from the RP2040. However, there is a requirement that `D-` GPIO must immediately precede or follow `D+` (i.e. `D+` = GPIO Pin X -> `D-` must be X+1 or X-1).
 
 :::
 
