@@ -8,9 +8,12 @@ description: "General How-To on using GP2040-CE"
 ---
 
 import InputLabelSelector, {
-	Hotkey,
+  Hotkey,
 } from "@site/src/components/LabelSelector.tsx";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 import InputTable from "./snippets/_input-table.mdx";
+import InputTableMiniClassic from "./snippets/_input-table-mini-classic.mdx";
 
 # GP2040-CE Usage
 
@@ -29,7 +32,21 @@ The v0.5+ release has some breaking changes to boards other than the Raspberry P
 
 GP2040-CE uses generic button labeling for gamepad state, which is then converted to the appropriate input type before sending. This table provides a map of GP2040-CE buttons to the supported input types and layouts:
 
+<Tabs groupID="input-modes">
+
+<TabItem value="Primary Input Modes" label="Primary Input Modes" default>
+
 <InputTable />
+
+</TabItem>
+
+<TabItem value="Mini/Classic Consoles" label="Mini/Classic Consoles">
+
+<InputTableMiniClassic />
+
+</TabItem>
+
+</Tabs>
 
 If your controller is missing dedicated buttons for any specific inputs, check the [Hotkeys page](./hotkeys.mdx) on how to map a button combination that will emulate those missing inputs.
 
@@ -50,7 +67,7 @@ Unlike other controllers, Keyboard gets different keys for directional buttons. 
 
 Bootsel Mode is the state of the board where firmware can be flashed onto the board. You will need to use this whenever there is an update or as part of the troubleshooting process.
 
-You can boot into Bootsel Mode by either holding <Hotkey buttons={["S1", "S2", "Up"]}/> buttons while plugging in the controller, by booting into the Web Configurator and then restarting in Bootsel Mode, or by holding <Hotkey buttons={["S1"]}/>, <Hotkey buttons={["B3"]}/>, and <Hotkey buttons={["B4"]}/> together for five seconds while the controller is plugged in. There is no way to leave Bootsel mode once activated other than by flashing new firmware or by unplugging the device.
+You can boot into Bootsel Mode by either holding <Hotkey buttons={["S1", "S2", "Up"]}/> buttons while plugging in the controller, by booting into the Web Configurator and then restarting in Bootsel Mode, or by holding <Hotkey buttons={["S1", "B3", "B4"]}/> together for five seconds while the controller is plugged in. There is no way to leave Bootsel mode once activated other than by flashing new firmware or by unplugging the device.
 
 ## WebConfig Mode
 
@@ -60,15 +77,30 @@ You can boot into WebConfig Mode by holding the <Hotkey buttons={["S2"]}/> butto
 
 ## Input Modes
 
-GP2040-CE is compatible with a number of systems and input modes. To change the input mode, **hold one of the following buttons as the controller is plugged in:**
+GP2040-CE is compatible with a number of systems and input modes. The specific input modes assigned to 8 buttons when held is configurable in the Web Configurator.
 
-| Input Mode      |        Button Held         |
-| :-------------- | :------------------------: |
-| Nintendo Switch | <Hotkey buttons={["B1"]}/> |
-| XInput          | <Hotkey buttons={["B2"]}/> |
-| DirectInput/PS3 | <Hotkey buttons={["B3"]}/> |
-| PS4             | <Hotkey buttons={["B4"]}/> |
-| Keyboard        | <Hotkey buttons={["R2"]}/> |
+TODO Link to Webconfig
+
+However, there are default input modes assigned in precompiled firmware. To change input modes, **hold one of the following buttons as the controller is plugged in:**
+
+| Primary Input Mode |        Button Held         |
+| :----------------- | :------------------------: |
+| Nintendo Switch    | <Hotkey buttons={["B1"]}/> |
+| XInput             | <Hotkey buttons={["B2"]}/> |
+| PS3/DirectInput    | <Hotkey buttons={["B3"]}/> |
+| PS4                | <Hotkey buttons={["B4"]}/> |
+| Xbox One           | <Hotkey buttons={["R1"]}/> |
+| Keyboard           | <Hotkey buttons={["R2"]}/> |
+| Original XBox      |        `Unassigned`        |
+
+| Mini/Classic Consoles        | Button Held  |
+| :--------------------------- | :----------: |
+| Sega Genesis/MegaDrive Mini  | `Unassigned` |
+| NEOGEO mini                  | `Unassigned` |
+| PC Engine/Turbografx 16 Mini | `Unassigned` |
+| EGRET II Mini                | `Unassigned` |
+| ASTROCITY Mini               | `Unassigned` |
+| Playstation Classic          | `Unassigned` |
 
 :::note
 
