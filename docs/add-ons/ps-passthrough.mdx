@@ -8,7 +8,6 @@ pagination_prev: null
 description: "Add-on to provide Playstation 4 and select Playstation 5 games on a GP2040 controller through the use of a passthrough authentication device attached to a USB host port"
 ---
 
-import PinOption from "../snippets/_pin-options-USB-Host.mdx";
 import InstallUSBHostPort from "../snippets/_add-usb-host-port.mdx";
 
 # PS Passthrough
@@ -19,13 +18,17 @@ Purpose: This add-on is intended to allow you to use a licensed 3rd party, "cate
 
 ## Web Configurator Options
 
-<PinOption />
+:::info GPIO Pin Assignment
+
+The Data, 5V Enable, and Pin Orientation options for USB host ports are now configured in [`Configuration > Peripheral Mapping - USB Host`](../web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-host).
+
+:::
 
 :::caution
 
 If you have PS Passthrough enabled, you must turn off the `PS4 Mode` add-on as the two will not work together.
 
-Ensure that under the `Settings` section you have chosen the PS4 for the input mode in order to use the GP2040-CE device as a controller or as a fightstick.
+Ensure that, under the `Settings` section, you have set the input mode as `PS4` and the `Controller Mode` as `Arcade Stick`. The PS Passthrough add-on will not work otherwise.
 
 :::
 
@@ -33,7 +36,11 @@ Ensure that under the `Settings` section you have chosen the PS4 for the input m
 
 ### Requirements
 
-This add-on requires that you have something like the [USB Passthrough Board](https://github.com/OpenStickCommunity/Hardware/tree/main/USB%20Passthrough%20Board) or a board with a USB passthrough port on it already.
+This add-on requires that you have a USB host port available on your device connected to GPIO pins on the RP2040 board. There are a number of methods to do so.
+
+See [USB Host Port Installation](../controller-build/usb-host.mdx) for more information on the requirements for adding a USB host port to your controller.
+
+A passthrough authentication device is also required for authentication of the controller by the console. See [FAQ: Console Compatibility](../faq/faq-ps4-ps5-compatibility.mdx#what-controller-or-dongle-do-i-use-for-ps-passthrough) for more information on which passthrough authentication devices will work for this add-on.
 
 ### Installation
 

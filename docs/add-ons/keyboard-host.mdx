@@ -8,9 +8,8 @@ description: "Add-on to use a USB keyboard in conjunction with GP2040-CE to send
 ---
 
 import InputLabelSelector, {
-	Hotkey,
+  Hotkey,
 } from "@site/src/components/LabelSelector.tsx";
-import PinOption from "../snippets/_pin-options-USB-Host.mdx";
 import InstallUSBHostPort from "../snippets/_add-usb-host-port.mdx";
 
 Select the button labels to be displayed in the usage guide:
@@ -24,7 +23,11 @@ Purpose: This add-on is intended to allow you to use a keyboard with GP2040-CE t
 
 ## Web Configurator Options
 
-<PinOption />
+:::info GPIO Pin Assignment
+
+The Data, 5V Enable, and Pin Orientation options for USB host ports are now configured in [`Configuration > Peripheral Mapping - USB Host`](../web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-host).
+
+:::
 
 ### Default Keybindings
 
@@ -54,7 +57,9 @@ Purpose: This add-on is intended to allow you to use a keyboard with GP2040-CE t
 
 ### Requirements
 
-This add-on requires that you have something like the [USB Passthrough Board](https://github.com/OpenStickCommunity/Hardware/tree/main/USB%20Passthrough%20Board) or a board with a USB passthrough port on it already.
+This add-on requires that you have a USB host port available on your device connected to GPIO pins on the RP2040 board. There are a number of methods to do so.
+
+See [USB Host Port Installation](../controller-build/usb-host.mdx) for more information on the requirements for adding a USB host port to your controller.
 
 ### Installation
 

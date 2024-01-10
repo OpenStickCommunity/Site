@@ -7,6 +7,8 @@ pagination_prev: null
 description: "Add-on to use an ADS1219 ADC for Left and Right analog joysticks on your controller"
 ---
 
+import I2CTable from "../snippets/_i2c-block-table.mdx";
+
 # I2C Analog ADS1219
 
 Purpose: This add-on is intended to allow you to add Left and Right analog joystick functionality using the ADS1219 24-bit, analog-to-digital
@@ -16,10 +18,13 @@ converter (ADC).
 
 ## Web Configurator Options
 
-- `I2C Analog ADS1219 SDA Pin` - The GPIO pin used for I2C Analog ADS1219 SDA.
-- `I2C Analog ADS1219 SCL Pin` - The GPIO pin used for I2C Analog ADS1219 SCL.
+:::info GPIO Pin Assignment
+
+The SDA and SCL pins for I2C and speed are now configured in [`Configuration > Peripheral Mapping - I2C`](../web-configurator/menu-pages/03-peripheral-mapping.mdx#i2c).
+
+:::
+
 - `I2C Analog ADS1219 Block` - The block of I2C to use (i2c0 or i2c1).
-- `I2C Analog ADS1219 Speed` - Sets the speed of I2C communication. Common values are `100000` for standard, `400000` for fast and `800000` ludicrous speed.
 - `I2C Analog ADS1219 Address` - Sets the address for the I2C Analog ADS1219 based on the pins used for SDA and SCL according to the table below.
 
 | A0  | A1  | I2C Address |
@@ -50,18 +55,9 @@ Connect the pins on the ADS1219 according to the table below
 
 :::info A0/A1 GPIO Assignment
 
-These pins will need to be wired to the appropriate SDA/SCL pins on the RP2040 and set the correct `I2C Analog ADS1219 Block` in Web Configurator. See the table below.
+These pins will need to be wired to the appropriate SDA/SCL pins on the RP2040 and set the correct I2C block in Web Configurator.
 
-|   SDA   |   SCL   | I2C Block |   SDA   |   SCL   | I2C Block |
-| :-----: | :-----: | --------- | :-----: | :-----: | --------- |
-| GPIO 0  | GPIO 1  | I2C0      | GPIO 2  | GPIO 3  | I2C1      |
-| GPIO 4  | GPIO 5  | I2C0      | GPIO 6  | GPIO 7  | I2C1      |
-| GPIO 8  | GPIO 9  | I2C0      | GPIO 10 | GPIO 11 | I2C1      |
-| GPIO 12 | GPIO 13 | I2C0      | GPIO 14 | GPIO 15 | I2C1      |
-| GPIO 16 | GPIO 17 | I2C0      | GPIO 18 | GPIO 19 | I2C1      |
-| GPIO 20 | GPIO 21 | I2C0      | GPIO 22 | GPIO 23 | I2C1      |
-| GPIO 24 | GPIO 25 | I2C0      | GPIO 26 | GPIO 27 | I2C1      |
-| GPIO 28 | GPIO 29 | I2C0      |         |         |           |
+See [Peripheral Mapping](../web-configurator/menu-pages/03-peripheral-mapping.mdx#i2c) for more information on setting up I2C.
 
 :::
 

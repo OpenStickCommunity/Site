@@ -25,15 +25,20 @@ The Wii Extensions add-on is not meant to work with Wii consoles.
 
 ## Web Configurator Options
 
-- `I2C SDA Pin` - The GPIO pin used for Wii Extension SDA.
-- `I2C SCL Pin` - The GPIO pin used for Wii Extension SCL.
+:::info GPIO Pin Assignment
+
+The SDA and SCL pins for I2C and speed are now configured in [`Configuration > Peripheral Mapping - I2C`](../web-configurator/menu-pages/03-peripheral-mapping.mdx#i2c).
+
+:::
+
 - `I2C Block` - The block of I2C to use (i2c0 or i2c1).
-- `I2C Speed` - Sets the speed of I2C communication. Common values are `100000` for standard, or `400000` for fast.
 
 ### Controller Specific Options
 
 <Tabs groupId="wii-extenstions" defaultValue="Nunchuck">
 <TabItem value="Nunchuck" label="Nunchuck" default>
+
+![GP2040-CE Configurator - Wii Nunchuck Settings](../assets/images/gpc-add-ons-wii-extensions-nunchuck.png)
 
 ![GP2040-CE Configurator - Wii Nunchuck Controller](../assets/images/wii-extension-controllers/nunchuck.svg)
 
@@ -47,10 +52,14 @@ The Wii Extensions add-on is not meant to work with Wii consoles.
 
 :::
 
+![GP2040-CE Configurator - Wii Classic Controller Settings](../assets/images/gpc-add-ons-wii-extensions-classic.png)
+
 ![GP2040-CE Configurator - Wii Classic Controller](../assets/images/wii-extension-controllers/classic.svg)
 
 </TabItem>
 <TabItem value="Guitar" label="Guitar" default>
+
+![GP2040-CE Configurator - Wii Guitar Settings](../assets/images/gpc-add-ons-wii-extensions-guitar.png)
 
 ![GP2040-CE Configurator - Wii Guitar](../assets/images/wii-extension-controllers/guitar.svg)
 
@@ -63,15 +72,21 @@ Due to an accessory hardware issue, Drum & DJ turntable controllers may require 
 
 :::
 
+![GP2040-CE Configurator - Wii Drums Settings](../assets/images/gpc-add-ons-wii-extensions-drums.png)
+
 ![GP2040-CE Configurator - Wii Drums](../assets/images/wii-extension-controllers/drums.svg)
 
 </TabItem>
 <TabItem value="Turntable" label="Turntable" default>
 
+![GP2040-CE Configurator - Wii Turntable Settings](../assets/images/gpc-add-ons-wii-extensions-turntable.png)
+
 ![GP2040-CE Configurator - Wii Turntable](../assets/images/wii-extension-controllers/turntable.svg)
 
 </TabItem>
 <TabItem value="Taiko" label="Taiko" default>
+
+![GP2040-CE Configurator - Wii Taiko Settings](../assets/images/gpc-add-ons-wii-extensions-taiko.png)
 
 ![GP2040-CE Configurator - Wii Taiko](../assets/images/wii-extension-controllers/taiko.svg)
 
