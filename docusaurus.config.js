@@ -137,7 +137,7 @@ const config = {
           "https://raw.githubusercontent.com/OpenStickCommunity/GP2040-CE/main/", // the base url for the markdown (gets prepended to all of the documents when fetching)
         outDir: "/", // the base directory to output to.
         documents: ["README.md"], // the file names to download
-        performCleanup: false,
+        performCleanup: true,
       },
     ],
   ],
