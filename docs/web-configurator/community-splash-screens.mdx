@@ -7,14 +7,154 @@ pagination_prev: null
 description: "Community created splash screens for use with an OLED screen"
 ---
 
+export const Image = ({ name, path }) => {
+  return (
+    <div className="splash">
+      <img className="splash-image" src={path} alt={name} />
+      <figcaption>{name}</figcaption>
+    </div>
+  );
+};
+
 # Community Splash Screens
 
 Here is a collection of community created splash screens that can be used with an optional OLED screen. Upload the image using the web configurator to set it up.
 
 All images been formatted to 128x64 in black / white color.
 
-| ![BentoBox](../assets/images/community-splash-screens/BentoBox.png)      | ![Crush_Counter](../assets/images/community-splash-screens/CrushCounter-v2-0.png) | ![GP2040-CE1](../assets/images/community-splash-screens/GP2040-CE-1.png)          | ![GP2040-CE2](../assets/images/community-splash-screens/GP2040-CE-2.png)        | ![GP2040-CE3](../assets/images/community-splash-screens/GP2040-CE-3.png) |
-| ------------------------------------------------------------------------ | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| ![GP2040-CE4](../assets/images/community-splash-screens/GP2040-CE-4.png) | ![GP2040-CE5](../assets/images/community-splash-screens/GP2040-CE-5.png)          | ![Sega_Astro_City](../assets/images/community-splash-screens/Sega-Astro-City.png) | ![Street_Fighter](../assets/images/community-splash-screens/Street-Fighter.png) | ![TheTrain](../assets/images/community-splash-screens/TheTrain-Logo.png) |
-| ![GP2040-CE6](../assets/images/community-splash-screens/GP2040-CE-6.png) | ![GP2040-CE7](../assets/images/community-splash-screens/GP2040-CE-7.png)          | ![Capcom_vs_SNK_2](../assets/images/community-splash-screens/CVS2_DC.png)         | ![SF_Alpha_3](../assets/images/community-splash-screens/Alpha3_DC.png)          | ![Mrvl_vs_Capcom](../assets/images/community-splash-screens/MVC1_DC.png)  |
-| ![Pls_Swd](../assets/images/community-splash-screens/PlasmaSword_DC.png) | ![Rival_Schools](../assets/images/community-splash-screens/ProjectJustice_DC.png)   | ![New_Challenger](../assets/images/community-splash-screens/NewChallenger-1.png)  |                                                                                 |                                                                          |
+## GP2040-CE
+
+<div id="img-wrapper">
+  <Image
+    name="GP2040-CE 1"
+    path={
+      require("../assets/images/community-splash-screens/GP2040-CE-1.png")
+        .default
+    }
+  />
+  <Image
+    name="GP2040-CE 2"
+    path={
+      require("../assets/images/community-splash-screens/GP2040-CE-2.png")
+        .default
+    }
+  />
+  <Image
+    name="GP2040-CE 3"
+    path={
+      require("../assets/images/community-splash-screens/GP2040-CE-3.png")
+        .default
+    }
+  />
+  <Image
+    name="GP2040-CE 4"
+    path={
+      require("../assets/images/community-splash-screens/GP2040-CE-4.png")
+        .default
+    }
+  />
+  <Image
+    name="GP2040-CE 5"
+    path={
+      require("../assets/images/community-splash-screens/GP2040-CE-5.png")
+        .default
+    }
+  />
+  <Image
+    name="GP2040-CE 6"
+    path={
+      require("../assets/images/community-splash-screens/GP2040-CE-6.png")
+        .default
+    }
+  />
+  <Image
+    name="GP2040-CE 7"
+    path={
+      require("../assets/images/community-splash-screens/GP2040-CE-7.png")
+        .default
+    }
+  />
+</div>
+
+## Vendors
+
+<div id="img-wrapper">
+  <Image
+    name="BentoBox"
+    path={
+      require("../assets/images/community-splash-screens/BentoBox.png").default
+    }
+  />
+  <Image
+    name="Crush Counter"
+    path={
+      require("../assets/images/community-splash-screens/CrushCounter-v2-0.png")
+        .default
+    }
+  />
+  <Image
+    name="TheTrain"
+    path={
+      require("../assets/images/community-splash-screens/TheTrain-Logo.png")
+        .default
+    }
+  />
+</div>
+
+## Video Games
+
+<div id="img-wrapper">
+  <Image
+    name="Capcom vs SNK 2"
+    path={
+      require("../assets/images/community-splash-screens/CVS2_DC.png").default
+    }
+  />
+  <Image
+    name="New Challenger"
+    path={
+      require("../assets/images/community-splash-screens/NewChallenger-1.png")
+        .default
+    }
+  />
+  <Image
+    name="Plasma Sword"
+    path={
+      require("../assets/images/community-splash-screens/PlasmaSword_DC.png")
+        .default
+    }
+  />
+  <Image
+    name="Rival Schools"
+    path={
+      require("../assets/images/community-splash-screens/ProjectJustice_DC.png")
+        .default
+    }
+  />
+  <Image
+    name="Marvel vs Capcom"
+    path={
+      require("../assets/images/community-splash-screens/MVC1_DC.png").default
+    }
+  />
+  <Image
+    name="Sega Astro City"
+    path={
+      require("../assets/images/community-splash-screens/Sega-Astro-City.png")
+        .default
+    }
+  />
+  <Image
+    name="Street Fighter"
+    path={
+      require("../assets/images/community-splash-screens/Street-Fighter.png")
+        .default
+    }
+  />
+  <Image
+    name="Street Fighter Alpha 3"
+    path={
+      require("../assets/images/community-splash-screens/Alpha3_DC.png").default
+    }
+  />
+</div>

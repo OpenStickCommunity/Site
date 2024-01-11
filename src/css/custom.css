@@ -33,3 +33,37 @@ img {
   width: auto;
   height: auto;
 }
+
+.splash {
+  padding: 0px 0px 10px 0px;
+}
+
+.splash-image {
+  width: auto;
+  height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .splash-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+#img-wrapper {
+  text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+  #img-wrapper {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  #img-wrapper > div {
+    flex: 0 1 20%;
+  }
+}
