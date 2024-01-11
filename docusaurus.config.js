@@ -140,6 +140,18 @@ const config = {
         performCleanup: true,
       },
     ],
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        redirects: [
+          {
+            // Redirect for console compatibility update
+            to: "/faq/faq-console-compatibility",
+            from: ["/faq/faq-ps4-ps5-compatibility"],
+          },
+        ],
+      },
+    ],
   ],
 };
 

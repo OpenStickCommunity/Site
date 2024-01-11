@@ -46,7 +46,7 @@ const sidebars = {
       collapsed: false,
       items: [
         "faq/faq-general",
-        "faq/faq-ps4-ps5-compatibility",
+        "faq/faq-console-compatibility",
         "faq/faq-troubleshooting",
       ],
     },
