@@ -69,6 +69,14 @@ Bootsel Mode is the state of the board where firmware can be flashed onto the bo
 
 You can boot into Bootsel Mode by either holding <Hotkey buttons={["S1", "S2", "Up"]}/> buttons while plugging in the controller, by booting into the Web Configurator and then restarting in Bootsel Mode, or by holding <Hotkey buttons={["S1", "B3", "B4"]}/> together for five seconds while the controller is plugged in. There is no way to leave Bootsel mode once activated other than by flashing new firmware or by unplugging the device.
 
+Generally, there is a Bootsel button somewhere on the board. This is often an exposed button on the PCB or a button inside the controller that requires either a pin to press or disassembly of the controller.
+
+:::note
+
+There are a number of controllers that elect not to include the Bootsel button. In these instances, you will need to locate the placement of the button and use conductor to connect the 2 sides of the contacts or pads together while plugging in or booting the controller.
+
+:::
+
 ## WebConfig Mode
 
 WebConfig Mode is the state of the board where built-in web browser-based configuration application is launched. From here, you can customize and configure your controller as needed. For more information, click [here](./web-configurator/web-configurator.mdx) for more information.
