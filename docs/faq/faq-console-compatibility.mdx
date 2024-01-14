@@ -95,23 +95,15 @@ For more information, refer to [PS Passthrough](../add-ons/ps-passthrough.mdx) i
 
 #### What controller or dongle do I use for PS Passthrough?
 
-This depends on whether you are aiming to avoid the 8 minute timeout on PS4 or are looking to get your controller working on PS5.
-
-##### Playstation 4 Passthrough
-
-For avoiding the 8 minute timeout on PS4, any PS4 controller or converter should work unless the device is not a valid and accepted as a proper controller on its own with a PS4.
-
-##### Playstation 5 Passthrough
-
 :::note
 
-Playstation 5 Passthrough Authentication also works for Playstation 4
+The list of devices is shared between PS4 and PS5 as the controller is authenticating as a licensed, "categorized" PS4 controller. If it works for PS5, it will work for PS4 as well.
 
 :::
 
-For PS5 compatibility, there are a number of devices that the PS5 recognizes as a "categorized" controller (e.g. arcade stick, racing wheel, flight sim joystick, etc.) where the developer of the game has supported the use of "categorized" controllers.
+There are a number of devices that the PS5 recognizes as a "categorized" controller (e.g. arcade stick, racing wheel, flight sim joystick, etc.) where the developer of the game has supported the use of "categorized" controllers. These devices have the `NXP7105` chips that allow them to authenticate with PS5 consoles.
 
-Any USB device that works as a categorized PS4 controller (arcade stick/racing wheel/flight sim joystick) or a USB dongle that allows a controller to authenticate should work with GP2040-CE. Note that this functionality is not present in all games, but is common in fighting games and racing simulators.
+Any USB device that works as a categorized PS4 controller (arcade stick/racing wheel/flight sim joystick) or a USB dongle that allows a controller to authenticate should work with PS Passthrough. Note that this functionality is not present in all games, but is common in fighting games and racing simulators.
 
 Some devices that do work for PS5 include, but are not limited to;
 
@@ -121,9 +113,14 @@ Some devices that do work for PS5 include, but are not limited to;
 
 Because your experience and purchased products may vary, GP2040-CE will not provide additional specific recommendations beyond these known working devices.
 
-:::caution PS5 Controllers
+:::caution Incompatible Controllers
 
-DualSense, DualSense Edge, and other licensed PS5 controllers will not work with this add-on.
+The following controllers are not supported at all with the PS Passthrough add-on
+
+- DualShock 4
+- DualSense
+- DualSense Edge
+- Other licensed PS5 controllers
 
 :::
 
