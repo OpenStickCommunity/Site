@@ -13,6 +13,36 @@ description: "FAQ related to Console Compatibility. Now supports Playstation 4, 
 
 GP2040-CE supports a wide variety of consoles and the most common questions regarding console compatibility are listed below.
 
+## General
+
+### Is there additional latency when using the PS Passthrough or Xbox One Passthrough add-ons?
+
+As long as PS/Xbox One Passthrough is configured correctly and the passthrough authentication device is properly plugged into the controller, there should be no additional latency. The passthrough authentication device is used solely for authentication without processing inputs and inputs come directly from the GP2040-CE firmware.
+
+### How do I plug in my passthrough authentication device for PS/Xbox One Passthrough?
+
+When using converters and adapters with PS/Xbox One Passthrough add-ons, you plug the device directly into the controller through a USB host port. You do not plug anything else into the converter/adapter.
+
+```mermaid
+graph LR
+Converter/Adapter/Dongle --> Controller --> Console
+```
+
+<br />
+
+:::caution Incorrect Usage of Converters/Adapters with Passthrough Add-ons
+
+Many users incorrectly plug their controllers into the converters/adapters and then plug the converter/adapter into the console. This is not how Passthrough is intended to be used and will result in additional latency as inputs are processed by the converter/adapter.
+
+Do not plug the converter/adapter as shown below.
+
+```mermaid
+graph LR
+Controller --> Converter/Adapter/Dongle --> Console
+```
+
+:::
+
 ## Playstation
 
 ### Why does my controller stop responding after a while on PS4 or PS5?
@@ -80,7 +110,7 @@ If you're using an OLED display, the input mode will change from `PS4` to `PS4:A
 
 ### What is PS Passthrough?
 
-:::caution Additional Hardware Required
+:::note Additional Hardware Required
 
 - [USB Host Port](../controller-build/usb-host.mdx)
 - PS4/PS5 Authentication Device

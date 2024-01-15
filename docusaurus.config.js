@@ -25,7 +25,9 @@ const config = {
     defaultLocale: "en",
     locales: ["en"],
   },
-
+  markdown: {
+    mermaid: true,
+  },
   presets: [
     [
       "classic",
@@ -51,6 +53,7 @@ const config = {
         docsRouteBasePath: "/",
       },
     ],
+    "@docusaurus/theme-mermaid",
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
