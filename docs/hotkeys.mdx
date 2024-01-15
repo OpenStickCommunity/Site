@@ -8,7 +8,7 @@ description: "Hotkey descriptions available for use with GP2040-CE"
 ---
 
 import InputLabelSelector, {
-	Hotkey,
+  Hotkey,
 } from "@site/src/components/LabelSelector.tsx";
 
 # Hotkeys
@@ -137,11 +137,11 @@ This hotkey will alter the behavior of the directional buttons such that only th
 
 ## Toggle DDI 4-Way Joystick Mode
 
-This hotkey will alter the behavior of the directional buttons mapped with the [Dual Direction Input](./add-ons/dual-direction-input) add-on such that only the cardinal directions will register as inputs and diagonal directions will be disabled and ignored.
+This hotkey will alter the behavior of the directional buttons mapped with the [Dual Direction Input](./add-ons/dual-direction-input.mdx) add-on such that only the cardinal directions will register as inputs and diagonal directions will be disabled and ignored.
 
 ## Load Profile # 1-4
 
-This hotkey will load various input to pin mapping profiles set in [Profile Settings](./web-configurator#profile-settings) in the Web Configurator.
+This hotkey will load various input to pin mapping profiles set in [Profile Settings](./web-configurator/menu-pages/02-pin-mapping.mdx#profile-settings) in the Web Configurator.
 
 ## L3 Button
 
@@ -153,8 +153,68 @@ This hotkey emulates a press of the <Hotkey buttons={["R3"]}/> button as not all
 
 ## Touchpad Button
 
-This hotkey emulates a press of the <Hotkey buttons={["A2"]}/> button as not all controllers may have this button natively on the controller.
+This hotkey emulates a press of the Touchpad button as not all controllers may have this button natively on the controller.
+
+:::note
+
+The Touchpad Button is distinct from the [A1 Button](#a1-button) hotkey as this hotkey will trigger the Touchpad button regardless of whether the toggle for `Switch Touchpad and Share` is on or off.
+
+:::
 
 ## Restart GP2040-CE
 
 This hotkey will restart the controller without pressing the hardware reset button on the board (if present) or requiring the controller to be unplugged from the PC or game console.
+
+## B1 Button
+
+This hotkey emulates a press of the <Hotkey buttons={["B1"]}/> button as not all controllers may have this button natively on the controller.
+
+## B2 Button
+
+This hotkey emulates a press of the <Hotkey buttons={["B2"]}/> button as not all controllers may have this button natively on the controller.
+
+## B3 Button
+
+This hotkey emulates a press of the <Hotkey buttons={["B3"]}/> button as not all controllers may have this button natively on the controller.
+
+## B4 Button
+
+This hotkey emulates a press of the <Hotkey buttons={["B4"]}/> button as not all controllers may have this button natively on the controller.
+
+## L1 Button
+
+This hotkey emulates a press of the <Hotkey buttons={["L1"]}/> button as not all controllers may have this button natively on the controller.
+
+## R1 Button
+
+This hotkey emulates a press of the <Hotkey buttons={["R1"]}/> button as not all controllers may have this button natively on the controller.
+
+## L2 Button
+
+This hotkey emulates a press of the <Hotkey buttons={["L2"]}/> button as not all controllers may have this button natively on the controller.
+
+## R2 Button
+
+This hotkey emulates a press of the <Hotkey buttons={["R2"]}/> button as not all controllers may have this button natively on the controller.
+
+## S1 Button
+
+This hotkey emulates a press of the <Hotkey buttons={["S1"]}/> button as not all controllers may have this button natively on the controller.
+
+## S2 Button
+
+This hotkey emulates a press of the <Hotkey buttons={["S2"]}/> button as not all controllers may have this button natively on the controller.
+
+## A1 Button
+
+This hotkey emulates a press of the <Hotkey buttons={["A1"]}/> button as not all controllers may have this button natively on the controller.
+
+:::note
+
+The A1 Button hotkey is distinct from the [Touchpad Button](#touchpad-button) hotkey as this hotkey will trigger either the Touchpad button or Share button depending on whether the toggle for [`Switch Touchpad and Share`](./web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings) is on or off.
+
+:::
+
+## A2 Button
+
+This hotkey emulates a press of the <Hotkey buttons={["A2"]}/> button as not all controllers may have this button natively on the controller.

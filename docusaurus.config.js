@@ -25,7 +25,9 @@ const config = {
     defaultLocale: "en",
     locales: ["en"],
   },
-
+  markdown: {
+    mermaid: true,
+  },
   presets: [
     [
       "classic",
@@ -51,6 +53,7 @@ const config = {
         docsRouteBasePath: "/",
       },
     ],
+    "@docusaurus/theme-mermaid",
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -137,7 +140,19 @@ const config = {
           "https://raw.githubusercontent.com/OpenStickCommunity/GP2040-CE/main/", // the base url for the markdown (gets prepended to all of the documents when fetching)
         outDir: "/", // the base directory to output to.
         documents: ["README.md"], // the file names to download
-        performCleanup: false,
+        performCleanup: true,
+      },
+    ],
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        redirects: [
+          {
+            // Redirect for console compatibility update
+            to: "/faq/faq-console-compatibility",
+            from: ["/faq/faq-ps4-ps5-compatibility"],
+          },
+        ],
       },
     ],
   ],

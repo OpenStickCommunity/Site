@@ -13,24 +13,24 @@ import TabItem from "@theme/TabItem";
 # Firmware Development
 
 GP2040-CE is written in C++ and set up as a standard Pico SDK project.
+
 See [Getting Started with the Raspberry Pi Pico](https://rptl.io/pico-get-started).
 
 ## Environment Setup
 
 Most of this will be parroting the above linked PDF from the Raspberry Pi Foundation.
 
-For GP2040-CE development on the Windows platform using the Pico SDK Installer, please skip ahead to the 'Windows Setup (Pico SDK Installer)' section on this page.
-
 <Tabs groupId="operating-systems" defaultValue="Windows (Pico SDK)">
 <TabItem value="Windows (Pico SDK)" label="Windows (Pico SDK)" default>
 
 1. Download and install [CMake](https://github.com/Kitware/CMake/releases/download/v3.27.4/cmake-3.27.4-windows-x86_64.msi).
-2. Install [NodeJS](https://nodejs.org/en/download) and NPM
-3. Download and install [pico-setup-windows-x64-standalone](https://github.com/raspberrypi/pico-setup-windows/releases/).
-4. Download and install VSCode.
-5. Download and install [Windows Terminal](https://github.com/microsoft/terminal/releases/tag/v1.17.11461.0).
-6. Open Windows Terminal.
-7. Download the GP2040-CE-main repository by running the following commands in the Windows Terminal. This will download the folder to `C:\Users\user\GP2040-CE`.
+2. Install [NodeJS](https://nodejs.org/en/download)
+3. Install [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+4. Download and install [pico-setup-windows-x64-standalone](https://github.com/raspberrypi/pico-setup-windows/releases/).
+5. Download and install VSCode.
+6. Download and install [Windows Terminal](https://github.com/microsoft/terminal/releases/tag/v1.17.11461.0).
+7. Open Windows Terminal.
+8. Download the GP2040-CE-main repository by running the following commands in the Windows Terminal. This will download the folder to `C:\Users\user\GP2040-CE`.
 
    ```console
    git clone https://github.com/OpenStickCommunity/GP2040-CE.git
@@ -40,10 +40,10 @@ For GP2040-CE development on the Windows platform using the Pico SDK Installer, 
 
 After installing the Raspberry Pi Pico SDK, you should now have a shortcut to "Pico-Visual Studio Code" (search for it using Windows Search).
 
-7. Open "Pico-Visual Studio Code" via Windows search. This is a shortcut with pre-configured environment variables (this will be explained later).
-8. Navigate to the Extensions window by pressing `Ctrl+Shift+X`.
-9. Install "CMake Tools" by Microsoft.
-10. Open the GP2040-CE folder you downloaded earlier via "File > Open Folder."
+8. Open "Pico-Visual Studio Code" via Windows search. This is a shortcut with pre-configured environment variables (this will be explained later).
+9. Navigate to the Extensions window by pressing `Ctrl+Shift+X`.
+10. Install "CMake Tools" by Microsoft.
+11. Open the GP2040-CE folder you downloaded earlier via "File > Open Folder."
 
 </TabItem>
 <TabItem value="Windows (Manual)" label="Windows (Manual)" default>
@@ -444,8 +444,7 @@ An example I2C display setup in the `BoardConfig.h` file:
 The firmware also has a splash display feature. The default splash image has been defined in `headers/add-ons/i2cdisplay.h`. The data for the splash image are bytes representing the bitmap to be displayed on the OLED screen. The splash image can be set via the web-config. If you would like to change the default version of the splash image (to preserve it beyond data wipe), it can be customized with a C define named `DEFAULT_SPLASH` in the active `BoardConfig.h` file.
 The instructions on how to generate those bytes are as follows:
 
-1. Navigate to Bitmap Converter web utility
-   - <https://marlinfw.org/tools/u8glib/converter.html>
+1. Navigate to [Bitmap Converter web utility](https://marlinfw.org/tools/u8glib/converter.html)
 2. Configure generated code
    - Select Marlin 2.x and Bitmap, untick all the rest.
 3. Upload the splash image file

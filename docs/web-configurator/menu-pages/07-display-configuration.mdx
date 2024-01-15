@@ -13,14 +13,25 @@ GP2040-CE supports the use of a display module such as an OLED with a SSD1306, S
 
 ![GP2040-CE Configurator - Display Configuration](../../assets/images/gpc-display-config.png)
 
-- `Use Display` - Turns on/off the display module.
+## Hardware Options
+
+- `Enabled` - Turns on/off the display module.
 - `I2C Block` - The Pico I2C block that will be used. Set based on pins, refer to table on page.
-- `SDA Pin` - The GPIO pin used for the I2C SDA channel.
-- `SCL Pin` - The GPIO pin used for the I2C SCL channel.
 - `I2C Address` - The I2C address of your device, defaults to the very commonly used `0x3C`.
-- `I2C Speed` - Sets the speed of I2C communication. Common values are `100000` for standard, `400000` for fast and `800000` ludicrous speed.
+
+## Screen Options
+
 - `Flip Display` - Allows you to flip or mirror the display in a variety of ways.
 - `Invert Display` - Inverts the pixel colors, effectively giving you a negative image when enabled.
+
+## Layout Options
+
+:::note Button Layout Combinations
+
+Be sure to pick left and right layouts that match. Some layout combinations result in overlapping buttons on the screen.
+
+:::
+
 - `Button Layout (Left)` - Changes the onscreen layout for the left side of the display and stick.
 - `Button Layout (Right)` - Changes the onscreen layout for the right side of the display and stick.
 - `Splash Mode` - Enables or disables a splash screen displaying when the unit is turned on.
