@@ -202,7 +202,7 @@ const boards = {
 			configName: 'Mavercade',
 			pinout: null,
 			website:
-				'https://github.com/OpenStickCommunity/GP2040-CE/tree/main/configs/Mavercade',
+				'https://mavercade.com/',
 			image: require('@site/docs/assets/boards/MavercadeKeebfighter.jpg')
 				.default,
 			category: 'closed',
