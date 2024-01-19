@@ -198,19 +198,19 @@ const boards = {
 			),
 		},
 		{
-			name: 'Mavercade Keebfighter',
-			configName: 'MavercadeKeebfighter',
+			name: 'Mavercade',
+			configName: 'Mavercade',
 			pinout: null,
 			website:
-				'https://github.com/OpenStickCommunity/GP2040-CE/tree/main/configs/MavercadeKeebfighter',
+				'https://github.com/OpenStickCommunity/GP2040-CE/tree/main/configs/Mavercade',
 			image: require('@site/docs/assets/boards/MavercadeKeebfighter.jpg')
 				.default,
 			category: 'closed',
 			desc: () => (
 				<p>
 					Configuration for the{' '}
-					<a href="https://mavercade.com/collections/mavercade-fightsticks">
-						Mavercade Keebfighters
+					<a href="https://mavercade.com/">
+						Mavercade
 					</a>
 					. These revisions use a Waveshare RP2040-Zero board.
 				</p>
