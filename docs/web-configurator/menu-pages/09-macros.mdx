@@ -44,7 +44,7 @@ When a macro stops for any reason and are triggered. again, the macro starts aga
 
 :::note
 
-This option is **only** available when `Interruptible` is enabled.
+This option is **only** available when `Interruptible` is disabled.
 
 :::
 
@@ -74,7 +74,7 @@ Each individual macro has a maximum of 50 lines where each input line has a maxi
 
 Each input line is composed of the following elements from left to right.
 
-`Input Line Duration` ms `Inputs` | `Post Input Wait Duration` ms
+`Input Line Duration` ms/frame(s) `Inputs` | `Post Input Wait Duration` ms
 
 - Input Line Duration - The duration that the inputs are held for. (Maximum 4,294,967ms or 268,435 frames)
 - Inputs - The inputs to be held during the execution of the input line.

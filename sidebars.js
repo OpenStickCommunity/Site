@@ -53,7 +53,7 @@ const sidebars = {
     {
       type: "category",
       label: "Controller Building",
-      collapsed: true,
+      collapsed: false,
       items: ["controller-build/wiring", "controller-build/usb-host"],
     },
   ],
@@ -87,6 +87,7 @@ const sidebars = {
       label: "Documentation",
       collapsed: false,
       items: [
+        "development/documentation-style-guide",
         "development/documentation-preview",
         "development/documentation-update-downloads",
       ],
