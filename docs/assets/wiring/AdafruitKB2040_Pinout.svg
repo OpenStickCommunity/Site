@@ -688,7 +688,7 @@
    inkscape:deskcolor="#d1d1d1"
    inkscape:zoom="0.5856654"
    inkscape:cx="239.04434"
-   inkscape:cy="585.65863"
+   inkscape:cy="585.65864"
    inkscape:window-width="1920"
    inkscape:window-height="1008"
    inkscape:window-x="1920"
@@ -1131,7 +1131,7 @@
      transform="scale(-1,1)"
      inkscape:label="LEFT_CONNECTOR" /><text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;line-height:1;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;paint-order:stroke fill markers"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;line-height:1;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;display:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;paint-order:stroke fill markers"
      x="650.18781"
      y="374.3815"
      id="text218-8-0"
@@ -1140,7 +1140,7 @@
        id="tspan218-1-85"
        x="650.18781"
        y="374.3815"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:end;text-anchor:end;stroke:none">SLIDER 1</tspan></text><text
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:end;text-anchor:end;stroke:none">GP06</tspan></text><text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;line-height:1;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;display:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;paint-order:stroke fill markers"
      x="790.73981"
@@ -1193,7 +1193,7 @@
      transform="scale(-1,1)"
      inkscape:label="LEFT_CONNECTOR" /><text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;line-height:1;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;paint-order:stroke fill markers"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;line-height:1;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;display:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;paint-order:stroke fill markers"
      x="650.18781"
      y="374.3815"
      id="text218-8-7"
@@ -1202,7 +1202,7 @@
        id="tspan218-1-24"
        x="650.18781"
        y="374.3815"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:end;text-anchor:end;stroke:none">SLIDER 2</tspan></text><text
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:end;text-anchor:end;stroke:none">GP07</tspan></text><text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;line-height:1;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;display:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;paint-order:stroke fill markers"
      x="790.73981"
@@ -1441,15 +1441,15 @@
      transform="scale(-1,1)"
      inkscape:label="LEFT_CONNECTOR" /><text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;line-height:1;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;paint-order:stroke fill markers"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;line-height:1;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;display:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;paint-order:stroke fill markers"
      x="650.18781"
      y="374.3815"
      id="text218-8-4"
      inkscape:label="LEFT_BUTTON_LABEL"><tspan
        sodipodi:role="line"
        id="tspan218-1-91"
-       x="650.18781"
-       y="374.3815"
+       x="0"
+       y="0"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:end;text-anchor:end;stroke:none">GP11</tspan></text><text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;line-height:1;font-family:Sans;-inkscape-font-specification:'Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;display:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:0;paint-order:stroke fill markers"
