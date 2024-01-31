@@ -87,7 +87,6 @@ const sidebars = {
       label: "Documentation",
       collapsed: false,
       items: [
-        "development/documentation-style-guide",
         "development/documentation-preview",
         "development/documentation-update-downloads",
       ],
