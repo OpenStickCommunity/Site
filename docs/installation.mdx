@@ -7,7 +7,15 @@ pagination_prev: null
 description: "How to install firmware onto devices"
 ---
 
+import InputLabelSelector, {
+  Hotkey,
+} from "@site/src/components/LabelSelector.tsx";
+
 # Firmware Installation
+
+Select the button labels to be displayed in the usage guide:
+
+<InputLabelSelector />
 
 ## General Process
 
@@ -15,7 +23,16 @@ description: "How to install firmware onto devices"
 
 1. Download the compiled firmware (.uf2 file) for your device
 2. Unplug your device.
-3. Put your device into Bootsel/USB mode. A new removable drive named `RPI-RP2` should appear in your file explorer.
+3. Put your device into Bootsel/USB mode. If successful, a new removable drive named `RPI-RP2` should appear in your file explorer.
+
+:::info How to get into Bootsel Mode
+
+- Holding the BootSel button while plugging in
+- Holding <Hotkey buttons={["S1", "S2", "Up"]} /> while plugging in
+- Holding <Hotkey buttons={["S1", "B3", "B4"]} /> for 5 seconds.
+
+:::
+
 4. Drag and drop the compiled firmware (.uf2 file) downloaded in step 1 into the removable drive
 5. Wait for the device to automatically disconnect.
 
@@ -29,7 +46,16 @@ If you would like to customize your device, check out the built-in [Web Configur
 
 1. Download the latest `GP2040-CE_X.X.X_Pico.uf2` file for the Raspberry Pi Pico from the [Download](./downloads/download-page.mdx) page.
 2. Unplug your Pico.
-3. Hold the BOOTSEL button on the Pico and plug into your computer.
+3. Put your device into Bootsel/USB mode. If successful, a new removable drive named `RPI-RP2` should appear in your file explorer.
+
+:::info How to get into Bootsel Mode
+
+- Holding the BootSel button while plugging in
+- Holding <Hotkey buttons={["S1", "S2", "Up"]} /> while plugging in
+- Holding <Hotkey buttons={["S1", "B3", "B4"]} /> for 5 seconds.
+
+:::
+
 4. Drag and drop the `GP2040-CE_X.X.X_Pico.uf2` file into the removable drive.
 5. Wait for the Pico to automatically disconnect.
 
@@ -42,7 +68,16 @@ _Warning_ - Flash nuking your board wipes all your custom configuration for pin 
 :::
 
 1. Download the [flash_nuke.uf2 file](./downloads/flash_nuke.uf2)
-2. Boot into bootsel/RPI drive (multiple methods to do so)
+2. Put your device into Bootsel/USB mode. If successful, a new removable drive named `RPI-RP2` should appear in your file explorer.
+
+:::info How to get into Bootsel Mode
+
+- Holding the BootSel button while plugging in
+- Holding <Hotkey buttons={["S1", "S2", "Up"]} /> while plugging in
+- Holding <Hotkey buttons={["S1", "B3", "B4"]} /> for 5 seconds.
+
+:::
+
 3. Drag [flash_nuke.uf2 file](./downloads/flash_nuke.uf2) onto the drive
 4. **_Wait for the drive to disconnect and reconnect without unplugging_**
 5. Drag your firmware onto the RPI drive and wait for disconnect

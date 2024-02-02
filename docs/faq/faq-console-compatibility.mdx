@@ -25,7 +25,7 @@ When using converters and adapters with PS/Xbox One Passthrough add-ons, you plu
 
 ```mermaid
 graph LR
-Converter/Adapter/Dongle --> Controller --> Console
+Converter/Adapter/Dongle -- USB Port <br> on controller --> Controller([Controller]) -- USB Port <br> on console --> Console{{Console}}
 ```
 
 <br />
@@ -38,7 +38,7 @@ Do not plug the converter/adapter as shown below.
 
 ```mermaid
 graph LR
-Controller --> Converter/Adapter/Dongle --> Console
+Controller([Controller]) -- USB Port <br> on Converter --> Converter/Adapter/Dongle -- USB Port <br> on console --> Console{{Console}}
 ```
 
 :::
@@ -119,8 +119,6 @@ If you're using an OLED display, the input mode will change from `PS4` to `PS4:A
 
 PS Passthrough is an add-on that grants GP2040-CE compatibility with the Playstation 4 or Playstation 5 console by using another controller or dongle to answer authentication
 
-Depending on the controller or dongle used, you may be limited to only Playstation 4 support.
-
 For more information, refer to [PS Passthrough](../add-ons/ps-passthrough.mdx) in the `Web Configurator - Add-ons` section of the documentation.
 
 #### What controller or dongle do I use for PS Passthrough?
@@ -139,7 +137,7 @@ Some devices that do work for PS5 include, but are not limited to;
 
 - [MagicBoots FPS Adapter Joystick Converter for PS4 v1.1](https://www.mayflash.com/product/MAGPS4.html)
 - [N5 for PXN Game Steering Wheel](https://pxn-game.com/products/n5-for-pxn-game-steering-wheel)
-- PCBs from Licensed PS4 Arcade Sticks
+- Licensed PS4 Arcade Sticks
 
 Because your experience and purchased products may vary, GP2040-CE will not provide additional specific recommendations beyond these known working devices.
 
