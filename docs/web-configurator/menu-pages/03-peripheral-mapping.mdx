@@ -40,7 +40,11 @@ Each I2C block, `I2C0` and `I2C1`, has separate settings and each must be config
   - `Fast - 400000`
   - `Fast Plus - 800000`
 
+:::caution
+
 The SDA and SCL pins must match a pair found on the table below for each I2C block. If this is not configured correctly, your I2C devices will not function properly.
+
+:::
 
 <I2CTable />
 
@@ -54,21 +58,27 @@ Each SPI block, SPI0 and SPI1, has separate settings and must be configured befo
 - `SCK` - The GPIO pin used for Serial Clock (SCK).
 - `TX` - The GPIO pin used for MOSI, to send data.
 
+:::caution
+
 The pins must match a set found on the table below for each SPI block. If this is not configured correctly, your SPI devices will not function properly.
+
+:::
 
 <SPITable />
 
 ## USB Host
 
+There are not restrictions on which GPIO pins can be used for setting up a USB host port. You can pick any GPIO pin as long as it is available (not being used by any other feature) and the GPIO pin selected for `D+` has a GPIO pin immediately following or preceding it that can be used for `D-` (e.g. GPIO X and GPIO X+/-1).
+
 - `Toggle` - This will toggle the USB Host Port on and off
 - `D+` - The GPIO Pin used to carry Data Plus between the USB Host Port and RP2040
 - `Enable 5V` - The GPIO Pin used to enable 5V power to the host port on the board.
 - `Pin Order` - This setting is based on the order that the Data pins are connected to sequential GPIO pins
-  - `D+/D-` - The GPIO pins are set such that, sequentially, `D+` is immediately followed by `D-`
-  - `D-/D+` -The GPIO pins are set such that, sequentially, `D-` is immediately followed by `D+`
+  - `D+/D-` - The GPIO pins are set such that, sequentially, `D+` is immediately followed by `D-` (e.g. D+ = 0. D- = 1)
+  - `D-/D+` -The GPIO pins are set such that, sequentially, `D+` is immediately preceded by `D-` (e.g. D+ = 29, D- = 28)
 
 :::note Enable 5V
 
-This is only applicable to a small number of boards (e.g. Adafruit RP2040 Feather USB Host) as they possess pins for enabling and disabling 5V port on the USB host port. Most boards do not require this to be set.
+Most boards do not require this to be set. This is only applicable to a small number of boards (e.g. Adafruit RP2040 Feather USB Host) as they possess pins for enabling and disabling 5V port on the USB host port. 
 
 :::
