@@ -64,7 +64,13 @@ Some of the options above uses the following GP2040 input labels for input mappi
 
 Additional buttons are required for the Turbo Button as well as each of the additional Charge Buttons desired for a minimum of one button and a maximum of 4 buttons.
 
-If a Turbo LED is desired, an 3.3V non-addressable non-RGB LED is required. This type of LED should only have 2 conductors, power and ground. Because this is using power from
+If a Turbo LED is desired, an 3.3V non-addressable non-RGB LED is required. This type of LED should only have 2 conductors, power and ground. 
+
+:::note 3.3V+ Forward Voltage LED
+
+The LED is using power from GPIO pin, which can only supply +3.3V. Verify that the forward voltage of the LED is below 3.3V, otherwise the LED will not turn on.
+
+:::
 
 ### Installation
 
