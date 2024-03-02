@@ -30,17 +30,37 @@ When tagging a new version, the document versioning mechanism will:
 - Create a versioned sidebars file based from your current sidebar configuration (if it exists) - saved as versioned_sidebars/version-\{versionName\}-sidebars.json.
 - Append the new version to versions.json.
 
+### Delete Prior Version
+
+At the root of the GP2040-CE folder, run the following command to delete the version
+
+```shell
+rm -rf versioned_docs/version-#.#.#
+rm -rf versioned_sidebars/version-#.#.#-sidebars.json
+```
+
+Then remove the version from versions.json.
+
+Example:
+
+```diff
+[
+  "0.7.7",
+- "0.7.6"
+]
+```
+
 ## Updating Documentation
 
 ### Update Future Release Documentation
 
-Updates can be made directly in the `docs/docs/` folder or `sidebars.js` as these changes are not reflected in the default versioned documents users will see on the site. Any changes to the `docs/docs/` folder or `sidebars.js` are made to the `Next` version.
+Updates can be made directly in the `docs/` folder or `sidebars.js` as these changes are not reflected in the default versioned documents users will see on the site. Any changes to the `docs/` folder or `sidebars.js` are made to the `Next` version.
 
 ![GP2040-CE | Next Version](../assets/images/gpc-documentation-next-version.png)
 
 ### Update Current Release Documentation
 
-This process is different from updating documentation for future releases as changes need to be made with the versioned documents. Changes to the current release version of documentation will need to be made to the files in `docs/versioned_docs/version-X.X.X` and `docs/versioned_sidebars/version-X.X.X-sidebars.json`.
+This process is different from updating documentation for future releases as changes need to be made with the versioned documents. Changes to the current release version of documentation will need to be made to the files in `/versioned_docs/version-X.X.X` and `/versioned_sidebars/version-X.X.X-sidebars.json`.
 
 These changes will be reflected in the default user facing documentation that appears when users go to https://gp2040-ce.info and do not specifically select the `Next` version of documentation.
 
