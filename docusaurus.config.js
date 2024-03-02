@@ -101,12 +101,11 @@ const config = {
             docId: "downloads/download-page",
             label: "Downloads",
           },
-          // VersionDropdown - To Be Reconsidered
-          // {
-          // 	type: 'docsVersionDropdown',
-          // 	position: 'right',
-          // 	dropdownActiveClassDisabled: true,
-          // },
+          {
+            type: "docsVersionDropdown",
+            position: "right",
+            dropdownActiveClassDisabled: true,
+          },
           {
             href: "https://discord.gg/k2pxhke7q8",
             label: "Discord",
