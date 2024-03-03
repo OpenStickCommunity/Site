@@ -19,10 +19,6 @@ const sidebars = {
   // But you can create a sidebar manually
   docSidebar: [
     {
-      type: "doc",
-      id: "home",
-    },
-    {
       type: "category",
       label: "General",
       collapsed: false,

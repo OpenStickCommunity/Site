@@ -78,10 +78,16 @@ const config = {
         },
         items: [
           {
+            type: "doc",
+            position: "left",
+            docId: "README",
+            label: "Home",
+          },
+          {
             type: "docSidebar",
             position: "left",
             sidebarId: "docSidebar",
-            label: "Home",
+            label: "Getting Started",
           },
           {
             type: "docSidebar",
@@ -137,9 +143,27 @@ const config = {
         name: "README", // used by CLI, must be path safe
         sourceBaseUrl:
           "https://raw.githubusercontent.com/OpenStickCommunity/GP2040-CE/main/", // the base url for the markdown (gets prepended to all of the documents when fetching)
-        outDir: "/", // the base directory to output to.
+        outDir: "/docs", // the base directory to output to.
         documents: ["README.md"], // the file names to download
-        performCleanup: true,
+        performCleanup: false,
+        modifyContent(filename, content) {
+          if (filename.includes("README")) {
+            return {
+              content: `---
+hide_title: true
+title: "Home"
+pagination_next: null
+pagination_prev: null
+description: "Homepage for GP2040-CE Documentation"
+---
+
+${content}`, // <-- this last part adds in the rest of the content, which would otherwise be discarded
+            };
+          }
+
+          // we don't want to modify this item, since it doesn't contain "README" in the name
+          return undefined;
+        },
       },
     ],
     [
