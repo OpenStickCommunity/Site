@@ -1,10 +1,6 @@
 {
   "docSidebar": [
     {
-      "type": "doc",
-      "id": "home"
-    },
-    {
       "type": "category",
       "label": "General",
       "collapsed": false,
@@ -36,10 +32,7 @@
       "type": "category",
       "label": "Controller Building",
       "collapsed": false,
-      "items": [
-        "controller-build/wiring",
-        "controller-build/usb-host"
-      ]
+      "items": ["controller-build/wiring", "controller-build/usb-host"]
     }
   ],
   "webConfigSidebar": [
@@ -73,15 +66,14 @@
       "type": "category",
       "label": "Firmware",
       "collapsed": false,
-      "items": [
-        "development/firmware-development"
-      ]
+      "items": ["development/firmware-development"]
     },
     {
       "type": "category",
       "label": "Documentation",
       "collapsed": false,
       "items": [
+        "development/documentation-style-guide",
         "development/documentation-versioning",
         "development/documentation-preview",
         "development/documentation-update-downloads"

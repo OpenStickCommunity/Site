@@ -54,6 +54,10 @@ img {
   text-align: center;
 }
 
+nav.navbar {
+  white-space: nowrap;
+}
+
 @media only screen and (min-width: 600px) {
   #img-wrapper {
     text-align: center;

@@ -1,0 +1,211 @@
+---
+title: Console Compatibility
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+toc_min_heading_level: 2
+toc_max_heading_level: 4
+description: "FAQ related to Console Compatibility. Now supports Playstation 4, Playstation 5, Xbox One, Xbox Series S, and Xbox Series S"
+---
+
+# FAQ: Console Compatibility
+
+GP2040-CE supports a wide variety of consoles and the most common questions regarding console compatibility are listed below.
+
+## General
+
+### Is there additional latency when using the PS Passthrough or Xbox One Passthrough add-ons?
+
+As long as PS/Xbox One Passthrough is configured correctly and the passthrough authentication device is properly plugged into the controller, there should be no additional latency. The passthrough authentication device is used solely for authentication without processing inputs and inputs come directly from the GP2040-CE firmware.
+
+### How do I plug in my passthrough authentication device for PS/Xbox One Passthrough?
+
+When using converters and adapters with PS/Xbox One Passthrough add-ons, you plug the device directly into the controller through a USB host port. You do not plug anything else into the converter/adapter.
+
+```mermaid
+graph LR
+Converter/Adapter/Dongle --> Controller --> Console
+```
+
+<br />
+
+:::caution Incorrect Usage of Converters/Adapters with Passthrough Add-ons
+
+Many users incorrectly plug their controllers into the converters/adapters and then plug the converter/adapter into the console. This is not how Passthrough is intended to be used and will result in additional latency as inputs are processed by the converter/adapter.
+
+Do not plug the converter/adapter as shown below.
+
+```mermaid
+graph LR
+Controller --> Converter/Adapter/Dongle --> Console
+```
+
+:::
+
+## Playstation
+
+### Why does my controller stop responding after a while on PS4 or PS5?
+
+PlayStation 4 and PlayStation 5 use an authentication mechanism to ensure only authorized controllers are used on the console. If a device doesn't implement this authentication mechanism the controller is subject to an 8-minute timeout.
+
+Using PS4 mode on a PC does not result in any timeout behavior, but note that XInput is the suggested mode on PC for best compatibility.
+
+### What is the 8-Minute Timeout?
+
+The 8-minute timeout works like this:
+
+1. Plug your controller into the PS4/5
+2. Press the PS button to initialize the controller
+3. Play for roughly 8 minutes
+4. Console rejects the controller due to failed authentication
+5. User unplugs their non-functional controller
+6. Go back to step 1 and repeat
+
+### How do I avoid the 8-Minute Timeout?
+
+GP2040-CE provides multiple methods for you to avoid the 8-Minute Timeout. The recommended method will depend on whether you are using your controller on Playstation 4 or Playstation 5.
+
+For PS4, you can either use the [PS4 Mode add-on](../add-ons/ps4-mode.mdx) or the [PS Passthrough add-on](../add-ons/ps-passthrough.mdx).
+
+For PS5 you can **only** use the [PS Passthrough add-on](../add-ons/ps-passthrough.mdx).
+
+### How do I get my GP2040-CE unit to work on a Playstation 4 or Playstation 5?
+
+For Playstation 4 compatibility, you will need to use either the [PS4 Mode add-on](../add-ons/ps4-mode.mdx) or the [PS Passthrough add-on](../add-ons/ps-passthrough.mdx). If you use PS Passthrough, you will need to disable the PS4 Mode add-on and enable the PS Passthrough add-on. You will also need to ensure that under the `Settings` section you have chosen `PS4` as your input mode and either `Controller` or `Arcade Stick`.
+
+For Playstation 5 compatibility, you **cannot** use the PS4 Mode add-on. You will need to disable the PS4 Mode add-on and then enable the PS Passthrough add-on. You will also need to ensure that under the `Settings` section you have chosen `PS4` as your input mode and picked if you want the GP2040-CE unit to function as a `Arcade Stick`.
+
+:::note
+
+Setting it as `Controller` will not work on Playstation 5 using the PS Passthrough add-on.
+
+:::
+
+### What is PS4 Mode?
+
+PS4 mode is an add-on that grants GP2040-CE compatibility with the Playstation 4 console. Using this add-on requires a few files that can be acquired from a legitimate DualShock 4 controller.
+
+- Private Key
+- Serial Number
+- Signature
+
+It was built using the efforts of another open source firmware project named [Passing Link](https://github.com/passinglink/passinglink). The team behind Passing Link are in no way affiliated with the GP2040-CE project, however the work and information they've made available was greatly appreciated so we could bring this highly-requested feature to our users.
+
+For more information, refer to [PS4 Mode](../add-ons/ps4-mode.mdx) in the `Web Configurator - Add-ons` section of the documentation.
+
+#### How do I get the necessary keys and files for the PS4 Mode add-on?
+
+The GP2040-CE project will not provide **_any_** files or information related to acquiring these keys and files.
+
+:::danger
+
+**Do not ask via any of communication channels (e.g. social media, direct messages, Github Issues, GP2040-CE Discord) as this will result in a permanent blacklist/ban.**
+
+:::
+
+#### How do I know the PS4 Mode add-on is working?
+
+If you're using an OLED display, the input mode will change from `PS4` to `PS4:AS` to indicate your device has successfully authenticated with the PS4/PS5 console. Otherwise the only way to tell is to plug the controller into a PS4 and wait 8 minutes to verify that the controller is still responding afterwards.
+
+### What is PS Passthrough?
+
+:::note Additional Hardware Required
+
+- [USB Host Port](../controller-build/usb-host.mdx)
+- PS4/PS5 Authentication Device
+
+:::
+
+PS Passthrough is an add-on that grants GP2040-CE compatibility with the Playstation 4 or Playstation 5 console by using another controller or dongle to answer authentication
+
+Depending on the controller or dongle used, you may be limited to only Playstation 4 support.
+
+For more information, refer to [PS Passthrough](../add-ons/ps-passthrough.mdx) in the `Web Configurator - Add-ons` section of the documentation.
+
+#### What controller or dongle do I use for PS Passthrough?
+
+:::note
+
+The list of devices is shared between PS4 and PS5 as the controller is authenticating as a licensed, "categorized" PS4 controller. If it works for PS5, it will work for PS4 as well.
+
+:::
+
+There are a number of devices that the PS5 recognizes as a "categorized" controller (e.g. arcade stick, racing wheel, flight sim joystick, etc.) where the developer of the game has supported the use of "categorized" controllers. These devices have the `NXP7105` chips that allow them to authenticate with PS5 consoles.
+
+Any USB device that works as a categorized PS4 controller (arcade stick/racing wheel/flight sim joystick) or a USB dongle that allows a controller to authenticate should work with PS Passthrough. Note that this functionality is not present in all games, but is common in fighting games and racing simulators.
+
+Some devices that do work for PS5 include, but are not limited to;
+
+- [MagicBoots FPS Adapter Joystick Converter for PS4 v1.1](https://www.mayflash.com/product/MAGPS4.html)
+- [N5 for PXN Game Steering Wheel](https://pxn-game.com/products/n5-for-pxn-game-steering-wheel)
+- PCBs from Licensed PS4 Arcade Sticks
+
+Because your experience and purchased products may vary, GP2040-CE will not provide additional specific recommendations beyond these known working devices.
+
+:::caution Incompatible Controllers
+
+The following controllers are not supported at all with the PS Passthrough add-on
+
+- DualShock 4
+- DualSense
+- DualSense Edge
+- Other licensed PS5 controllers
+
+:::
+
+#### How do I know the PS Passthrough add-on is working?
+
+Because of the numerous devices to be used for passthrough authentication, there is not just one way to verify that the add-on is working without plugging the controller into a PS4 or PS5 and waiting 8 minutes to verify that the controller is still responding afterwards.
+
+For the MagicBoots Adapter and N5 listed above, there is an indicator light on the dongle that should flash on boot and then become solid after a moment. If the indicator light is on and solid, your controllers _should_ be compatible with PS5 at that point and not time out.
+
+#### Can I remove the PS Passthrough authentication device once I have plugged in my controller?
+
+Playstation consoles repeatedly send authorization requests every 30 seconds or so. If the request fails (i.e. there is no passthrough authentication device plugged in), in about 8 minutes, the controller will stop responding. Once this happens, the only option is to either reset the controller or unplug and then plug the controller back into the console.
+
+## Xbox
+
+### How do I get my GP2040-CE unit to work on a Xbox One, Xbox Series S, or Xbox Series X?
+
+For Xbox One, Xbox Series S, or Xbox Series X compatibility, you will need to use the [Xbox One Passthrough add-on](../add-ons/xbox-one-passthrough.mdx).
+
+### What is Xbox One Passthrough?
+
+:::caution Additional Hardware Required
+
+- [USB Host Port](../controller-build/usb-host.mdx)
+- Xbox One Authentication Device
+
+:::
+
+Xbox One Passthrough is an add-on that grants GP2040-CE compatibility with the Xbox One, Xbox Series S, or Xbox Series X by using another controller or dongle to answer authentication
+
+For more information, refer to [Xbox One add-on](../add-ons/xbox-one-passthrough.mdx) in the `Web Configurator - Add-ons` section of the documentation.
+
+### What controller or dongle do I use for Xbox One Passthrough?
+
+Some devices that do work for Xbox One Passthrough are currently limited to the following;
+
+- [MagicBoots FPS Adapter Joystick Converter for Xbox One](https://www.mayflash.com/product/MAGONE.html)
+- [Magic-X Wireless Bluetooth USB Adapter](https://www.mayflash.com/product/magic_x.html)
+
+Because your experience and purchased products may vary, GP2040-CE will not provide additional specific recommendations beyond these known working devices.
+
+:::caution Xbox One Controllers
+
+Xbox Wireless Controllers, Xbox One Elite Controllers, and other licensed Xbox One controllers will not work with this add-on.
+
+:::
+
+### How do I know the Xbox One Passthrough add-on is working?
+
+Because of the numerous devices to be used for passthrough authentication, there is not just one way to verify that the add-on is working without plugging the controller into a console and attempting to use it.
+
+For the MagicBoots Adapter listed above, there is an indicator light on the dongle that should flash on boot and then become solid after a moment. If the indicator light is on and solid, your controllers _should_ be compatible and you may use your controller as intended.
+
+For the Magic-X Adapter listed above, there is an indicator light on the dongle that will continue flashing after the controller boots, unlike the MagicBoots Adapter.
+
+### Can I remove the Xbox One Passthrough authentication device once I have plugged in my controller?
+
+Xbox One, Xbox Series S, and Xbox Series X consoles only perform the authentication process once when the controller is plugged into the console. Once this occurs, the passthrough authentication device can be removed. However, it is still recommended to keep the device plugged in.
