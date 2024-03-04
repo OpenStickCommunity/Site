@@ -87,13 +87,13 @@ const config = {
             type: "docSidebar",
             position: "left",
             sidebarId: "docSidebar",
-            label: "Getting Started",
+            label: "Get Started",
           },
           {
             type: "docSidebar",
             position: "left",
             sidebarId: "webConfigSidebar",
-            label: "Web Configurator",
+            label: "Web Config",
           },
           {
             type: "docSidebar",
