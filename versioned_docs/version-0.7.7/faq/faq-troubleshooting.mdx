@@ -102,27 +102,56 @@ Regarding PS5 disconnection issues. [PS Passthrough](../add-ons/ps-passthrough.m
 
 For more information, refer to the [PS4/PS5 Compatibility FAQ](../faq/faq-console-compatibility.mdx).
 
-## Configuration Issues
-
 ### Why can't I access the Web Configurator?
+
+#### Controller is not booting into Web Configurator Mode
 
 If the Web Configurator page is timing out, verify that the controller is booting into Web Configurator Mode.
 
-Test that you are holding <Hotkey buttons={["S2"]}/> when booting, using a using the website like [Gamepad Tester](https://gamepad-tester.com/), or in another application such as the Steam Input Overlay. to verify that you are pressing the correct button.
+:::info How to get into Webconfig Mode
+
+- Holding <Hotkey buttons={["S2"]} /> while plugging in
+- Holding <Hotkey buttons={["S2", "B3", "B4"]} /> for 5 seconds.
+
+:::
+
+Test that you are holding correct buttons, using a using the website like [Gamepad Tester](https://gamepad-tester.com/), or in another application such as the Steam Input Overlay. to verify that you are pressing the correct button.
+
+#### Another device on your network has the IPV4 address of 192.168.7.1
+
+If another device (e.g. router, managed switch/hub, IoT device, etc.) is on the network and has the same IP address, the web configurator will not be able to access the Web Configurator dur to IP conflicts.
+
+Disconnect your computer from your local network (e.g. unplug the ethernet cable) and then attempt to access the Web Configurator again.
+
+## Configuration Issues
 
 ### Why does PS Passthrough not work on my device?
 
-#### USB Host Port not configured correctly
+#### Did not press A1 after connecting the controller.
 
-Verify that your USB host port is correctly configured in the Web Configurator. The specific pins for Data+ and Data- may differ between devices and device manufacturers so check with the documentation provided by the vendor.
+After connecting a controller that is correctly configured for PS Passthrough, you need to press <Hotkey buttons={["A1"]} /> in order to have the PS4 or PS5 register the controller. Once you have done so, the console should now properly receive inputs from the controller.
+
+#### The controller mode is incorrectly configured.
+
+If you have PS Passthrough enabled, you must turn off the `PS4 Mode` add-on as the two will not work together.
+
+Ensure that, under the `Settings` section, you have set the input mode as `PS4` and the `Controller Mode` as `Arcade Stick`. The PS Passthrough add-on will not work otherwise.
 
 For more information, refer to the [PS Passthrough](../add-ons/ps-passthrough.mdx) add-on documentation.
+
+#### USB Host Port not configured correctly
+
+Verify that your USB host port is correctly configured in the Web Configurator under [Peripheral Mapping](/docs/web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-host). The specific pins for Data+ and Data- may differ between devices and device manufacturers so check with the documentation provided by the vendor.
 
 #### Incompatible Controller/Dongle is being used
 
 Only compatible devices will allow the use of a GP2040-CE controller with PS Passthrough to work on PS4 and not all devices will work with PS5.
 
 For more information, refer to the [PS4/PS5 Compatibility FAQ](../faq/faq-console-compatibility.mdx).
+
+### I cannot get to WebConfig using the shortcuts. How do I get to the Web Configurator?
+
+**_Without flash nuking your device_**, flash this [firmware file](../downloads/force_webconfig.uf2) using the [firmware installation](../installation.mdx) instructions. This will force your device to reboot into Web Configurator mode.
 
 ### Why are my RGB LEDs the wrong color?
 
