@@ -138,7 +138,7 @@ For more information, refer to the [RGB LED Button Order](../web-configurator/me
 
 ### When I updated my device, why did my controller stop working?
 
-If you updated your device and suddenly your inputs aren't correct and your OLED Display or RGB LED stopped working, it's likely that the incorrect compiled firmware was flashed onto your device or your device is not supported and thus the precompiled builds on the [Downloads](./downloads) page may not work for your device.
+If you updated your device and suddenly your inputs aren't correct and your OLED Display or RGB LED stopped working, it's likely that the incorrect compiled firmware was flashed onto your device or your device is not supported and thus the precompiled builds on the [Downloads](/downloads) page may not work for your device.
 
 #### Incorrect Firmware for a Supported Device
 
@@ -151,7 +151,7 @@ If your device is not supported, please speak with the vendor you purchased the 
 If your vendor is incapable of supporting their device, you will need to perform some investigative work to properly set up your device.
 
 1. Flash the compiled **Pico** GP2040 firmware from the downloads page using the [firmware installation](../installation.mdx) instructions.
-2. Repeat those steps **_without flash nuking your device_**, flashing this [firmware file](../downloads/force_webconfig.uf2). This will force your device to boot into Web Configurator mode on boot.
+2. Repeat those steps **_without flash nuking your device_**, flashing this [firmware file](/assets/force_webconfig.uf2). This will force your device to boot into Web Configurator mode on boot.
 3. Go to Configuration>Pin Mapping
 4. For each gamepad input, use the “Press Button to Map” feature to map the input to a GPIO Pin connected to that button. Repeat for all inputs
 5. For any additional features (e.g. RGB LED, OLED display, USB Host Port, etc.), you will need to determine what GPIO pin is associated. This can be done by tracing physical copper paths on the PCB to the button/component.

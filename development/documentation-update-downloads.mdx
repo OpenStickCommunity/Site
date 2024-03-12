@@ -9,7 +9,7 @@ description: "How to update the Downloads Page to add a new microcontroller boar
 
 # Update Downloads Page
 
-Adding a microcontroller board or device to the [Downloads](./downloads) page requires an update to the `docs/src/config/boards.tsx` file. The information required will depend on whether you are adding a microcontroller board or a controller.
+Adding a microcontroller board or device to the [Downloads](/downloads) page requires an update to the `src/config/boards.tsx` file. The information required will depend on whether you are adding a microcontroller board or a controller.
 
 | Key          | Value                                                                                                            |
 | ------------ | ---------------------------------------------------------------------------------------------------------------- |
@@ -17,7 +17,7 @@ Adding a microcontroller board or device to the [Downloads](./downloads) page re
 | `configName` | The name of the device that will be used to generate the .uf2 file and used to generate link to release firmware |
 | `pinout`     | Link to the devices pinout diagram                                                                               |
 | `website`    | Link to the website containing device information                                                                |
-| `image`      | Absolute link to the asset used for device, change only `BoardName` to match file name in `docs/docs/assets/`    |
+| `image`      | Absolute link to the asset used for device, change only `BoardName` to match file name in `static/img/boards/`    |
 | `supported`  | (Microcontroller Board Only) Whether the device is currently supported by the project                            |
 | `category`   | (Controller Only) The category classification following convention listed below                                  |
 | `desc`       | Short description of the device and manufacturer to be displayed on Downloads page                               |

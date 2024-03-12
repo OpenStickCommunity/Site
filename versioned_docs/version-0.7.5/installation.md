@@ -40,9 +40,9 @@ If you would like to customize your device, check out the built-in [Web Configur
 
 :::
 
-1. Download the [flash_nuke.uf2 file](https://raw.githubusercontent.com/OpenStickCommunity/GP2040-CE/main/docs/downloads/flash_nuke.uf2)
+1. Download the [flash_nuke.uf2 file](/assets/flash_nuke.uf2)
 2. Boot into bootsel/RPI drive (multiple methods to do so)
-3. Drag [flash_nuke.uf2 file](https://raw.githubusercontent.com/OpenStickCommunity/GP2040-CE/main/docs/downloads/flash_nuke.uf2) onto the drive
+3. Drag [flash_nuke.uf2 file](/assets/flash_nuke.uf2) onto the drive
 4. ***Wait for the drive to disconnect and reconnect without unplugging***
 5. Drag your firmware onto the RPI drive and wait for disconnect
 6. Check that the controller connects using this [gamepad tester](https://hardwaretester.com/gamepad) and pressing a button.
