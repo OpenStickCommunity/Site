@@ -7,7 +7,7 @@ const boards = {
 			configName: 'Pico',
 			pinout: '/controller-build/wiring#raspberry-pi-pico',
 			website: 'https://www.raspberrypi.com/products/raspberry-pi-pico/',
-			image: require('@site/docs/assets/boards/Pico.jpg').default,
+			image: '/img/boards/Pico.jpg',
 			supported: true,
 			desc: () => (
 				<p>
@@ -22,7 +22,7 @@ const boards = {
 			configName: 'PicoW',
 			pinout: '/controller-build/wiring#raspberry-pi-pico',
 			website: 'https://www.raspberrypi.com/products/raspberry-pi-pico/',
-			image: require('@site/docs/assets/boards/PicoW.jpg').default,
+			image: '/img/boards/PicoW.jpg',
 			supported: true,
 			desc: () => (
 				<p>
@@ -36,7 +36,7 @@ const boards = {
 			configName: 'KB2040',
 			pinout: '/controller-build/wiring#adafruit-kb2040',
 			website: 'https://learn.adafruit.com/adafruit-kb2040',
-			image: require('@site/docs/assets/boards/KB2040.jpg').default,
+			image: '/img/boards/KB2040.jpg',
 			supported: true,
 			desc: () => (
 				<p>
@@ -51,7 +51,7 @@ const boards = {
 			pinout: '/controller-build/wiring#sparkfun-pro-micro---rp2040',
 			website:
 				'https://splitkb.com/products/liatris',
-			image: require('@site/docs/assets/boards/Liatris.jpg').default,
+			image: '/img/boards/Liatris.jpg',
 			supported: true,
 			desc: () => (
 				<p>
@@ -69,7 +69,7 @@ const boards = {
 			pinout: '/controller-build/wiring#sparkfun-pro-micro---rp2040',
 			website:
 				'https://learn.sparkfun.com/tutorials/pro-micro-rp2040-hookup-guide',
-			image: require('@site/docs/assets/boards/SparkFunProMicro.jpg').default,
+			image: '/img/boards/SparkFunProMicro.jpg',
 			supported: true,
 			desc: () => (
 				<p>
@@ -87,7 +87,7 @@ const boards = {
 			configName: 'WaveshareZero',
 			pinout: '/controller-build/wiring#waveshare-rp2040-zero',
 			website: 'https://www.waveshare.com/wiki/RP2040-Zero',
-			image: require('@site/docs/assets/boards/WaveshareZero.jpg').default,
+			image: '/img/boards/WaveshareZero.jpg',
 			supported: true,
 			desc: () => (
 				<p>
@@ -108,7 +108,7 @@ const boards = {
 			configName: 'FlatboxRev4',
 			pinout: null,
 			website: 'https://github.com/jfedor2/flatbox/tree/master/hardware-rev4',
-			image: require('@site/docs/assets/boards/FlatboxRev4.jpg').default,
+			image: '/img/boards/FlatboxRev4.jpg',
 			category: 'open',
 			desc: () => (
 				<p>
@@ -123,7 +123,7 @@ const boards = {
 			configName: 'FlatboxRev5',
 			pinout: null,
 			website: 'https://github.com/jfedor2/flatbox/tree/master/hardware-rev5',
-			image: require('@site/docs/assets/boards/FlatboxRev5.jpg').default,
+			image: '/img/boards/FlatboxRev5.jpg',
 			category: 'open',
 			desc: () => (
 				<p>
@@ -138,7 +138,7 @@ const boards = {
 			configName: 'FlatboxRev5Southpaw',
 			pinout: null,
 			website: 'https://github.com/SkylaHila/flatbox-southpaw',
-			image: require('@site/docs/assets/boards/FlatboxRev5Southpaw.jpg').default,
+			image: '/img/boards/FlatboxRev5Southpaw.jpg',
 			category: 'open',
 			desc: () => (
 				<p>
@@ -153,7 +153,7 @@ const boards = {
 			pinout: null,
 			website:
 				'https://github.com/OpenStickCommunity/Hardware/tree/main/Flatbox%20Rev%205%20RGB',
-			image: require('@site/docs/assets/boards/FlatboxRev5RGB.jpg').default,
+			image: '/img/boards/FlatboxRev5RGB.jpg',
 			category: 'open',
 			desc: () => (
 				<p>
@@ -170,7 +170,7 @@ const boards = {
 			pinout: null,
 			website:
 				'https://github.com/OpenStickCommunity/Hardware/blob/main/GP2040%20Keyboard%20Converter/Waveshare%20Zero-PCB/README.md',
-			image: require('@site/docs/assets/boards/KeyboardConverter.jpg').default,
+			image: '/img/boards/KeyboardConverter.jpg',
 			category: 'open',
 			desc: () => (
 				<p>
@@ -184,7 +184,7 @@ const boards = {
 			configName: 'Haute42',
 			pinout: null,
 			website: 'https://haute42.com/',
-			image: require('@site/docs/assets/boards/Haute42.jpg').default,
+			image: '/img/boards/Haute42.jpg',
 			category: 'closed',
 			desc: () => (
 				<p>
@@ -203,8 +203,7 @@ const boards = {
 			pinout: null,
 			website:
 				'https://mavercade.com/',
-			image: require('@site/docs/assets/boards/MavercadeKeebfighter.jpg')
-				.default,
+			image: '/img/boards/MavercadeKeebfighter.jpg',
 			category: 'closed',
 			desc: () => (
 				<p>
@@ -221,7 +220,7 @@ const boards = {
 			pinout: null,
 			website:
 				'https://github.com/OpenStickCommunity/Hardware/tree/main/Open_Core0',
-			image: require('@site/docs/assets/boards/OpenCore0.jpg').default,
+			image: '/img/boards/OpenCore0.jpg',
 			category: 'official',
 			desc: () => (
 				<p>
@@ -238,7 +237,7 @@ const boards = {
 			pinout: null,
 			website:
 				'https://github.com/OpenStickCommunity/Hardware/tree/main/Open_Core0',
-			image: require('@site/docs/assets/boards/OpenCore0WASD.jpg').default,
+			image: '/img/boards/OpenCore0WASD.jpg',
 			category: 'official',
 			desc: () => (
 				<p>
@@ -254,7 +253,7 @@ const boards = {
 			configName: 'PicoFightingBoard',
 			pinout: null,
 			website: 'https://github.com/FeralAI/PicoFightingBoard',
-			image: require('@site/docs/assets/boards/PicoFightingBoard.jpg').default,
+			image: '/img/boards/PicoFightingBoard.jpg',
 			category: 'open',
 			desc: () => (
 				<p>
@@ -269,7 +268,7 @@ const boards = {
 			configName: 'RanaTadpole',
 			pinout: null,
 			website: 'https://github.com/rana-sylvatica/rana-tadpole',
-			image: require('@site/docs/assets/boards/RanaTadpole.jpg').default,
+			image: '/img/boards/RanaTadpole.jpg',
 			category: 'open',
 			desc: () => (
 				<p>
@@ -282,7 +281,7 @@ const boards = {
 			configName: 'ReflexEncodeV1.2',
 			pinout: null,
 			website: 'https://github.com/misteraddons/ReflexFightingBoard',
-			image: require('@site/docs/assets/boards/ReflexEncode_v1.2.jpg').default,
+			image: '/img/boards/ReflexEncode_v1.2.jpg',
 			category: 'open',
 			desc: () => (
 				<p>
@@ -297,7 +296,7 @@ const boards = {
 			configName: 'ReflexEncodeV2.0',
 			pinout: null,
 			website: 'https://github.com/misteraddons/ReflexFightingBoard',
-			image: require('@site/docs/assets/boards/ReflexEncode_v2.0.jpg').default,
+			image: '/img/boards/ReflexEncode_v2.0.jpg',
 			category: 'open',
 			desc: () => (
 				<p>
@@ -312,7 +311,7 @@ const boards = {
 			configName: 'ReflexCtrlSNES',
 			pinout: null,
 			website: 'https://github.com/misteraddons/Reflex-CTRL',
-			image: require('@site/docs/assets/boards/ReflexCtrlSNES.jpg').default,
+			image: '/img/boards/ReflexCtrlSNES.jpg',
 			category: 'open',
 			desc: () => (
 				<p>
@@ -329,8 +328,7 @@ const boards = {
 			pinout: null,
 			website:
 				'https://github.com/OpenStickCommunity/Hardware/tree/main/RP2040%20Advanced%20Breakout%20Board',
-			image: require('@site/docs/assets/boards/RP2040AdvancedBreakoutBoard.jpg')
-				.default,
+			image: '/img/boards/RP2040AdvancedBreakoutBoard.jpg',
 			category: 'official',
 			desc: () => (
 				<p>
@@ -345,7 +343,7 @@ const boards = {
 			configName: 'RP2040AdvancedBreakoutBoardUSBPassthrough',
 			pinout: null,
 			website: 'https://github.com/OpenStickCommunity/Hardware/tree/main/RP2040%20Advanced%20Breakout%20Board%20-%20Passthrough',
-			image: require('@site/docs/assets/boards/RP2040AdvancedBreakoutBoardUSBPassthrough.jpg').default,
+			image: '/img/boards/RP2040AdvancedBreakoutBoardUSBPassthrough.jpg',
 			category: 'official',
 			desc: () => 
 				<p>
@@ -359,8 +357,7 @@ const boards = {
 			pinout: null,
 			website:
 				'https://github.com/OpenStickCommunity/Hardware/tree/main/RP2040%20Mini%20Breakout%20Board',
-			image: require('@site/docs/assets/boards/RP2040MiniBreakoutBoard.jpg')
-				.default,
+			image: '/img/boards/RP2040MiniBreakoutBoard.jpg',
 			category: 'open',
 			desc: () => (
 				<p>
@@ -377,7 +374,7 @@ const boards = {
 			pinout: null,
 			website:
 				'https://github.com/OpenStickCommunity/GP2040-CE/tree/main/configs/BentoBox',
-			image: require('@site/docs/assets/boards/BentoBox.jpg').default,
+			image: '/img/boards/BentoBox.jpg',
 			category: 'closed',
 			desc: () => (
 				<p>
@@ -394,7 +391,7 @@ const boards = {
 			configName: 'SGFBridget',
 			pinout: null,
 			website: 'https://sgfdevices.com/products/sgf-bridget-mx-stickless-controller',
-			image: require('@site/docs/assets/boards/SGFBridget.jpg').default,
+			image: '/img/boards/SGFBridget.jpg',
 			category: 'open',
 			desc: () => (
 				<p>
@@ -408,7 +405,7 @@ const boards = {
 			configName: 'SGFFaust',
 			pinout: null,
 			website: 'https://sgfdevices.com/products/sgf-faust-all-button-controller',
-			image: require('@site/docs/assets/boards/SGFFaust.jpg').default,
+			image: '/img/boards/SGFFaust.jpg',
 			category: 'closed',
 			desc: () => (
 				<p>
@@ -422,7 +419,7 @@ const boards = {
 			configName: 'Stress',
 			pinout: null,
 			website: 'https://github.com/GroooveBob/Stress',
-			image: require('@site/docs/assets/boards/Stress.jpg').default,
+			image: '/img/boards/Stress.jpg',
 			category: 'open',
 			desc: () => (
 				<p>
@@ -437,7 +434,7 @@ const boards = {
 			configName: 'FightboardV3',
 			pinout: null,
 			website: 'https://docs.thnikk.moe/models/fightboard/v3.html',
-			image: require('@site/docs/assets/boards/FightboardV3.jpg').default,
+			image: '/img/boards/FightboardV3.jpg',
 			category: 'legacy',
 			desc: () => <p>Configuration for the Fightboard v3</p>,
 		},
@@ -446,8 +443,7 @@ const boards = {
 			configName: 'FightboardV3Mirrored',
 			pinout: null,
 			website: 'https://docs.thnikk.moe/models/fightboard/v3.html',
-			image: require('@site/docs/assets/boards/FightboardV3Mirrored.jpg')
-				.default,
+			image: '/img/boards/FightboardV3Mirrored.jpg',
 			category: 'legacy',
 			desc: () => (
 				<p>

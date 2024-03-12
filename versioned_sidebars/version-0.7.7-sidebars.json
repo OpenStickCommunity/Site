@@ -59,26 +59,5 @@
         }
       ]
     }
-  ],
-  "contributeSidebar": [
-    "development/contribution-guide",
-    {
-      "type": "category",
-      "label": "Firmware",
-      "collapsed": false,
-      "items": ["development/firmware-development"]
-    },
-    {
-      "type": "category",
-      "label": "Documentation",
-      "collapsed": false,
-      "items": [
-        "development/documentation-style-guide",
-        "development/documentation-versioning",
-        "development/documentation-preview",
-        "development/documentation-update-downloads"
-      ]
-    },
-    "development/templates"
   ]
 }

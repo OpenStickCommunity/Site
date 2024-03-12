@@ -71,56 +71,53 @@ const config = {
         isCloseable: true,
       },
       navbar: {
-        title: "GP2040-CE | Community Edition Firmware",
+        title: "GP2040-CE",
         logo: {
           alt: "GP2040-CE Logo",
           src: "img/gp2040-ce-logo.svg",
         },
         items: [
           {
-            type: "doc",
-            position: "left",
-            docId: "README",
-            label: "Home",
-          },
-          {
             type: "docSidebar",
-            position: "left",
+            position: "right",
             sidebarId: "docSidebar",
-            label: "Get Started",
+            label: "Documentation",
+            docId: 'introduction',
           },
           {
             type: "docSidebar",
-            position: "left",
+            position: "right",
             sidebarId: "webConfigSidebar",
             label: "Web Config",
+            docId: 'introduction',
           },
           {
-            type: "docSidebar",
-            position: "left",
-            sidebarId: "contributeSidebar",
-            label: "Contribute",
+            to: '/development/contribution-guide',
+            label: 'Contribute',
+            position: 'right',
+            // activeBaseRegex: `/development/`,
           },
           {
-            type: "doc",
-            position: "left",
-            docId: "downloads/download-page",
+            position: "right",
+            to: '/downloads',
             label: "Downloads",
           },
           {
             type: "docsVersionDropdown",
-            position: "right",
+            position: "left",
             dropdownActiveClassDisabled: true,
           },
           {
-            href: "https://discord.gg/k2pxhke7q8",
-            label: "Discord",
-            position: "right",
+            'aria-label': 'Discord Invite',
+            'className': 'navbar-discord-link',
+            'href': 'https://discord.gg/k2pxhke7q8',
+            'position': 'right',
           },
           {
-            href: "https://github.com/OpenStickCommunity/GP2040-CE",
-            label: "GitHub",
-            position: "right",
+            'aria-label': 'GitHub Repository',
+            'className': 'navbar-github-link',
+            'href': 'https://github.com/OpenStickCommunity/GP2040-CE',
+            'position': 'right',
           },
         ],
       },
@@ -143,22 +140,12 @@ const config = {
         name: "README", // used by CLI, must be path safe
         sourceBaseUrl:
           "https://raw.githubusercontent.com/OpenStickCommunity/GP2040-CE/main/", // the base url for the markdown (gets prepended to all of the documents when fetching)
-        outDir: "/docs", // the base directory to output to.
+        outDir: "/", // the base directory to output to.
         documents: ["README.md"], // the file names to download
         performCleanup: false,
         modifyContent(filename, content) {
           if (filename.includes("README")) {
-            return {
-              content: `---
-hide_title: true
-title: "Home"
-pagination_next: null
-pagination_prev: null
-description: "Homepage for GP2040-CE Documentation"
----
-
-${content}`, // <-- this last part adds in the rest of the content, which would otherwise be discarded
-            };
+            return content // <-- this last part adds in the rest of the content, which would otherwise be discarded
           }
 
           // we don't want to modify this item, since it doesn't contain "README" in the name
@@ -176,6 +163,16 @@ ${content}`, // <-- this last part adds in the rest of the content, which would 
             from: ["/faq/faq-ps4-ps5-compatibility"],
           },
         ],
+      },
+    ],
+    [
+      'content-docs',
+      {
+        id: 'development',
+        path: 'development',
+        routeBasePath: 'development',
+        editCurrentVersion: true,
+        sidebarPath: './sidebarsDevelopment.json',
       },
     ],
   ],
