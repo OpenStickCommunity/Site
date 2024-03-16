@@ -40,10 +40,5 @@
         }
       ]
     }
-  ],
-  "devSidebar": [
-    "development/development",
-    "development/contribution-guide",
-    "development/templates"
   ]
 }

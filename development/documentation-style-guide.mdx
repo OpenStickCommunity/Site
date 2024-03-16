@@ -1,0 +1,576 @@
+---
+title: Style Guide
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+toc_max_heading_level: 4
+description: "A style guide on how to write documentation for GP2040-CE using Docusaurus"
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import InputLabelSelector, {
+  Hotkey,
+} from "@site/src/components/LabelSelector.tsx";
+
+# Style Guide
+
+GP2040-CE welcomes your contribution to our documentation. This document describes the options available for creating
+content for the site. along with guidelines and conventions.
+
+## Markdown
+
+This site uses Docusaurus version 2. Docusaurus uses MDX as the parsing engine. which can parse standard Markdown syntax
+as well as render React Components inside the document.
+
+[Docusaurus Markdown](https://docusaurus.io/docs/markdown-features) supports
+[Basic Markdown Syntax](https://www.markdownguide.org/basic-syntax) and most
+[Extended Syntax](https://www.markdownguide.org/extended-syntax/). You can see which features are supported
+[here](https://www.markdownguide.org/tools/docusaurus/).
+
+## Frontmatter
+
+At the top of each docs page, you need to include these things:
+
+| Variable                           | Description                                                                                                                      |
+| :--------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `title`                            | The main title of the page. This value will appear in the left hand navigation tree for the page.                                |
+| `pagination_prev` (optional)       | The ID of the documentation you want the "Previous" pagination to link to. Use null to disable showing "Previous" for this page. |
+| `pagination_next` (optional)       | The ID of the documentation you want the "Next" pagination to link to. Use null to disable showing "Next" for this page.         |
+| `toc_min_heading_level` (optional) | The minimum heading level shown in the table of contents. Must be between 2 and 6 and lower or equal to the max value.           |
+| `toc_max_heading_level` (optional) | The max heading level shown in the table of contents. Must be between 2 and 6.                                                   |
+| `description`                      | This is what appears when the page is referenced in a Google search result and what appears when the page is embedded elsewhere. |
+| `keywords` (optional)              | A list of terms that help categorize the page for SEO purposes.                                                                  |
+
+The fields above are sufficient for most documentation pages. However,additional frontmatter fields can be found in the
+Docusaurus [plugin-content-docs documentation](https://docusaurus.io/docs/2.x/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter).
+
+Frontmatter will look like this at the beginning of a document:
+
+```
+---
+title: Documentation Style Guide
+pagination_next: null
+pagination_prev: null
+description: "A style guide on how to write documentation for GP2040-CE using Docusaurus"
+---
+```
+
+## Introduction
+
+The first paragraph of the documentation should set the user's expectations for what they will find on the page.
+Describe the key benefits to the user, but do not include links.
+
+## Headers
+
+For accessibility and SEO reasons, never have an H4 header that isn't under an H3 header, or an H3 header that isn't
+under an H2 header.
+
+- H1 headers should never be used in a document since the title is automatically generated as an H1.
+- H2 headers are used for SEO, so make sure they succinctly represent what a user will find on the page in that section.
+- H3 headers are included in the page's table of contents on the right, so make sure the title describes something a
+  user might want to directly navigate to.
+- H4 headers are to emphasize things within a subsection of the page; these can be longer than the other headers if
+  needed because they aren't included in the Table of Contents.
+
+Markdown Code:
+
+```
+## H2 Header
+
+### H3 Header
+
+#### H4 Header
+```
+
+## Content
+
+### Line Breaks
+
+All words are rendered in the same paragraph even with line breaks, so long as there isn't an empty line.
+As such, it is good practice for each line to be less than 120 characters long for readability, when possible.
+
+If the text is contained in a Markdown table cell, `<br/>` will need to be used.
+
+<table class="code">
+  <tbody>
+    <tr>
+      <td>
+
+**Markdown**
+
+</td>
+      <td>
+
+```markdown
+This
+will
+all
+be
+on
+one
+line.
+
+The empty line above creates a new paragraph.
+
+This forces a soft return<br />
+rather than creating a new paragraph
+
+| Column1 | Column2                               |
+| ------- | ------------------------------------- |
+| Row 1   | - Line 1 <br/> - Line 2 <br/> - Line3 |
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Display**
+
+</td>
+      <td>
+
+This
+will
+all
+be
+on
+one
+line.
+
+The empty line above creates a new paragraph.
+
+This forces a soft return<br />
+rather than creating a new paragraph
+
+| Column1 | Column2                               |
+| ------- | ------------------------------------- |
+| Row 1   | - Line 1 <br/> - Line 2 <br/> - Line3 |
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+### Links
+
+#### Pages and Assets
+
+When linking to pages or assets, you will need to use relative links to navigate to the page and asset you need to
+access.
+
+:::caution
+
+When moving files into different sub directories, make sure that you update any references to other pages/assets within
+that page in addition to any other page that reference the moving page. If this is not done, this will result in broken
+links and errors in the building process.
+
+:::
+
+<table class="componentLinks">
+  <tbody>
+    <tr>
+      <td>
+
+**Markdown**
+
+</td>
+      <td>
+
+```markdown
+![GP2040-CE Placeholder Image](/img/gp2040-ce-placeholder.png)
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Display**
+
+</td>
+<td>
+
+![GP2040-CE Placeholder Image](/img/gp2040-ce-placeholder.png)
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+If Markdown syntax is insufficient, you can use either an inline CommonJS require in JSX image tag or an ES import
+syntax and JSX image tag. For more information, refer to the
+[Docusaurus documentations](https://docusaurus.io/docs/2.x/markdown-features/assets#images)
+
+#### Components
+
+When linking to components, you will need to use absolute links to navigate to the page and asset you need to access.
+By using `@site` from any page in any subdirectory, it will locate to the root of the repo (i.e. "/").
+
+:::caution
+
+When moving components into different sub directories, make sure that you update any pages that utilize that component.
+If this is not done, this may result in either broken pages and errors in the building process or it may simply fail to
+render.
+
+:::
+
+```md
+import Component from "@site/src/components/ComponentName.tsx";
+```
+
+### Hotkey Combinations
+
+When you need to present to the user a single input or input combination, you will need to include both a label selector
+at the top of the screen and use the Hotkey component to display the input or input combination. By using this component,
+the user will be able to choose the relevant input mode labels to present the labels.
+
+To use Hotkey Combinations, you need to import two components by placing these lines below the [Frontmatter](#frontmatter),
+but above the [Introduction](#introduction):
+
+```typescript
+import InputLabelSelector, {
+  Hotkey,
+} from "@site/src/components/LabelSelector.tsx";
+```
+
+Underneath the top header for the page, include this label selector to allow users to select the input mode for Hotkey
+Combination labels.
+
+<table class="componentLinks">
+  <tbody>
+    <tr>
+      <td>
+
+**Markdown**
+
+</td>
+      <td>
+
+```markdown
+Select the button labels to be displayed in the usage guide:
+
+<InputLabelSelector/>
+<br/>
+
+Document Content
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Display**
+
+</td>
+<td>
+
+Select the button labels to be displayed in the usage guide:
+
+<InputLabelSelector />
+<br />
+
+Document Content
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+### Tabs
+
+Tabs are a great option when an example, instructions or other text would be different in different contexts. The
+primary usage of tabs on this site is to illustrate the similar content in multiple context.
+
+:::tip
+When a page includes multiple sets of tabs, use a `groupId` so when the user selects a particular tab,
+all tabs with that ID will switch to the selected tab.
+:::
+
+To use tabs, you need to import two special methods by placing these lines below the [Frontmatter](#frontmatter),
+but above the [Introduction](#introduction):
+
+```typescript
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+```
+
+and then use the tabs as follows:
+
+<table class="tabs">
+  <tbody>
+    <tr>
+      <td>
+
+**Markdown**
+
+</td>
+      <td>
+
+```markdown
+<Tabs groupId="groupId">
+  <TabItem value="value1" label="Label 1" default>
+    This would include information or examples for context 1.
+  </TabItem>
+  <TabItem value="value2" label="Label 2">
+    This would include information or examples for context 2.
+  </TabItem>
+</Tabs>
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Display**
+
+</td>
+      <td>
+
+<Tabs groupId="groupId">
+  <TabItem value="value1" label="Label 1" default>
+    This would include information or examples for context 1.
+  </TabItem>
+  <TabItem value="value2" label="Label 2">
+    This would include information or examples for context 2.
+  </TabItem>
+</Tabs>
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+### Inline Code
+
+To emphasize a single class, method name, variable, direction, filename, etc. in a sentence, place single backticks
+around the name.
+
+<table class="inlineCode">
+  <tbody>
+    <tr>
+      <td>
+
+**Markdown**
+
+</td>
+      <td>
+
+```markdown
+This comment refers to the `GP2040-CE_X.X.X_Pico.uf2` file.
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Display**
+
+</td>
+      <td>
+
+This comment refers to the `GP2040-CE_X.X.X_Pico.uf2` file.
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+### Code Blocks
+
+The best way to display code or Markdown text to be copied is with code blocks. Markdown will highlight each language
+differently, so it is helpful to specify which language you are using, and it's a good idea to include a title with the
+code block as well.
+
+<table class="codeblocks">
+  <tbody>
+    <tr>
+      <td>
+
+**Markdown**
+
+</td>
+      <td>
+
+        ```md title="Example Markdown Page"
+        ---
+        title: TITLE
+        # tags:
+        # -
+        pagination_next: null
+        pagination_prev: null
+        description: "PAGE DESCRIPTION"
+        ---
+
+        # Document Title
+
+        CONTENT
+        ```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Display**
+
+</td>
+      <td>
+
+```md title="Example Markdown Page"
+---
+title: TITLE
+pagination_next: null
+pagination_prev: null
+description: "PAGE DESCRIPTION"
+---
+
+# Document Title
+
+CONTENT
+```
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+### Admonitions
+
+There are four types of [Docusaurus admonitions](https://docusaurus.io/docs/markdown-features/admonitions):
+
+- Note - Relevant information.
+- Tip - A user should do this.
+- Caution - A user should pay attention to this.
+- Warning - A user might do something dangerous.
+
+<table class="code">
+  <tbody>
+    <tr>
+      <td>
+
+**Markdown**
+
+</td>
+      <td>
+
+```markdown
+:::note
+
+Relevant information for you.
+
+:::
+
+:::tip
+
+You should do this.
+
+:::
+
+:::caution
+
+You should probably pay attention to this.
+
+:::
+
+:::warning
+
+You are about to do something dangerous.
+
+:::
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Display**
+
+</td>
+      <td>
+
+:::note
+
+Relevant information for you.
+
+:::
+
+:::tip
+
+You should do this.
+
+:::
+
+:::caution
+
+You should probably pay attention to this.
+
+:::
+
+:::warning
+
+You are about to do something dangerous.
+
+:::
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+You can also change the text of an admonition by including the test next to the admonition type.
+
+<table class="code">
+  <tbody>
+    <tr>
+      <td>
+
+**Markdown**
+
+</td>
+      <td>
+
+```markdown
+:::note This was labelled NOTE
+
+Relevant information for you.
+
+:::
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+**Display**
+
+</td>
+      <td>
+
+:::note This was labelled NOTE
+
+Relevant information for you.
+
+:::
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+## Adding Images to the Repo
+
+All image files should be included in `docs/assets` directory, in a subdirectory that corresponds to the type of content.
+
+| Subdirectory | Content                                                                                                                                                     |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `boards`     | Images of RP2040 boards (commercially available or community designed) that will be referenced in `src/config/boards.tsx` to be included in Downloads page  |
+| `images`     | General image category for documentation<br/> - Add-ons: Start the filename with `gpc-add-ons-`<br/> - Web Config Page: Start the filename with `gpc-`<br/> |
+| `wiring`     | Images of microcontroller board pinouts to be included in `docs/controller-build/wiring.mdx`                                                                |

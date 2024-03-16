@@ -26,7 +26,7 @@ If you would like to customize your device, check out the built-in [Web Configur
 
 **The instructions will slightly vary based on your device. These instructions are for a Raspberry Pi Pico.**
 
-1. Download the latest `GP2040-CE_X.X.X_Pico.uf2` file for the Raspberry Pi Pico from the [Download](./downloads/download-page.mdx) page.
+1. Download the latest `GP2040-CE_X.X.X_Pico.uf2` file for the Raspberry Pi Pico from the [Download](/downloads) page.
 2. Unplug your Pico.
 3. Hold the BOOTSEL button on the Pico and plug into your computer.
 4. Drag and drop the `GP2040-CE_X.X.X_Pico.uf2` file into the removable drive.
@@ -40,9 +40,9 @@ If you would like to customize your device, check out the built-in [Web Configur
 
 :::
 
-1. Download the [flash_nuke.uf2 file](https://raw.githubusercontent.com/OpenStickCommunity/GP2040-CE/main/docs/downloads/flash_nuke.uf2)
+1. Download the [flash_nuke.uf2 file](/assets/flash_nuke.uf2)
 2. Boot into bootsel/RPI drive (multiple methods to do so)
-3. Drag [flash_nuke.uf2 file](https://raw.githubusercontent.com/OpenStickCommunity/GP2040-CE/main/docs/downloads/flash_nuke.uf2) onto the drive
+3. Drag [flash_nuke.uf2 file](/assets/flash_nuke.uf2) onto the drive
 4. ***Wait for the drive to disconnect and reconnect without unplugging***
 5. Drag your firmware onto the RPI drive and wait for disconnect
 6. Check that the controller connects using this [gamepad tester](https://hardwaretester.com/gamepad) and pressing a button.

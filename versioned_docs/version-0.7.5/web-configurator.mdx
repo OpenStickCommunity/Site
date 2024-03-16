@@ -15,7 +15,7 @@ Select the button labels to be displayed in the usage guide:
 <InputLabelSelector />
 <br />
 
-GP2040-CE contains a built-in web-based configuration application which can be started up by holding <Hotkey buttons={["S2"]}/> when plugging your controller into a PC. Then access <http://192.168.7.1> in a web browser to begin configuration. This mode is compatible with Windows, Mac, Linux and SteamOS. When using the web-based configuration on Windows and Mac, RNDIS works on a default install. Linux distributions may need some extra steps to access the web configurator; see [Linux Setup](#linux-setup).
+GP2040-CE contains a built-in web-based configuration application which can be started up by holding <Hotkey buttons={["S2"]}/> when plugging your controller into a PC. Then access "http://192.168.7.1" in a web browser to begin configuration. This mode is compatible with Windows, Mac, Linux and SteamOS. When using the web-based configuration on Windows and Mac, RNDIS works on a default install. Linux distributions may need some extra steps to access the web configurator; see [Linux Setup](#linux-setup).
 
 ## Home
 
@@ -204,7 +204,7 @@ When you plug in your controller while holding <Hotkey buttons={["S2"]}/>, you s
 
 In the above example, **enp6s0f1u3** is the virtual Ethernet interface for your controller. If you don't see the first `rndis_host` line, make sure `CONFIG_USB_NET_RNDIS_HOST` is compiled in your kernel or as a module.
 
-The web configurator is automatically running, you just need to be able to reach it. Some configurations automatically set up the route, so try <http://192.168.7.1> in your browser now. If it doesn't load, try configuring an IP for the interface manually via: `sudo ifconfig enp6s0f1u3 192.168.7.2`.
+The web configurator is automatically running, you just need to be able to reach it. Some configurations automatically set up the route, so try "http://192.168.7.1" in your browser now. If it doesn't load, try configuring an IP for the interface manually via: `sudo ifconfig enp6s0f1u3 192.168.7.2`.
 
 Whether or not you had to add an IP manually, you should end up with a route something like this:
 
