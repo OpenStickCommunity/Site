@@ -71,10 +71,9 @@ const config = {
         isCloseable: true,
       },
       navbar: {
-        title: "GP2040-CE",
         logo: {
           alt: "GP2040-CE Logo",
-          src: "img/gp2040-ce-logo.svg",
+          src: "img/gp2040-ce-logo.png",
         },
         items: [
           {
