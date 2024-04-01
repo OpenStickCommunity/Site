@@ -51,6 +51,7 @@ const config = {
         hashed: true,
         highlightSearchTermsOnTargetPage: true,
         docsRouteBasePath: "/",
+        indexBlog: false
       },
     ],
     "@docusaurus/theme-mermaid",
