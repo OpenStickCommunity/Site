@@ -22,9 +22,9 @@ GP2040-CE supports a wide variety of consoles and the most common questions rega
 
 As long as Host USB authentication is configured correctly and the passthrough authentication device is properly plugged into the controller, there should be no additional latency. The passthrough authentication device is used solely for authentication without processing inputs and inputs come directly from the GP2040-CE firmware.
 
-### How do I plug in my passthrough authentication device for PS/Xbox One Passthrough?
+### How do I plug in my passthrough authentication device for PS4, PS5, and Xbox One Input Modes?
 
-When using converters and adapters with PS/Xbox One Passthrough add-ons, you plug the device directly into the controller through a USB host port. You do not plug anything else into the converter/adapter.
+When using converters and adapters with PS4, PS5, and Xbox One Input Modes, you plug the device directly into the controller through a USB host port. You do not plug anything else into the converter/adapter.
 
 ```mermaid
 graph LR
@@ -35,7 +35,7 @@ Converter/Adapter/Dongle -- USB Port <br> on controller --> Controller([Controll
 
 :::caution Incorrect Usage of Converters/Adapters with Passthrough Add-ons
 
-Many users incorrectly plug their controllers into the converters/adapters and then plug the converter/adapter into the console. This is not how Passthrough is intended to be used and will result in additional latency as inputs are processed by the converter/adapter.
+Many users incorrectly plug their controllers into the converters/adapters and then plug the converter/adapter into the console. This is not how passthrough authentication is intended to be used and will result in additional latency as inputs are processed by the converter/adapter.
 
 Do not plug the converter/adapter as shown below.
 
@@ -52,7 +52,7 @@ Controller([Controller]) -- USB Port <br> on Converter --> Converter/Adapter/Don
 
 PlayStation 4 and PlayStation 5 use an authentication mechanism to ensure only authorized controllers are used on the console. If a device doesn't implement this authentication mechanism, the controller is subject to an 8-minute timeout.
 
-Using PS4 mode on a PC does not result in any timeout behavior, but note that XInput is the suggested mode on PC for best compatibility.
+Using PS4 Input Mode on a PC does not result in any timeout behavior, but note that XInput is the suggested mode on PC for best compatibility.
 
 ### What is the 8-Minute Timeout?
 
@@ -201,9 +201,9 @@ Playstation consoles repeatedly send authorization requests every 30 seconds or 
 
 ### How do I get my GP2040-CE unit to work on a Xbox One, Xbox Series S, or Xbox Series X?
 
-For Xbox One, Xbox Series S, or Xbox Series X compatibility, you will need to use the [Xbox One Passthrough add-on](../add-ons/xbox-one-passthrough.mdx).
+For Xbox One, Xbox Series S, or Xbox Series X compatibility, you will need to use the [Xbox One Input Mode](../web-configurator/menu-pages/01-settings.mdx#additional-xbox-one-settings)
 
-### What is Xbox One Passthrough?
+### What is the Xbox One Input Mode?
 
 :::caution Additional Hardware Required
 
@@ -212,13 +212,13 @@ For Xbox One, Xbox Series S, or Xbox Series X compatibility, you will need to us
 
 :::
 
-Xbox One Passthrough is an add-on that grants GP2040-CE compatibility with the Xbox One, Xbox Series S, or Xbox Series X by using another controller or dongle to answer authentication
+Xbox One Input Mode grants GP2040-CE compatibility with the Xbox One, Xbox Series S, or Xbox Series X by using another controller or dongle to answer authentication
 
-For more information, refer to [Xbox One add-on](../add-ons/xbox-one-passthrough.mdx) in the `Web Configurator - Add-ons` section of the documentation.
+For more information, refer to [Xbox One Input Mode](../web-configurator/menu-pages/01-settings.mdx#additional-xbox-one-settings) in the `Web Configurator - Add-ons` section of the documentation.
 
-### What controller or dongle do I use for Xbox One Passthrough?
+### What controller or dongle do I use for Xbox One Input Mode?
 
-Some devices that do work for Xbox One Passthrough are currently limited to the following;
+Some devices that do work for Xbox One Input Mode are currently limited to the following;
 
 - [MagicBoots FPS Adapter Joystick Converter for Xbox One](https://www.mayflash.com/product/MAGONE.html)
 - [Magic-X Wireless Bluetooth USB Adapter](https://www.mayflash.com/product/magic_x.html)
@@ -231,14 +231,14 @@ Xbox Wireless Controllers, Xbox One Elite Controllers, and other licensed Xbox O
 
 :::
 
-### How do I know the Xbox One Passthrough add-on is working?
+### How do I know the Xbox One Input Mode add-on is working?
 
-Because of the numerous devices to be used for passthrough authentication, there is not just one way to verify that the add-on is working without plugging the controller into a console and attempting to use it.
+Because of the numerous devices to be used for passthrough authentication, there is not just one way to verify that the input mode is working without plugging the controller into a console and attempting to use it.
 
 For the MagicBoots Adapter listed above, there is an indicator light on the dongle that should flash on boot and then become solid after a moment. If the indicator light is on and solid, your controllers _should_ be compatible and you may use your controller as intended.
 
 For the Magic-X Adapter listed above, there is an indicator light on the dongle that will continue flashing after the controller boots, unlike the MagicBoots Adapter.
 
-### Can I remove the Xbox One Passthrough authentication device once I have plugged in my controller?
+### Can I remove the Xbox One authentication device once I have plugged in my controller?
 
 Xbox One, Xbox Series S, and Xbox Series X consoles only perform the authentication process once when the controller is plugged into the console. Once this occurs, the passthrough authentication device can be removed. However, it is still recommended to keep the device plugged in.
