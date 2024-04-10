@@ -7,13 +7,90 @@ title: Settings
 description: "Select the input mode, DPad Mode, SOCD Cleaning Mode, etc. and configure Hotkey Shortcuts"
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 # Settings
 
-![GP2040-CE Configurator - Settings](../../assets/images/gpc-settings.png)
+## Input Mode Settings
 
-Here you can select the basic settings which are normally available via hotkeys.
+![GP2040-CE Configurator - Input Mode Settings](../../assets/images/gpc-settings-input-mode.png)
 
-- `Input Mode` - Choose the main input mode (XINPUT, DINPUT, Switch, PS4, HID-Keyboard) this connected device will boot into when powered on. This selection will persist through unplug and plugging back in the controller.
+- `Current Input Mode` - Choose the main input mode (XINPUT, DINPUT, Switch, PS4, HID-Keyboard, etc.) this connected device will boot into when powered on. This selection will persist through unplug and plugging back in the controller.
+
+### Keyboard Mapping
+
+Here you can remap the GP2040-CE buttons to different keyboard keycodes that will be sent to the PC or game console when pressed in Keyboard Mode.
+
+![GP2040-CE Configurator - Keyboard Mapping](../../assets/images/gpc-settings-keyboard-mapping.png)
+
+### Additional PS4 Settings
+
+![GP2040-CE Configurator - Additional PS4 Settings](../../assets/images/gpc-settings-ps4.png)
+
+- `Switch Touchpad and Share` - Share will now be mapped to A2 rather than S1, Touchpad will be now mapped to S1 rather than A2
+- `Authentication Settings`
+  - `Uploaded Key File` - Upload key files obtained from a Dualshock 4 to authenticate and bypass the PS4's 8-minute time out
+  - `Host USB` - Use a dongle, converter, or licensed PS4 controller to authenticate your GP2040-CE device
+
+<Tabs groupId="authentication-settings" defaultValue="host-usb">
+
+<TabItem value="upload-key-file" label="Uploaded Key File" default>
+
+![GP2040-CE Configurator - Additional PS4 Settings](../../assets/images/gpc-settings-ps4-upload-key-files.png)
+
+- `Uploaded Key File`
+  - `Private Key (PEM)` - Choose your PEM file.
+  - `Serial Number (16 Bytes in Hex Ascii)` - Choose your serial number file.
+  - `Signature (256 Bytes in Binary)` - Choose your signature file.
+
+:::danger Warning
+
+The GP2040-CE project will not provide any files or information related to acquiring these keys and files under any circumstances.
+
+Do not ask via any of communication channels (e.g. social media, direct messages, Github Issues, GP2040-CE Discord) as this will result in a permanent blacklist/ban.
+
+:::
+
+</TabItem>
+
+<TabItem value="host-usb" label="Host USB" default>
+
+![GP2040-CE Configurator - Additional PS4 Settings](../../assets/images/gpc-settings-ps4-host-usb.png)
+
+In order to use this setting, a USB Peripheral must be configured in [Web Configurator > Peripheral Mapping > USB Host](./03-peripheral-mapping.mdx#usb-host)
+
+</TabItem>
+</Tabs>
+
+### Additional PS5 Settings
+
+![GP2040-CE Configurator - Additional PS5 Settings](../../assets/images/gpc-settings-ps5.png)
+
+- `Switch Touchpad and Share` - Share will now be mapped to A2 rather than S1, Touchpad will be now mapped to S1 rather than A2
+- `Authentication Settings`
+  - `Host USB` - Use a dongle, converter, or licensed PS4 controller to authenticate your GP2040-CE device
+
+<Tabs groupId="authentication-settings" defaultValue="host-usb">
+<TabItem value="host-usb" label="Host USB" default>
+
+![GP2040-CE Configurator - Additional PS5 Settings](../../assets/images/gpc-settings-ps5-host-usb.png)
+
+In order to use this setting, a USB Peripheral must be configured in [Web Configurator > Peripheral Mapping > USB Host](./03-peripheral-mapping.mdx#usb-host)
+
+</TabItem>
+</Tabs>
+
+### Additional Xbox One Settings
+
+![GP2040-CE Configurator - Additional PS5 Settings](../../assets/images/gpc-settings-xbox-one.png)
+
+In order to use this setting, a USB Peripheral must be configured in [Web Configurator > Peripheral Mapping > USB Host](./03-peripheral-mapping.mdx#usb-host)
+
+## Gamepad Settings
+
+![GP2040-CE Configurator - Gamepad Settings](../../assets/images/gpc-settings-gamepad.png)
+
 - `D-Pad Mode` - Choose the default D-Pad mode (D-Pad, Left Stick or Right Stick).
 - `SOCD Cleaning Mode` - Choose the default SOCD Cleaning Mode (Neutral, Last Win, First Win, OFF). Please note that PS4, PS3 and Nintendo Switch modes do not support setting SOCD to off and will default to Neutral SOCD.
 - `Forced Setup Mode` - Allows you to lock out Input Mode, the ability to enter Web-Config or both. Enabling a web-config lockout will require you to nuke and reload the firmware if you wish to make further changes.
@@ -21,25 +98,9 @@ Here you can select the basic settings which are normally available via hotkeys.
 - `Profile Number` - Enables different GPIO pin mappings per profile. Changeable through the Web-Config or [hotkeys](../../hotkeys.mdx#load-profile-1-4).
 - `Debounce Delay in milliseconds` - Timeframe where the firmware will ignore additional inputs to prevent switch noise from accidentally triggering unintended inputs.
 
-## Additional PS4 Settings
-
-![GP2040-CE Configurator - Additional PS4 Settings](../../assets/images/gpc-settings-ps4.png)
-
-- `Switch Touchpad and Share` - Share will now be mapped to A2 rather than S1, Touchpad will be now mapped to S1 rather than A2
-- `PS4 Report Speed Hack` - Disables report counters in the PS4/PS5 reports. This decreases PS4/PS5 latency, but is known to have instability in small number of games. Disable this setting if you are encountering stuck inputs.
-- ` Controller Mode` - Choose what PS4 mode the device will use, either `Controller` or `Arcade Stick`.
-  - `Controller` - The device will function as a native PS4 controller. Primarily intended for use with the [PS4 Mode](../../add-ons/ps4-mode.mdx) add-on and will require the various files be uploaded onto the controller to properly function and avoid the [8-Minute Timeout](../../faq/faq-console-compatibility.mdx#what-is-the-8-minute-timeout).
-  - `Arcade Stick` - The device will function as a licensed PS4 arcade stick, provided that an authentication device is connected and the PS Passthrough add-on is enabled and properly configured. It will also work for the PS5 UI, any PS4 games on the PS5 as well as PS5 titles that support legacy controllers.
-
-:::info
-
-If you wish to play compatible PS5 games, you will need to choose `Arcade Stick` and thus have an authentication device connected and the PS Passthrough add-on enabled and properly configured via a USB passthrough port.
-
-:::
-
 ## Boot Input Modes
 
-![GP2040-CE Configurator - Input Boot Modes](../../assets/images/gpc-input-boot-modes.png)
+![GP2040-CE Configurator - Boot Input Modes](../../assets/images/gpc-settings-boot-input-modes.png)
 
 For each of the buttons listed in the menu, you can assign a different input mode to enter while holding that button during boot (e.g. when plugging in the controller or immediately after resetting the controller).
 
@@ -47,7 +108,7 @@ For the list of input modes to select from, see [Input Modes](../../usage.mdx#in
 
 ## Hotkey Settings
 
-![GP2040-CE Configurator - Hotkey Settings](../../assets/images/gpc-hotkey-settings.png)
+![GP2040-CE Configurator - Boot Input Modes](../../assets/images/gpc-settings-hotkey.png)
 
 An arbitrary number of buttons and directions, plus the optional Function (Fn) button, can be used to define desired hotkey actions. Select `Fn` if desired, plus one or more buttons/directions, and associate them with a hotkey action. The default hotkeys can be modified or removed, and new ones added, up to 12 in total.
 

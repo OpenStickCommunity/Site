@@ -96,9 +96,9 @@ Depending on how your device hardware is designed, it may not be set up to use a
 
 ### Why does my controller stop responding on Playstation 4 or Playstation 5?
 
-Regarding PS4 disconnection issues, verify that you have the [PS4 Mode](../add-ons/ps4-mode.mdx) add-on is enabled with valid authentication files or the [PS Passthrough](../add-ons/ps-passthrough.mdx) add-on is enabled with a valid passthrough authentication device.
+Regarding PS4 disconnection issues, verify that you have the [PS4 Input Mode](../web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings) with uploaded key files or USB Host with a valid passthrough authentication device.
 
-Regarding PS5 disconnection issues. [PS Passthrough](../add-ons/ps-passthrough.mdx) add-on is enabled with a valid passthrough authentication device.
+Regarding PS5 disconnection issues. verify that you have the [PS5 Input Mode](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings) with USB Host using a valid passthrough authentication device.
 
 For more information, refer to the [PS4/PS5 Compatibility FAQ](../faq/faq-console-compatibility.mdx).
 
@@ -125,19 +125,17 @@ Disconnect your computer from your local network (e.g. unplug the ethernet cable
 
 ## Configuration Issues
 
-### Why does PS Passthrough not work on my device?
+### Why does PS4 or PS5 Input Mode not work on my device?
 
 #### Did not press A1 after connecting the controller.
 
-After connecting a controller that is correctly configured for PS Passthrough, you need to press <Hotkey buttons={["A1"]} /> in order to have the PS4 or PS5 register the controller. Once you have done so, the console should now properly receive inputs from the controller.
+After connecting a controller that is correctly configured for PS4 or PS5 Input Mode, you need to press <Hotkey buttons={["A1"]} /> in order to have the PS4 or PS5 register the controller. Once you have done so, the console should now properly receive inputs from the controller.
 
 #### The controller mode is incorrectly configured.
 
-If you have PS Passthrough enabled, you must turn off the `PS4 Mode` add-on as the two will not work together.
+Ensure that, under the `Settings` section, you have uploaded key files for PS4 or selected Host USB for PS4 and PS5.
 
-Ensure that, under the `Settings` section, you have set the input mode as `PS4` and the `Controller Mode` as `Arcade Stick`. The PS Passthrough add-on will not work otherwise.
-
-For more information, refer to the [PS Passthrough](../add-ons/ps-passthrough.mdx) add-on documentation.
+For more information, refer to the [PS4 Input Mode](../web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings) or [PS5 Input Mode](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings) documentation.
 
 #### USB Host Port not configured correctly
 
