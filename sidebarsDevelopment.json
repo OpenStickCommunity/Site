@@ -1,23 +1,22 @@
 {
-    "development": [
-        "contribution-guide",
-        {
-          "type": "category",
-          "label": "Firmware",
-          "collapsed": false,
-          "items": ["firmware-development"]
-        },
-        {
-          "type": "category",
-          "label": "Documentation",
-          "collapsed": false,
-          "items": [
-            "documentation-style-guide",
-            "documentation-versioning",
-            "documentation-preview",
-            "documentation-update-downloads"
-          ]
-        },
-        "templates"
+  "development": [
+    "contribution-guide",
+    {
+      "type": "category",
+      "label": "Firmware",
+      "collapsed": false,
+      "items": ["firmware-development"]
+    },
+    {
+      "type": "category",
+      "label": "Documentation",
+      "collapsed": false,
+      "items": [
+        "documentation-style-guide",
+        "documentation-preview",
+        "documentation-update-downloads"
       ]
-  }
+    },
+    "templates"
+  ]
+}
