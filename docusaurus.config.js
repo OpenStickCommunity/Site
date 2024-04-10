@@ -4,7 +4,7 @@
 const lightCodeTheme = require("prism-react-renderer").themes.github;
 const darkCodeTheme = require("prism-react-renderer").themes.dracula;
 
-const releaseVersion = "0.7.7";
+const releaseVersion = "0.7.8";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -51,7 +51,7 @@ const config = {
         hashed: true,
         highlightSearchTermsOnTargetPage: true,
         docsRouteBasePath: "/",
-        indexBlog: false
+        indexBlog: false,
       },
     ],
     "@docusaurus/theme-mermaid",
@@ -82,42 +82,42 @@ const config = {
             position: "right",
             sidebarId: "docSidebar",
             label: "Documentation",
-            docId: 'introduction',
+            docId: "introduction",
           },
           {
             type: "docSidebar",
             position: "right",
             sidebarId: "webConfigSidebar",
             label: "Web Config",
-            docId: 'introduction',
+            docId: "introduction",
           },
           {
-            to: '/development/contribution-guide',
-            label: 'Contribute',
-            position: 'right',
+            to: "/development/contribution-guide",
+            label: "Contribute",
+            position: "right",
             // activeBaseRegex: `/development/`,
           },
           {
             position: "right",
-            to: '/downloads',
+            to: "/downloads",
             label: "Downloads",
           },
+          // {
+          //   type: "docsVersionDropdown",
+          //   position: "left",
+          //   dropdownActiveClassDisabled: true,
+          // },
           {
-            type: "docsVersionDropdown",
-            position: "left",
-            dropdownActiveClassDisabled: true,
+            "aria-label": "Discord Invite",
+            className: "navbar-discord-link",
+            href: "https://discord.gg/k2pxhke7q8",
+            position: "right",
           },
           {
-            'aria-label': 'Discord Invite',
-            'className': 'navbar-discord-link',
-            'href': 'https://discord.gg/k2pxhke7q8',
-            'position': 'right',
-          },
-          {
-            'aria-label': 'GitHub Repository',
-            'className': 'navbar-github-link',
-            'href': 'https://github.com/OpenStickCommunity/GP2040-CE',
-            'position': 'right',
+            "aria-label": "GitHub Repository",
+            className: "navbar-github-link",
+            href: "https://github.com/OpenStickCommunity/GP2040-CE",
+            position: "right",
           },
         ],
       },
@@ -145,7 +145,7 @@ const config = {
         performCleanup: false,
         modifyContent(filename, content) {
           if (filename.includes("README")) {
-            return content // <-- this last part adds in the rest of the content, which would otherwise be discarded
+            return content; // <-- this last part adds in the rest of the content, which would otherwise be discarded
           }
 
           // we don't want to modify this item, since it doesn't contain "README" in the name
@@ -166,13 +166,13 @@ const config = {
       },
     ],
     [
-      'content-docs',
+      "content-docs",
       {
-        id: 'development',
-        path: 'development',
-        routeBasePath: 'development',
+        id: "development",
+        path: "development",
+        routeBasePath: "development",
         editCurrentVersion: true,
-        sidebarPath: './sidebarsDevelopment.json',
+        sidebarPath: "./sidebarsDevelopment.json",
       },
     ],
   ],
