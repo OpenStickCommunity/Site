@@ -185,14 +185,14 @@ const boards = {
 			pinout: null,
 			website: 'https://granola.games/collections/controllers',
 			image: '/img/boards/Granola.jpg',
-			category: 'closed',
+			category: 'open',
 			desc: () => (
 				<p>
 					Configuration for the {' '}
 					<a href="https://granola.games/">
 					   Granola Summit
 					</a>
-					. 
+					. PCB and design files can be found <a href="https://github.com/michaelswitzer/granola-summit">here</a>.
 				</p>
 			),
 		},
