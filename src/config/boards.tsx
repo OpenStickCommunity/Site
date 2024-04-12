@@ -180,8 +180,25 @@ const boards = {
 			),
 		},
 		{
+			name: 'Granola Summit',
+			configName: 'Granola',
+			pinout: null,
+			website: 'https://granola.games/collections/controllers',
+			image: '/img/boards/Granola.jpg',
+			category: 'closed',
+			desc: () => (
+				<p>
+					Configuration for the {' '}
+					<a href="https://granola.games/">
+					   Granola Summit
+					</a>
+					. 
+				</p>
+			),
+		},
+		{
 			name: 'Haute42 Series',
-			configName: 'Haute42',
+			configName: 'Haute42COSMOX',
 			pinout: null,
 			website: 'https://haute42.com/',
 			image: '/img/boards/Haute42.jpg',
