@@ -1,5 +1,5 @@
 ---
-title: Analog
+title: Analog (Internal ADC)
 # tags:
 # -
 pagination_next: null
@@ -7,13 +7,13 @@ pagination_prev: null
 description: "Add-on to use hardware analog joysticks with GP2040-CE"
 ---
 
-# Analog
+# Analog (Internal ADC)
 
-Purpose: This add-on is intended for the use of an hardware analog joystick with GP2040-CE for the left and right analog sticks of the gamepad.
-
-![GP2040-CE Configurator - Add-Ons Analog](../assets/images/gpc-add-ons-analog.png)
+**Purpose:** Enable the use of analog joysticks using the built-in ADC of the RP2040.
 
 ## Web Configurator Options
+
+![GP2040-CE Configurator - Analog (Internal ADC) options](../assets/images/gpc-add-ons-analog.png)
 
 - `Analog Stick 1 X Pin` - The GPIO pin used for the Analog joystick 1 X value. Only ADC pins 26, 27, 28 and 29 are allowed here.
 - `Analog Stick 1 Y Pin` - The GPIO pin used for the Analog joystick 1 Y value. Only ADC pins 26, 27, 28 and 29 are allowed here.
@@ -31,18 +31,15 @@ Purpose: This add-on is intended for the use of an hardware analog joystick with
 
 ### Requirements
 
-A minimum of one hardware analog joystick is required for the use of this add-on. Each joystick will have at least 4 pins, one for each of the following.
+A minimum of one hardware analog joystick is required for the use of this add-on.
 
-- Reference Voltage (ADC_VREF/3.3V)
-- X-Axis Input Voltage (Vx)
-- Y-Axis Input Voltage (Vy)
-- Ground (GND)
+Each joystick will require the use of 2 Analog to Digital Converter (ADC) pins to operate.
 
-Each axis input voltage pin requires an Analog to Digital Converter (ADC) pin to operate. As such, some boards may have a limit on the maximum number of possible joysticks that can be used (e.g. the Raspberry Pi Pico only has 3 ADC pins available so only 1 joystick can be used).
+:::note Check ADC Pin Availability!!!
 
-:::note Joystick Buttons
-
-The analog joystick may have an additional pin for the joystick button. This can be connected to any GPIO pin and used as a regular button.
+The **Raspberry Pi Pico and some of its clone boards do not expose GPIO 29**, leaving only 3 usable ADC GPIO pins: **26, 27, 28**.
+Keep this in mind when designing hardware that uses analog inputs from one of these boards, or similar boards that don't expose all
+4 of the RP2040 ADC pins, as this will limit the number of joysticks that can be used.
 
 :::
 
@@ -54,6 +51,12 @@ Connect the pins of the analog joystick to the board as follows and then set the
 - X-Axis Input Voltage (Vx) -> Any ADC GPIO Pin
 - Y-Axis Input Voltage (Vy) -> Any ADC GPIO Pin
 - Ground (GND) -> Any GND Pin
+
+:::note Joystick Buttons
+
+The analog joystick may have an additional pin for the joystick button. This can be connected to any GPIO pin and used as a regular button.
+
+:::
 
 The specific location of the ADC pins on your board will vary depending on the design and manufacturer, but they will always be one of the following GPIO pins on the RP2040
 
