@@ -11,20 +11,48 @@ description: "Macro settings and how to create input macros"
 
 Macros are a series or combination of gamepad inputs triggered with a single button or a combination of buttons.
 
+:::note
+
+Setting an overall `Macro` button as well as dedicated individual `Macro` buttons for any of the six available macro slots is now set via the `Configuration` / `Pin Mapping` page. 
+
+:::
+
+## Macros Overview
+
+The Macros Overview screen will show you key information about your macro setup like which macros are currently activated, which pins (if any) they are assigned to and the label which has been assigned for each.
+
 ![GP2040-CE Configurator - Macros](../../assets/images/gpc-macros.png)
+
+You can also have the onbload LED (on the Pico and other devices that have a connected onboard LED) turn on while a macro is active.
+
+Use Board LED to Display Macro Status:
+- `Off` - The Board LED will not turn on while a macro is active
+- `On` - The Board LED will turn on while a macro is active
+
+![GP2040-CE Configurator - Macro Options](../../assets/images/gpc-macro-options.png)
 
 ## Macro Options
 
-`Macro Button Pin` - The GPIO Pin used to activate macros in combination with other inputs when `Uses Button` is enabled and set.
+On the left hand column you will see the `Macros Overview` link as well as links to each of the six configurable macros.
 
-### Label
+### Macro Enabled
 
-This is the name of the macro and is optional.
-
-### Activate
+The `Enabled` slider will allow you to enable and disable a macro.
 
 - `Off` - The macro is not available for use.
 - `On` - The macro is available for use when triggered by either the GPIO pin or the combination set in [`Uses Button`](#uses-button).
+
+### Macro Name
+
+This is the name of the macro and is optional.
+
+### Macro Activation Type
+
+This describes is how the GPIO pin or the combination set in [`Uses Button`](#uses-button) triggers and repeats the macro.
+
+- Press - Full press of button triggers the macro once
+- Hold Repeat - Holding button to repeatedly triggers macro
+- Toggle - Full press of button causes the macro to repeatedly trigger, another full press of the button will stop the macro from repeatedly triggering.
 
 ### Interruptible
 
@@ -48,23 +76,17 @@ This option is **only** available when `Interruptible` is disabled.
 
 :::
 
-### Show Frames
+### Use Macro Button + Gamepad Button to Trigger 
 
-- `Off` - The duration in the macro input line editor will appear in milliseconds (ms).
-- `On` - The duration in the macro input line editor will appear as a number of frames, assuming 60 frames per second.
-
-### Uses Button
+If you have set an overall `Macro Button` in the `Pin Mapping` configuration page this will allow you to set a `Button Assignment` + the set Macro button to activate the Macro. 
 
 - `Off` - This macro is assigned to a GPIO pin on the board and when pressed, the macro will be triggered.
 - `On` - This macro is assigned to a button combination of `Macro Button Pin + Input` where the input can be any of the standard gamepad inputs.
 
-### Trigger Mode
+### Show Frames
 
-This describes is how the GPIO pin or the combination set in [`Uses Button`](#uses-button) triggers and repeats the macro.
-
-- Press - Full press of button triggers the macro once
-- Hold Repeat - Holding button to repeatedly triggers macro
-- Toggle - Full press of button causes the macro to repeatedly trigger, another full press of the button will stop the macro from repeatedly triggering.
+- `Off` - The duration in the macro input line editor will appear in milliseconds (ms).
+- `On` - The duration in the macro input line editor will appear as a number of frames, assuming 60 frames per second.
 
 ## Macro Input Line Editor
 
@@ -82,6 +104,6 @@ Each input line is composed of the following elements from left to right.
 
 :::note Deleting Input Lines
 
-To delete an input line, double-click the "x" button.
+To delete an input line, double-click the "firework" image.
 
 :::
