@@ -1,5 +1,5 @@
 ---
-title: I2C Analog ADS1219
+title: Analog (I2C ADC ADS1219)
 # tags:
 # -
 pagination_next: null
@@ -9,22 +9,23 @@ description: "Add-on to use an ADS1219 ADC for Left and Right analog joysticks o
 
 import I2CTable from "../snippets/_i2c-block-table.mdx";
 
-# I2C Analog ADS1219
+# Analog (I2C ADC ADS1219)
 
-Purpose: This add-on is intended to allow you to add Left and Right analog joystick functionality using the ADS1219 24-bit, analog-to-digital
-converter (ADC).
+**Purpose:** Enable the use of analog joysticks using an ADS1219 24-bit, analog-to-digital
+converter (ADC) module connected via the I2C bus.
 
-![GP2040-CE Configurator - Add-Ons ADS1219](../assets/images/gpc-add-ons-ads1219.png)
+:::info I2C Setup
 
-## Web Configurator Options
-
-:::info GPIO Pin Assignment
-
-The SDA and SCL pins for I2C and speed are now configured in [`Configuration > Peripheral Mapping - I2C`](../web-configurator/menu-pages/03-peripheral-mapping.mdx#i2c).
+This addon requires I2C to be configured in [`Peripheral Mapping`](../web-configurator/menu-pages/03-peripheral-mapping.mdx#i2c)
+in order to be used.
 
 :::
 
-- `I2C Analog ADS1219 Block` - The block of I2C to use (i2c0 or i2c1).
+## Web Configurator Options
+
+![GP2040-CE Configurator - Analog (I2C ADC ADS1219) options](../assets/images/gpc-add-ons-ads1219.png)
+
+- `I2C Analog ADS1219 Block` - The [`I2C Block`](../web-configurator/menu-pages/03-peripheral-mapping.mdx#i2c) to use (i2c0 or i2c1).
 - `I2C Analog ADS1219 Address` - Sets the address for the I2C Analog ADS1219 based on the pins used for SDA and SCL according to the table below.
 
 | A0  | A1  | I2C Address |
@@ -44,8 +45,8 @@ Connect the pins on the ADS1219 according to the table below
 
 | ADS1219 Pin | Function                     |
 | :---------: | ---------------------------- |
-|     A0      | SDA or SCL                   |
-|     A1      | SDA or SCL                   |
+|     A0      | I2C Block SDA or SCL         |
+|     A1      | I2C Block SDA or SCL         |
 |    AIN0     | Left analog joystick X-Axis  |
 |    AIN1     | Left analog joystick Y-Axis  |
 |    AIN2     | Right analog joystick X-Axis |
