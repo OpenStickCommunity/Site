@@ -104,6 +104,21 @@ const boards = {
 	],
 	'Community Devices': [
 		{
+			name: 'ARC Accessibility Controller',
+			configName: 'ARCController',
+			pinout: null,
+			website: 'https://github.com/OpenStickCommunity/Hardware/tree/main/Boards/GP2040-CE%20Official%20Controllers/ARC%20Accessibility%20Controller',
+			image: '/img/boards/ARCController.jpg',
+			category: 'official',
+			desc: () => (
+				<p>
+					The ARC Controller is an accessibility controller.{' '}
+					This was designed by TheTrain taking some design ideas from <a href="https://github.com/jfedor2">jfedor2</a>{' '}
+					as well as the universal standards for accessibility controller connectors.
+				</p>
+			),
+		},
+		{
 			name: 'Flatbox Rev 4',
 			configName: 'FlatboxRev4',
 			pinout: null,
@@ -152,8 +167,25 @@ const boards = {
 			configName: 'FlatboxRev5RGB',
 			pinout: null,
 			website:
-				'https://github.com/OpenStickCommunity/Hardware/tree/main/Flatbox%20Rev%205%20RGB',
+				'https://github.com/OpenStickCommunity/Hardware/tree/main/Boards/GP2040-CE%20Official%20Controllers/Flatbox%20Rev%205%20RGB',
 			image: '/img/boards/FlatboxRev5RGB.jpg',
+			category: 'open',
+			desc: () => (
+				<p>
+					Stickless PCB designed by{' '}
+					<a href="https://github.com/jfedor2">jfedor2</a> and{' '}
+					<a href="https://github.com/TheTrainGoes">TheTrain</a> using the
+					Waveshare RP2040-Zero.
+				</p>
+			),
+		},
+		{
+			name: 'Flatbox Rev 5 USB Passthrough',
+			configName: 'FlatboxRev5USBPassthrough',
+			pinout: null,
+			website:
+				'https://github.com/OpenStickCommunity/Hardware/tree/main/Boards/GP2040-CE%20Official%20Controllers/Flatbox%20Rev%205%20Passthrough',
+			image: '/img/boards/FlatboxRev5USBPassthrough.jpg',
 			category: 'open',
 			desc: () => (
 				<p>
@@ -215,23 +247,42 @@ const boards = {
 			),
 		},
 		{
-			name: 'Mavercade',
-			configName: 'Mavercade',
+			name: 'Mavercade Rev1',
+			configName: 'MavercadeRev1',
 			pinout: null,
 			website:
 				'https://mavercade.com/',
-			image: '/img/boards/MavercadeKeebfighter.jpg',
+			image: '/img/boards/MavercadeRev1.jpg',
 			category: 'closed',
 			desc: () => (
 				<p>
 					Configuration for the{' '}
 					<a href="https://mavercade.com/">
-						Mavercade
+						Mavercade Rev1
 					</a>
 					. These revisions use a Waveshare RP2040-Zero board.
 				</p>
 			),
-		},		{
+		},
+		{
+			name: 'Mavercade Rev2',
+			configName: 'MavercadeRev2',
+			pinout: null,
+			website:
+				'https://mavercade.com/',
+			image: '/img/boards/MavercadeRev2.jpg',
+			category: 'closed',
+			desc: () => (
+				<p>
+					Configuration for the{' '}
+					<a href="https://mavercade.com/">
+						Mavercade Rev2
+					</a>
+					. These revisions use a Waveshare RP2040-Zero board.
+				</p>
+			),
+		},
+		{
 			name: 'Open Core0',
 			configName: 'OpenCore0',
 			pinout: null,
@@ -324,6 +375,38 @@ const boards = {
 			),
 		},
 		{
+			name: 'Reflex CTRL Genesis 6',
+			configName: 'ReflexCtrlGenesis6',
+			pinout: null,
+			website: 'https://github.com/misteraddons/Reflex-CTRL',
+			image: 'https://github.com/misteraddons/Reflex-CTRL/raw/main/Images/genesis6.png',
+			category: 'open',
+			desc: () => (
+				<p>
+					Reflex Board Open source PCB for Sega Genesis 6 button Controller replacement PCBs
+					designed and sold by{' '}
+					<a href="https://github.com/misteraddons">MiSTerAddons</a> using an
+					embedded RP2040 chip.
+				</p>
+			),
+		},
+		{
+			name: 'Reflex CTRL NES',
+			configName: 'ReflexCtrlNES',
+			pinout: null,
+			website: 'https://github.com/misteraddons/Reflex-CTRL',
+			image: 'https://github.com/misteraddons/Reflex-CTRL/raw/main/Images/nes.png',
+			category: 'open',
+			desc: () => (
+				<p>
+					Reflex Board Open source PCB for NES Controller replacement PCBs
+					designed and sold by{' '}
+					<a href="https://github.com/misteraddons">MiSTerAddons</a> using an
+					embedded RP2040 chip.
+				</p>
+			),
+		},
+		{
 			name: 'Reflex CTRL SNES',
 			configName: 'ReflexCtrlSNES',
 			pinout: null,
@@ -333,6 +416,38 @@ const boards = {
 			desc: () => (
 				<p>
 					Reflex Board Open source PCB for SNES Controller replacement PCBs
+					designed and sold by{' '}
+					<a href="https://github.com/misteraddons">MiSTerAddons</a> using an
+					embedded RP2040 chip.
+				</p>
+			),
+		},
+		{
+			name: 'Reflex CTRL Saturn',
+			configName: 'ReflexCtrlSaturn',
+			pinout: null,
+			website: 'https://github.com/misteraddons/Reflex-CTRL',
+			image: 'https://github.com/misteraddons/Reflex-CTRL/raw/main/Images/saturn.png',
+			category: 'open',
+			desc: () => (
+				<p>
+					Reflex Board Open source PCB for Sega Saturn Controller replacement PCBs
+					designed and sold by{' '}
+					<a href="https://github.com/misteraddons">MiSTerAddons</a> using an
+					embedded RP2040 chip.
+				</p>
+			),
+		},
+		{
+			name: 'Reflex CTRL Virtual Boy',
+			configName: 'ReflexCtrlVB',
+			pinout: null,
+			website: 'https://github.com/misteraddons/Reflex-CTRL',
+			image: 'https://github.com/misteraddons/Reflex-CTRL/raw/main/Images/vb.png',
+			category: 'open',
+			desc: () => (
+				<p>
+					Reflex Board Open source PCB for Virtual Boy Controller replacement PCBs
 					designed and sold by{' '}
 					<a href="https://github.com/misteraddons">MiSTerAddons</a> using an
 					embedded RP2040 chip.
@@ -466,6 +581,34 @@ const boards = {
 				<p>
 					Configuration for the Fightboard v3 mirrored with directional inputs
 					on the right hand and the action buttons on the left.
+				</p>
+			),
+		},
+		{
+			name: 'Zero Rhythm',
+			configName: 'ZeroRhythm',
+			pinout: null,
+			website: 'https://github.com/OpenStickCommunity/Hardware/tree/main/Boards/GP2040-CE%20Official%20Controllers/Zero%20Rhythm',
+			image: '/img/boards/Zero_Rhythm.jpg',
+			category: 'official',
+			desc: () => (
+				<p>
+					The ARC Controller is a controller for the Theatrhythm game on the Nintendo Switch.{' '}
+					 It allows you to play rhythm as well as dual stick games in a double WASD layout.
+				</p>
+			),
+		},
+		{
+			name: 'ergoSHIFT Rev.2',
+			configName: 'ergoSHIFTRev2',
+			pinout: null,
+			website: 'https://github.com/mizma/ergoSHIFT/tree/main/hardware-rev2',
+			image: '/img/boards/ergoSHIFT.jpg',
+			category: 'open',
+			desc: () => (
+				<p>
+					The ergoSHIFT is a Low profile 11 button leverless arcade controller with Acrylic shell{' '}
+					by <a href="https://github.com/mizma">mizma</a>.
 				</p>
 			),
 		},
