@@ -593,7 +593,7 @@ const boards = {
 			category: 'official',
 			desc: () => (
 				<p>
-					The ARC Controller is a controller for the Theatrhythm game on the Nintendo Switch.{' '}
+					The Zero Rhythm is a controller for the Theatrhythm game on the Nintendo Switch.{' '}
 					 It allows you to play rhythm as well as dual stick games in a double WASD layout.
 				</p>
 			),
