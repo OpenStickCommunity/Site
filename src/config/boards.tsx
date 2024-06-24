@@ -201,7 +201,7 @@ const boards = {
 			configName: 'KeyboardConverter',
 			pinout: null,
 			website:
-				'https://github.com/OpenStickCommunity/Hardware/blob/main/GP2040%20Keyboard%20Converter/Waveshare%20Zero-PCB/README.md',
+				'https://github.com/OpenStickCommunity/Hardware/tree/main/Boards/Supported%20Boards/GP2040%20Keyboard%20Converter/Waveshare%20Zero-PCB',
 			image: '/img/boards/KeyboardConverter.jpg',
 			category: 'open',
 			desc: () => (
@@ -287,7 +287,7 @@ const boards = {
 			configName: 'OpenCore0',
 			pinout: null,
 			website:
-				'https://github.com/OpenStickCommunity/Hardware/tree/main/Open_Core0',
+				'https://github.com/OpenStickCommunity/Hardware/tree/main/Boards/GP2040-CE%20Official%20Controllers/Open_Core0',
 			image: '/img/boards/OpenCore0.jpg',
 			category: 'official',
 			desc: () => (
@@ -304,7 +304,7 @@ const boards = {
 			configName: 'OpenCore0WASD',
 			pinout: null,
 			website:
-				'https://github.com/OpenStickCommunity/Hardware/tree/main/Open_Core0',
+				'https://github.com/OpenStickCommunity/Hardware/tree/main/Boards/GP2040-CE%20Official%20Controllers/Open_Core0%20WASD',
 			image: '/img/boards/OpenCore0WASD.jpg',
 			category: 'official',
 			desc: () => (
@@ -379,7 +379,7 @@ const boards = {
 			configName: 'ReflexCtrlGenesis6',
 			pinout: null,
 			website: 'https://github.com/misteraddons/Reflex-CTRL',
-			image: 'https://github.com/misteraddons/Reflex-CTRL/raw/main/Images/genesis6.png',
+			image: '/img/boards/ReflexCTRLGenesis6.png',
 			category: 'open',
 			desc: () => (
 				<p>
@@ -395,7 +395,7 @@ const boards = {
 			configName: 'ReflexCtrlNES',
 			pinout: null,
 			website: 'https://github.com/misteraddons/Reflex-CTRL',
-			image: 'https://github.com/misteraddons/Reflex-CTRL/raw/main/Images/nes.png',
+			image: '/img/boards/ReflexCTRLNES.png',
 			category: 'open',
 			desc: () => (
 				<p>
@@ -411,7 +411,7 @@ const boards = {
 			configName: 'ReflexCtrlSNES',
 			pinout: null,
 			website: 'https://github.com/misteraddons/Reflex-CTRL',
-			image: '/img/boards/ReflexCtrlSNES.jpg',
+			image: '/img/boards/ReflexCTRLSNES.png',
 			category: 'open',
 			desc: () => (
 				<p>
@@ -427,7 +427,7 @@ const boards = {
 			configName: 'ReflexCtrlSaturn',
 			pinout: null,
 			website: 'https://github.com/misteraddons/Reflex-CTRL',
-			image: 'https://github.com/misteraddons/Reflex-CTRL/raw/main/Images/saturn.png',
+			image: '/img/boards/ReflexCTRLSaturn.png',
 			category: 'open',
 			desc: () => (
 				<p>
@@ -443,7 +443,7 @@ const boards = {
 			configName: 'ReflexCtrlVB',
 			pinout: null,
 			website: 'https://github.com/misteraddons/Reflex-CTRL',
-			image: 'https://github.com/misteraddons/Reflex-CTRL/raw/main/Images/vb.png',
+			image: '/img/boards/ReflexCTRLVB.png',
 			category: 'open',
 			desc: () => (
 				<p>
@@ -459,7 +459,7 @@ const boards = {
 			configName: 'RP2040AdvancedBreakoutBoard',
 			pinout: null,
 			website:
-				'https://github.com/OpenStickCommunity/Hardware/tree/main/RP2040%20Advanced%20Breakout%20Board',
+				'https://github.com/OpenStickCommunity/Hardware/tree/main/Boards/GP2040-CE%20Official%20Boards/RP2040%20Advanced%20Breakout%20Board/RP2040%20Advanced%20Breakout%20Board',
 			image: '/img/boards/RP2040AdvancedBreakoutBoard.jpg',
 			category: 'official',
 			desc: () => (
@@ -474,7 +474,7 @@ const boards = {
 			name: 'RP2040 Advanced Breakout (USB Passthrough)',
 			configName: 'RP2040AdvancedBreakoutBoardUSBPassthrough',
 			pinout: null,
-			website: 'https://github.com/OpenStickCommunity/Hardware/tree/main/RP2040%20Advanced%20Breakout%20Board%20-%20Passthrough',
+			website: 'https://github.com/OpenStickCommunity/Hardware/tree/main/Boards/GP2040-CE%20Official%20Boards/RP2040%20Advanced%20Breakout%20Board/RP2040%20Advanced%20Breakout%20Board%20-%20Passthrough',
 			image: '/img/boards/RP2040AdvancedBreakoutBoardUSBPassthrough.jpg',
 			category: 'official',
 			desc: () => 
@@ -488,7 +488,7 @@ const boards = {
 			configName: 'RP2040MiniBreakoutBoard',
 			pinout: null,
 			website:
-				'https://github.com/OpenStickCommunity/Hardware/tree/main/RP2040%20Mini%20Breakout%20Board',
+				'https://github.com/OpenStickCommunity/Hardware/tree/main/Boards/GP2040-CE%20Official%20Boards/RP2040%20Mini%20Breakout%20Board/RP2040%20Mini%20Breakout%20Board',
 			image: '/img/boards/RP2040MiniBreakoutBoard.jpg',
 			category: 'open',
 			desc: () => (
