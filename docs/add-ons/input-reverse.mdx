@@ -9,7 +9,7 @@ description: "Add-on to use a button to reverse cardinal directions of the DPad 
 
 # Input Reverse
 
-Purpose: This add-on is intended to allow the user to press or hold an additional button to granularly reverse cardinal directions on the gamepad and input this new direction instead.
+Purpose: This add-on is intended to allow the user to press or hold an additional button to granularly reverse, neutralize, or leave unaltered cardinal directions on the gamepad and input the new direction instead.
 
 ![GP2040-CE Configurator - Add-Ons Input Reverse](../assets/images/gpc-add-ons-input-reverse.png)
 
@@ -21,6 +21,12 @@ Purpose: This add-on is intended to allow the user to press or hold an additiona
 - `Reverse Down` - Enables the down direction to be reversed when the Reverse Input button is pressed or held.
 - `Reverse Left` - Enables the left direction to be reversed when the Reverse Input button is pressed or held.
 - `Reverse Right` - Enables the right direction to be reversed when the Reverse Input button is pressed or held.
+
+Each of the four directions can be independently given one of three options for what behavior occurs when the Reverse Input Pin is held:
+
+- `Disable` - No change is made to this direction (e.g. Up + Reverse = Up).
+- `Enable` - The opposite direction is activated instead for this direction (e.g. Left + Reverse = Right).
+- `Neutral` - This direction is brought to neutral (e.g. Down + Reverse = Neutral).
 
 ## Hardware
 

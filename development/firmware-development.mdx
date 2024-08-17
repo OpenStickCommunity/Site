@@ -439,6 +439,67 @@ An example I2C display setup in the `BoardConfig.h` file:
 #define I2C_SPEED 800000
 ```
 
+### I2C Display Custom Button Layouts
+
+As of v0.7.9 you have the ability to create a custom `left` and `right` display layout through the boardconfig.h as `DEFAULT_BOARD_LAYOUT_A` and `DEFAULT_BOARD_LAYOUT_B`. 
+
+You can find an example of how to set this up in the [Zero Rhythm BoardConfig.h](https://github.com/OpenStickCommunity/GP2040-CE/blob/main/configs/ZeroRhythm/BoardConfig.h#L90) file.
+
+For a full breakdown of possibilties please see below.
+
+```cpp
+BUTTON_GROUP structure
+{
+  {element, {x, y, w, h, stroke, fill, value, object, ...extra}},
+  ...
+}
+
+element - one of the following types
+GP_ELEMENT_WIDGET      - general use widget (needs to be expanded)
+GP_ELEMENT_SCREEN      - screen (only defined as a root-level display navigation element)
+GP_ELEMENT_BTN_BUTTON  - button (Gamepad button mask)
+GP_ELEMENT_DIR_BUTTON  - button (Gamepad D-Pad mask)
+GP_ELEMENT_PIN_BUTTON  - button (GPIO digital pin)
+GP_ELEMENT_LEVER       - lever (uses D-Pad modes to determine action - dpad or analog)
+GP_ELEMENT_LABEL       - text label (needs some love)
+GP_ELEMENT_SPRITE      - sprite object (same - used for placing static images on the layout)
+GP_ELEMENT_SHAPE       - shape object (similar to button elements but no reactivity)
+
+object - one of the following types
+GP_SHAPE_ELLIPSE
+GP_SHAPE_SQUARE
+GP_SHAPE_DIAMOND
+GP_SHAPE_POLYGON
+GP_SHAPE_ARC
+
+x, y, w, h - depends on the object type
+
+GP_SHAPE_ELLIPSE
+x, y     center of the ellipse
+w        radius
+
+GP_SHAPE_SQUARE
+x, y     left/top positions
+w, h     right/bottom positions
+
+GP_SHAPE_DIAMOND
+x, y     center of shape
+w        size
+
+GP_SHAPE_POLYGON
+x, y     center of the polygon
+w        radius
+h        number of sides
+extra[0] rotation
+
+GP_SHAPE_ARC
+x, y     center of the arc (assume ellipse)
+w        radius
+extra[0] start point of angle (angle)
+extra[1] end point of angle (angleEnd)
+extra[2] draw to inner point of angle (closed)
+```
+
 #### I2C Display Splash
 
 The firmware also has a splash display feature. The default splash image has been defined in `headers/add-ons/i2cdisplay.h`. The data for the splash image are bytes representing the bitmap to be displayed on the OLED screen. The splash image can be set via the web-config. If you would like to change the default version of the splash image (to preserve it beyond data wipe), it can be customized with a C define named `DEFAULT_SPLASH` in the active `BoardConfig.h` file.
