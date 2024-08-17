@@ -1,0 +1,114 @@
+---
+title: Compile Firmware
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "Documentation on creating a board configuration for GP2040-CE Firmware"
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+# Building
+
+## Environment Variables
+
+A number of new environment variables have been setup to control parts of the build flow.
+
+| Name               | Default | Description                                                                                             |
+| ------------------ | ------- | ------------------------------------------------------------------------------------------------------- |
+| GP2040_BOARDCONFIG | Pico    | The boards.h config file to use for the build.                                                          |
+| SKIP_WEBBUILD      | FALSE   | Determines whether the web configurator is built during the cmake configuration step.                   |
+| SKIP_SUBMODULES    | FALSE   | Determines whether the submodule init command is run automatically during the cmake configuration step. |
+
+### SDK Variables
+
+There are a few SDK variables we take advantage of for our builds.
+
+| Name       | Default | Description                                                                                                                                                                    |
+| ---------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| PICO_BOARD | pico    | This is the embedded board that the RP2040 chip is part of. By default, it assumes the Pico. This variable would match the `<boardname.h>` file in the board's configs folder. |
+
+<Tabs groupId="operating-systems" defaultValue="Windows (Pico SDK)">
+<TabItem value="Windows (Pico SDK)" label="Windows (Pico SDK)" default>
+
+After installing the Raspberry Pi Pico SDK, you should now have a shortcut to "Pico-Visual Studio Code" (search for it using Windows Search). This shortcut should already have everything configured, **allowing you to skip to step 7**. If you're experiencing compilation issues, consider following the manual steps outlined here.
+
+Ensure the `PICO_SDK_PATH` environment variable is set:
+
+1. Search for "Edit environment variables for your account" in Windows.
+2. Under "User Variables," click "New...".
+3. In the dialog that appears, enter `PICO_SDK_PATH` for the Variable Name.
+4. Click "Browse Directory" and navigate to `C:\Program Files\Raspberry Pi\Pico SDK v1.5.1\pico-sdk` for the Variable Value.
+5. Create another new variable.
+6. Enter `GP2040_BOARDCONFIG` for the Variable Name.
+7. Enter `Pico` (or the name of your edited config folder) for the Variable Value.
+
+You can also set the variable within VSCode:
+
+1. Press `Ctrl + ,` to open the settings.
+2. Use the search bar to find "CMake."
+3. Scroll until you see "CMake: Configure Environment."
+4. Click "Add Item."
+5. Key: `GP2040_BOARDCONFIG`
+6. Value: `Pico` (or your working folder name).
+
+When prompted, choose `GCC 10.3.1 ARM NONE EABI` for "Select a kit for GP2040-CE"
+
+From inside VSCode:
+
+1. Click the CMake icon on the left sidebar of VSCode.
+2. You'll see three icons at the top-right corner of the CMake project outline. Click the "Configure All Projects" icon (looks like a page with an arrow).
+3. Wait for the configuration process to complete. If progress isn't visible, open a new terminal in VSCode by clicking on the "Terminal" menu, then "New Terminal". A new terminal window will open at the bottom, navigate the "Output" tab.
+4. Click "Build All Projects" in the CMake project outline.
+5. The files should be in a new folder named "build" inside the GP2040-CE folder
+
+</TabItem>
+<TabItem value="Windows (Manual)" label="Windows (Manual)" default>
+
+Start in the GP2040-CE folder. **From a Developer Powershell or Developer Command Command Prompt**:
+
+:::note
+
+A new Powershell or Command Prompt session will be required after setting an environment variable.
+
+:::
+
+1. Ensure you have the `PICO_SDK_PATH` environment variable set to the path to your pico-sdk folder.
+2. (optional) Set the `GP2040_BOARDCONFIG` environment variable to the folder name for your board configuration.
+
+   - Default value is `Pico`
+
+3. Create a build directory, configure the build, and execute the build.
+
+   ```console
+   mkdir build
+   cd build
+   cmake -G "NMake Makefiles" ..
+   nmake
+   ```
+
+4. Your UF2 file should be in the build directory.
+
+</TabItem>
+<TabItem value="Linux" label="Linux" default>
+
+Start in the GP2040-CE folder
+
+1. Ensure you have the `PICO_SDK_PATH` environment variable set to the path to your pico-sdk folder.
+2. (optional) Set the `GP2040_BOARDCONFIG` environment variable to the folder name for your board configuration.
+   - Default value is `Pico`
+3. Create a build directory, configure the build, and execute the build.
+
+   ```bash
+   mkdir build
+   cd build
+   cmake ..
+   make
+   ```
+
+4. Your UF2 file should be in the build directory.
+
+</TabItem>
+</Tabs>

@@ -1,0 +1,262 @@
+---
+title: Set Up Build Environment
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "Documentation on setting up the build environment for GP2040-CE firmware development"
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+# Firmware Development
+
+GP2040-CE is written in C++ and set up as a standard Pico SDK project.
+
+See [Getting Started with the Raspberry Pi Pico](https://rptl.io/pico-get-started).
+
+## Environment Setup
+
+Most of this will be parroting the above linked PDF from the Raspberry Pi Foundation.
+
+<Tabs groupId="operating-systems" defaultValue="Windows (Pico SDK)">
+<TabItem value="Windows (Pico SDK)" label="Windows (Pico SDK)" default>
+
+1. Download and install [CMake](https://github.com/Kitware/CMake/releases/download/v3.27.4/cmake-3.27.4-windows-x86_64.msi).
+2. Install [NodeJS](https://nodejs.org/en/download)
+3. Install [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+4. Download and install [pico-setup-windows-x64-standalone](https://github.com/raspberrypi/pico-setup-windows/releases/).
+5. Download and install VSCode.
+6. Download and install [Windows Terminal](https://github.com/microsoft/terminal/releases/tag/v1.17.11461.0).
+7. Open Windows Terminal.
+8. Download the GP2040-CE-main repository by running the following commands in the Windows Terminal. This will download the folder to `C:\Users\user\GP2040-CE`.
+
+   ```console
+   git clone https://github.com/OpenStickCommunity/GP2040-CE.git
+   cd GP2040-CE
+   git submodule update --init
+   ```
+
+After installing the Raspberry Pi Pico SDK, you should now have a shortcut to "Pico-Visual Studio Code" (search for it using Windows Search).
+
+8. Open "Pico-Visual Studio Code" via Windows search. This is a shortcut with pre-configured environment variables (this will be explained later).
+9. Navigate to the Extensions window by pressing `Ctrl+Shift+X`.
+10. Install "CMake Tools" by Microsoft.
+11. Open the GP2040-CE folder you downloaded earlier via "File > Open Folder."
+
+</TabItem>
+<TabItem value="Windows (Manual)" label="Windows (Manual)" default>
+
+1. Install the latest[Arm GNU Toolchain](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)
+2. Install latest version of [CMake](https://cmake.org/download/)
+3. Install [Visual Studio Build tools](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022), or the full [Visual Studio Community Edition IDE](https://visualstudio.microsoft.com/downloads/#visual-studio-community-2022)
+   - Make sure to select the Desktop development with C++ workload
+   - Select the latest Windows 10 or Windows 11 SDK from the Individual Components
+4. Install [Python 3.10](https://www.python.org/downloads/windows/)
+   - At the end of the installation, there is an option to disable max file path length. You want to select this.
+5. Install [Visual Studio Code](https://code.visualstudio.com/) - Optional
+6. Install git
+   - Set default editor to anything other than VIM, such as Visual Studio Code
+7. Install [NodeJS](https://nodejs.org/en/download) and NPM
+8. Clone the Pico SDK to your local computer
+
+   ```console
+   git clone https://github.com/raspberrypi/pico-sdk.git
+   cd pico-sdk
+   git submodule update --init
+   cd ..
+   ```
+
+9. From a command-prompt, Clone GP2040-CE to your local computer
+
+   ```console
+   git clone https://github.com/OpenStickCommunity/GP2040-CE.git
+   cd GP2040-CE
+   ```
+
+</TabItem>
+<TabItem value="Linux" label="Linux" default>
+
+#### Ubuntu
+
+This setup assumes an understanding of Linux terminal usage.
+
+1. Get the SDK
+
+   ```bash
+   cd ~/
+   mkdir pico
+   cd pico
+   git clone https://github.com/raspberrypi/pico-sdk.git --branch master
+   cd pico-sdk
+   git submodule update --init
+   cd ..
+   ```
+
+2. Install the toolchain
+
+   ```bash
+   sudo apt update
+   sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential
+   ```
+
+   - May additionally need to install `libstdc++-arm-none-eabi-newlib`
+
+3. Install NodeJS and NPM
+
+   ```bash
+   curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
+   sudo apt-get install -y nodejs
+   ```
+
+4. Get GP2040-CE
+
+   ```bash
+   git clone https://github.com/OpenStickCommunity/GP2040-CE.git
+   cd GP2040-CE
+   git submodule update --init
+   ```
+
+#### Raspberry Pi
+
+This setup script requires approximately 2.5GB of disk space on your SD card.
+
+1. Download the setup script
+
+   ```bash
+   wget https://raw.githubusercontent.com/raspberrypi/pico-setup/master/pico_setup.sh
+   ```
+
+2. Make script executable and Run it.
+
+   ```bash
+   chmod +x pico_setup.sh
+   ```
+
+3. Install NodeJS and NPM
+
+   ```bash
+   curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
+   sudo apt-get install -y nodejs
+   ```
+
+4. Reboot your Pi
+
+   ```bash
+   sudo reboot
+   ```
+
+5. Get GP2040-CE
+
+   ```bash
+   git clone https://github.com/OpenStickCommunity/GP2040-CE.git
+   cd GP2040-CE
+   git submodule update --init
+   ```
+
+</TabItem>
+</Tabs>
+
+## Building
+
+### Environment Variables
+
+A number of new environment variables have been setup to control parts of the build flow.
+
+| Name               | Default | Description                                                                                             |
+| ------------------ | ------- | ------------------------------------------------------------------------------------------------------- |
+| GP2040_BOARDCONFIG | Pico    | The boards.h config file to use for the build.                                                          |
+| SKIP_WEBBUILD      | FALSE   | Determines whether the web configurator is built during the cmake configuration step.                   |
+| SKIP_SUBMODULES    | FALSE   | Determines whether the submodule init command is run automatically during the cmake configuration step. |
+
+#### SDK Variables
+
+There are a few SDK variables we take advantage of for our builds.
+
+| Name       | Default | Description                                                                                                                                                                    |
+| ---------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| PICO_BOARD | pico    | This is the embedded board that the RP2040 chip is part of. By default, it assumes the Pico. This variable would match the `<boardname.h>` file in the board's configs folder. |
+
+<Tabs groupId="operating-systems" defaultValue="Windows (Pico SDK)">
+<TabItem value="Windows (Pico SDK)" label="Windows (Pico SDK)" default>
+
+After installing the Raspberry Pi Pico SDK, you should now have a shortcut to "Pico-Visual Studio Code" (search for it using Windows Search). This shortcut should already have everything configured, **allowing you to skip to step 7**. If you're experiencing compilation issues, consider following the manual steps outlined here.
+
+Ensure the `PICO_SDK_PATH` environment variable is set:
+
+1. Search for "Edit environment variables for your account" in Windows.
+2. Under "User Variables," click "New...".
+3. In the dialog that appears, enter `PICO_SDK_PATH` for the Variable Name.
+4. Click "Browse Directory" and navigate to `C:\Program Files\Raspberry Pi\Pico SDK v1.5.1\pico-sdk` for the Variable Value.
+5. Create another new variable.
+6. Enter `GP2040_BOARDCONFIG` for the Variable Name.
+7. Enter `Pico` (or the name of your edited config folder) for the Variable Value.
+
+You can also set the variable within VSCode:
+
+1. Press `Ctrl + ,` to open the settings.
+2. Use the search bar to find "CMake."
+3. Scroll until you see "CMake: Configure Environment."
+4. Click "Add Item."
+5. Key: `GP2040_BOARDCONFIG`
+6. Value: `Pico` (or your working folder name).
+
+When prompted, choose `GCC 10.3.1 ARM NONE EABI` for "Select a kit for GP2040-CE"
+
+From inside VSCode:
+
+1. Click the CMake icon on the left sidebar of VSCode.
+2. You'll see three icons at the top-right corner of the CMake project outline. Click the "Configure All Projects" icon (looks like a page with an arrow).
+3. Wait for the configuration process to complete. If progress isn't visible, open a new terminal in VSCode by clicking on the "Terminal" menu, then "New Terminal". A new terminal window will open at the bottom, navigate the "Output" tab.
+4. Click "Build All Projects" in the CMake project outline.
+5. The files should be in a new folder named "build" inside the GP2040-CE folder
+
+</TabItem>
+<TabItem value="Windows (Manual)" label="Windows (Manual)" default>
+
+Start in the GP2040-CE folder. **From a Developer Powershell or Developer Command Command Prompt**:
+
+:::note
+
+A new Powershell or Command Prompt session will be required after setting an environment variable.
+
+:::
+
+1. Ensure you have the `PICO_SDK_PATH` environment variable set to the path to your pico-sdk folder.
+2. (optional) Set the `GP2040_BOARDCONFIG` environment variable to the folder name for your board configuration.
+
+   - Default value is `Pico`
+
+3. Create a build directory, configure the build, and execute the build.
+
+   ```console
+   mkdir build
+   cd build
+   cmake -G "NMake Makefiles" ..
+   nmake
+   ```
+
+4. Your UF2 file should be in the build directory.
+
+</TabItem>
+<TabItem value="Linux" label="Linux" default>
+
+Start in the GP2040-CE folder
+
+1. Ensure you have the `PICO_SDK_PATH` environment variable set to the path to your pico-sdk folder.
+2. (optional) Set the `GP2040_BOARDCONFIG` environment variable to the folder name for your board configuration.
+   - Default value is `Pico`
+3. Create a build directory, configure the build, and execute the build.
+
+   ```bash
+   mkdir build
+   cd build
+   cmake ..
+   make
+   ```
+
+4. Your UF2 file should be in the build directory.
+
+</TabItem>
+</Tabs>
