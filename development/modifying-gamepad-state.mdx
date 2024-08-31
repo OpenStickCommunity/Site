@@ -1,0 +1,127 @@
+---
+title: Modifying Gamepad State
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: Documentation on how to modify gamepad state when developing firmware features and add-ons"
+---
+
+# Modifying Gamepad State
+
+In any function looking to modify the gamepad state, use a pointer to the gamepad. This is absolutely necessary for changing any aspect of gamepad state.
+
+```cpp
+Gamepad *gamepad = Storage::getInstance().GetGamepad();
+```
+
+You can find the appropriate gamepad macros and button masks in `headers/gamepad/GamepadState.h`
+
+## Directional Pad
+
+To modify the gamepad's directional pad (DPad) state, use a bitwise OR assignment and the appropriate `GAMEPAD_MASK` enum to set the input as active.
+
+```cpp
+Gamepad *gamepad = Storage::getInstance().GetGamepad();
+gamepad->state.dpad |= GAMEPAD_MASK_UP;
+gamepad->state.dpad |= GAMEPAD_MASK_DOWN;
+gamepad->state.dpad |= GAMEPAD_MASK_LEFT;
+gamepad->state.dpad |= GAMEPAD_MASK_RIGHT;
+```
+
+:::note SOCD Cleaning for Add-ons
+
+All add-ons need to handle opposing simultaneous cardinal directions within the add-on since they come after standard GPIO inputs has already been SOCD cleaned.
+
+Consider using `runSOCDCleaner(SOCDMode mode, uint8_t dpad)` in `src/gamepad/GamepadState.cpp` to take incoming DPad inputs and then resolve them at once in the add-on's `process()` function.
+
+:::
+
+## Buttons
+
+To modify the gamepad's button states, use a bitwise OR assignment and the appropriate `GAMEPAD_MASK` enum to set the input as active.
+
+```cpp
+Gamepad *gamepad = Storage::getInstance().GetGamepad();
+gamepad->state.buttons |= GAMEPAD_MASK_B1;
+gamepad->state.buttons |= GAMEPAD_MASK_B2;
+gamepad->state.buttons |= GAMEPAD_MASK_B3;
+gamepad->state.buttons |= GAMEPAD_MASK_B4;
+gamepad->state.buttons |= GAMEPAD_MASK_L1;
+gamepad->state.buttons |= GAMEPAD_MASK_R1;
+gamepad->state.buttons |= GAMEPAD_MASK_L2;
+gamepad->state.buttons |= GAMEPAD_MASK_R2;
+gamepad->state.buttons |= GAMEPAD_MASK_S1;
+gamepad->state.buttons |= GAMEPAD_MASK_S2;
+gamepad->state.buttons |= GAMEPAD_MASK_L3;
+gamepad->state.buttons |= GAMEPAD_MASK_R3;
+gamepad->state.buttons |= GAMEPAD_MASK_A1;
+gamepad->state.buttons |= GAMEPAD_MASK_A2;
+gamepad->state.buttons |= AUX_MASK_FUNCTION;
+```
+
+## Joystick
+
+To modify the gamepad's analog joystick state, each joystick's X- and Y-axes must be set to an unsigned integer between 0 and 65535.
+
+```cpp
+GAMEPAD_JOYSTICK_MIN = 0
+GAMEPAD_JOYSTICK_MID = 0x7FFF
+GAMEPAD_JOYSTICK_MAX = 0xFFFF
+```
+
+| Axis   | Value Range     | Joystick Position         |
+| :----- | :-------------- | :------------------------ |
+| X-Axis | 0 - 32767      | Direction Left 100% - 0%  |
+| X-Axis | 32767          | Centered                  |
+| X-Axis | 32767 - 65535 | Direction Right 0% - 100% |
+| Y-Axis | 0 - 32767      | Direction Up 100% - 0%  |
+| Y-Axis | 32767          | Centered                  |
+| Y-Axis | 32767 - 65535 | Direction Down 0% - 100% |
+
+```cpp
+Gamepad *gamepad = Storage::getInstance().GetGamepad();
+gamepad->state.ly = value;
+gamepad->state.lx = value;
+gamepad->state.ry = value:
+gamepad->state.rx = value:
+```
+
+:::note SOCD Cleaning for Analog Inputs
+
+All add-ons will need to handle opposing simultaneous cardinal directions on the analog joysticks as there are no preexisting mechanisms for resolving such things elsewhere in the firmware.
+
+:::
+
+## Triggers
+
+For the L2 and R2 triggers, there are two different methods for setting the values of the triggers. You can either set them digitally or using analog values.
+
+### Digital Triggers
+
+Similarly to other digital inputs, use a bitwise OR assignment and the appropriate `GAMEPAD_MASK` enum to set the input as active.
+
+```cpp
+Gamepad *gamepad = Storage::getInstance().GetGamepad();
+gamepad->state.buttons |= GAMEPAD_MASK_L2;
+gamepad->state.buttons |= GAMEPAD_MASK_R2;
+```
+
+### Analog Triggers
+
+To set the L2 and R2 triggers to analog values, first, the gamepad's flag `hasAnalogTriggers` indicating whether the gamepad has analog triggers must be set to `true`. By default, this flag is set to `false` and it is recommended that you set this flag whenever you are manipulating analog trigger values. 
+
+Then, the appropriate axes should be set for each analog trigger. The values for analog triggers can range from 0 to 255, where 0 is fully released and 255 is fully depressed.
+
+```cpp
+GAMEPAD_TRIGGER_MIN = 0;
+GAMEPAD_TRIGGER_MID = 0x7F;
+GAMEPAD_TRIGGER_MAX = 0xFF;
+```
+
+```cpp
+Gamepad *gamepad = Storage::getInstance().GetGamepad();
+gamepad->hasAnalogTriggers = true;
+gamepad->state.lt = value;
+gamepad->state.rt = value;
+```

@@ -3,9 +3,12 @@
     "contribution-guide",
     {
       "type": "category",
-      "label": "Firmware",
+      "label": "Firmware Development",
       "collapsed": false,
-      "items": ["firmware-development"]
+      "items": [
+        "modifying-gamepad-state",
+        "debugging"
+      ]
     },
     {
       "type": "category",
