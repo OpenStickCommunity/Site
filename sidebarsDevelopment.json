@@ -9,6 +9,15 @@
         "build-environment", 
         "board-configuration",
         "compile-firmware"
+        {
+          "type": "category",
+          "label": "Add-ons",
+          "collapsed": false,
+          "items": [
+            "add-on-basics",
+            "add-on-core-functionality"
+          ]
+        }
       ]
     },
     {

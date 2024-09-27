@@ -1,0 +1,17 @@
+---
+title: Basics
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "Documentation on the minimum requirements for a GP2040-CE add-on."
+---
+
+# Basics
+
+## General Process
+
+1. Complete core add-on functionality in the source file with directly hard-coded values based on `#define` macros in the add-on's header files
+2. Once basic add-on functionality is confirmed, create necessary enumerations in `config.proto` for add-on options to be saved into protobuf and and then set them in `config_utils.cpp`
+3. Replace directly hard-coded values using `#define` macros in source file with the values set in `config_utils.cpp`
+4. Create Web Configurator pages, components, and interfaces to manipulate and save user set values to protobuf
