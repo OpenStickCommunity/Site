@@ -87,6 +87,36 @@ In order to use this setting, a USB Peripheral must be configured in [Web Config
 
 In order to use this setting, a USB Peripheral must be configured in [Web Configurator > Peripheral Mapping > USB Host](./03-peripheral-mapping.mdx#usb-host)
 
+### Experimental USB Hub Support
+
+GP2040-CE now has experimental support for USB hubs.  A USB hub will now let you connect multiple authentication dongles as well as a keyboard.
+
+There are no settings to change for USB hub support, it is simply plug and play.  
+
+As an example, you could have the following connected to a USB hub:
+1 - USB keyboard
+2 - Mayflash MagicBoots PS4 v1.1 dongle
+3 - Mayflash MagicBoots Xbox 1 dongle
+4 - Mayflash MagicBoots Xbox 360 dongle
+
+So long as the USB hub is compatible this combination should let switch between PS5 / Xbox / Xbox360 mode without physically switching the dongles around.
+
+This will also, for the first time, allow you to use a keyboard in PS5 / Xbox / Xbox360 mode (without authentication issues so long as an appropriate dongle is used).
+
+:::caution
+
+USB Hub Support is currently experimental.  We do not recommend that it be used for commercial applications.
+
+We do not guarantee that any combination of devices and hubs will work and we will not accept support tickets or GitHub issues about combinations that do not work at this time.
+
+We have seen issues with some USB hubs.  We do not guarantee that any single hub will or will not work and we have no plans to introduce a list of known good hubs.
+
+We have also seen issues with some dongles when added to a USB hub setup like the Mayflash Magic-X.  When the Mayflash Magic-X is added to a USB hub it may not work as intended and also may cause other dongles not to work as intended. 
+
+We leave it to the user to explore various combinations and see what works and does not work for them.
+
+:::
+
 ## Gamepad Settings
 
 ![GP2040-CE Configurator - Gamepad Settings](../../assets/images/gpc-settings-gamepad.png)
