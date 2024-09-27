@@ -1,0 +1,205 @@
+---
+title: Core Functionality
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "Documentation on the minimum requirements for a GP2040-CE add-on to function. Note: This does not include web configuration functionality and saving post-compile options to protobuf."
+---
+
+# Core Functionality
+
+### CMAKE
+
+The first thing to do is to make sure that CMAKE is able to see and add your add-on source files, link any libraries that you create, and include any subfolders for header files you added for add-on functionality.
+
+```cpp
+add_executable(${PROJECT_NAME}
+...
+src/addons/addon_name.cpp
+...
+)
+
+target_link_libraries(${PROJECT_NAME}
+...
+AdditionalLibraryName
+...
+)
+
+target_include_directories(${PROJECT_NAME} PUBLIC
+...
+headers/folder/subfolder
+...
+)
+```
+
+#### Add-On
+
+Include all necessary files to `/CMakeLists.txt`
+
+1. Add Add-on executable (i.e. `src/addons/addon_name.cpp`) under `add_executable(${PROJECT_NAME}`
+	- If any .cpp files in folders outside of `src/addons/` were created for operation of the add-on, they must be included under `add_executable(${PROJECT_NAME}` as well,
+2. Add any add-on header files and folders outside of `/headers/addons` (i.e. `/headers/folder/subfolder/addonHeader.h`) to `target_include_directories(${PROJECT_NAME} PUBLIC`
+
+#### Additional Libraries
+
+1. Add library to `CMakeLists.txt`
+2. Add library to `lib/CMakeLists.txt`
+3. Create `lib/AdditionalLibrary/CMakeLists.txt`
+4. Add necessary source and header files to `lib/AdditionalLibrary/`
+
+### Main Program (gp2040.cpp)
+
+#### Add Add-on Include
+
+```cpp
+#include "addons/addon_name.cpp"
+```
+
+#### Load Add-on
+
+```cpp
+addons.LoadAddon(new AddonName(), CORE0_Input)
+```
+
+:::info CORE0_Input vs CORE1_Input
+
+- `CORE0_Input` is typically input or input-related tasks
+- `CORE1_Input` tends to be auxillary output processes (Display, RGB LEDs, etc) and input that include additional USB processing.
+
+:::
+
+### Header Files
+
+You will need to create a header file for add-on in `/headers/addons/ADDON_NAME.h`
+
+```cpp
+#ifndef ADDON_NAME_H
+#define ADDON_NAME_H
+
+#include "gpaddon.h"
+#include "GamepadEnums.h"
+#include "BoardConfig.h"
+#include "enums.pb.h"
+
+#ifndef ADDON_NAME_ENABLED
+#define ADDON_NAME_ENABLED 0
+#endif
+
+#define ADDON_PIN -1
+
+// IO Module Name
+#define AddonName "Add-on Name"
+
+class AddonNameAddon : public GPAddon
+{
+public:
+    virtual void bootProcess() {}
+    virtual bool available();
+    virtual void setup();
+    virtual void preprocess();
+    virtual void process();
+    virtual std::string name() { return AddonName; }
+
+private:
+    
+};
+
+```
+
+### Source File
+
+You will need to create a source file for add-on in `/src/addons/ADDON_NAME..cpp`. This will be the majority of your add-ons functionality.
+
+```cpp
+#include "addons/ADDON_NAME.h"
+#include "storagemanager.h"
+#include "config.pb.h"
+
+bool AddonNameAddon::available()
+{
+	return Storage::getInstance().getAddonOptions().addonNameOptions.enabled;
+}
+
+void AddonNameAddon::setup()
+{
+}
+
+void AddonNameAddon::preprocess()
+{
+}
+
+void AddonNameAddon::process()
+{
+}
+```
+
+#### `available()`
+
+This function is called once on create to determine whether the addon will be included in the processing loop. You would typically check if the addon's enabled flag is toggled in options and then return that boolean flag. There might be other options you'd want to look at, but that all depends on what's important to know before you turn the add-on on (e.g. checking if GPIO pins are set properly first).
+
+#### `setup()`
+
+This function is called once if `available()` returns true to set up any objects/variables that are needed prior to the main loop. Here you will want to prepare any GPIO pin assignments or create objects that the processing loop needs to function when `preprocess()` and `process()` are called.
+
+#### `preprocess()`
+
+This function is called on the `GP2040::run()` loop prior to processing the gamepad state. This is where you will want to change and modify the gamepad state according to the intended function of your add-on.
+
+#### `process()`
+
+This function is called on the `GP2040::run()` or `GP2040Aux::run()` loop after processing gamepad state. This is where you will want to change and modify the gamepad state according to the intended function of your add-on.
+
+### Protobuf
+
+:::warning
+
+Unless absolutely necessary, do not rename or reorder the enumerations in `config.proto` and `enums.proto`. Doing so will break compatibility with previous versions of the firmware. Simply append any new enumerations if more are necessary.
+
+:::
+
+#### `config.proto`
+
+Once you have the add-on working using the directly hardcoded `#define` macros in `addonName.h`, you will want to add the options to `/proto/config.proto` so that those options will be properly allocated memory space in protobuf. By doing so, you can later read and write values to be saved to protobuf using the Web Configurator and web interface.
+
+In addition to options specific to the add-on you are developing, you will need to add an enum for the new add-on to the `AddonOptions`.
+
+```cpp
+message AddOnNameOptions {
+	optional bool enabled = 1;
+	optional uint32 addonSetting = 2;
+}
+
+message AddonOptions {
+	...
+    optional AddonOptions addonNameOptions = XX;
+}
+```
+
+#### `enums.proto` 
+
+When a variable can take certain values, it is useful to use enumerations. It encapsulates all possible values from a specific group. In order to use enumerations, it will be necessary to add these enumerations to `proto/enums.proto` so that they can be used in your add-on as well as potentially in other parts of the firmware.
+
+```cpp
+enum AddonEnum
+{
+	options (nanopb_enumopt).long_names = false;
+
+	ENUM_OPTION_1 = 0;
+	ENUM_OPTION_2 = 1;
+	...
+}
+```
+
+#### `configs_utils.cpp`
+
+- Add set properties to `src/configs_utils.cpp`
+	- Remember to add all properties to `config.proto`
+
+```cpp
+#include "addons/addon_name.h"
+
+// addonOptions.addonNameOptions
+INIT_UNSET_PROPERTY(config.addonOptions.addonNameOptions, enabled, ADDON_NAME_ENABLED);
+
+```
