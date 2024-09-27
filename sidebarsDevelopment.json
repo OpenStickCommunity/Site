@@ -8,7 +8,7 @@
       "items": [
         "build-environment", 
         "board-configuration",
-        "compile-firmware"
+        "compile-firmware",
         {
           "type": "category",
           "label": "Add-ons",
