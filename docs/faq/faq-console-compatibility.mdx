@@ -197,6 +197,48 @@ For the MagicBoots Adapter and N5 listed above, there is an indicator light on t
 
 Playstation consoles repeatedly send authorization requests every 30 seconds or so. If the request fails (i.e. there is no passthrough authentication device plugged in), in about 8 minutes, the controller will stop responding. Once this happens, the only option is to either reset the controller or unplug and then plug the controller back into the console.
 
+## Xbox 360
+
+### How do I get my GP2040-CE unit to work on an Xbox 360?
+
+For Xbox 360 compatibility, you will need to use the [XInput](../web-configurator/menu-pages/01-settings.mdx).  XInput mode will change to Xbox 360 automatically when a appropiate Xbox 360 dongle is connected.
+
+### What is the Xbox 360 Input Mode?
+
+:::caution Additional Hardware Required
+
+- [USB Host Port](../controller-build/usb-host.mdx)
+- Xbox 360 Authentication Device
+
+:::
+
+Xbox 360 Mode through XInput grants GP2040-CE compatibility with the Xbox 360 by using a dongle to answer authentication
+
+For more information, refer to [Xbox 360 Input Mode](../web-configurator/menu-pages/01-settings.mdx) in the `Web Configurator - Add-ons` section of the documentation.
+
+### What dongle do I use for Xbox 360 Input Mode?
+
+Currently there is only one dongle that will work for Xbox 360 input mode:
+- [MagicBoots FPS Adapter Joystick Converter for Xbox 360](https://www.mayflash.com/product/MAG360.html)
+
+Because your experience and purchased products may vary, GP2040-CE will not provide additional specific recommendations beyond these known working devices.
+
+:::caution Xbox 360 Controllers
+
+Xbox 360 Wireless Controllers, Xbox 360 Wired Controllers, and other licensed Xbox 360 controllers will not work with this add-on.
+
+:::
+
+### How do I know the Xbox 360 Input Mode add-on is working?
+
+Because of the numerous devices to be used for passthrough authentication, there is not just one way to verify that the input mode is working without plugging the controller into a console and attempting to use it.
+
+For the MagicBoots Adapter listed above, there is an indicator light on the dongle that should flash on boot and then become solid after a moment. If the indicator light is on and solid, your controllers _should_ be compatible and you may use your controller as intended.
+
+### Can I remove the Xbox 360 authentication device once I have plugged in my controller?
+
+Xbox 360 consoles only perform the authentication process once when the controller is plugged into the console. Once this occurs, the passthrough authentication device can be removed. However, it is still recommended to keep the device plugged in.
+
 ## Xbox
 
 ### How do I get my GP2040-CE unit to work on a Xbox One, Xbox Series S, or Xbox Series X?
@@ -242,3 +284,25 @@ For the Magic-X Adapter listed above, there is an indicator light on the dongle 
 ### Can I remove the Xbox One authentication device once I have plugged in my controller?
 
 Xbox One, Xbox Series S, and Xbox Series X consoles only perform the authentication process once when the controller is plugged into the console. Once this occurs, the passthrough authentication device can be removed. However, it is still recommended to keep the device plugged in.
+
+## Experimental USB Hub Support
+
+As of v0.7.10 GP2040-CE now includes experimental support for USB hubs which will allow you to connect multiple dongles along with a keyboard at the same time.  Please note the following cautions.
+
+:::caution Not all USB hubs are supported
+
+Please note that USB hub support is still very experimental and as such we cannot provide a list of known good USB hubs.
+
+:::
+
+:::caution Be mindful of power draw
+
+A USB hub and multiple connected USB dongles may add considerable load to your setups overall power draw.
+
+:::
+
+:::caution USB Hub Support and the RP2040 Advanced Breakout Board
+
+Through testing we have found that on the RP2040 Advanced Breakout Board it is recommended to disable RGB LEDs via web-config if you are planning to use a USB hub.  RGB LEDs can be disabled by changing the GPIO pin to `-1` and saving.
+
+:::
