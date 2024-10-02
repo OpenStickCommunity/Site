@@ -29,6 +29,12 @@ Here you can remap the GP2040-CE buttons to different keyboard keycodes that wil
 ![GP2040-CE Configurator - Additional PS4 Settings](../../assets/images/gpc-settings-ps4.png)
 
 - `Switch Touchpad and Share` - Share will now be mapped to A2 rather than S1, Touchpad will be now mapped to S1 rather than A2
+- `Identification Mode` is an option to allow for situations where a true DualShock 4 would be required. This doesn't make it a real DS4 for technical reasons, but it does make the firmware behave more like one.  
+  - `Console` - This is what everyone is used to. It works on PS4/PS5 with the same restrictions you would expect for authorization.
+  - `Remote/Emulation` - This is used in situations where the only controller you can use is a DualShock 4, but doesn't necessarily require any sort of passthrough authorization.  PS Remote Play only allows "authentic" DualShock 4/DualSense controllers, but does not (currently) seem to require auth.  Open PS2 Loader (OPL) versions with the PADEMU USB controller driver will only look for "authentic" DualShock 3/4 controllers, but do not require auth to function.
+When playing directly on a PS4/PS5 console, using Console mode will allow the controller to behave as expected.  This is the default.  When using Remote/Emulation directly on a console, the controller will not be detected for technical reasons.
+When playing via PS Remote Play specifically, since Console mode does not appear as an authentic DualShock 4 controller, it will not be detected.  Using an alternate Remote Play client, such as Chiaki, does not have this limitation.
+Unless something changes specifically in PS Remote Play, authorization is not required in Remote/Emulation mode.
 - `Authentication Settings`
   - `Uploaded Key File` - Upload key files obtained from a Dualshock 4 to authenticate and bypass the PS4's 8-minute time out
   - `Host USB` - Use a dongle, converter, or licensed PS4 controller to authenticate your GP2040-CE device
@@ -68,6 +74,12 @@ In order to use this setting, a USB Peripheral must be configured in [Web Config
 ![GP2040-CE Configurator - Additional PS5 Settings](../../assets/images/gpc-settings-ps5.png)
 
 - `Switch Touchpad and Share` - Share will now be mapped to A2 rather than S1, Touchpad will be now mapped to S1 rather than A2
+- `Identification Mode` is an option to allow for situations where a true DualShock 4 would be required. This doesn't make it a real DS4 for technical reasons, but it does make the firmware behave more like one.  
+  - `Console` - This is what everyone is used to. It works on PS4/PS5 with the same restrictions you would expect for authorization.
+  - `Remote/Emulation` - This is used in situations where the only controller you can use is a DualShock 4, but doesn't necessarily require any sort of passthrough authorization.  PS Remote Play only allows "authentic" DualShock 4/DualSense controllers, but does not (currently) seem to require auth.  Open PS2 Loader (OPL) versions with the PADEMU USB controller driver will only look for "authentic" DualShock 3/4 controllers, but do not require auth to function.
+When playing directly on a PS4/PS5 console, using Console mode will allow the controller to behave as expected.  This is the default.  When using Remote/Emulation directly on a console, the controller will not be detected for technical reasons.
+When playing via PS Remote Play specifically, since Console mode does not appear as an authentic DualShock 4 controller, it will not be detected.  Using an alternate Remote Play client, such as Chiaki, does not have this limitation.
+Unless something changes specifically in PS Remote Play, authorization is not required in Remote/Emulation mode.
 - `Authentication Settings`
   - `Host USB` - Use a dongle, converter, or licensed PS4 controller to authenticate your GP2040-CE device
 
