@@ -3,9 +3,12 @@
     "contribution-guide",
     {
       "type": "category",
-      "label": "Firmware",
+      "label": "Build and Compile",
       "collapsed": false,
       "items": [
+        "build-environment", 
+        "board-configuration",
+        "compile-firmware",
         {
           "type": "category",
           "label": "Add-ons",
