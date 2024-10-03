@@ -3,9 +3,32 @@
     "contribution-guide",
     {
       "type": "category",
-      "label": "Firmware",
+
+      "label": "Firmware Development",
       "collapsed": false,
-      "items": ["firmware-development"]
+      "items": [
+        {
+          "type": "category",
+          "label": "Build, Compile, Debug",
+          "collapsed": false,
+          "items": [
+            "build-environment", 
+            "board-configuration",
+            "compile-firmware",
+            "debugging"
+          ]
+        },
+        "modifying-gamepad-state",
+        {
+          "type": "category",
+          "label": "Add-ons",
+          "collapsed": false,
+          "items": [
+            "add-on-basics",
+            "add-on-core-functionality"
+          ]
+        }
+      ]
     },
     {
       "type": "category",
