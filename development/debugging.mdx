@@ -1,0 +1,68 @@
+---
+title: Debugging
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "Documentation on how to set up a GP2040-CE device for debugging while developing firmware features and add-ons."
+---
+
+# Debugging
+
+Debugging is essential when developing anything in the firmware because it will help you identify and fix errors in your code, ensuring that things runs correctly. It allows you to detect syntax, logic, and runtime issues that could cause your program to crash or behave unexpectedly. The RP2040 interacts with various peripherals (e.g., GPIO, I2C, SPI). Debugging helps you ensure that these interactions are working correctly, especially when dealing with timing-sensitive operations.
+
+By catching and resolving issues early in the development process, debugging helps you build more reliable and efficient code, saving time and preventing complex problems later on.
+
+## UART (TTL) to USB Serial Monitor
+
+To set up an RP2040 microcontroller to use UART communication over USB on GPIO 00 and 01, follow these steps:
+
+### Pin Configuration
+
+The RP2040 has two UART peripherals (UART0 and UART1). To use GPIO 00 and GPIO 01 for UART communication, you will need to leave GPIO 00 and 01 free in all GPIO pin assignments in the Board config including I2C add-ons and display, USB Host assignments or button assignments. Here's how the pins map:
+
+- GPIO 00: UART0 TX (Transmit)
+- GPIO 01: UART0 RX (Receive)
+
+### Circuit Setup
+
+![USB - UART Connection](https://hackster.imgix.net/uploads/attachments/1284607/image_eiE7x8afXR.png?auto=compress%2Cformat&w=740&h=555&fit=max)
+
+- Connect USB Host to your PC to use it as a controller.
+- Connect GPIO 00 (TX) to the RX pin of the USB-to-UART Serial Port Module.
+- Connect GPIO 01 (RX) to the TX pin of the USB-to-UART Serial Port Module.
+
+Make sure the ground (GND) of the RP2040 is connected to the ground of the USB-to-UART Serial Port Module to establish a common reference.
+
+:::tip
+
+In the event that no messages appear in serial monitor, reverse the pin connections.
+
+:::
+
+### Software Configuration
+
+In the firmware, you will need to
+
+1. Add `stdio_init_all();` to the `process()` function of your feature or add-on
+2. Include the `iostream` C++ library to the executable (i.e. file.cpp)
+3. Use `printf()` will output to whatever serial monitor you use to read the USB serial port.
+
+For formatting the serial message, see https://cplusplus.com/reference/cstdio/printf/
+
+### Read Messages via Serial Monitor
+
+There are a number of serial monitor applications that can be used to read printed messages. Examples include, but are not limited to:
+
+- [PuTTY](https://www.putty.org/) (Windows or Linux)
+- [iTerm2](https://iterm2.com/) (MacOS)
+- [picocom](https://github.com/npat-efault/picocom) (Linux)
+- [Serial Monitor](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-serial-monitor) VS Code Extension (Windows, MacOS, Linux)
+- [Windows Terminal](https://github.com/microsoft/terminal) (Windows)
+- Default Terminal Application (Linux or MacOS)
+
+:::note Baud Rate
+
+By default, the baud rate is set to 115200Hz.
+
+:::
