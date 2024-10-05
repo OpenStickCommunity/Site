@@ -140,9 +140,9 @@ const config = {
         name: "README", // used by CLI, must be path safe
         sourceBaseUrl:
           "https://raw.githubusercontent.com/OpenStickCommunity/GP2040-CE/main/", // the base url for the markdown (gets prepended to all of the documents when fetching)
-        outDir: "/", // the base directory to output to.
+        outDir: "/docs", // the base directory to output to.
         documents: ["README.md"], // the file names to download
-        performCleanup: false,
+        performCleanup: true,
         modifyContent(filename, content) {
           if (filename.includes("README")) {
             return content; // <-- this last part adds in the rest of the content, which would otherwise be discarded
