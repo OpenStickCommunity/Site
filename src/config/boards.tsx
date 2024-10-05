@@ -519,30 +519,16 @@ const boards = {
 			),
 		},
 		{
-			name: 'SGF Bridget',
-			configName: 'SGFBridget',
+			name: 'SGF Devices',
+			configName: 'SGFDevices',
 			pinout: null,
-			website: 'https://sgfdevices.com/products/sgf-bridget-mx-stickless-controller',
-			image: '/img/boards/SGFBridget.jpg',
-			category: 'open',
-			desc: () => (
-				<p>
-					The SGF Bridget MX stickless controller is based on the open-source
-					flatbox rev4 design by jfedor.
-				</p>
-			),
-		},
-		{
-			name: 'SGF Faust',
-			configName: 'SGFFaust',
-			pinout: null,
-			website: 'https://sgfdevices.com/products/sgf-faust-all-button-controller',
+			website: 'https://sgfdevices.com/collections/controllers',
 			image: '/img/boards/SGFFaust.jpg',
 			category: 'closed',
 			desc: () => (
 				<p>
-					The SGF Faust stickless controller is an all new design 
-					from SGF Devices running on the open source GP2040-CE firmware.
+					The SGF stickless controllers are inspired by the open-source
+					flatbox rev4 design by jfedor.
 				</p>
 			),
 		},
