@@ -17,3 +17,6 @@ build
 
 .docusaurus
 .cache-loader
+
+# Generated file that should not be created/edited
+/docs/README.md
