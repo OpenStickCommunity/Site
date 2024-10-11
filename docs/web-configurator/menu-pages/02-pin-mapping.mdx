@@ -53,7 +53,16 @@ If you do not know what pins are mapped to which button on your device, there is
 
 You can configure profiles that will change the GPIO to GP2040-CE button mappings based on what profile number you have set. This means that you can have button layouts for different use cases and change between them without the need to enter the Web Configurator and remap GPIO pins.
 
-The profile number can be changed by either using the Web Configurator on the [Settings page](../../web-configurator/menu-pages/01-settings.mdx) or using a [hotkey shortcut](../../hotkeys.mdx#load-profile-1-4). There is not a default input combination associated with these `Load Profile #1-4` or `Next Profile` hotkey shortcuts so you will likely need to set them up in the Settings page under [Hotkey Settings](../../web-configurator/menu-pages/01-settings.mdx#hotkey-settings). The default is profile #1 on first boot, but will remember the last set profile between boots.
+The profile number can be changed by either using the Web Configurator on the [Settings page](../../web-configurator/menu-pages/01-settings.mdx) or using a [hotkey shortcut](../../hotkeys.mdx#load-profile-1-4). There is not a default input combination associated with these `Load Profile #1-4`, `Next Profile`, or `Previous Profile` hotkey shortcuts so you will likely need to set them up in the Settings page under [Hotkey Settings](../../web-configurator/menu-pages/01-settings.mdx#hotkey-settings). The default is profile #1 on first boot, but will remember the last set profile between boots.
+
+### Profile Name
+Profile name can be set to help identify what the profile is used for. This is especially useful if you have multiple profiles set up for different use cases.
+If a profile name is not set, the profile will be displayed as `Profile #` where `#` is the profile number.
+A connected display will show the profile name when the profile is changed.
+
+### Profile Enabled/Disabled
+Profiles can be enabled or disabled. If a profile is disabled, it will not be available when using [Hotkeys](./hotkeys.mdx "GP2040-CE | Hotkeys") to change profile.
+The first profile cannot be disabled.
 
 :::info
 
