@@ -283,6 +283,24 @@ const boards = {
 			),
 		},
 		{
+			name: 'MiSTercadeV2',
+			configName: 'MiSTercadeV2',
+			pinout: null,
+			website:
+				'https://github.com/misteraddons/MiSTercadeV1',
+			image: '/img/boards/MiSTercadeV2.jpg',
+			category: 'closed',
+			desc: () => (
+				<p>
+					Configuration for the{' '}
+					<a href="https://misteraddons.com/products/mistercade-v2-kit-mister-fpga-jamma-arcade-kit">
+						Mistercade V2
+					</a>
+					. MiSTercade is the original JAMMA extension for MiSTer FPGA.
+				</p>
+			),
+		},
+		{
 			name: 'Open Core0',
 			configName: 'OpenCore0',
 			pinout: null,
@@ -317,6 +335,23 @@ const boards = {
 			),
 		},
 		{
+			name: 'OSUMGP-RP2040',
+			configName: 'OSUMGP-RP2040',
+			pinout: null,
+			website:
+				'https://github.com/NickGuyver/OSUMGP-RP2040',
+			image: '/img/boards/OSUMGP-RP2040.jpg',
+			category: 'open',
+			desc: () => (
+				<p>
+					OSUMGP-RP2040: Open Source Universal Modern Game Pad - RP2040 Edition by
+					<a href="https://github.com/NickGuyver/OSUMGP-RP2040"> 
+						NickGuyver
+					</a>.
+				</p>
+			),
+		},
+		{
 			name: 'Pico Fighting Board',
 			configName: 'PicoFightingBoard',
 			pinout: null,
@@ -328,6 +363,21 @@ const boards = {
 					Arcade encoder board designed by {' '}
 					<a href="https://github.com/FeralAI">FeralAI</a> using a Raspberry Pi
 					Pico or pin-equivalent RP2040 board.
+				</p>
+			),
+		},
+		{
+			name: 'PXP-Gamepad',
+			configName: 'PXPGamepad',
+			pinout: null,
+			website: 'https://github.com/MegaBitmap/PXP-Gamepad',
+			image: '/img/boards/PXPGamepad.png',
+			category: 'open',
+			desc: () => (
+				<p>
+					DIY universal controller pocket gamepad by {' '}
+					<a href="https://github.com/MegaBitmap/PXP-Gamepad">MegaBitmap</a> using
+					an RP2040-Zero MCU soldered onto a custom PCB.
 				</p>
 			),
 		},
