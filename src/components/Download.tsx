@@ -22,7 +22,9 @@ const RenderDownloadBox = ({
 	const releaseVersion = useGitHubInfo((state) => state.releaseVersion);
 	return (
 		<div key={`download-${name}`} className={styles.box}>
-			<img className={styles.boxImage} src={image} />
+			<a href={website}>
+				<img className={styles.boxImage} src={image} />
+			</a>
 			<div className={styles.boxInfo}>
 				<h3 className={styles.boxTitle}>{name}</h3>
 				<div>

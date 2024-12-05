@@ -288,7 +288,7 @@ const boards = {
 			pinout: null,
 			website:
 				'https://github.com/misteraddons/MiSTercadeV1',
-			image: '/img/boards/MiSTercadeV2.jpg',
+			image: '/img/boards/MistercadeV2.jpg',
 			category: 'closed',
 			desc: () => (
 				<p>
