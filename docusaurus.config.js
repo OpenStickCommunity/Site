@@ -131,6 +131,7 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      image: "img/gp2040-ce-social-card.png",
     }),
   plugins: [
     [
