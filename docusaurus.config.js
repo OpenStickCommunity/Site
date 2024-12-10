@@ -132,6 +132,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       image: "img/gp2040-ce-social-card.png",
+      metadata: [{ name: "twitter:card", content: "summary" }],
     }),
   plugins: [
     [
