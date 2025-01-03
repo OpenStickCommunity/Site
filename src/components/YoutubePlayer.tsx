@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "@site/src/components/youtubePlayer.module.css";
+import styles from "@site/src/components/youTubePlayer.module.css";
 
-type YoutubePlayerTypes = {
+type YouTubePlayerTypes = {
   videoId: string;
 };
 
-const YoutubePlayer = ({ videoId }: YoutubePlayerTypes) => (
+const YouTubePlayer = ({ videoId }: YouTubePlayerTypes) => (
   <div className={styles.container}>
     <iframe
       allowFullScreen
@@ -16,4 +16,4 @@ const YoutubePlayer = ({ videoId }: YoutubePlayerTypes) => (
   </div>
 );
 
-export default YoutubePlayer;
+export default YouTubePlayer;
