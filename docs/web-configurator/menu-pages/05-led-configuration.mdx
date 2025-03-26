@@ -58,3 +58,40 @@ Please note that RGB Player LEDs must be located at an index after the RGB LED B
 
 - `PLED #[1-4] Index` - The index of the LED module on the RGB strip.
 - `RGB PLED Color` - Click the box to reveal a color picker, or manually enter the color.
+
+### Case RGB LEDs
+
+![GP2040-CE Configurator - RGB Case LEDs](../../assets/images/gpc-rgb-case-leds.png)
+
+Case RGB LEDs allow you to add additional RGB LEDs inside of your case or on your device for more RGB goodness.
+
+There are several options for `Color Type`:
+- `Off` - No case RGB LEDs
+- `Ambient` - Case RGB LEDs will operate independently of your button LED settings.
+- `Linked` - Case RGB LEDs will match the button LED settings.
+
+::note
+
+When in `Ambient` case RGB LED mode you will have access to some additional shortcuts to change the LEDs.
+
+`Start` + `P1` + `K1` = Cycle between `Ambient`, `Linked`, and `Off` mode.
+`Start` + `P2` = Increase brightness of case LEDs
+`Start` + `K2` = Decrease brightness of case LEDs
+`Start` + `P3` = Next color for static colors in case LEDs
+`Start` + `K3` = Previous color for static colors in case LEDs
+`Start` + `P4` = Next Effect in Ambient mode
+`Start` + `K4` = Previous Effect in Ambient mode
+
+:::
+
+![GP2040-CE Configurator - RGB Case LEDs Settings](../../assets/images/gpc-rgb-case-leds-settings.png)
+
+When choosing `Ambient` or `Linked` modes you will also need to specify where the case LEDs start in the index as well as how many LEDs are to be used for case LEDs.
+- `RGB LED Index` - The LED position in the chain to start case RGB LEDs at.
+- `RGB LED Count` - The number of LEDs that will be used for case RGB LEDs.
+
+::note
+
+The index must be after the last LED button defined but can be before or after the player LEDs and turbo LED.
+
+:::

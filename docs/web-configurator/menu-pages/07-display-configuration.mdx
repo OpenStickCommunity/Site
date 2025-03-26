@@ -16,13 +16,16 @@ GP2040-CE supports the use of a display module such as an OLED with a SSD1306, S
 ## Hardware Options
 
 - `Enabled` - Turns on/off the display module.
-- `I2C Block` - The Pico I2C block that will be used. Set based on pins, refer to table on the [Peripheral Mapping](https://gp2040-ce.info/web-configurator/menu-pages/peripheral-mapping#i2c) page.
-- `I2C Address` - The I2C address of your device, defaults to the very commonly used `0x3C`.
+
+![GP2040-CE Configurator - Display Configuration - Screen Options](../../assets/images/gpc-display-config-screen-options.png)
 
 ## Screen Options
 
 - `Flip Display` - Allows you to flip or mirror the display in a variety of ways.
 - `Invert Display` - Inverts the pixel colors, effectively giving you a negative image when enabled.
+- `Power Management` - Allows you to turn off the display when suspended.
+
+![GP2040-CE Configurator - Display Configuration - Layout Options](../../assets/images/gpc-display-config-layout-options.png)
 
 ## Layout Options
 
@@ -32,8 +35,40 @@ Be sure to pick left and right layouts that match. Some layout combinations resu
 
 :::
 
+## Button Layout
+
 - `Button Layout (Left)` - Changes the onscreen layout for the left side of the display and stick.
 - `Button Layout (Right)` - Changes the onscreen layout for the right side of the display and stick.
+- `Button Layout Orientation` - Allows you to flip or switch the overall layout.
+
+## Status Bar Layout
+
+- `Input Mode` - Allows you to show or hide the `Input Mode` on your display.
+- `Turbo` - Allows you to show or hide the `Turbo` setting on your display.
+- `D-Pad Mode` - Allows you to show or hide the `D-Pad Mode` on your display.
+- `SOCD Mode` - Allows you to show or hide the `SOCD Mode` on your display.
+- `Macro Mode` - Allows you to show or hide the `Macro Mode` on your display.
+- `Profile` - Allows you to show or hide the `Profile` pop-up on your display (if profiles are enabled).
+
+## Input History Layout
+
+- `Input History` - Allows you to show or hide a a running input history.
+
+Input history has the following options:
+- `History length (characters)` - The number of characters to display on the screen for `Input History` (21 by default).
+- `Column` - The column position on the screen to start `Input History` at (0 by default).
+- `Row` - The row position on the screen to start `Input History` at (7 by default).
+
+:::note
+
+It is recommended to leave `History length (characters)`, `Column` and `Row` as they are unless you are working on a custom display.
+
+:::
+
+## Mode Options
+
+![GP2040-CE Configurator - Display Configuration - Mode Options](../../assets/images/gpc-display-config-mode-options.png)
+
 - `Splash Mode` - Enables or disables a splash screen displaying when the unit is turned on.
 - `Splash Duration` - Sets the amount of time the splash screen displays for on boot.
 - `Display Saver Timeout` - Will cause the display to turn off after the specified number of minutes. Pressing any input will cause the display to turn back on.
