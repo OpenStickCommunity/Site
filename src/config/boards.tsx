@@ -382,19 +382,6 @@ const boards = {
 			),
 		},
 		{
-			name: 'Rana Tadpole',
-			configName: 'RanaTadpole',
-			pinout: null,
-			website: 'https://github.com/rana-sylvatica/rana-tadpole',
-			image: '/img/boards/RanaTadpole.jpg',
-			category: 'open',
-			desc: () => (
-				<p>
-					Pocket-sized digital controller from RanaLabs.
-				</p>
-			),
-		},
-		{
 			name: 'Reflex Encode v1.2',
 			configName: 'ReflexEncodeV1.2',
 			pinout: null,
@@ -598,29 +585,6 @@ const boards = {
 			),
 		},
 		{
-			name: 'thnikk Fightboard V3',
-			configName: 'FightboardV3',
-			pinout: null,
-			website: 'https://docs.thnikk.moe/models/fightboard/v3.html',
-			image: '/img/boards/FightboardV3.jpg',
-			category: 'legacy',
-			desc: () => <p>Configuration for the Fightboard v3</p>,
-		},
-		{
-			name: 'thnikk Fightboard V3 (Mirrored)',
-			configName: 'FightboardV3Mirrored',
-			pinout: null,
-			website: 'https://docs.thnikk.moe/models/fightboard/v3.html',
-			image: '/img/boards/FightboardV3Mirrored.jpg',
-			category: 'legacy',
-			desc: () => (
-				<p>
-					Configuration for the Fightboard v3 mirrored with directional inputs
-					on the right hand and the action buttons on the left.
-				</p>
-			),
-		},
-		{
 			name: 'Zero Rhythm',
 			configName: 'ZeroRhythm',
 			pinout: null,
@@ -631,20 +595,6 @@ const boards = {
 				<p>
 					The Zero Rhythm is a controller for the Theatrhythm game on the Nintendo Switch.{' '}
 					 It allows you to play rhythm as well as dual stick games in a double WASD layout.
-				</p>
-			),
-		},
-		{
-			name: 'ergoSHIFT Rev.2',
-			configName: 'ergoSHIFTRev2',
-			pinout: null,
-			website: 'https://github.com/mizma/ergoSHIFT/tree/main/hardware-rev2',
-			image: '/img/boards/ergoSHIFT.jpg',
-			category: 'open',
-			desc: () => (
-				<p>
-					The ergoSHIFT is a Low profile 11 button leverless arcade controller with Acrylic shell{' '}
-					by <a href="https://github.com/mizma">mizma</a>.
 				</p>
 			),
 		},

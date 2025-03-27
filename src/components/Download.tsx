@@ -80,11 +80,3 @@ export const ClosedSourceDevices = () => (
 			.map(RenderDownloadBox)}
 	</Container>
 );
-
-export const LegacyDevices = () => (
-	<Container>
-		{boards['Community Devices']
-			.filter((config) => config.category === 'legacy')
-			.map(RenderDownloadBox)}
-	</Container>
-);
