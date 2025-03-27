@@ -17,6 +17,34 @@ import TabItem from "@theme/TabItem";
 ![GP2040-CE Configurator - Input Mode Settings](../../assets/images/gpc-settings-input-mode.png)
 
 - `Current Input Mode` - Choose the main input mode (XINPUT, DINPUT, Switch, PS4, HID-Keyboard, etc.) this connected device will boot into when powered on. This selection will persist through unplug and plugging back in the controller.
+- `Authentication Settings` - Choose a method of authentication if needed for the mode.
+
+:::note
+
+Xinput will work on a PC without any authentication. If you would like to on a Xbox 360 please choose USB authentication and attach an appropriate dongle.
+
+:::
+
+![GP2040-CE Configurator - USB Override](../../assets/images/gpc-settings-usboverride.png)
+
+GP2040-CE allows you to override some of the USB descriptor information.  These settings should only be changed if you know what you are doing.
+
+- 'Product Name` - How you would like the name of the device to come up in your device list
+- 'Manufacturer` - How you would like the manufacturer to come up in the device details
+- `Version` - What version you would like to assign to the device details
+
+There is an additional layer of USB device information that can be changed under `Override Physical IDs`.  
+
+- `Vendor ID` - A vendor ID descriptor
+- `Product ID` - A product ID descriptor
+
+::warning
+
+Please note that changing and of the options in either the `Advanced USB Override` or the `Override Physical IDs` may cause the input mode to no longer function.  
+
+The GP2040-CE team offers no support on issues that arrise from changing these settings.  
+
+:::
 
 ### Keyboard Mapping
 
@@ -141,6 +169,15 @@ Please be mindful of power draw if you are adding multiple dongles and a USB hub
 - `4-Way Joystick Mode` - Enables 4-Way Joystick mode which will prevent non-cardinal directions from registering. When a second cardinal direction input is received, the gamepad direction will change to the newest cardinal direction, similar to [SOCD Last Win](../../hotkeys.mdx#socd-last-win).
 - `Profile Number` - Enables different GPIO pin mappings per profile. Changeable through the Web-Config or [hotkeys](../../hotkeys.mdx#load-profile-1-4).
 - `Debounce Delay in milliseconds` - Timeframe where the firmware will ignore additional inputs to prevent switch noise from accidentally triggering unintended inputs.
+- `Use Gamepad Input for Display Mini Menu` - Allows direction inputs as well as buttons to control the `Mini Menu`.
+
+:::note
+
+Please note that if `Use Gamepad Input for Display Mini Menu` is enabled inputs will still be sent to the device while navigating the `Mini Menu`.
+
+As an example, pressing down to go to the next `Mini Menu` item will also send the down input in-game.
+
+:::
 
 ## Boot Input Modes
 
@@ -154,6 +191,24 @@ For the list of input modes to select from, see [Input Modes](../../usage.mdx#in
 
 ![GP2040-CE Configurator - Boot Input Modes](../../assets/images/gpc-settings-hotkey.png)
 
-An arbitrary number of buttons and directions, plus the optional Function (Fn) button, can be used to define desired hotkey actions. Select `Fn` if desired, plus one or more buttons/directions, and associate them with a hotkey action. The default hotkeys can be modified or removed, and new ones added, up to 12 in total.
+Hotkeys allow for combinations of buttons to be pressed to produce other actions or inputs.
+
+By default, 16 total `Hotkeys` can be assigned.
+
+Although there are 7 default `Hotkeys` in the firmware, individual board configurations may have more or less and the standard `Hotkeys` may be different. 
+
+When the `FN` key is not mapped you will not be able to enable the `FN` slider.  The `FN` slider will require the `FN` button to be pressed along with the other specified buttons to trigger the `Hotkey`.
+
+:::note
+
+Please note that a greyed out `FN` slider does not mean a `Hotkey` is not active.  A greyed out `FN` slider means that an `FN` button has not been assigned.  
+
+You will see a warning at the top of the page if no `FN` button has been assigned.
+
+:::
 
 The available hotkey actions will expand over time. We may also expand the number of hotkeys available to configure in the future. For a list of the available hotkey actions, see [Hotkeys](../../hotkeys.mdx).
+
+At the end of each set `Hotkey` line you will see a `X` button.  Pressing this will remove the `Hotkey`.  You are free to remove the default `Hotkeys` if you do not wish to have them as well.
+
+There is also an option at the bottom to `Lock Hotkeys` which will cause all `Hotkeys` to stop working.
