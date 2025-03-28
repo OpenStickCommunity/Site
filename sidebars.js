@@ -26,7 +26,7 @@ const sidebars = {
         "introduction",
         "installation",
         "usage",
-        "mini menu",
+        "mini-menu",
         "hotkeys",
         {
           type: "ref",
