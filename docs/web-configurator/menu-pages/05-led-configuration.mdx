@@ -7,6 +7,11 @@ title: LED Configuration
 description: "Configure settings for addressable RGB LEDs on your controller"
 ---
 
+import InputLabelSelector, {
+  Hotkey,
+} from "@site/src/components/LabelSelector.tsx";
+import { ColorBlock } from "@site/src/components/LEDColors";
+
 # LED Configuration
 
 If you have a setup with per-button RGB LEDs, they can be configured here.
@@ -74,13 +79,15 @@ There are several options for `Color Type`:
 
 When in `Ambient` case RGB LED mode you will have access to some additional shortcuts to change the LEDs.
 
-`Start` + `P1` + `K1` = Cycle between `Ambient`, `Linked`, and `Off` mode.
-`Start` + `P2` = Increase brightness of case LEDs
-`Start` + `K2` = Decrease brightness of case LEDs
-`Start` + `P3` = Next color for static colors in case LEDs
-`Start` + `K3` = Previous color for static colors in case LEDs
-`Start` + `P4` = Next Effect in Ambient mode
-`Start` + `K4` = Previous Effect in Ambient mode
+| Hotkey                                 | Description                                        |
+| -------------------------------------- | -------------------------------------------------- |
+| <Hotkey buttons={["S2", "B3", "B1"]}/> | Cycle between `Ambient`, `Linked`, and `Off` mode. |
+| <Hotkey buttons={["S2", "B4"]}/>       | Increase brightness of case LEDs                   |
+| <Hotkey buttons={["S2", "B2"]}/>       | Decrease brightness of case LEDs                   |
+| <Hotkey buttons={["S2", "R1"]}/>       | Next color for static colors in case LEDs          |
+| <Hotkey buttons={["S2", "R2"]}/>       | Previous color for static colors in case LEDs      |
+| <Hotkey buttons={["S2", "L1"]}/>       | Next Effect in Ambient mode                        |
+| <Hotkey buttons={["S2", "L2"]}/>       | Previous Effect in Ambient mode                    |
 
 :::
 
