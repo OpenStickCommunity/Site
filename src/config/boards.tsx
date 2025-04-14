@@ -64,6 +64,20 @@ const boards = {
 			),
 		},
 		{
+			name: 'Seeed XAIO RP2040',
+			configName: 'SeeedXIAORP2040',
+			pinout: '/controller-build/wiring#seeed-xiao-rp2040',
+			website:
+				'https://wiki.seeedstudio.com/XIAO-RP2040/',
+			image: '/img/boards/SeeedXIAORP2040.jpg',
+			supported: true,
+			desc: () => (
+				<p>
+					The Seeed Studio XIAO RP2040 is a small RP2040 board created by Seeed Studio.
+				</p>
+			),
+		},
+		{
 			name: 'SparkFun Pro Micro',
 			configName: 'SparkFunProMicro',
 			pinout: '/controller-build/wiring#sparkfun-pro-micro---rp2040',
@@ -243,6 +257,59 @@ const boards = {
 					</a>
 					. The Haute42 products are all compatible with the same configuration file.
 					These products include the Haute42 Pad M Series, T Series, G Series, and mini. 
+				</p>
+			),
+		},
+		{
+			name: 'HautePad M Lite',
+			configName: 'Haute42COSMOXMLite',
+			pinout: null,
+			website: 'https://cosmoxgaming.com/m-lite/',
+			image: '/img/boards/Haute42COSMOXMLite.jpg',
+			category: 'closed',
+			desc: () => (
+				<p>
+					Configuration for the {' '}
+					<a href="https://cosmoxgaming.com/m-lite/">
+					   HautePad M Lite
+					</a>
+					. The HautePad M Lite product contains special case RGB code specific to the M-Lite.
+					The firmware uf2 will automatically set the case rgbs and mode to enable full LEDs. 
+				</p>
+			),
+		},
+		{
+			name: 'HautePad M Ultra',
+			configName: 'Haute42COSMOXMUltra',
+			pinout: null,
+			website: 'https://cosmoxgaming.com/m-ultra/',
+			image: '/img/boards/Haute42COSMOXMUltra.jpg',
+			category: 'closed',
+			desc: () => (
+				<p>
+					Configuration for the {' '}
+					<a href="https://cosmoxgaming.com/m-ultra/">
+					   HautePad M Ultra
+					</a>
+					. The HautePad M Ultra product contains special case RGB code specific to the M Ultra.
+					The firmware uf2 will automatically set the case rgbs and mode to enable full LEDs. 
+				</p>
+			),
+		},
+		{
+			name: 'HautePad X (Analog Configuration)',
+			configName: 'Haute42COSMOXXAnalog',
+			pinout: null,
+			website: 'https://cosmoxgaming.com/x/',
+			image: '/img/boards/Haute42COSMOXXAnalog.jpg',
+			category: 'closed',
+			desc: () => (
+				<p>
+					Configuration for the {' '}
+					<a href="https://cosmoxgaming.com/x/">
+					   HautePad X Series in Analog Configuration
+					</a>
+					. The HautePad X Series with the analog attachment requires a special configuration file to work immediately. 
 				</p>
 			),
 		},
