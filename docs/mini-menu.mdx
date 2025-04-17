@@ -42,6 +42,16 @@ On most builds it is recommended to add a `FN` button and have a function layer 
 
 ![GP2040-CE Mini Menu](./assets/images/gpc-mini-menu.png)
 
+Alternatively, the following configuration requires assigning `Menu Toggle` to a pin and using the Gamepad Settings to enable gamepad input on the Mini Menu.
+
+![GP2040-CE Mini Menu Pins](./assets/images/gpc-mini-menu-pins.png)
+
+After assigning `Menu Toggle` to a pin, go to the Gamepad Settings, and enable the `Use Gamepad Input for Display Mini Menu`. Please note the inputs for mini menu will also output to your controller when this option is selected.
+
+![GP2040-CE Mini Menu Gamepad Setting](./assets/images/gpc-mini-menu-gamepad.png)
+
+With the `Menu Toggle` and `Use Gamepad Input for Display Mini Menu` options set, the Mini Menu will now only require a single pin assignment to operate. In this mode, you can use <Hotkey buttons={["B1"]}/> for `Menu Select`, <Hotkey buttons={["B2"]}/> for `Menu Back`, and Directional for `Menu Up`, `Menu Down`, `Menu Left`, and `Menu Right`.
+
 ## Options in the Mini Menu
 
 - `Input Mode` - Allows you to change `input mode` to any of our supported modes.
