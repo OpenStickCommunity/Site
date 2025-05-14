@@ -36,7 +36,7 @@ Verify that your buttons are correctly connected to the controller board accordi
 
 #### Incorrect Firmware
 
-Firmware is built to assume a specific GPIO pin out and there may be a mismatch between what the firmware expects and what you expect the controls to be. You can either update the GPIO pin mappings in the [Web Configurator](../web-configurator/menu-pages/02-pin-mapping.mdx) or install the correct firmware onto this device.
+Firmware is built to assume a specific GPIO pin out and there may be a mismatch between what the firmware expects and what you expect the controls to be. You can either update the GPIO pin mappings in the [Web Configurator](../web-configurator/menu-pages/02-gpio-pin-mapping.mdx) or install the correct firmware onto this device.
 
 See [Incorrect Firmware](#incorrect-firmware-for-a-supported-device) below for more information on how to resolve this issue.
 
@@ -179,7 +179,7 @@ If your vendor is incapable of supporting their device, you will need to perform
 
 1. Flash the compiled **Pico** GP2040 firmware from the downloads page using the [firmware installation](../installation.mdx) instructions.
 2. Repeat those steps **_without flash nuking your device_**, flashing this [firmware file](/assets/force_webconfig.uf2). This will force your device to boot into Web Configurator mode on boot.
-3. Go to Configuration>Pin Mapping
+3. Go to Configuration>GPIO Pin Mapping
 4. For each gamepad input, use the “Press Button to Map” feature to map the input to a GPIO Pin connected to that button. Repeat for all inputs
 5. For any additional features (e.g. RGB LED, OLED display, USB Host Port, etc.), you will need to determine what GPIO pin is associated. This can be done by tracing physical copper paths on the PCB to the button/component.
 
