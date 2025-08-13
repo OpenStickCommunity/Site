@@ -88,9 +88,12 @@ When you plug in your controller while holding <Hotkey buttons={["S2"]}/>, you s
 [   72.498630] rndis_host 1-3:1.0 enp6s0f1u3: renamed from usb0
 ```
 
-In the above example, **enp6s0f1u3** is the virtual Ethernet interface for your controller. If you don't see the first `rndis_host` line, make sure `CONFIG_USB_NET_RNDIS_HOST` is compiled in your kernel or as a module.
+In the above example, **enp6s0f1u3** is the virtual Ethernet interface for your computer to communicate with the controller. If you don't see the first `rndis_host` line, make sure `CONFIG_USB_NET_RNDIS_HOST` is compiled in your kernel or as a module.
 
-The web configurator is automatically running, you just need to be able to reach it. Some configurations automatically set up the route, so try [http://192.168.7.1](http://192.168.7.1) in your browser now. If it doesn't load, try configuring an IP for the interface manually via: `sudo ifconfig enp6s0f1u3 192.168.7.2`.
+The web configurator is automatically running, you just need to be able to reach it.
+Some configurations automatically set up the virtual Ethernet interface, so try [http://192.168.7.1](http://192.168.7.1) in your browser now.
+If it doesn't load, you need to configure the virtual Ethernet interface for your computer to be able communicate with the controller.
+Try configuring an IP for the interface manually via: `sudo ifconfig enp6s0f1u3 192.168.7.**2**`. Please be sure to use the IP 192.168.7.**2** and NOT 192.168.7.**1** because that **won't work**.
 
 Whether or not you had to add an IP manually, you should end up with a route something like this:
 
