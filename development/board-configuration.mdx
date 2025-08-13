@@ -27,54 +27,57 @@ Each subfolder in [`configs`](https://github.com/OpenStickCommunity/GP2040-CE/tr
 | Name            | Required? | Description                                                                                                                                                                                                                 |
 | --------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `BoardConfig.h` | Yes       | The configuration file used when building GP2040-CE for a specific controller/board. Contains initial GPIO pin mappings, LED configuration, etc.                                                                                 |
-| `README.mdx`    | No        | Provides information related to this board configuration. Not required for the build process, but suggested for pull requests of new board configurations.                                                                  |
-| `assets/`       | No        | Folder for containing assets included in the `README.mdx`. Not required for the build process.                                                                                                                              |
+| `README.md`     | Yes       | Provides information related to this board configuration. Required for pull requests of new board configurations. Must contain the **Main Pin Mapping Configuration**. Suggested to also contain a link to your repository and a picture.                                                                  |
+| `assets/`       | No        | Folder for containing assets included in the `README.md`. Not required for the build process.                                                                                                                              |
 | `<boardname.h>` | No        | Board definition file, named after the board itself, used by the Pico SDK for configuring board specific SDK features. [Pico Example](https://github.com/raspberrypi/pico-sdk/blob/master/src/boards/include/boards/pico.h) |
 
 ## Board Configuration (`BoardConfig.h`)
 
-The following board options are available in the `BoardConfig.h` file:
+The following board options are required in the `BoardConfig.h` file:
 
-| Name                                     | Description                                                                                                                                                                             | Required? |
-| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| **PIN*DPAD*_X_**<br />**PIN*BUTTON*_X_** | The GPIO pin for the button. Replace the _`X`_ with GP2040-CE button or DPad direction.                                                                                                 | Yes       |
-| **DEFAULT_SOCD_MODE**                    | The default SOCD mode to use, defaults to `SOCD_MODE_NEUTRAL`.<br />Available options are:<br />`SOCD_MODE_NEUTRAL`<br />`SOCD_MODE_UP_PRIORITY`<br />`SOCD_MODE_SECOND_INPUT_PRIORITY` | No        |
-| **BUTTON_LAYOUT**                        | The layout of controls/buttons for use with per-button LEDs and external displays.<br />Available options are:<br />`BUTTON_LAYOUT_STICKLESS`<br />`BUTTON_LAYOUT_WASD`                 | Yes       |
+| Name                                     | Description                                                                                                                                                                         
+| ---------------------------------------- | -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| **BOARD_CONFIG_LABEL**                   | Name of your board.                                                                                                                                                                
+| **GPIO_PIN_***X*                         | The GPIO pin for the action you want. Replace the _`X`_ with GPIO pin number and then assign to actions with **GpioAction::**                                                                                 
 
-Create `configs/NewBoard/BoardConfig.h` and add your pin configuration and options. An example `BoardConfig.h` file:
+Create `configs/NewBoard/BoardConfig.h` and add your pin configuration and options. An example, bare minimum, `BoardConfig.h` file:
 
 ```cpp
 // BoardConfig.h
 
-#include <GamepadEnums.h>
+#ifndef PICO_BOARD_CONFIG_H_
+#define PICO_BOARD_CONFIG_H_
 
-#define PIN_DPAD_UP     2
-#define PIN_DPAD_DOWN   3
-#define PIN_DPAD_LEFT   4
-#define PIN_DPAD_RIGHT  5
-#define PIN_BUTTON_B1   6
-#define PIN_BUTTON_B2   7
-#define PIN_BUTTON_B3   8
-#define PIN_BUTTON_B4   9
-#define PIN_BUTTON_L1   10
-#define PIN_BUTTON_R1   11
-#define PIN_BUTTON_L2   26
-#define PIN_BUTTON_R2   27
-#define PIN_BUTTON_S1   16
-#define PIN_BUTTON_S2   17
-#define PIN_BUTTON_L3   18
-#define PIN_BUTTON_R3   19
-#define PIN_BUTTON_A1   20
-#define PIN_BUTTON_A2   21
-#define PIN_BUTTON_TURBO -1
-#define PIN_SLIDER_LS    -1
-#define PIN_SLIDER_RS    -1
+#include "enums.pb.h"
+#include "class/hid/hid.h"
 
-#define DEFAULT_SOCD_MODE SOCD_MODE_NEUTRAL
-#define BUTTON_LAYOUT BUTTON_LAYOUT_ARCADE
+#define BOARD_CONFIG_LABEL "New Board"
+
+// Main pin mapping Configuration
+//                                                  // GP2040 | Xinput | Switch  | PS3/4/5  | Dinput | Arcade |
+#define GPIO_PIN_19 GpioAction::BUTTON_PRESS_UP     // UP     | UP     | UP      | UP       | UP     | UP     |
+#define GPIO_PIN_18 GpioAction::BUTTON_PRESS_DOWN   // DOWN   | DOWN   | DOWN    | DOWN     | DOWN   | DOWN   |
+#define GPIO_PIN_17 GpioAction::BUTTON_PRESS_RIGHT  // RIGHT  | RIGHT  | RIGHT   | RIGHT    | RIGHT  | RIGHT  |
+#define GPIO_PIN_16 GpioAction::BUTTON_PRESS_LEFT   // LEFT   | LEFT   | LEFT    | LEFT     | LEFT   | LEFT   |
+#define GPIO_PIN_08 GpioAction::BUTTON_PRESS_B1     // B1     | A      | B       | Cross    | 2      | K1     |
+#define GPIO_PIN_07 GpioAction::BUTTON_PRESS_B2     // B2     | B      | A       | Circle   | 3      | K2     |
+#define GPIO_PIN_06 GpioAction::BUTTON_PRESS_R2     // R2     | RT     | ZR      | R2       | 8      | K3     |
+#define GPIO_PIN_05 GpioAction::BUTTON_PRESS_L2     // L2     | LT     | ZL      | L2       | 7      | K4     |
+#define GPIO_PIN_12 GpioAction::BUTTON_PRESS_B3     // B3     | X      | Y       | Square   | 1      | P1     |
+#define GPIO_PIN_11 GpioAction::BUTTON_PRESS_B4     // B4     | Y      | X       | Triangle | 4      | P2     |
+#define GPIO_PIN_10 GpioAction::BUTTON_PRESS_R1     // R1     | RB     | R       | R1       | 6      | P3     |
+#define GPIO_PIN_09 GpioAction::BUTTON_PRESS_L1     // L1     | LB     | L       | L1       | 5      | P4     |
+#define GPIO_PIN_15 GpioAction::BUTTON_PRESS_S1     // S1     | Back   | Minus   | Select   | 9      | Coin   |
+#define GPIO_PIN_13 GpioAction::BUTTON_PRESS_S2     // S2     | Start  | Plus    | Start    | 10     | Start  |
+#define GPIO_PIN_21 GpioAction::BUTTON_PRESS_L3     // L3     | LS     | LS      | L3       | 11     | LS     |
+#define GPIO_PIN_22 GpioAction::BUTTON_PRESS_R3     // R3     | RS     | RS      | R3       | 12     | RS     |
+#define GPIO_PIN_14 GpioAction::BUTTON_PRESS_A1     // A1     | Guide  | Home    | PS       | 13     | ~      |
+#define GPIO_PIN_20 GpioAction::BUTTON_PRESS_A2     // A2     | ~      | Capture | ~        | 14     | ~      |
+
+#endif
 ```
 
-### RGB LEDs
+### [RGB LEDs](../web-configurator/menu-pages/led-configuration/#rgb-led-configuration)
 
 GP2040-CE supports per-button WS2812 and similar RGB LEDs.
 
@@ -101,11 +104,6 @@ An example RGB LED setup in the `BoardConfig.h` file:
 ```cpp
 // BoardConfig.h
 
-#include "gp2040.h"
-#include "NeoPico.hpp"
-
-#define BUTTON_LAYOUT BUTTON_LAYOUT_STICKLESS
-
 #define BOARD_LEDS_PIN 22
 
 #define LED_BRIGHTNESS_MAXIMUM 100
@@ -127,7 +125,7 @@ An example RGB LED setup in the `BoardConfig.h` file:
 #define LEDS_BUTTON_L2   11
 ```
 
-### Player LEDs
+### [Player LEDs](../web-configurator/menu-pages/led-configuration/#player-leds-xinput)
 
 GP2040-CE supports PWM and RGB player LEDs (PLEDs) and can be configured in the `BoardConfig.h` file.
 
@@ -161,7 +159,7 @@ An example PLED setup in the `BoardConfig.h` file:
 #define PLED4_PIN 15
 ```
 
-### I2C Displays
+### [I2C Displays](../web-configurator/menu-pages/display-configuration)
 
 GP2040-CE supports 128x64 monochrome displays that run on the SSD1306, SH1106 or SH1107 drivers. The following options are available for displays:
 
