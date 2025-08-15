@@ -23,27 +23,26 @@ Most of this will be parroting the above linked PDF from the Raspberry Pi Founda
 <Tabs groupId="operating-systems" defaultValue="Windows (Pico SDK)">
 <TabItem value="Windows (Pico SDK)" label="Windows (Pico SDK)" default>
 
-1. Download and install [CMake](https://github.com/Kitware/CMake/releases/download/v3.27.4/cmake-3.27.4-windows-x86_64.msi).
-2. Install [NodeJS](https://nodejs.org/en/download)
-3. Install [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-4. Download and install [pico-setup-windows-x64-standalone](https://github.com/raspberrypi/pico-setup-windows/releases/).
-5. Download and install VSCode.
-6. Download and install [Windows Terminal](https://github.com/microsoft/terminal/releases/tag/v1.17.11461.0).
-7. Open Windows Terminal.
-8. Download the GP2040-CE-main repository by running the following commands in the Windows Terminal. This will download the folder to `C:\Users\user\GP2040-CE`.
-
+1. Download and install [NodeJS](https://nodejs.org/en/download)
+2. Download and install [Python 3.x](https://www.python.org/downloads/windows/)
+   - During install, check the box **"Add python.exe to PATH"**
+   - Run the following command to install virtualenv
    ```console
-   git clone https://github.com/OpenStickCommunity/GP2040-CE.git
-   cd GP2040-CE
-   git submodule update --init
+   pip install virtualenv
    ```
-
-After installing the Raspberry Pi Pico SDK, you should now have a shortcut to "Pico-Visual Studio Code" (search for it using Windows Search).
-
-8. Open "Pico-Visual Studio Code" via Windows search. This is a shortcut with pre-configured environment variables (this will be explained later).
-9. Navigate to the Extensions window by pressing `Ctrl+Shift+X`.
-10. Install "CMake Tools" by Microsoft.
-11. Open the GP2040-CE folder you downloaded earlier via "File > Open Folder."
+3. Download and install a git client [git for windows](https://gitforwindows.org/) or [GitHub Desktop](https://desktop.github.com/download/)
+4. Download and install [VS Code](https://code.visualstudio.com/Download)
+5. Run VS Code
+   - Go to **Extensions**, search for and install the **"Raspberry Pi Pico"** extension
+   - Go to **Settings** for the extension and up the **"Raspberry-pi-pico: Python3 Path"** setting to the direct path of the version you installed in Step 2
+6. Restart VS Code
+   - Select **Open Folder** and navigate to the gp2040-ce path where you cloned the repository
+   - Confirm when asked **"Do you want to import this project as a Raspberry Pi Pico project?"**
+   - Select Pico SDK version **"v2.1.1"**
+   - Check the box under CMake Tool **"Enable CMake-Tools extension integration"**
+7. Test building the project
+   - Go to Cmake and expand **PROJECT OUTLINE**
+   - Click **Build All Projects** and select **Pico** from the list of **Kits**
 
 </TabItem>
 <TabItem value="Windows (Manual)" label="Windows (Manual)" default>
