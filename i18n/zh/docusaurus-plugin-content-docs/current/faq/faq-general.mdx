@@ -1,0 +1,105 @@
+---
+title: 常见问题解答
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "General FAQ related to the GP2040-CE project"
+---
+
+# 常见问题解答
+
+## 常见问题
+
+### **我应该使用哪种输入模式？**
+
+这取决于您将使用的平台：
+
+- 在 PC 游戏和第三方游戏机适配器中，**优先使用 `XInput 模式`**。
+- 在 PS4 或 PS5 的 PS4 游戏中，使用 **`PS4 模式`**。
+- 在 PS3 或支持旧控制器的 PS4 游戏中，使用 **`PS3 模式`**。
+- 在 Nintendo Switch 上使用 **`Switch 模式`**。
+- 用于 MAME 街机、PC 音乐游戏等，使用 **`键盘模式`**。
+
+如果您配置了 USB 主机端口、启用了 Passthrough，并拥有适当的认证设备，您可以在以下情况中使用 GP2040-CE 控制器：
+
+- **PS5 主机的 PS5 游戏**：使用 [`PS4 输入模式`](../web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings)。
+- **Xbox One 和 Xbox Series X|S 游戏**：使用 [`Xbox One 输入模式`](../web-configurator/menu-pages/01-settings.mdx#additional-xbox-one-settings)。
+
+对于经典或迷你游戏主机，可以使用以下额外的 USB 输入模式：
+
+- `Sega Genesis/MegaDrive Mini`
+- `NEOGEO Mini`
+- `PC Engine/Turbografx 16 Mini`
+- `EGRET II Mini`
+- `ASTROCITY Mini`
+- `PlayStation Classic`
+
+---
+
+### **GP2040-CE 是否支持 PS5、Xbox One 或 Xbox Series 主机？**
+
+这些游戏机实现了防止未经授权的外围设备使用的安全措施。而破解或绕过此安全措施可能在某些地区不合法。以下是当前支持方式：
+
+1. 如果能够找到用户友好且完全合法的实现方法，[PS4 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings)的实现可能会被进一步扩展支持。
+
+2. **当前支持方式：**
+   - **PS5**：仅通过 passthrough 认证支持，具体见 [PS5 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings)。
+   - **Xbox One 和 Xbox Series 主机**：仅通过 passthrough 认证支持，具体见 [Xbox One 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-xbox-one-settings)。
+
+---
+
+### **GP2040-CE 是否可以在同一系统上使用多个控制器？**
+
+可以！每个 GP2040-CE 板都会被系统识别为独立的控制器。不过需要注意：
+
+- **只运行一个控制器的嵌入式 Web 配置工具**。不能同时运行多个。
+- 如果您将 GP2040-CE 的板用在街机设备中，请参考 [控制器设置](../web-configurator/menu-pages/01-settings.mdx) 以更改高级 USB 覆盖设置（如唯一的 XInput 和 USB HID 设备配置）。
+
+---
+
+### **GP2040-CE 真的可以实现低于 1ms 的输入延迟吗？**
+
+是的！如果您的平台支持 1000 Hz 的 USB 轮询，则输入延迟会低于 **1 毫秒**。
+
+- 默认情况下，GP2040-CE 的所有模式都配置为 1000 Hz / 1 ms 轮询。
+- 某些系统可能会覆盖或忽略控制器请求的轮询速率。不过可以确认 1000 Hz 的轮询速度在 PC 和 MiSTer 上有效。
+- 即使您的平台不支持高速 USB 轮询，GP2040-CE 仍然会以目标系统允许的最快速度读取和处理您的输入。
+
+---
+
+### **诸如 RGB LED、玩家 LED 和 OLED 显示屏等附加功能是否会影响性能？**
+
+不会！RP2040 处理器拥有两个核心：
+
+- GP2040-CE **专门利用一个核心处理玩家输入的读取、处理和发送任务**。
+- 所有附加功能（例如 LED 和显示屏）都运行在第二核心上。
+
+无论功能多么复杂，GP2040-CE 都不会引入额外的输入延迟。
+
+---
+
+### **为什么按键会有奇怪的标签，比如 B3、A1、S2 等？**
+
+GP2040-CE 使用了一种通用按键布局系统，类似于传统的 PlayStation 控制器布局，并添加了一些额外的按键：
+
+- 4 个手柄按键：**B1 - B4**
+- 4 个肩键：**L1, L2, R1, R2**
+- 选择键与开始键：**S1, S2**
+- 两个摇杆按键：**L3, R3**
+- 两个辅助按键：**A1, A2**（如 Guide、PS 键、触控板键、Home、Capture 等）。
+
+GP2040-CE 的文档和 Web 配置工具都提供了一个下拉菜单，您可以将按钮标签更改为更熟悉的控制器布局。有关按键映射的详细信息，请参阅 [GP2040-CE 使用文档](../usage.mdx#buttons)。
+
+---
+
+## 技术问题
+
+### **内置 Web 配置工具是如何实现的？**
+
+没有任何魔法，只是结合了一些很酷的库与工具：
+
+- `React` 和 `Bootstrap` 构建的单页 Web 应用程序嵌入在 GP2040-CE 固件中。
+- `TinyUSB` 库提供通过 RNDIS 的虚拟网络连接。
+- `lwIP` 库实现了一个 HTTP 服务器，用于服务内嵌的 React 应用程序和 Web 配置 API。
+- `ArduinoJson` 库用于序列化和反序列化 Web API 请求。

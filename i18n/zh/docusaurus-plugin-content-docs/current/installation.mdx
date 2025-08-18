@@ -1,0 +1,84 @@
+---
+title: 固件安装
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "How to install firmware onto devices"
+---
+
+import InputLabelSelector, {
+  Hotkey,
+} from "@site/src/components/LabelSelector.tsx";
+
+# 固件安装
+
+选择按钮标签以在使用指南中显示：
+
+<InputLabelSelector />
+
+## 常规流程
+
+> 如果设备先前安装过除 GP2040-CE 外的其它固件，您需要按照下面的[Flash Nuke 流程](#flash-nuke-process)进行操作，以完全清除内存以准备安装 GP2040-CE。
+
+1. 下载适用于您的设备的已编译固件 (.uf2 文件)
+2. 拔掉您的设备。
+3. 将您的设备置于 Bootsel/USB 模式。如果成功，在文件浏览器中将出现名为 `RPI-RP2` 的新的可移动驱动器。
+
+:::info 如何进入 Bootsel 模式
+
+- 插入时按住 BootSel 按钮
+- 插入时按住 <Hotkey buttons={["S1", "S2", "Up"]} />
+- 按住 <Hotkey buttons={["S1", "B3", "B4"]} /> 5 秒。
+
+:::
+
+4. 拖放在步骤 1 中下载的已编译固件 (.uf2 文件) 到可移动驱动器
+5. 等待设备自动断开连接。
+
+恭喜！电路板现在正在运行 GP2040-CE 固件，并将在您的计算机上显示为控制器。您可以在游戏中测试它，使用网站如 [Gamepad Tester](https://gamepad-tester.com/)，或者在其他应用中如 Steam 输入叠加。
+
+如果您想定制您的设备，请查看内置的[网页配置器](./web-configurator/web-configurator.mdx)。
+
+### 示例流程 (Raspberry Pi Pico)
+
+**说明因设备而异。下述说明适用于 Raspberry Pi Pico。**
+
+1. 从[下载](/downloads)页面下载适用于 Raspberry Pi Pico 的最新 `GP2040-CE_X.X.X_Pico.uf2` 文件。
+2. 拔掉您的 Pico。
+3. 将您的设备置于 Bootsel/USB 模式。如果成功，在文件浏览器中将出现名为 `RPI-RP2` 的新的可移动驱动器。
+
+:::info 如何进入 Bootsel 模式
+
+- 插入时按住 BootSel 按钮
+- 插入时按住 <Hotkey buttons={["S1", "S2", "Up"]} />
+- 按住 <Hotkey buttons={["S1", "B3", "B4"]} /> 5 秒。
+
+:::
+
+4. 将 `GP2040-CE_X.X.X_Pico.uf2` 文件拖放到可移动驱动器中。
+5. 等待 Pico 自动断开连接。
+
+## Flash Nuke 流程
+
+:::caution
+
+_警告_ - Flash nuke 将清除板上所有的 GPIO 引脚映射和附加功能的自定义配置。
+
+:::
+
+1. 下载 [flash_nuke.uf2 文件](/assets/flash_nuke.uf2)
+2. 将您的设备置于 Bootsel/USB 模式。如果成功，在文件浏览器中将出现名为 `RPI-RP2` 的新的可移动驱动器。
+
+:::info 如何进入 Bootsel 模式
+
+- 插入时按住 BootSel 按钮
+- 插入时按住 <Hotkey buttons={["S1", "S2", "Up"]} />
+- 按住 <Hotkey buttons={["S1", "B3", "B4"]} /> 5 秒。
+
+:::
+
+3. 将 [flash_nuke.uf2 文件](/assets/flash_nuke.uf2) 拖放到驱动器上
+4. **_等待驱动器在未拔掉连接的情况下断开并重新连接_**
+5. 将固件拖放到 RPI 驱动器上并等待断开连接
+6. 使用 [游戏手柄测试器](https://hardwaretester.com/gamepad)检查控制器是否连接并按下按钮。

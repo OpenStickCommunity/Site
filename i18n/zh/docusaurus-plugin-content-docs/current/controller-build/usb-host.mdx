@@ -1,0 +1,33 @@
+---
+title: USB 主机端口安装
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "Instructions on installing a USB Host port onto your GP2040-CE controllers. May require additional wiring, connectors, solder, or circuit boards."
+---
+
+import InstallUSBHostPort from "../snippets/_add-usb-host-port.mdx";
+
+# USB 主机端口安装
+
+:::info
+
+具体步骤取决于您使用的 RP2040 板的类型，可能会有很大差异。一些板可能需要焊接额外的导线并将外接板连接到您的主板上。其他板可能已预装主机端口，且无需额外的硬件操作。
+
+:::
+
+对于所有 RP2040 板，至少需要满足以下要求：
+
+- 两个连续的 GPIO 引脚（例如，`GPIO 引脚 X` 和 `GPIO 引脚 X+1`），并且这些引脚**不能**与任何电容器或大型非终端电阻串联/并联连接。
+- 一个 5V 引脚（例如，`VBUS`、`VCC`、`+5V` 等）。
+- 一个地线引脚（例如，`GND`）。
+
+您可能还需要以下额外硬件来完成安装，具体需求视您的主板配置而定：
+
+- 烙铁和焊锡
+- 用于连接到 USB A 端口的导线
+- 用于连接到 GP2040-CE 板的线端接器
+- USB 主机板扩展板或额外的 USB 线缆
+
+  <InstallUSBHostPort />

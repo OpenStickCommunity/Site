@@ -1,0 +1,29 @@
+---
+title: 自定义 LED 主题
+# tags:
+# -
+# pagination_next: null
+# pagination_prev: null
+description: "Create a custom RGB LED theme for your controller with different colors on rest and when pressed"
+---
+
+# 自定义 LED 主题
+
+![GP2040-CE Configurator - 自定义 LED 主题](../../assets/images/gpc-rgb-led-custom-theme.png)
+
+- `启用` - 启用自定义 LED 主题。
+- `预览布局` - 用于预览 LED 主题的预定义布局。**注意：** 此功能仅用于预览，不会影响控制器的实际操作。
+- `清除所有` - 提示确认以将当前主题重置为所有按钮黑色（LED 关闭）。如果不希望丢失自定义设置，请确保已保存并备份。
+- `设置所有为某颜色` - 显示一个颜色选择器，用于将所有按钮设置为相同的普通或按下状态颜色。
+- `设置渐变` - 根据 `预览布局` 的选择，在动作按钮上设置水平渐变。
+- `设置按下状态渐变` - 与 `设置渐变` 相同，但用于按钮按下状态。
+- `保存颜色` - 将自定义颜色保存到颜色选择器的调色板中。
+- `删除颜色` - 从颜色选择器的调色板中删除自定义颜色。默认颜色无法删除。
+
+:::note
+
+所有保存的颜色和渐变选择都会保存在浏览器的本地存储中。
+
+:::
+
+启用后，自定义 LED 主题将作为另一种动画模式可用，并可通过控制器上的 `上一动画` 和 `下一动画` 快捷键进行循环切换。您还可以使用 [数据备份与恢复](./10-data-backup-restoration.mdx) 功能来创建和共享主题！

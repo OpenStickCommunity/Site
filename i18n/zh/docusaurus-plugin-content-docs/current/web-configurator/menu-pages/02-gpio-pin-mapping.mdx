@@ -1,0 +1,78 @@
+---
+title: GPIO 引脚映射
+# tags:
+# -
+# pagination_next: null
+# pagination_prev: null
+description: "Map GPIO pins from RP2040 to gamepad inputs in GP2040-CE"
+---
+
+# GPIO 引脚映射
+
+![GP2040-CE Configurator - GPIO 引脚映射](../../assets/images/gpc-pin-mapping.png)
+
+在这里，您可以将 GP2040-CE 按钮重新映射到 RP2040 芯片上的不同 GPIO 引脚。这可以用于简单地重新映射按钮或绕过设备上可能有问题的 GPIO 引脚。
+
+以下选项可用于分配给每个 GPIO 引脚：
+
+- 在 [Buttons](../../usage.mdx#buttons) 中找到的标准游戏手柄输入
+- D-Pad 模式：数字模式、左摇杆和右摇杆
+- [双方向输入](../../add-ons/dual-direction-input.mdx)：上、下、左、右
+- [SOCD 上优先](../../hotkeys.mdx#socd-up-priority)
+- [SOCD 回中](../../hotkeys.mdx#socd-neutral)
+- [SOCD 后输入优先](../../hotkeys.mdx#socd-last-win)
+- [SOCD 先输入优先](../../hotkeys.mdx#socd-first-wins)
+- [关闭 SOCD Cleaning](../../hotkeys.mdx#socd-cleaning-off)
+- [Turbo](../../add-ons/turbo.mdx)
+- [宏](./09-macros.mdx)
+- 功能
+- 额外功能
+
+:::note
+- 多个 [Buttons](../../usage.mdx#buttons) 可以分配到单个 GPIO 引脚（例如 SOCD 清理和 [热键](../../hotkeys.mdx) 都可以激活）。
+- 选项不限于单个 GPIO 引脚分配，可以多次分配（例如，GPIO 引脚 0-29 都可以分配为“向上”输入，如果需要）。
+
+:::
+
+## 引脚查看器 :video_game:
+
+此工具可用于查看哪个 GPIO 引脚物理连接到某个按钮。点击按钮并按照提示操作。系统会要求您按下按钮，并显示“按下的引脚”。
+
+## 使用 :video_game: 映射按钮
+
+![GP2040-CE Configurator - GPIO 引脚映射 - "使用...映射按钮"](../../assets/images/gpc-pin-mapping-map-buttons.png)
+
+如果您不知道设备上的哪些引脚映射到哪些按钮，可以使用一个工具来帮助您。点击上图中的按钮并按照提示操作。系统会要求您依次按下在 [Buttons](../../usage.mdx#buttons) 中找到的每个标准游戏手柄输入。
+
+![GP2040-CE Configurator - GPIO 引脚映射 - 提示](../../assets/images/gpc-pin-mapping-map-buttons-prompt.png)
+
+- 如果您不希望映射特定输入，可以点击 `跳过按钮` 并继续操作。
+- 如果您不需要映射更多输入，可以点击 `停止捕获`。
+
+## 配置文件
+
+您可以配置配置文件，根据设置的配置文件编号更改 GPIO 到 GP2040-CE 按钮的映射。这意味着您可以为不同的使用场景设置按钮布局，并在无需进入 Web 配置器重新映射 GPIO 引脚的情况下切换它们。
+
+可以通过 Web 配置器的 [设置页面](../../web-configurator/menu-pages/01-settings.mdx) 或使用 [热键快捷键](../../hotkeys.mdx#load-profile-1-4) 更改配置文件编号。这些 `加载配置文件 #1-4`、`下一个配置文件` 或 `上一个配置文件` 热键快捷键没有默认输入组合，因此您可能需要在设置页面的 [热键设置](../../web-configurator/menu-pages/01-settings.mdx#hotkey-settings) 中设置它们。首次启动时默认使用配置文件 #1，但会在重启后记住上次设置的配置文件。
+
+### 配置文件名称
+可以设置配置文件名称以帮助识别配置文件的用途。如果您为不同使用场景设置了多个配置文件，这会非常有用。如果未设置配置文件名称，则配置文件会显示为 `配置文件 #`，其中 `#` 是配置文件编号。连接的显示器会在配置文件更改时显示配置文件名称。
+
+### 配置文件启用/禁用
+配置文件可以启用或禁用。如果配置文件被禁用，则使用 [热键](../../hotkeys.mdx "GP2040-CE | Hotkeys") 更改配置文件时不会显示该配置文件。第一个配置文件无法禁用。
+
+:::info
+
+目前，配置文件仅限于更改 GPIO 引脚分配，无法用于更改其他设置或与 GPIO 引脚分配无直接关系的附加功能。这包括但不限于以下设置和附加功能：
+
+- 启动输入模式
+- 热键
+- 外围设备映射
+- 键盘映射分配
+- 倾斜输入
+- Wii 扩展
+- SNES 扩展
+- 聚焦模式
+- 键盘主机按钮到键映射
+
+:::

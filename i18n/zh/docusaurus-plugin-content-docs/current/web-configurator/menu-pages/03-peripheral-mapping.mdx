@@ -1,0 +1,85 @@
+---
+title: 外围设备映射
+# tags:
+# -
+# pagination_next: null
+# pagination_prev: null
+description: "Map GPIO pins from RP2040 and configure settings for peripherals in GP2040-CE such as I2C and USB Host Ports"
+---
+
+import I2CTable from "../../snippets/_i2c-block-table.mdx";
+import SPITable from "../../snippets/_spi-block-table.mdx";
+
+# 外围设备映射
+
+![GP2040-CE Configurator - 外围设备映射](../../assets/images/gpc-peripheral-mapping.png)
+
+在这里，您可以分配使用输入模式、外围设备和需要 I2C 及 USB 主机端口的附加功能所需的 GPIO 引脚。这些功能包括但不限于：
+
+- [PS4 输入模式](./01-settings.mdx#additional-ps4-settings)
+- [PS5 输入模式](./01-settings.mdx#additional-ps5-settings)
+- [OLED 显示屏](./07-display-configuration.mdx)
+- [I2C 模拟 ADS1219](../../add-ons/i2c-analog-ads1219.mdx)
+- [Xbox One 输入模式](./01-settings.mdx#additional-xbox-one-settings)
+- [键盘主机附加功能](../../add-ons/keyboard-host.mdx)
+
+:::info
+
+点击 Web 配置器中的 (i) 工具提示以获取有关各种设置的更多信息。
+
+:::
+
+## I2C
+
+每个 I2C 模块（`I2C0` 和 `I2C1`）都有独立的设置，在使用相应的 I2C 模块之前必须正确配置。这些设置必须正确完成，才能使用任何依赖 I2C 的功能或附加功能。
+
+- `切换` - 开启或关闭指定的 I2C 模块。
+- `SDA` - 用于串行数据 (SDA) 的 GPIO 引脚。
+- `SCL` - 用于串行时钟 (SCL) 的 GPIO 引脚。
+- `速度` - 设置 I2C 通信的速度。
+  - `普通 - 100000`
+  - `快速 - 400000`
+  - `快速增强 - 800000`
+
+:::caution
+
+SDA 和 SCL 引脚必须与下表中为每个 I2C 模块列出的引脚对之一匹配。如果未正确配置，您的 I2C 设备将无法正常工作。
+
+:::
+
+<I2CTable />
+
+## SPI
+
+每个 SPI 模块（SPI0 和 SPI1）都有独立的设置，在使用相应的 SPI 模块之前必须正确配置。这些设置必须正确完成，才能使用任何依赖 SPI 的功能或附加功能。
+
+- `切换` - 开启或关闭指定的 SPI 模块。
+- `RX` - 用于接收数据的 GPIO 引脚 (MISO)。
+- `CS` - 用于芯片选择 (CS) 的 GPIO 引脚。
+- `SCK` - 用于串行时钟 (SCK) 的 GPIO 引脚。
+- `TX` - 用于发送数据的 GPIO 引脚 (MOSI)。
+
+:::caution
+
+引脚必须与下表中为每个 SPI 模块列出的引脚集之一匹配。如果未正确配置，您的 SPI 设备将无法正常工作。
+
+:::
+
+<SPITable />
+
+## USB 主机
+
+设置 USB 主机端口时，选择的 GPIO 引脚没有限制。您可以选择任何可用的 GPIO 引脚（未被其他功能占用），并确保为 `D+` 选择的 GPIO 引脚在物理上紧邻一个可用于 `D-` 的 GPIO 引脚（例如，GPIO X 和 GPIO X+/-1）。
+
+- `切换` - 开启或关闭 USB 主机端口。
+- `D+` - 用于在 USB 主机端口和 RP2040 之间传输正向数据的 GPIO 引脚。
+- `启用 5V` - 用于为主机端口提供 5V 电源的 GPIO 引脚。
+- `引脚顺序` - 此设置基于数据引脚连接到连续 GPIO 引脚的顺序。
+  - `D+/D-` - GPIO 引脚按顺序设置为 `D+` 紧跟 `D-`（例如，D+ = 0，D- = 1）。
+  - `D-/D+` - GPIO 引脚按顺序设置为 `D+` 紧接在 `D-` 之后（例如，D+ = 29，D- = 28）。
+
+:::note 启用 5V
+
+大多数板不需要设置此项。这仅适用于少数板（例如 Adafruit RP2040 Feather USB Host），因为它们具有用于启用和禁用 USB 主机端口 5V 电源的引脚。
+
+:::
