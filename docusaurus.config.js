@@ -108,6 +108,10 @@ const config = {
           //   dropdownActiveClassDisabled: true,
           // },
           {
+          type: 'localeDropdown',
+          position: 'right',
+          },
+          {
             "aria-label": "Discord Invite",
             className: "navbar-discord-link",
             href: "https://discord.gg/k2pxhke7q8",
