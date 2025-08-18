@@ -1,0 +1,83 @@
+---
+title: Turbo 连发
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "Add-on to allow hold a button to be held and fast series of button presses and inputs to be sent."
+---
+
+import InputTable from "../snippets/_input-table.mdx";
+
+# Turbo（连发）
+
+用途：此附加功能用于更改控制行为，使得按住一个按钮时能够快速触发一系列单独的按钮按下操作。
+
+通过按住某个输入并同时按下 Turbo 按钮，可以启用/禁用 Turbo 模式。这会导致该输入以快速连续的方式重复发送（根据 Web 配置器中的 `Turbo Shot Count` 设置）。
+
+:::note
+
+Turbo 模式仅限于手柄上的非方向性输入。
+
+:::
+
+![GP2040-CE 配置器 - Turbo 附加功能](../assets/images/gpc-add-ons-turbo.png)
+
+## Web 配置器选项
+
+### 通用选项
+
+- `Turbo Pin` - 用于 Turbo 按钮的 GPIO 引脚，用于切换按钮的 Turbo 模式。
+- `Turbo Pin LED` - 用于 Turbo LED 的 GPIO 引脚。
+- `Turbo Shot Count` - Turbo 激活时每秒的按钮触发次数。（默认值：15，范围：0-30）
+- `Turbo Dial (ADC ONLY)` - 用于 Turbo 调节旋钮的 GPIO 引脚。
+
+:::caution
+
+`Turbo Dial (ADC ONLY)` 必须设置为 RP2040 板上的 ADC 引脚之一（GPIO 26-29）。
+
+:::
+
+### Turbo - SHMUP 模式
+
+![GP2040-CE 配置器 - Turbo SHMUP 模式](../assets/images/gpc-add-ons-turbo-shmup.png)
+
+- `Turbo Always On 1-4` - 即使未启用 Turbo 模式，这些手柄输入也会始终发送 Turbo 输入（快速、独立的按钮按下信号）。
+- `Charge Button 1-4 Pin` - 用于额外按钮的 GPIO 引脚，这些按钮可以按住并无论 Turbo 状态如何始终发送一个持续的输入。
+- `Charge Button 1-4 Assignment` - 与各自的 `Charge Button 1-4` 按钮相关联的输入。
+- `Simultaneous Priority Mode` - 设置以下两种模式中的优先级：
+  - `Turbo Priority` - 当同时按下 Charge 按钮和启用了 Turbo 模式的手柄输入时，应用 Turbo 模式行为。
+  - `Charge Priority` - 当同时按下 Charge 按钮和启用了 Turbo 模式的手柄输入时，仅发送 Charge 按钮的持续输入（Charge Shot）。
+
+:::note
+
+- 为了使这些选项生效，`Turbo Pin` 必须设置为某个 GPIO 引脚，且不能禁用（-1）。
+- `Charge Button 1-4 Pin` 必须设置为未分配给其他输入的 GPIO 引脚。
+
+:::
+
+以上部分选项使用以下 GP2040 输入标签，用于从控制器映射到 GP2040-CE 的输入。
+
+<InputTable />
+
+### 硬件要求
+
+需要额外的按钮用于 Turbo 按钮，以及用于每个额外 Charge 按钮的按键，最少需要一个按钮，最多支持 4 个按钮。
+
+如果需要 Turbo LED，则需要一个 3.3V 的非可寻址非 RGB LED。这种 LED 仅需要 2 条导线（电源和接地）。
+
+:::note 3.3V+ 正向电压 LED
+
+LED 使用的电源来自 GPIO 引脚，该引脚仅能提供 +3.3V 电压。请确保 LED 的正向电压低于 3.3V，否则 LED 将无法点亮。
+
+:::
+
+### 安装
+
+对于每个按钮，将按钮的一侧连接到 Web 配置器中分配的对应 GPIO 引脚。将按钮的另一侧连接到 GND。
+
+对于 Turbo LED，将 LED 的一侧连接到 Web 配置器中分配的 GPIO 引脚。将 LED 的另一侧连接到 GND。
+
+## 其他备注
+
+当使用 OLED 显示屏时，启用了 Turbo 的按钮在被按下时会在内部显示一个额外的圆环或方框，以指示该按钮映射的输入将被控制器反复发送。

@@ -1,0 +1,68 @@
+---
+title: 模拟摇杆
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "Add-on to use hardware analog joysticks with GP2040-CE"
+---
+
+# 模拟摇杆
+
+用途：此附加功能旨在通过 GP2040-CE 使用硬件模拟摇杆，用于游戏手柄的左模拟摇杆和右模拟摇杆。
+
+![GP2040-CE 配置器 - 附加功能 模拟摇杆](../assets/images/gpc-add-ons-analog.png)
+
+## Web 配置器选项
+
+- `Analog Stick 1 X Pin` - 用于模拟摇杆 1 的 X 值的 GPIO 引脚。此处仅允许使用 ADC 引脚 26、27、28 和 29。
+- `Analog Stick 1 Y Pin` - 用于模拟摇杆 1 的 Y 值的 GPIO 引脚。此处仅允许使用 ADC 引脚 26、27、28 和 29。
+- `Analog Stick 1 Mode` - 选择模拟摇杆 1 用作左模拟摇杆或右模拟摇杆。
+- `Analog joystick 1 Invert` - 选择是否翻转模拟摇杆 1 的 X 或 Y 轴输入（或同时翻转）。
+- `Analog joystick 2 X Pin` - 用于模拟摇杆 2 的 X 值的 GPIO 引脚。此处仅允许使用 ADC 引脚 26、27、28 和 29。
+- `Analog joystick 2 Y Pin` - 用于模拟摇杆 2 的 Y 值的 GPIO 引脚。此处仅允许使用 ADC 引脚 26、27、28 和 29。
+- `Analog joystick 2 Mode` - 选择模拟摇杆 2 用作左模拟摇杆或右模拟摇杆（必须与模拟摇杆 1 不同）。
+- `Analog joystick 2 Invert` - 选择是否翻转模拟摇杆 2 的 X 或 Y 轴输入（或同时翻转）。
+- `Inner Deadzone Size (%)` - 输入您希望在模拟摇杆上设置的内死区百分比值。
+- `Outer Deadzone Size (%)` - 输入您希望在模拟摇杆上设置的外死区百分比值。
+- `Forced Circularity` - 强制将模拟摇杆限制在完美圆形内。这对某些游戏可能有益，但请注意，这可能会对某些允许摇杆超出圆形移动的游戏产生负面影响。
+- `Auto Calibration` - 自动校准模拟摇杆。这通过在启动时读取中心偏移并在下次电源循环之前进行补偿来工作。这对存在漂移问题的模拟摇杆可能非常有用。
+
+## 硬件
+
+### 要求
+
+至少需要一个硬件模拟摇杆才能使用此附加功能。每个摇杆至少有以下 4 个引脚：
+
+- 参考电压 (ADC_VREF/3.3V)
+- X 轴输入电压 (Vx)
+- Y 轴输入电压 (Vy)
+- 接地 (GND)
+
+每个轴输入电压引脚都需要一个模拟到数字转换器 (ADC) 引脚来运行。因此，某些板可能对可用摇杆的最大数量有限制（例如，Raspberry Pi Pico 只有 3 个 ADC 引脚可用，因此只能使用 1 个摇杆）。
+
+:::note 摇杆按钮
+
+模拟摇杆可能有一个额外的引脚用于摇杆按钮。此引脚可以连接到任何 GPIO 引脚，并作为常规按钮使用。
+
+:::
+
+### 安装
+
+将模拟摇杆的引脚连接到开发板，如下所示，然后在 `Web Configurator > Configurations > Add-Ons > Analog` 中设置 GPIO 引脚值：
+
+- 参考电压 (ADC_VREF/3.3V) -> ADC_VREF/3.3V 引脚
+- X 轴输入电压 (Vx) -> 任意 ADC GPIO 引脚
+- Y 轴输入电压 (Vy) -> 任意 ADC GPIO 引脚
+- 接地 (GND) -> 任意 GND 引脚
+
+开发板上的 ADC 引脚具体位置因设计和制造商而异，但在 RP2040 上始终为以下 GPIO 引脚之一：
+
+- GPIO 26
+- GPIO 27
+- GPIO 28
+- GPIO 29
+
+## 其他注意事项
+
+支持电位器和霍尔效应类型的摇杆，只要它们使用 3.0-3.3V 的参考电压并输出 0-3.3V 范围内的电压作为 RP2040 的输入即可。这是因为 RP2040 的 GPIO 引脚使用 3.3V 逻辑电平，不支持 5V 电平。

@@ -1,0 +1,84 @@
+---
+title: SNES 输入
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "Add-on to use various NES and SNES controllers/peripherals in conjunction with GP2040-CE to send inputs to supported systems"
+---
+
+import InputLabelSelector, {
+	Hotkey,
+} from "@site/src/components/LabelSelector.tsx";
+
+# SNES 输入
+
+选择要在使用指南中显示的按钮标签：
+
+<InputLabelSelector />
+<br />
+
+用途：此附加功能旨在允许您使用 GP2040-CE 作为适配器，将 NES 控制器、SNES 控制器或 Super NES 鼠标连接到支持的系统。
+
+![GP2040-CE 配置器 - SNES 输入](../assets/images/gpc-add-ons-snespad-input.png)
+
+## Web 配置器选项
+
+- `CLOCK Pin` - 用于 SNES CLOCK 的 GPIO 引脚。  
+- `LATCH Pin` - 用于 SNES LATCH 的 GPIO 引脚。  
+- `DATA Pin` - 用于 SNES DATA 的 GPIO 引脚。  
+
+支持的控制器类型及其映射如下：
+
+| GP2040                        | NES    | SNES   | Super NES Mouse |
+| ----------------------------- | ------ | ------ | --------------- |
+| <Hotkey buttons={["Up"]}/>    | Up     | Up     |                 |
+| <Hotkey buttons={["Down"]}/>  | Down   | Down   |                 |
+| <Hotkey buttons={["Left"]}/>  | Left   | Left   |                 |
+| <Hotkey buttons={["Right"]}/> | Right  | Right  |                 |
+| <Hotkey buttons={["B1"]}/>    | B      | B      | 左键点击         |
+| <Hotkey buttons={["B2"]}/>    | A      | A      | 右键点击         |
+| <Hotkey buttons={["B3"]}/>    |        | Y      |                 |
+| <Hotkey buttons={["B4"]}/>    |        | X      |                 |
+| <Hotkey buttons={["L1"]}/>    |        | L      |                 |
+| <Hotkey buttons={["R1"]}/>    |        | R      |                 |
+| <Hotkey buttons={["L2"]}/>    |        |        |                 |
+| <Hotkey buttons={["R2"]}/>    |        |        |                 |
+| <Hotkey buttons={["S1"]}/>    | Select | Select |                 |
+| <Hotkey buttons={["S2"]}/>    | Start  | Start  |                 |
+| <Hotkey buttons={["A1"]}/>    |        |        |                 |
+| `Analog`                      |        |        | 鼠标移动         |
+
+## 硬件
+
+### 要求
+
+SNES 延长线带有独立的导线，或者直接从控制器接线。
+
+### 安装
+
+![GP2040-CE 配置器 - SNES 控制器电缆连接器针脚图](../assets/images/gpc-add-ons-snespad-input-pinout.svg)
+
+请参考 [Super Nintendo Entertainment System: pinouts & protocol](https://www.repairfaq.org/REPAIR/F_SNES.html) 中的 SNES 控制器电缆连接器针脚图。此针脚图的方向是从电缆连接器的背面“看进去”。
+
+:::caution
+
+延长线的颜色可能不一致，因此最好测试导通性。
+
+:::
+
+按照下表将 SNES 针脚连接到 RP2040 板上的 GPIO 针脚。
+
+| SNES 针脚 | RP2040 板上的针脚             |
+| :------: | ---------------------------- |
+|    1     | VBUS                         |
+|    2     | Web 界面中的 `CLOCK Pin`      |
+|    3     | Web 界面中的 `LATCH Pin`      |
+|    4     | Web 界面中的 `DATA Pin`       |
+|    5     | 无连接                        |
+|    6     | 无连接                        |
+|    7     | 地线                          |
+
+## 其他备注
+
+无。

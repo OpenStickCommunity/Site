@@ -1,0 +1,22 @@
+{
+  "logo.alt": {
+    "message": "GP2040-CE Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Documentation": {
+    "message": "文档",
+    "description": "Navbar item with label Documentation"
+  },
+  "item.label.Web Config": {
+    "message": "网页设置",
+    "description": "Navbar item with label Web Config"
+  },
+  "item.label.Contribute": {
+    "message": "贡献",
+    "description": "Navbar item with label Contribute"
+  },
+  "item.label.Downloads": {
+    "message": "下载",
+    "description": "Navbar item with label Downloads"
+  }
+}

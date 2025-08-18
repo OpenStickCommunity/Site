@@ -1,0 +1,109 @@
+---
+title: GP2040-CE 主页
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "GP2040-CE (Community Edition) is a gamepad firmware for the Raspberry Pi Pico and other boards based on the RP2040 microcontrollers that combines multi-platform compatibility, low latency and a rich feature set to provide endless customization possibilities without sacrificing performance."
+---
+
+<p align="center">
+  <a>
+    <img alt="GP2040-CE" src="https://raw.githubusercontent.com/OpenStickCommunity/Site/main/docs/assets/images/gp2040-ce-logo.png" />
+  </a>
+</p>
+
+<p align="center">
+  基于RP2040的多平台游戏控制器固件
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/github/license/OpenStickCommunity/GP2040-CE" />
+  <img src="https://img.shields.io/github/actions/workflow/status/OpenStickCommunity/GP2040-CE/cmake.yml" />
+  <br />
+  <img src="https://img.shields.io/badge/inputlag.science-0.86%20ms-blue" />
+  <img src="https://img.shields.io/badge/MiSTer%20latency-0.765%20ms-blue" />
+</p>
+
+<p>
+  GP2040-CE（社区版）是一款用于树莓派 Pico 和其他基于 RP2040 微控制器的游戏控制器固件，结合了多平台兼容性、低延迟和丰富的功能集，为用户提供了无限的自定义可能性，同时不牺牲性能。
+</p>
+
+<p>
+  GP2040-CE 兼容 PC、PS3、PS4、PS5、Nintendo Switch、Xbox One、Steam Deck、MiSTer 和 Android。
+</p>
+
+## 链接
+
+[下载](./downloads) | [安装](/installation) | [接线](/controller-build/wiring) | [使用](/usage) | [常见问题](/faq/faq-general) | [GitHub](https://github.com/OpenStickCommunity/GP2040-CE)
+
+## 功能
+
+- 可选择 13 种输入模式，包括 X-Input、Nintendo Switch、Playstation 4/5、Xbox One、D-Input 和键盘模式
+- Xinput 平均输入延迟为 0.76ms，Playstation 5 平均输入延迟为 0.90ms
+- 多种 SOCD 清理模式 - 上优先（又称无摇杆模式）、中立和第二输入优先
+- 通过方向键输入模拟左摇杆和右摇杆，以及专用切换开关
+- 方向键 + LS/RS 双方向输入支持
+- 按钮反转输入支持
+- [Turbo（连发）和 Turbo LED](/add-ons/turbo)，支持速度选择
+- 每个按钮支持 RGB LED
+- PWM 玩家指示灯 LED 支持（仅限 XInput）
+- 支持多种 LED 配置文件
+- 支持 128x64 单色 I2C 显示屏 - 兼容 SSD1306、SH1106 和 SH1107
+- 自定义启动画面，支持通过网页配置轻松上传图像
+- 支持被动蜂鸣器扬声器（3V 或 5V）
+- [内置嵌入式网页配置器](/web-configurator) - 无需下载！
+
+访问 [GP2040-CE 使用说明](/usage) 页面了解更多详情。
+
+## 性能
+
+输入延迟使用 [WydD 的 inputlag.science 网站](https://inputlag.science/controller/methodology) 中描述的方法进行测试，固件使用默认的 1000 Hz（1ms）轮询率。您可以阅读我们用于延迟测试的设置 [这里](https://github.com/OpenStickCommunity/Site/blob/main/latency_testing/README.md)，以便自行测试或了解用于测试的设备。
+
+| 版本    | 模式      | 轮询率   | 最小值   | 最大值   | 平均值   | 标准差   | 准时概率 | 1帧跳过概率 | 2帧跳过概率 |
+| ------- | --------- | -------- | -------- | -------- | -------- | -------- | ---------- | ------------- | ------------- |
+| v0.7.11 | Xinput    | 1 ms     | 0.45 ms  | 1.28 ms  | 0.76 ms  | 0.24 ms  | 98.48%     | 1.52%         | 0%            |
+| v0.7.11 | Switch    | 1 ms     | 0.41 ms  | 1.23 ms  | 0.72 ms  | 0.24 ms  | 98.53%     | 1.47%         | 0%            |
+| v0.7.11 | HID USB   | 1 ms     | 0.41 ms  | 1.30 ms  | 0.72 ms  | 0.24 ms  | 98.53%     | 1.47%         | 0%            |
+| v0.7.11 | PS3       | 1 ms     | 0.52 ms  | 1.46 ms  | 0.83 ms  | 0.24 ms  | 98.38%     | 1.62%         | 0%            |
+| v0.7.11 | PS4       | 1 ms     | 0.55 ms  | 2.37 ms  | 0.90 ms  | 0.32 ms  | 98.19%     | 1.81%         | 0%            |
+| v0.7.11 | PS5       | 1 ms     | 0.55 ms  | 2.37 ms  | 0.91 ms  | 0.33 ms  | 98.17%     | 1.83%         | 0%            |
+
+完整测试结果可在 [GP2040-CE v0.7.10 固件延迟测试结果.xlsx](https://github.com/OpenStickCommunity/Site/raw/main/latency_testing/GP2040-CE_Firmware_Latency_Test_Results_v0.7.11.xlsx) 表中找到。
+
+v0.7.10 的结果可在 [这里](https://github.com/OpenStickCommunity/Site/raw/main/latency_testing/GP2040-CE_Firmware_Latency_Test_Results_v0.7.10.xlsx) 找到。之前的测试结果可在 `latency_testing` 文件夹中找到。
+
+## 支持
+
+如果您希望讨论功能、问题或任何与 GP2040-CE 相关的内容，请 [创建问题](https://github.com/OpenStickCommunity/GP2040-CE/issues/new) 或加入 [OpenStick GP2040-CE Discord](https://discord.gg/k2pxhke7q8) 支持频道。
+
+## 贡献
+
+希望帮助改进 GP2040-CE？有很多方式可以参与！
+
+### 社区参与
+
+有一个很酷的新功能想法，或者只是想与开发人员讨论一些技术细节？加入 [OpenStick GP2040-CE Discord](https://discord.gg/k2pxhke7q8) 服务器，与我们活跃且不断壮大的社区互动！
+
+### 拉取请求
+
+欢迎并鼓励提交拉取请求以进行功能增强、错误修复和文档更新。
+
+请遵守您正在处理的文件的编码风格，并在存在 `.editorconfig` 文件时强制使用。
+
+## 致谢
+
+- [FeralAI](https://github.com/FeralAI) 构建了 [GP2040](https://github.com/FeralAI/GP2040)，为这个社区项目奠定了基础
+- Ha Thach 的优秀 [TinyUSB 库](https://github.com/hathach/tinyusb) 示例
+- fluffymadness 的 [tinyusb-xinput](https://github.com/fluffymadness/tinyusb-xinput) 示例
+- Kevin Boone 的 [关于使用 RP2040 闪存作为模拟 EEPROM 的博客文章](https://kevinboone.me/picoflash.html)
+- [bitbank2](https://github.com/bitbank2) 提供的 [OneBitDisplay](https://github.com/bitbank2/OneBitDisplay) 和 [BitBang_I2C](https://github.com/bitbank2/BitBang_I2C) 库，这些库已移植用于 Pico SDK
+- [arntsonl](https://github.com/arntsonl) 提供了出色的清理和功能增强，使我们达到了 v0.5.0
+- [alirin222](https://github.com/alirin222) 提供了出色的 Turbo 代码（在 Twitter 上为 [@alirin222](https://twitter.com/alirin222)）
+- [deeebug](https://github.com/deeebug) 改进了 Web-UI 并修复了 PS3 Home 按钮问题
+- [TheTrain](https://github.com/TheTrainGoes/GP2040-Projects) 和 [Fortinbra](https://github.com/Fortinbra) 帮助推动我们的社区发展
+- [PassingLink](https://github.com/passinglink/passinglink) 提供了有关 PS4 实现的技术细节和代码
+- [Youssef Habchi](https://youssef-habchi.com/) 允许我们购买 Road Rage 字体的使用许可
+- [tamanegitaro](https://github.com/tamanegitaro/) 和 [alirin222](https://github.com/alirin222) 为迷你/经典控制器工作提供了基础
+- [Ryzee119](https://github.com/Ryzee119) 提供了出色的 [ogx360_t4](https://github.com/Ryzee119/ogx360_t4/) 和 xid_driver 库，用于支持原版 Xbox
+- [Santroller](https://github.com/Santroller/Santroller) 和 [GIMX](https://github.com/matlo/GIMX) 提供了使用直通认证 Xbox One 的技术示例

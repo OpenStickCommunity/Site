@@ -1,0 +1,30 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docSidebar.category.General": {
+    "message": "通用",
+    "description": "The label for category General in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.FAQ": {
+    "message": "疑难解答",
+    "description": "The label for category FAQ in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Controller Building": {
+    "message": "控制器组装",
+    "description": "The label for category Controller Building in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.doc.Web Configurator": {
+    "message": "网页配置器",
+    "description": "The label for the doc item Web Configurator in sidebar docSidebar, linking to the doc web-configurator/web-configurator"
+  },
+  "sidebar.webConfigSidebar.category.Web Configurator Menu": {
+    "message": "网页配置器菜单",
+    "description": "The label for category Web Configurator Menu in sidebar webConfigSidebar"
+  },
+  "sidebar.webConfigSidebar.category.Add-Ons": {
+    "message": "附加组件",
+    "description": "The label for category Add-Ons in sidebar webConfigSidebar"
+  }
+}

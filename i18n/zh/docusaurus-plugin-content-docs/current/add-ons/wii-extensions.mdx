@@ -1,0 +1,128 @@
+---
+title: Wii 扩展
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "Add-on to use various Wii controllers in conjunction with GP2040-CE to send inputs to supported systems"
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import InputTable from "../snippets/_input-table.mdx";
+
+# Wii 扩展
+
+用途：此附加功能旨在允许您使用各种 Wii 控制器（例如 Nunchuck、经典 Wii 控制器、吉他、鼓、转盘和太鼓）与 GP2040-CE 配合使用，以支持 GP2040-CE 支持的系统。
+
+:::note
+
+Wii 扩展附加功能不适用于 Wii 游戏机。
+
+:::
+
+![GP2040-CE 配置器 - Wii 扩展](../assets/images/gpc-add-ons-wii-extensions.png)
+
+## Web 配置器选项
+
+:::info GPIO 引脚分配
+
+I2C 的 SDA 和 SCL 引脚及其速度现在在 [`Configuration > Peripheral Mapping - I2C`](../web-configurator/menu-pages/03-peripheral-mapping.mdx#i2c) 中配置。
+
+:::
+
+- `I2C Block` - 要使用的 I2C 块（i2c0 或 i2c1）。
+
+### 控制器特定选项
+
+<Tabs groupId="wii-extenstions" defaultValue="Nunchuck">
+<TabItem value="Nunchuck" label="Nunchuck" default>
+
+![GP2040-CE 配置器 - Wii Nunchuck 设置](../assets/images/gpc-add-ons-wii-extensions-nunchuck.png)
+
+![GP2040-CE 配置器 - Wii Nunchuck 控制器](../assets/images/wii-extension-controllers/nunchuck.svg)
+
+</TabItem>
+<TabItem value="Classic" label="Classic" default>
+
+:::note
+
+- 经典控制器支持包括经典、经典 Pro 和 NES/SNES Mini 控制器。
+- 原版经典控制器的 L 和 R 触发器为模拟敏感型，而 Pro 型触发器则不是。
+
+:::
+
+![GP2040-CE 配置器 - Wii 经典控制器设置](../assets/images/gpc-add-ons-wii-extensions-classic.png)
+
+![GP2040-CE 配置器 - Wii 经典控制器](../assets/images/wii-extension-controllers/classic.svg)
+
+</TabItem>
+<TabItem value="Guitar" label="Guitar" default>
+
+![GP2040-CE 配置器 - Wii 吉他设置](../assets/images/gpc-add-ons-wii-extensions-guitar.png)
+
+![GP2040-CE 配置器 - Wii 吉他](../assets/images/wii-extension-controllers/guitar.svg)
+
+</TabItem>
+<TabItem value="Drums" label="Drums" default>
+
+:::note
+
+由于配件硬件问题，鼓和 DJ 转盘控制器可能需要从 Nunchuk 或经典控制器热插拔后才能使用。
+
+:::
+
+![GP2040-CE 配置器 - Wii 鼓设置](../assets/images/gpc-add-ons-wii-extensions-drums.png)
+
+![GP2040-CE 配置器 - Wii 鼓](../assets/images/wii-extension-controllers/drums.svg)
+
+</TabItem>
+<TabItem value="Turntable" label="Turntable" default>
+
+![GP2040-CE 配置器 - Wii 转盘设置](../assets/images/gpc-add-ons-wii-extensions-turntable.png)
+
+![GP2040-CE 配置器 - Wii 转盘](../assets/images/wii-extension-controllers/turntable.svg)
+
+</TabItem>
+<TabItem value="Taiko" label="Taiko" default>
+
+![GP2040-CE 配置器 - Wii 太鼓设置](../assets/images/gpc-add-ons-wii-extensions-taiko.png)
+
+![GP2040-CE 配置器 - Wii 太鼓](../assets/images/wii-extension-controllers/taiko.svg)
+
+</TabItem>
+</Tabs>
+
+上述每个选项均使用以下 GP2040 输入标签，用于从控制器映射到 GP2040-CE 的输入。
+
+<InputTable />
+
+### 要求
+
+此附加功能需要某种方式将控制器连接到 GP2040-CE 设备的以下引脚。
+
+- `PWR` - 3.3V 电源供给（可能也标记为 `+` 或 `VIN`）
+- `GND` - 地线（可能也标记为 `-`）
+- `SDA` - 串行数据线（可能也标记为 `C`）
+- `SCL` - 串行时钟线（可能也标记为 `D`）
+
+:::note
+
+市面上有许多可用的扩展板，在线搜索 "Wiichuck Adapter" 会显示许多选项。
+
+某些扩展板可能包含一个 3.3V 输出，但此附加功能不需要该输出即可正常工作。
+
+:::
+
+### 安装
+
+根据 Web 配置器中设置的 GPIO 引脚，将 Wii 控制器/适配器连接到 GP2040-CE 板。
+
+- `PWR` - 3.3V 电源供给（可能也标记为 `+` 或 `VIN`）
+- `GND` - 地线（可能也标记为 `-`）
+- `SDA` - 串行数据线（可能也标记为 `C`）
+- `SCL` - 串行时钟线（可能也标记为 `D`）
+
+## 其他备注
+
+无。

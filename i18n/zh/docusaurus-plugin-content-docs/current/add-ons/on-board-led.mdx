@@ -1,0 +1,38 @@
+---
+title: 板载 LED 配置
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "Add-on to use the on-board LED as an mode, input, or PS4/5 authentication status indicator"
+---
+
+# 板载 LED 配置
+
+用途：此附加功能旨在允许您使用板载 LED 作为模式指示器、输入测试指示器或 PS4/5 认证指示器。
+
+![GP2040-CE 配置器 - 附加功能 板载 LED 配置](../assets/images/gpc-add-ons-onboard-led.png)
+
+## Web 配置器选项
+
+- `Off` - LED 关闭
+- `Mode Indicator`（模式指示器）
+  - 如果设备通电并连接数据，LED 为常亮
+  - 如果设备通电但未连接数据，LED 快速闪烁
+  - 如果设备处于 Web 配置模式，LED 慢速闪烁
+- `Input Test`（输入测试） - LED 默认关闭，但在按下任何输入时会亮起（释放按钮时 LED 关闭）。
+- `PS4/5 Authentication`（PS4/5 认证） - 当认证调用已触发且成功时，LED 为常亮
+
+## 硬件
+
+### 要求
+
+此附加功能要求使用的 RP2040 板上已经集成了板载 LED。
+
+### 安装
+
+无需安装。
+
+## 其他说明
+
+无。

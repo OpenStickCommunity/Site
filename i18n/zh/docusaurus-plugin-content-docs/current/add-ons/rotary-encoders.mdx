@@ -1,0 +1,35 @@
+---
+title: 旋转编码器
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "Add-on to allow for the use of rotary encoders."
+---
+
+# 旋转编码器
+
+:::warning Beta
+
+请注意，旋转编码器功能目前处于测试阶段。
+
+:::
+
+用途：旋转编码器允许在指定引脚上实现连续或有限的最小-最大脉冲。
+
+![GP2040-CE 配置器 - 附加功能 旋转编码器](../assets/images/gpc-add-ons-rotary-encoders.png)
+
+## Web 配置器选项
+
+- `Enabled` - 启用或禁用 `Encoder 1` 或 `Encoder 2`。  
+- `Pin A/CLK` - 编码器的 `Clock` 引脚。  
+- `Pin B/DT` - 编码器的 `Data` 引脚。  
+- `Pulses/Revolutions (PPR)` - 编码器每转的脉冲数。  
+- `Multiplier` - 使用此乘数微调旋转编码器在 GP2040-CE 中的性能。  
+- `Reset After (ms)` - 等待的毫秒数，在此时间后将值重置为 `0` 或 `center`。  
+- `Control Mode` - 选择此编码器的工作模式。  
+- `Allow Wrap-Around` - 允许编码器在达到轴的最大值时回绕到轴的最小值。  
+
+## 硬件
+
+目前我们没有推荐的模块。这是一个新引入的功能。  

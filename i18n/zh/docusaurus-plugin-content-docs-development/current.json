@@ -1,0 +1,22 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.development.category.Firmware Development": {
+    "message": "Firmware Development",
+    "description": "The label for category Firmware Development in sidebar development"
+  },
+  "sidebar.development.category.Build, Compile, Debug": {
+    "message": "Build, Compile, Debug",
+    "description": "The label for category Build, Compile, Debug in sidebar development"
+  },
+  "sidebar.development.category.Add-ons": {
+    "message": "Add-ons",
+    "description": "The label for category Add-ons in sidebar development"
+  },
+  "sidebar.development.category.Documentation": {
+    "message": "Documentation",
+    "description": "The label for category Documentation in sidebar development"
+  }
+}

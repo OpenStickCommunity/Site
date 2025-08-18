@@ -1,0 +1,58 @@
+---
+title: 双向输入
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "Add-on to add more digital DPad, left analog stick, and right analog stick directional inputs to your controller"
+---
+
+# 双向输入
+
+用途：此附加功能旨在允许使用额外的数字按钮作为方向输入，支持 D-Pad 或左、右模拟摇杆的最大幅度的基本方向输入。
+
+![GP2040-CE 配置器 - 附加功能 双向输入](../assets/images/gpc-add-ons-dual-directional.png)
+
+## Web 配置器选项
+
+:::info GPIO 引脚映射已迁移
+
+这些引脚现在可以在 [GPIO 引脚映射页面](../web-configurator/menu-pages/02-gpio-pin-mapping.mdx) 中配置，通过为选定引脚选择正确的选项。
+
+- DDI Up
+- DDI Down
+- DDI Left
+- DDI Right
+
+:::
+
+- `Dual D-Pad Mode` - 选择此功能是否作为 D-Pad、左模拟摇杆或右模拟摇杆的附加实例。
+- `Combination Mode` - 选择这些方向输入与游戏手柄方向的组合方式。
+- `Dual Directional 4-Way Joystick Mode` - 在 DDI 摇杆上启用 4 向摇杆模式，此模式将阻止非基本方向的输入。当接收到第二个基本方向的输入时，游戏手柄方向将切换到最新的基本方向，类似于 [SOCD Last Win](../hotkeys.mdx#socd-last-win)。
+
+### 双 D-Pad 模式值
+
+- `D-PAD` 用于 D-Pad 模式。
+- `Left Analog` 用于左模拟摇杆模式。
+- `Right Analog` 用于右模拟摇杆模式。
+
+### 组合模式
+
+- `Mixed` - 将游戏手柄方向与双向输入方向结合，并允许使用所有 3 种 SOCD 模式。
+- `Gamepad` - 游戏手柄方向优先，当按下时覆盖双向输入，否则游戏手柄和双向输入独立运行。
+- `Dual Directional` - 双向输入方向优先，当按下时覆盖游戏手柄方向，否则游戏手柄和双向输入独立运行。
+- `None` - 游戏手柄方向和双向输入方向相互独立运行。
+
+## 硬件
+
+### 要求
+
+每个额外的方向输入需要额外的按钮。
+
+### 安装
+
+对于每个按钮，将按钮的一侧连接到其在 Web 配置器中分配的对应 GPIO 引脚。将按钮的另一侧连接到 GND。
+
+## 其他注意事项
+
+“游戏手柄方向”指核心方向（如“Up”），而“双向输入方向”指此附加功能使用的方向（如“DDI Up”）。

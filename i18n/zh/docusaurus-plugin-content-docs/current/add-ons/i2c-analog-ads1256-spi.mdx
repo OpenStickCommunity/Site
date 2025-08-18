@@ -1,0 +1,33 @@
+---
+title: 模拟 ADS1256-SPI
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "Add-on to use ADS1256 SPI for compatible accessories (currently in early beta)"
+---
+
+# 模拟 ADS1256（SPI）
+
+用途：此附加功能旨在允许您使用与 ADS1256 SPI 兼容的配件（目前处于早期测试阶段）。
+
+![GP2040-CE 配置器 - 附加功能 ADS1256](../assets/images/gpc-add-ons-ads1256-spi.png)
+
+## Web 配置器选项
+
+:::info GPIO 引脚分配
+
+`SPI 块`、`片选引脚` 和 `数据准备引脚` 现在可以在 [`配置 > 外设映射 - SPI`](../web-configurator/menu-pages/03-peripheral-mapping.mdx#spi) 中进行配置。
+
+:::
+
+- `SPI 块` - 要使用的 SPI 块（spi0 或 spi1）。
+- `片选（CS）引脚` - 用于片选的 GPIO 引脚。
+- `数据准备（DRDY）引脚` - 用于数据准备的 GPIO 引脚。
+- `模拟最大值` - 将使用的最大电压，可在此选择 `3.3V` 或 `5V`。
+
+## 硬件
+
+### 要求
+
+请注意，此附加功能目前处于早期测试阶段，尚未提供使用示例。

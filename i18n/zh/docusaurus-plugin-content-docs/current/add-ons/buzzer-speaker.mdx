@@ -1,0 +1,37 @@
+---
+title: 蜂鸣器扬声器
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "Add-on to add a buzzer to your controller"
+---
+
+# 蜂鸣器扬声器
+
+用途：此附加功能旨在允许您为 GP2040-CE 设备添加蜂鸣器并播放声音。
+
+![GP2040-CE 配置器 - 附加功能 蜂鸣器](../assets/images/gpc-add-ons-buzzer.png)
+
+## Web 配置器选项
+
+- `Use buzzer` - 开启/关闭蜂鸣器模块。
+- `Buzzer Pin` - 用于蜂鸣器的 GPIO 引脚。
+- `Buzzer Volume` - 蜂鸣器的音量，范围为 0-100。
+
+## 硬件
+
+### 要求
+
+- 3-3.3V 压电扬声器
+
+扬声器只需要电源 (VCC) 和接地 (GND) 引脚。如果扬声器上有 I/O 引脚，可以将引脚跳线，只使用连接到 RP2040 GPIO 引脚的 VCC。
+
+### 安装
+
+- 将开发板上的 GPIO 引脚连接到扬声器的 VCC。
+- 在 Web 配置器中输入 GPIO 引脚。
+
+## 其他注意事项
+
+无

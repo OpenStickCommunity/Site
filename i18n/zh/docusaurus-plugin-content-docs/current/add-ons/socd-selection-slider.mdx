@@ -1,0 +1,51 @@
+---
+title: SOCD 选择滑块
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "Add-on to select SOCD cleaning modes with toggle or slide switch"
+---
+
+# SOCD 选择滑块
+
+用途：此附加功能旨在允许用户通过两档或三档拨动开关或滑动开关切换 SOCD 清理模式。
+
+![GP2040-CE 配置器 - SOCD 选择滑块](../assets/images/gpc-add-ons-socd-slider.png)
+
+## Web 配置器选项
+
+- `SOCD Slider Mode Default` - 在滑块引脚未激活时使用的默认 SOCD 模式。
+
+:::info GPIO 引脚映射已移动
+
+引脚现在可以在 [GPIO 引脚映射页面](../web-configurator/menu-pages/02-gpio-pin-mapping.mdx) 中配置，通过选择所需引脚的正确选项来完成。
+
+- [优先向上 SOCD 清理](../hotkeys.mdx#socd-up-priority)
+- [中立 SOCD 清理](../hotkeys.mdx#socd-neutral)
+- [最后胜出 SOCD 清理](../hotkeys.mdx#socd-last-win)
+- [先胜出 SOCD 清理](../hotkeys.mdx#socd-first-wins)
+- [关闭 SOCD 清理](../hotkeys.mdx#socd-cleaning-off)
+
+:::
+
+- `SOCD Slider Mode Default` - 当没有 `SOCD Cleaning Mode` 引脚被保持时激活的 SOCD 清理模式。
+  - [优先向上](../hotkeys.mdx#socd-up-priority)
+  - [中立](../hotkeys.mdx#socd-neutral)
+  - [最后胜出](../hotkeys.mdx#socd-last-win)
+  - [先胜出](../hotkeys.mdx#socd-first-wins)
+  - [关闭 SOCD 清理](../hotkeys.mdx#socd-cleaning-off)
+
+## 硬件
+
+### 要求
+
+在引脚映射页面设置的 GPIO 引脚需要保持低电平以激活对应模式，而使用默认模式时，所有引脚不能保持低电平。因此，正确使用此附加功能需要一个两档或三档拨动开关或滑动开关。
+
+### 安装
+
+安装方法取决于使用拨动开关还是滑动开关。通常情况下，在开关的一侧，将选择引脚连接到设置的 GPIO 引脚。在开关的中心引脚，将其连接到任意 GND 引脚。
+
+## 其他备注
+
+启用此附加功能后，将禁用使用 SOCD 清理的 [快捷键](../hotkeys.mdx)，因此通过此附加功能设置的拨动开关或滑动开关将成为设置 SOCD 清理模式的唯一方法。
