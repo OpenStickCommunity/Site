@@ -9,7 +9,7 @@ description: "Add-on to select SOCD cleaning modes with toggle or slide switch"
 
 # SOCD 选择滑块
 
-用途：此附加功能旨在允许用户通过两档或三档拨动开关或滑动开关切换 SOCD 清理模式。
+用途：此附加功能旨在允许用户通过两档或三档拨动开关或滑动开关切换 SOCD 覆盖模式。
 
 ![GP2040-CE 配置器 - SOCD 选择滑块](../assets/images/gpc-add-ons-socd-slider.png)
 
@@ -21,20 +21,20 @@ description: "Add-on to select SOCD cleaning modes with toggle or slide switch"
 
 引脚现在可以在 [GPIO 引脚映射页面](../web-configurator/menu-pages/02-gpio-pin-mapping.mdx) 中配置，通过选择所需引脚的正确选项来完成。
 
-- [优先向上 SOCD 清理](../hotkeys.mdx#socd-up-priority)
-- [中立 SOCD 清理](../hotkeys.mdx#socd-neutral)
-- [最后胜出 SOCD 清理](../hotkeys.mdx#socd-last-win)
-- [先胜出 SOCD 清理](../hotkeys.mdx#socd-first-wins)
-- [关闭 SOCD 清理](../hotkeys.mdx#socd-cleaning-off)
+- [SOCD 上优先](../hotkeys.mdx#socd-up-priority)
+- [SOCD 回中](../hotkeys.mdx#socd-neutral)
+- [SOCD 后输入优先](../hotkeys.mdx#socd-last-win)
+- [SOCD 先输入优先](../hotkeys.mdx#socd-first-wins)
+- [SOCD 关闭](../hotkeys.mdx#socd-cleaning-off)
 
 :::
 
-- `SOCD Slider Mode Default` - 当没有 `SOCD Cleaning Mode` 引脚被保持时激活的 SOCD 清理模式。
-  - [优先向上](../hotkeys.mdx#socd-up-priority)
-  - [中立](../hotkeys.mdx#socd-neutral)
-  - [最后胜出](../hotkeys.mdx#socd-last-win)
-  - [先胜出](../hotkeys.mdx#socd-first-wins)
-  - [关闭 SOCD 清理](../hotkeys.mdx#socd-cleaning-off)
+- `SOCD Slider Mode Default` - 当没有 `SOCD Cleaning Mode` 引脚被保持时激活的 SOCD 覆盖模式。
+  - [上优先](../hotkeys.mdx#socd-up-priority)
+  - [回中](../hotkeys.mdx#socd-neutral)
+  - [后输入优先](../hotkeys.mdx#socd-last-win)
+  - [先输入优先](../hotkeys.mdx#socd-first-wins)
+  - [关闭](../hotkeys.mdx#socd-cleaning-off)
 
 ## 硬件
 
@@ -48,4 +48,4 @@ description: "Add-on to select SOCD cleaning modes with toggle or slide switch"
 
 ## 其他备注
 
-启用此附加功能后，将禁用使用 SOCD 清理的 [快捷键](../hotkeys.mdx)，因此通过此附加功能设置的拨动开关或滑动开关将成为设置 SOCD 清理模式的唯一方法。
+启用此附加功能后，将禁用使用 SOCD 覆盖的 [快捷键](../hotkeys.mdx)，因此通过此附加功能设置的拨动开关或滑动开关将成为设置 SOCD 覆盖模式的唯一方法。

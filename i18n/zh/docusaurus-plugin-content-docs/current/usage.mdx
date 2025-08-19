@@ -17,7 +17,7 @@ import InputTableMiniClassic from "./snippets/_input-table-mini-classic.mdx";
 
 # GP2040-CE 使用指南
 
-选择要在使用指南中显示的按钮标签：
+选择要在使用指南中显示的按键标签：
 
 <InputLabelSelector />
 <br />
@@ -28,9 +28,9 @@ v0.5+ 版本对除 Raspberry Pi Pico 以外的其他电路板有重大更改。�
 
 :::
 
-## 按钮
+## 按键
 
-GP2040-CE 使用通用按钮标记来表示游戏手柄状态，然后在发送前转换为适当的输入类型。下表提供了 GP2040-CE 按钮与支持的输入类型和布局的映射：
+GP2040-CE 使用通用按键标记来表示游戏手柄状态，然后在发送前转换为适当的输入类型。下表提供了 GP2040-CE 按键与支持的输入类型和布局的映射：
 
 <Tabs groupID="input-modes">
 
@@ -48,11 +48,11 @@ GP2040-CE 使用通用按钮标记来表示游戏手柄状态，然后在发送�
 
 </Tabs>
 
-如果您的控制器缺少专用按钮用于特定输入，请查看[快捷键页面](./hotkeys.mdx)，了解如何映射按钮组合以模拟这些缺失的输入。
+如果您的控制器缺少专用按键用于特定输入，请查看[快捷键页面](./hotkeys.mdx)，了解如何映射按键组合以模拟这些缺失的输入。
 
 :::note
 
-与其他控制器不同，键盘的方向按钮对应不同的键。您可以在[网页配置模式 > 配置 > 键盘映射](./web-configurator/menu-pages/01-settings.mdx#keyboard-mapping)中更改键盘模式的键映射。
+与其他控制器不同，键盘的方向按键对应不同的键。您可以在[网页配置模式 > 配置 > 键盘映射](./web-configurator/menu-pages/01-settings.mdx#keyboard-mapping)中更改键盘模式的键映射。
 
 :::
 
@@ -63,33 +63,33 @@ GP2040-CE 使用通用按钮标记来表示游戏手柄状态，然后在发送�
 | 左    | 方向键左    |
 | 右    | 方向键右    |
 
-## Bootsel 模式
+## BOOTSEL 模式
 
 Bootsel 模式是板进入可刷入固件的状态。每当进行更新或排查问题时，您都需要使用此模式。
 
-您可以通过以下方式进入 Bootsel 模式：在插入控制器时按住 <Hotkey buttons={["S1", "S2", "Up"]}/> 按钮，通过进入 Web 配置器并在 Bootsel 模式下重启，或在控制器插入状态下按住 <Hotkey buttons={["S1", "B3", "B4"]}/> 五秒钟。激活后，除了刷入新固件或拔掉设备，没有其他方法可以离开 Bootsel 模式。
+您可以通过以下方式进入 BOOTSEL 模式：在插入控制器时按住 <Hotkey buttons={["S1", "S2", "Up"]}/> 按键，通过进入 Web 配置器并在 BOOTSEL 模式下重启，或在控制器插入状态下按住 <Hotkey buttons={["S1", "B3", "B4"]}/> 五秒钟。激活后，除了刷入新固件或拔掉设备，没有其他方法可以离开 BOOTSEL 模式。
 
-通常，板上会有一个 Bootsel 按钮。这个按钮往往是 PCB 上露出的按钮，或者在控制器内部，需要针状物按压或拆卸控制器才能按到。
+通常，板上会有一个 BOOTSEL 按钮。这个按钮往往是 PCB 上露出的按钮，或者在控制器内部，需要针状物按压或拆卸控制器才能按到。
 
 :::note
 
-一些控制器选择不包含 Bootsel 按钮。在这种情况下，您需要找到按钮的位置，并在插入或启动控制器时使用导体连接触点或垫片的两侧。
+一些控制器选择不包含 BOOTSEL 按钮。在这种情况下，您需要找到按钮的位置，并在插入或启动控制器时使用导体连接触点或垫片的两侧。
 
 :::
 
 ## 网页配置模式
 
-网页配置模式是板启动内置网页浏览器配置应用程序的状态。在此，您可以根据需要自定义和配置控制器。更多信息请点击[这里](./web-configurator/web-configurator.mdx)。
+网页配置模式是板启动内置网页浏览器配置应用程序的状态。在此，您可以根据需要自定义和配置控制器。更多信息请点击 [这里](./web-configurator/web-configurator.mdx)。
 
-您可以通过以下方式进入网页配置模式：在插入控制器时按住 <Hotkey buttons={["S2"]}/> 按钮，或在控制器插入状态下按住 <Hotkey buttons={["S2", "B3", "B4"]}/> 五秒钟。再次按住这个组合五秒钟，即可将设备切换回先前使用的控制器模式。
+您可以通过以下方式进入网页配置模式：在插入控制器时按住 <Hotkey buttons={["S2"]}/> 按键，或在控制器插入状态下按住 <Hotkey buttons={["S2", "B3", "B4"]}/> 五秒钟。再次按住这个组合五秒钟，即可将设备切换回先前使用的控制器模式。
 
 ## 输入模式
 
-GP2040-CE兼容多个系统和输入模式。可以在网页配置器中设置按住八个按钮时分配的特定输入模式，配置路径为[设置](./web-configurator/menu-pages/01-settings.mdx#boot-input-modes)。
+GP2040-CE兼容多个系统和输入模式。可以在网页配置器中设置按住八个按键时分配的特定输入模式，配置路径为 [设置](./web-configurator/menu-pages/01-settings.mdx#boot-input-modes)。
 
-不过，预编译固件中有默认输入模式。要更改输入模式，**在插入控制器时按住以下按钮之一：**
+不过，预编译固件中有默认输入模式。要更改输入模式，**在插入控制器时按住以下按键之一：**
 
-| 主输入模式      |        按住的按钮         |
+| 主输入模式      |        按住的按键         |
 | :------------- | :-----------------------: |
 | Nintendo Switch | <Hotkey buttons={["B1"]}/> |
 | XInput          | <Hotkey buttons={["B2"]}/> |
@@ -99,7 +99,7 @@ GP2040-CE兼容多个系统和输入模式。可以在网页配置器中设置�
 | 键盘            | <Hotkey buttons={["R2"]}/> |
 | Original XBox   |      `未分配`            |
 
-| Mini/Classic 游戏机          | 按住的按钮 |
+| Mini/Classic 游戏机          | 按住的按键 |
 | :--------------------------- | :--------: |
 | Sega Genesis/MegaDrive Mini  | `未分配`   |
 | NEOGEO mini                  | `未分配`   |
@@ -116,25 +116,25 @@ GP2040-CE兼容多个系统和输入模式。可以在网页配置器中设置�
 
 ## 快捷键
 
-GP2040设有多个快捷键，无需访问网页配置器即可更改功能。所有快捷键和快捷键绑定可以在网页配置器的[快捷键设置](./web-configurator/menu-pages/01-settings.mdx#hotkey-settings)中更改或分配为不同的按钮组合。
+GP2040设有多个快捷键，无需访问网页配置器即可更改功能。所有快捷键和快捷键绑定可以在网页配置器的 [快捷键设置](./web-configurator/menu-pages/01-settings.mdx#hotkey-settings) 中更改或分配为不同的按键组合。
 
-常用快捷键包括将方向更改为模拟数字DPad、左模拟摇杆、右模拟摇杆或更改[SOCD（同时相反方向）](https://glossary.infil.net/?t=SOCD)清理模式。不同的 SOCD Cleaning 模式将确保控制器在发送输入时遵循特定的方向输入规则。
+常用快捷键包括将方向更改为模拟数字DPad、左模拟摇杆、右模拟摇杆或更改 [SOCD（同时相反方向）](https://glossary.infil.net/?t=SOCD) 覆盖模式。不同的 SOCD 覆盖模式将确保控制器在发送输入时遵循特定的方向输入规则。
 
 许多快捷键默认启用，如果控制器出现意外行为，请确保未意外触发快捷键。
 
 | 默认启用的快捷键                           | 输入                              |
 | :----------------------------------------- | :-------------------------------- |
-| [主页按钮](hotkeys.mdx#home-button)        | <Hotkey buttons={["S1","S2","Up"]}/> |
+| [Home 键](hotkeys.mdx#home-button)        | <Hotkey buttons={["S1","S2","Up"]}/> |
 | [十字键模式](hotkeys.mdx#dpad-digital)      | <Hotkey buttons={["S1","S2","Down"]}/> |
 | [左摇杆模式](hotkeys.mdx#dpad-left-analog) | <Hotkey buttons={["S1","S2","Left"]}/> |
 | [右摇杆模式](hotkeys.mdx#dpad-right-analog) | <Hotkey buttons={["S1","S2","Right"]}/> |
 | [SOCD 上优先](hotkeys.mdx#socd-up-priority) | <Hotkey buttons={["S2","A1","Up"]}/>    |
-| [SOCD 回中模式](hotkeys.mdx#socd-neutral)     | <Hotkey buttons={["S2","A1","Down"]}/>  |
+| [SOCD 回中](hotkeys.mdx#socd-neutral)     | <Hotkey buttons={["S2","A1","Down"]}/>  |
 | [SOCD 后输入优先](hotkeys.mdx#socd-last-win) | <Hotkey buttons={["S2","A1","Left"]}/>  |
 
 :::note
 
-选定的DPad模式和 SOCD Cleaning 模式在重启后会被保留。
+选定的方向模式和 SOCD 覆盖模式在重启后会被保留。
 
 :::
 

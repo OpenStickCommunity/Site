@@ -18,7 +18,7 @@ import InputLabelSelector, {
 <InputLabelSelector />
 <br />
 
-GP2040-CE包含一个内置的基于Web的配置应用程序，您可以通过在将控制器插入PC时按住<Hotkey buttons={["S2"]}/>，或在控制器插入时按住<Hotkey buttons={["S2", "B3", "B4"]}/>五秒钟来启动它。然后，在Web浏览器中访问[http://192.168.7.1](http://192.168.7.1)即可开始配置。
+GP2040-CE 包含一个内置的基于 Web 的配置应用程序，您可以通过在将控制器插入 PC 时按住 <Hotkey buttons={["S2"]}/>，或在控制器插入时按住 <Hotkey buttons={["S2", "B3", "B4"]}/> 五秒钟来启动它。然后，在 Web 浏览器中访问 [http://192.168.7.1](http://192.168.7.1) 即可开始配置。
 
 ### 支持
 
@@ -35,72 +35,72 @@ GP2040-CE包含一个内置的基于Web的配置应用程序，您可以通过�
 
 :::note
 
-并非所有的Android和iOS设备都支持Web配置。在我们的测试中，一些Android设备可以工作，而另一些则不行。大多数基于USB-C的iOS设备都能工作。我们没有记录哪些设备可以或不可以工作。
+并非所有的 Android 和 iOS 设备都支持 Web 配置。在我们的测试中，一些 Android 设备可以工作，而另一些则不行。大多数基于 USB-C 的 iOS 设备都能工作。我们没有记录哪些设备可以或不可以工作。
 
 :::
 
-## 在Windows PC上访问Web配置时遇到问题
+## 在 Windows PC 上访问 Web 配置时遇到问题
 
-如果您的Windows PC无法访问GP2040-CE控制器的内置Web配置，请尝试以下步骤：
+如果您的 Windows PC 无法访问 GP2040-CE 控制器的内置 Web 配置，请尝试以下步骤：
 
-1 - **确保您处于网页配置模式**
+1 - ** 确保您处于网页配置模式 **
 
   - 确保您的控制器处于网页配置模式。
-  - 验证USB线缆连接牢固，并支持数据传输（有些线缆只支持供电）。
+  - 验证 USB 线缆连接牢固，并支持数据传输（有些线缆只支持供电）。
 
-2 - **尝试不同的浏览器**
+2 - ** 尝试不同的浏览器 **
 
-  - 某些浏览器可能会阻止本地设备访问。请尝试Chrome、Firefox或Edge。
+  - 某些浏览器可能会阻止本地设备访问。请尝试 Chrome、Firefox 或 Edge。
   - 暂时禁用浏览器扩展（如广告拦截器）。
 
-3 - **检查URL**
+3 - ** 检查 URL**
 
-  - Web配置的URL是[http://192.168.7.1](http://192.168.7.1)。
+  - Web 配置的 URL 是 [http://192.168.7.1](http://192.168.7.1)。
 
-4 - **暂时禁用防火墙/杀毒软件**
+4 - ** 暂时禁用防火墙 / 杀毒软件 **
 
   - 安全软件可能会阻止通信。请尝试暂时禁用保护。
 
-5 - **尝试另一个USB端口/PC**
+5 - ** 尝试另一个 USB 端口 / PC**
 
   - 在不同的端口或不同的计算机上进行测试。
 
-6 - **尝试重启您的计算机**
+6 - ** 尝试重启您的计算机 **
 
   - 尝试重启您的计算机。
 
 :::warning
 
-除了上述情况，您的PC上安装的驱动程序可能存在问题。由于存在导致系统问题的风险，GP2040-CE团队不会协助解决基于驱动程序的问题，也不会建议安装或卸载驱动程序。
+除了上述情况，您的 PC 上安装的驱动程序可能存在问题。由于存在导致系统问题的风险，GP2040-CE 团队不会协助解决基于驱动程序的问题，也不会建议安装或卸载驱动程序。
 
 :::
 
 :::note
 
-Linux发行版可能需要一些额外的步骤才能访问Web配置器；请参阅[Linux安装](https://www.google.com/search?q=%23linux-setup)。
+Linux 发行版可能需要一些额外的步骤才能访问 Web 配置器；请参阅 [Linux 安装](https://www.google.com/search?q=%23linux-setup)。
 
 :::
 
-## Linux安装
+## Linux 安装
 
-当您在按住<Hotkey buttons={["S2"]}/>的同时插入控制器时，如果您运行`dmesg`，您应该会在内核日志中看到它已连接：
+当您在按住 <Hotkey buttons={["S2"]}/> 的同时插入控制器时，如果您运行 `dmesg`，您应该会在内核日志中看到它已连接：
 
 ```sh
-[   72.291060] usb 1-3: new full-speed USB device number 12 using xhci_hcd
-[   72.450166] usb 1-3: New USB device found, idVendor=cafe, idProduct=4028, bcdDevice= 1.01
-[   72.450172] usb 1-3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
-[   72.450174] usb 1-3: Product: TinyUSB Device
-[   72.450176] usb 1-3: Manufacturer: TinyUSB
-[   72.450177] usb 1-3: SerialNumber: 123456
-[   72.484285] rndis_host 1-3:1.0 usb0: register 'rndis_host' at usb-0000:06:00.1-3, RNDIS device, 02:02:84:6a:96:00
-[   72.498630] rndis_host 1-3:1.0 enp6s0f1u3: renamed from usb0
+[72.291060] usb 1-3: new full-speed USB device number 12 using xhci_hcd
+[72.450166] usb 1-3: New USB device found, idVendor=cafe, idProduct=4028, bcdDevice= 1.01
+[72.450172] usb 1-3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[72.450174] usb 1-3: Product: TinyUSB Device
+[72.450176] usb 1-3: Manufacturer: TinyUSB
+[72.450177] usb 1-3: SerialNumber: 123456
+[72.484285] rndis_host 1-3:1.0 usb0: register 'rndis_host' at usb-0000:06:00.1-3, RNDIS device, 02:02:84:6a:96:00
+[72.498630] rndis_host 1-3:1.0 enp6s0f1u3: renamed from usb0
 ```
 
-在上面的示例中，**enp6s0f1u3**是您控制器的虚拟以太网接口。如果您没有看到第一行`rndis_host`，请确保您的内核中已编译`CONFIG_USB_NET_RNDIS_HOST`或将其作为模块。
+在上面的示例中，**enp6s0f1u3** 是您控制器的虚拟以太网接口。如果您没有看到第一行 `rndis_host`，请确保您的内核中已编译 `CONFIG_USB_NET_RNDIS_HOST` 或将其作为模块。
 
-Web配置器会自动运行，您只需要能够访问它即可。某些配置会自动设置路由，因此现在请在浏览器中尝试[http://192.168.7.1](http://192.168.7.1)。如果无法加载，请尝试通过以下命令手动为接口配置IP：`sudo ifconfig enp6s0f1u3 192.168.7.2`。
+Web 配置器会自动运行，您只需要能够访问它即可。某些配置会自动设置路由，因此现在请在浏览器中尝试 [http://192.168.7.1](http://192.168.7.1)。如果无法加载，请尝试通过以下命令手动为接口配置 IP：`sudo ifconfig enp6s0f1u3 192.168.7.2`。
 
-无论您是否需要手动添加IP，您都应该会得到类似如下的路由：
+无论您是否需要手动添加 IP，您都应该会得到类似如下的路由：
 
 ```sh
 % ip route
