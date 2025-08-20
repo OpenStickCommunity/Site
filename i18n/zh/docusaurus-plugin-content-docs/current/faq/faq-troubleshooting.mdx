@@ -28,7 +28,7 @@ Select the button labels to be displayed in the usage guide:
 
 #### **2. 输入模式不正确**
 
-确认是否使用了正确的输入模式，不同的模式可能会更改输入映射（例如 Switch 模式与 XInput 模式，PS3/PS4 等）。有关更改输入模式的更多信息，请参阅 [GP2040-CE 使用指南](../usage.mdx#input-modes)。
+确认是否使用了正确的输入模式，不同的模式可能会更改输入映射（例如 Switch 模式与 XInput 模式，PS3/PS4 等）。有关更改输入模式的更多信息，请参阅 [GP2040-CE 使用指南](../usage.mdx#输入模式)。
 
 #### **3. 按键接线错误**
 
@@ -36,9 +36,9 @@ Select the button labels to be displayed in the usage guide:
 
 #### **4. 固件不正确**
 
-固件是基于特定 GPIO 引脚配置而构建的，如果固件的预期配置与您的配置不匹配，可能会导致问题。您可以在 [Web 配置器](../web-configurator/menu-pages/02-gpio-pin-mapping.mdx) 中更新 GPIO 引脚映射，或者为您的设备安装正确的固件版本。
+固件是基于特定 GPIO 引脚配置而构建的，如果固件的预期配置与您的配置不匹配，可能会导致问题。您可以在 [网页配置器](../web-configurator/menu-pages/02-gpio-pin-mapping.mdx) 中更新 GPIO 引脚映射，或者为您的设备安装正确的固件版本。
 
-有关如何解决此问题的更多信息，请参阅下文的 [不支持设备的固件版本不正确](#incorrect-firmware-for-a-supported-device)。
+有关如何解决此问题的更多信息，请参阅下文的 [支持设备的固件错误](#1-支持设备的固件错误)。
 
 ### **按下按钮时为什么没有反应？**
 
@@ -52,7 +52,7 @@ Select the button labels to be displayed in the usage guide:
 
 ### **上下或左右方向颠倒了，如何修复此问题？**
 
-可能是您在控制器上启动了 [反转 Y 轴](../hotkeys.mdx#invert-y-axis) 或 [反转 X 轴](../hotkeys.mdx#invert-x-axis) 的快捷键功能。再次激活相应快捷键以关闭该功能。
+可能是您在控制器上启动了 [反转 Y 轴](../hotkeys.mdx#反转-y-轴) 或 [反转 X 轴](../hotkeys.mdx#反转-x-轴) 的快捷键功能。再次激活相应快捷键以关闭该功能。
 
 <HotkeyNote />
 
@@ -60,17 +60,17 @@ Select the button labels to be displayed in the usage guide:
 
 可能是您在控制器上激活了以下 SOCD 覆盖模式快捷键之一，再次激活快捷键可以关闭此功能：
 
-- [SOCD 上优先](../hotkeys.mdx#socd-up-priority)
-- [SOCD 回中](../hotkeys.mdx#socd-neutral)
-- [SOCD 后输入优先](../hotkeys.mdx#socd-last-win)
-- [SOCD 先输入优先](../hotkeys.mdx#socd-first-win)
-- [SOCD 关闭](../hotkeys.mdx#socd-cleaning-off)
+- [SOCD 上优先](../hotkeys.mdx#socd-上优先)
+- [SOCD 回中](../hotkeys.mdx#socd-回中)
+- [SOCD 后输入优先](../hotkeys.mdx#socd-后输入优先)
+- [SOCD 先输入优先](../hotkeys.mdx#socd-先输入优先)
+- [SOCD 关闭](../hotkeys.mdx#socd-关闭)
 
 <HotkeyNote />
 
 ### **为什么方向键会卡在输出方向到左/右摇杆？**
 
-可能是您在控制器上启用了 [方向键左摇杆模式](../hotkeys.mdx#dpad-left-analog) 或 [方向键右摇杆模式](../hotkeys.mdx#dpad-right-analog) 的快捷键功能。再次激活对应快捷键可以关闭功能。
+可能是您在控制器上启用了 [方向键左摇杆模式](../hotkeys.mdx#左摇杆模式) 或 [方向键右摇杆模式](../hotkeys.mdx#右摇杆模式) 的快捷键功能。再次激活对应快捷键可以关闭功能。
 
 <HotkeyNote />
 
@@ -86,9 +86,9 @@ Select the button labels to be displayed in the usage guide:
 
 检查设备的输入模式是否设置为键盘模式。这会导致您的电脑仅识别控制器作为键盘，而不是游戏手柄。
 
-#### **2. Web 配置器**
+#### **2. 网页配置器**
 
-使用 Web 配置器时，控制器会初始化为 RNDIS 设备，PC/主机会无法将其识别为控制器。检查控制器是否已启动到 Web 配置器模式，并确保开机时未触发快捷键 <Hotkey buttons={["S2"]}/>。
+使用 网页配置器时，控制器会初始化为 RNDIS 设备，PC/主机会无法将其识别为控制器。检查控制器是否已启动到 网页配置器模式，并确保开机时未触发快捷键 <Hotkey buttons={["S2"]}/>。
 
 ### **为什么使用 USB Type-C 转 Type-C 无法连接到 PC/主机？**
 
@@ -96,16 +96,16 @@ Select the button labels to be displayed in the usage guide:
 
 ### **为什么我的控制器在 PS4 或 PS5 上无响应？**
 
-- **针对 PS4 的问题**：确认已启用 [PS4 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings) 并上传密钥文件，或通过 USB 主机使用有效的认证设备。
-- **针对 PS5 的问题**：确认已启用 [PS5 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings)，并通过 USB 主机使用有效的认证设备。
+- **针对 PS4 的问题**：确认已启用 [PS4 输入模式](../web-configurator/menu-pages/01-settings.mdx#额外的-ps4-设置) 并上传密钥文件，或通过 USB 主机使用有效的认证设备。
+- **针对 PS5 的问题**：确认已启用 [PS5 输入模式](../web-configurator/menu-pages/01-settings.mdx#额外的-ps5-设置)，并通过 USB 主机使用有效的认证设备。
 
 有关更多信息，请参阅 [PS4/PS5 兼容性常见问题](../faq/faq-console-compatibility.mdx)。
 
-### **为什么我无法访问 Web 配置器？**
+### **为什么我无法访问 网页配置器？**
 
-#### **1. 控制器未启动到 Web 配置器模式**
+#### **1. 控制器未启动到 网页配置器模式**
 
-如果 Web 配置器页面超时，请确认控制器是否已启动到 Web 配置器模式。
+如果 网页配置器页面超时，请确认控制器是否已启动到 网页配置器模式。
 
 :::info 如何进入 Web 配置模式
 
@@ -118,9 +118,9 @@ Select the button labels to be displayed in the usage guide:
 
 #### **2. 网络中其他设备占用了 192.168.7.1 的 IPV4 地址**
 
-如果网络中其他设备（例如路由器、交换机、IoT 设备等）占用了相同的 IP 地址，则会发生 IP 地址冲突，导致无法访问 Web 配置器。
+如果网络中其他设备（例如路由器、交换机、IoT 设备等）占用了相同的 IP 地址，则会发生 IP 地址冲突，导致无法访问 网页配置器。
 
-断开电脑与本地网络的连接（例如拔掉网线），然后重新尝试访问 Web 配置器。
+断开电脑与本地网络的连接（例如拔掉网线），然后重新尝试访问 网页配置器。
 
 --- 
 
@@ -136,11 +136,11 @@ Select the button labels to be displayed in the usage guide:
 
 确保在“设置”部分中已上传 PS4 的密钥文件或选择了 PS4/PS5 的 USB 主机模式。
 
-有关更多信息，请参阅 [PS4 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings) 或 [PS5 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings) 文档。
+有关更多信息，请参阅 [PS4 输入模式](../web-configurator/menu-pages/01-settings.mdx#额外的-ps4-设置) 或 [PS5 输入模式](../web-configurator/menu-pages/01-settings.mdx#额外的-ps5-设置) 文档。
 
 #### **3. USB 主机端口未正确配置**
 
-在 Web 配置器的 [外围设备映射](../web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-host) 中，确认您的 USB 主机端口配置正确。不同设备制造商提供的 Data+ 和 Data- 的特定引脚可能会有所不同，请参考供应商的文档。
+在 网页配置器的 [外围设备映射](../web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-主机) 中，确认您的 USB 主机端口配置正确。不同设备制造商提供的 Data+ 和 Data- 的特定引脚可能会有所不同，请参考供应商的文档。
 
 #### **4. 使用的控制器或适配器不兼容**
 
@@ -148,24 +148,24 @@ Select the button labels to be displayed in the usage guide:
 
 有关更多信息，请参阅 [PS4/PS5 兼容性常见问题](../faq/faq-console-compatibility.mdx)。
 
-### **我无法通过快捷方式进入 Web 配置器。如何手动进入 Web 配置器？**
+### **我无法通过快捷方式进入 网页配置器。如何手动进入 网页配置器？**
 
 如果 **不擦除您的设备固件**，请按以下步骤操作：
 
 1. 使用本 [强制 WebConfig 固件文件](/assets/force_webconfig.uf2) 并按照 [固件安装说明](../installation.mdx) 运行。  
-2. 这会强制您的设备以 Web 配置器模式进行启动。
+2. 这会强制您的设备以 网页配置器模式进行启动。
 
 ### **为什么我的 RGB LED 显示的颜色不对？**
 
 确认 `LED 格式` 设置正确，不同的 LED 类型使用的 RGB 数据顺序可能不同。
 
-有关更多信息，请参阅 Web 配置器菜单中的 [RGB LED 按钮顺序](../web-configurator/menu-pages/05-led-configuration.mdx#rgb-led-button-order) 部分。
+有关更多信息，请参阅 网页配置器菜单中的 [RGB LED 按键顺序](../web-configurator/menu-pages/05-led-configuration.mdx#rgb-led-按键顺序) 部分。
 
 ### **为什么我的 RGB LED 顺序不对？**
 
-RGB LED 的顺序可以在 Web 配置器中设置，正确的配置取决于硬件和用户如何布线 LED 链，或设备设计师如何在电路板上设置 LED 链。
+RGB LED 的顺序可以在 网页配置器中设置，正确的配置取决于硬件和用户如何布线 LED 链，或设备设计师如何在电路板上设置 LED 链。
 
-有关更多信息，请参阅 Web 配置器菜单中的 [RGB LED 按钮顺序](../web-configurator/menu-pages/05-led-configuration.mdx#rgb-led-button-order) 部分。
+有关更多信息，请参阅 网页配置器菜单中的 [RGB LED 按键顺序](../web-configurator/menu-pages/05-led-configuration.mdx#rgb-led-按键顺序) 部分。
 
 ### **更新设备后，为什么我的控制器停止工作了？**
 
@@ -182,9 +182,9 @@ RGB LED 的顺序可以在 Web 配置器中设置，正确的配置取决于硬�
 如果供应商无法为设备提供支持，您需要自行研究并正确设置您的设备：
 
 1. 从下载页面获取 **Pico GP2040 固件** 并按照 [固件安装说明](../installation.mdx) 操作刷入设备。
-2. 不擦除设备固件，刷入 [强制 WebConfig 固件文件](/assets/force_webconfig.uf2)，强制设备以 Web 配置器模式启动。
-3. 进入 Web 配置器，转到“配置 > GPIO 引脚映射”。
+2. 不擦除设备固件，刷入 [强制 WebConfig 固件文件](/assets/force_webconfig.uf2)，强制设备以 网页配置器模式启动。
+3. 进入 网页配置器，转到“配置 > GPIO 引脚映射”。
 4. 对于每个游戏手柄输入，使用“按键映射功能”将输入映射到连接按钮的 GPIO 引脚，重复进行所有输入的映射操作。
-5. 对于任何附加功能（如 RGB LED、OLED 显示屏、USB 主机端口等），需要确定其关联的 GPIO 引脚。这可以通过追踪 PCB 上的物理铜箔路径找到。
+5. 对于任何插件（如 RGB LED、OLED 显示屏、USB 主机端口等），需要确定其关联的 GPIO 引脚。这可以通过追踪 PCB 上的物理铜箔路径找到。
 
 由于上述步骤完全取决于 PCB 制造商的设计，无法提供进一步的支持。

@@ -11,15 +11,15 @@ import I2CTable from "../snippets/_i2c-block-table.mdx";
 
 # I2C 模拟 ADS1219
 
-用途：此附加功能旨在使用 ADS1219 24 位模拟-数字转换器（ADC）添加左右模拟摇杆功能。
+用途：此插件旨在使用 ADS1219 24 位模拟-数字转换器（ADC）添加左右模拟摇杆功能。
 
-![GP2040-CE 配置器 - 附加功能 ADS1219](../assets/images/gpc-add-ons-ads1219.png)
+![GP2040-CE 配置器 - 插件 ADS1219](../assets/images/gpc-add-ons-ads1219.png)
 
-## Web 配置器选项
+## 网页配置器选项
 
 :::info GPIO 引脚分配
 
-I2C 的 SDA 和 SCL 引脚以及速度现在可以在 [`配置 > 外设映射 - I2C`](../web-configurator/menu-pages/03-peripheral-mapping.mdx#i2c) 中进行配置。
+I2C 的 SDA 和 SCL 引脚以及速度现在可以在 [`配置 > 外围设备映射 - I2C`](../web-configurator/menu-pages/03-peripheral-mapping.mdx#i2c) 中进行配置。
 
 :::
 
@@ -35,7 +35,7 @@ I2C 的 SDA 和 SCL 引脚以及速度现在可以在 [`配置 > 外设映射 - 
 
 ### 要求
 
-此附加功能需要 ADS1219 模拟-数字转换器（ADC）才能正常工作。
+此插件需要 ADS1219 模拟-数字转换器（ADC）才能正常工作。
 
 ### 安装
 
@@ -54,9 +54,9 @@ I2C 的 SDA 和 SCL 引脚以及速度现在可以在 [`配置 > 外设映射 - 
 
 :::info A0/A1 GPIO 分配
 
-这些引脚需要连接到 RP2040 上的适当 SDA/SCL 引脚，并在 Web 配置器中设置正确的 I2C 块。
+这些引脚需要连接到 RP2040 上的适当 SDA/SCL 引脚，并在 网页配置器中设置正确的 I2C 块。
 
-有关设置 I2C 的更多信息，请参阅 [外设映射](../web-configurator/menu-pages/03-peripheral-mapping.mdx#i2c)。
+有关设置 I2C 的更多信息，请参阅 [外围设备映射](../web-configurator/menu-pages/03-peripheral-mapping.mdx#i2c)。
 
 :::
 

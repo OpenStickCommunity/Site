@@ -69,13 +69,13 @@ PS4 和 PS5 使用认证机制确保仅限授权控制器在主机上使用。�
 
 GP2040-CE 提供多种方法避免 8 分钟超时。建议根据是否在 PS4 或 PS5 上使用控制器选择对应的方法。
 
-- 对于 PS4，可使用 [PS4 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings) 或 [PS5 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings)。
-- 对于 PS5，只能使用 [PS5 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings)。
+- 对于 PS4，可使用 [PS4 输入模式](../web-configurator/menu-pages/01-settings.mdx#额外的-ps4-设置) 或 [PS5 输入模式](../web-configurator/menu-pages/01-settings.mdx#额外的-ps5-设置)。
+- 对于 PS5，只能使用 [PS5 输入模式](../web-configurator/menu-pages/01-settings.mdx#额外的-ps5-设置)。
 
 ### 如何让我的 GP2040-CE 设备在 PS4 或 PS5 上工作？
 
-- **PS4**：需要使用 [PS4 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings) 或 [PS5 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings)。
-- **PS5**：不能使用 [PS4 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings)，必须使用 [PS5 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings)。
+- **PS4**：需要使用 [PS4 输入模式](../web-configurator/menu-pages/01-settings.mdx#额外的-ps4-设置) 或 [PS5 输入模式](../web-configurator/menu-pages/01-settings.mdx#额外的-ps5-设置)。
+- **PS5**：不能使用 [PS4 输入模式](../web-configurator/menu-pages/01-settings.mdx#额外的-ps4-设置)，必须使用 [PS5 输入模式](../web-configurator/menu-pages/01-settings.mdx#额外的-ps5-设置)。
 
 ### 什么是 PS4 输入模式？
 
@@ -91,7 +91,7 @@ PS4 输入模式是一种允许 GP2040-CE 与 PS4 主机兼容的输入模式。
 
 此功能基于另一开源固件项目 [Passing Link](https://github.com/passinglink/passinglink) 的努力构建。Passing Link 项目团队与 GP2040-CE 无关联，但感谢他们的工作和共享的信息，使我们得以为用户提供这一高需求功能。
 
-更多信息请参阅文档中 `Web Configurator > Settings` 部分的 [PS4 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings)。
+更多信息请参阅文档中 `Web Configurator > Settings` 部分的 [PS4 输入模式](../web-configurator/menu-pages/01-settings.mdx#额外的-ps4-设置)。
 
 </TabItem>
 
@@ -104,7 +104,7 @@ PS4 输入模式是一种允许 GP2040-CE 与 PS4 主机兼容的输入模式。
 
 :::
 
-为使用此设置，需要在 [Web Configurator > Peripheral Mapping > USB Host](../web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-host) 中配置 USB 外围设备。
+为使用此设置，需要在 [网页配置器 > 外围设备映射 > USB 主机](../web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-主机) 中配置 USB 外围设备。
 
 配置完成后，将加密狗、转换器，或已认证的 PS4 控制器插入 GP2040-CE 设备上的 USB A 端口。
 
@@ -136,14 +136,14 @@ PS5 输入模式是一种通过另一控制器或加密狗进行认证，从而�
 
 :::
 
-为使用此设置，需要在 [Web Configurator > Peripheral Mapping > USB Host](../web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-host) 中配置 USB 外围设备。
+为使用此设置，需要在 [网页配置器 > 外围设备映射 > USB 主机](../web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-主机) 中配置 USB 外围设备。
 
 配置完成后，将加密狗、转换器，或已认证的 PS4 控制器插入 GP2040-CE 设备上的 USB A 端口。
 
 </TabItem>
 </Tabs>
 
-更多信息，请参考文档中 `Web Configurator - Settings` 部分的 [PS5 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings)。
+更多信息，请参考文档中 `Web Configurator - Settings` 部分的 [PS5 输入模式](../web-configurator/menu-pages/01-settings.mdx#额外的-ps5-设置)。
 
 #### 在 PS5 和 PS4 输入模式下，我应使用什么认证设备？
 
@@ -219,11 +219,11 @@ PlayStation 主机每 30 秒左右重复发送认证请求。如果请求失败�
 
 :::caution Xbox 360 控制器  
 
-Xbox 360 无线控制器、Xbox 360 有线控制器和其他授权的 Xbox 360 控制器无法与此附加功能兼容。  
+Xbox 360 无线控制器、Xbox 360 有线控制器和其他授权的 Xbox 360 控制器无法与此插件兼容。  
 
 :::
 
-### 如何判断 Xbox 360 输入模式附加功能是否正常工作？
+### 如何判断 Xbox 360 输入模式插件是否正常工作？
 
 由于需要使用多种设备进行传递认证，因此无法在不将控制器连接到主机并尝试使用之前，确认输入模式是否正常工作。
 
@@ -239,7 +239,7 @@ Xbox 360 主机在控制器插入主机时，仅会进行一次认证。一旦�
 
 ### 如何让我的 GP2040-CE 设备在 Xbox One、Xbox Series S 或 Xbox Series X 上工作？
 
-为了实现 Xbox One、Xbox Series S 或 Xbox Series X 的兼容性，您需要使用 [Xbox One 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-xbox-one-settings)。
+为了实现 Xbox One、Xbox Series S 或 Xbox Series X 的兼容性，您需要使用 [Xbox One 输入模式](../web-configurator/menu-pages/01-settings.mdx#额外的-xbox-one-设置)。
 
 ### 什么是 Xbox One 输入模式？
 
@@ -252,7 +252,7 @@ Xbox 360 主机在控制器插入主机时，仅会进行一次认证。一旦�
 
 Xbox One 输入模式允许 GP2040-CE 通过另一款控制器或加密狗完成认证，从而实现对 Xbox One、Xbox Series S 和 Xbox Series X 的兼容性。
 
-欲了解更多信息，请参阅文档中 “Web Configurator - Add-ons” 部分的 [Xbox One 输入模式](../web-configurator/menu-pages/01-settings.mdx#additional-xbox-one-settings)。
+欲了解更多信息，请参阅文档中 “Web Configurator - Add-ons” 部分的 [Xbox One 输入模式](../web-configurator/menu-pages/01-settings.mdx#额外的-xbox-one-设置)。
 
 ### 哪种控制器或加密狗可用于 Xbox One 输入模式？
 
@@ -265,11 +265,11 @@ Xbox One 输入模式允许 GP2040-CE 通过另一款控制器或加密狗完成
 
 :::caution Xbox One 控制器
 
-Xbox 无线控制器、Xbox One 精英控制器和其他授权的 Xbox One 控制器无法与此附加功能兼容。
+Xbox 无线控制器、Xbox One 精英控制器和其他授权的 Xbox One 控制器无法与此插件兼容。
 
 :::
 
-### 如何判断 Xbox One 输入模式附加功能是否正常工作？
+### 如何判断 Xbox One 输入模式插件是否正常工作？
 
 由于需要使用多种设备进行传递认证，因此无法在不将控制器连接到主机并尝试使用之前，确认输入模式是否正常工作。
 

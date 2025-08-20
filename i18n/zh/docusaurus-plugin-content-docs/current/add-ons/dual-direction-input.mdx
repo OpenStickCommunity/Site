@@ -9,11 +9,11 @@ description: "Add-on to add more digital DPad, left analog stick, and right anal
 
 # 双向输入
 
-用途：此附加功能旨在允许使用额外的数字按钮作为方向输入，支持 D-Pad 或左、右模拟摇杆的最大幅度的基本方向输入。
+用途：此插件旨在允许使用额外的数字按钮作为方向输入，支持 D-Pad 或左、右模拟摇杆的最大幅度的基本方向输入。
 
-![GP2040-CE 配置器 - 附加功能 双向输入](../assets/images/gpc-add-ons-dual-directional.png)
+![GP2040-CE 配置器 - 插件 双向输入](../assets/images/gpc-add-ons-dual-directional.png)
 
-## Web 配置器选项
+## 网页配置器选项
 
 :::info GPIO 引脚映射已迁移
 
@@ -28,7 +28,7 @@ description: "Add-on to add more digital DPad, left analog stick, and right anal
 
 - `Dual D-Pad Mode` - 选择此功能是否作为 D-Pad、左模拟摇杆或右模拟摇杆的附加实例。
 - `Combination Mode` - 选择这些方向输入与游戏手柄方向的组合方式。
-- `Dual Directional 4-Way Joystick Mode` - 在 DDI 摇杆上启用 4 向摇杆模式，此模式将阻止非基本方向的输入。当接收到第二个基本方向的输入时，游戏手柄方向将切换到最新的基本方向，类似于 [SOCD Last Win](../hotkeys.mdx#socd-last-win)。
+- `Dual Directional 4-Way Joystick Mode` - 在 DDI 摇杆上启用 4 向摇杆模式，此模式将阻止非基本方向的输入。当接收到第二个基本方向的输入时，游戏手柄方向将切换到最新的基本方向，类似于 [SOCD Last Win](../hotkeys.mdx#socd-后输入优先)。
 
 ### 双 D-Pad 模式值
 
@@ -51,8 +51,8 @@ description: "Add-on to add more digital DPad, left analog stick, and right anal
 
 ### 安装
 
-对于每个按钮，将按钮的一侧连接到其在 Web 配置器中分配的对应 GPIO 引脚。将按钮的另一侧连接到 GND。
+对于每个按钮，将按钮的一侧连接到其在 网页配置器中分配的对应 GPIO 引脚。将按钮的另一侧连接到 GND。
 
 ## 其他注意事项
 
-“游戏手柄方向”指核心方向（如“Up”），而“双向输入方向”指此附加功能使用的方向（如“DDI Up”）。
+“游戏手柄方向”指核心方向（如“Up”），而“双向输入方向”指此插件使用的方向（如“DDI Up”）。

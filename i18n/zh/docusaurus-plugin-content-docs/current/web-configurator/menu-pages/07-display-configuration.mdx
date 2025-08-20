@@ -1,5 +1,5 @@
 ---
-title: 显示配置
+title: 显示屏配置
 # tags:
 # -
 # pagination_next: null
@@ -7,39 +7,39 @@ title: 显示配置
 description: "Configure settings for an optional OLED display on your controller"
 ---
 
-# 显示配置
+# 显示屏配置
 
 GP2040-CE 支持使用显示模块，例如带有 SSD1306、SH1106 或 SH1107 显示 IC 的 OLED。
 
-![GP2040-CE Configurator - 显示配置](../../assets/images/gpc-display-config.png)
+![GP2040-CE Configurator - 显示屏配置](../../assets/images/gpc-display-config.png)
 
 ## 硬件选项
 
 - `启用` - 打开/关闭显示模块。
 
-![GP2040-CE Configurator - 显示配置 - 屏幕选项](../../assets/images/gpc-display-config-screen-options.png)
+![GP2040-CE Configurator - 显示屏配置 - 屏幕选项](../../assets/images/gpc-display-config-screen-options.png)
 
 ## 屏幕选项
 
 - `翻转显示` - 允许以多种方式翻转或镜像显示屏。
-- `反转显示` - 反转像素颜色，启用后会呈现出负片效果。
+- `反向显示` - 反转像素颜色，启用后会呈现出负片效果。
 - `电源管理` - 允许在挂起时关闭显示屏。
 
-![GP2040-CE Configurator - 显示配置 - 布局选项](../../assets/images/gpc-display-config-layout-options.png)
+![GP2040-CE Configurator - 显示屏配置 - 布局选项](../../assets/images/gpc-display-config-layout-options.png)
 
 ## 布局选项
 
-:::note 按钮布局组合
+:::note 按键布局组合
 
-请确保选择匹配的左右布局。有些布局组合可能会导致屏幕上的按钮重叠。
+请确保选择匹配的左右布局。有些布局组合可能会导致屏幕上的按键重叠。
 
 :::
 
-## 按钮布局
+## 按键布局
 
-- `按钮布局（左侧）` - 更改显示屏左侧按钮和摇杆的布局。
-- `按钮布局（右侧）` - 更改显示屏右侧按钮和摇杆的布局。
-- `按钮布局方向` - 允许翻转或切换整体布局。
+- `按键布局（左侧）` - 更改显示屏左侧按键和摇杆的布局。
+- `按键布局（右侧）` - 更改显示屏右侧按键和摇杆的布局。
+- `按键布局方向` - 允许翻转或切换整体布局。
 
 ## 状态栏布局
 
@@ -67,7 +67,7 @@ GP2040-CE 支持使用显示模块，例如带有 SSD1306、SH1106 或 SH1107 �
 
 ## 模式选项
 
-![GP2040-CE Configurator - 显示配置 - 模式选项](../../assets/images/gpc-display-config-mode-options.png)
+![GP2040-CE Configurator - 显示屏配置 - 模式选项](../../assets/images/gpc-display-config-mode-options.png)
 
 - `启动画面模式` - 启用或禁用开机时显示的启动画面。
 - `启动画面持续时间` - 设置启动画面在开机时显示的时长。
@@ -94,20 +94,20 @@ GP2040-CE 支持使用显示模块，例如带有 SSD1306、SH1106 或 SH1107 �
 
 此部分包含显示元素的说明，并提供了一个示例，展示其在设备上的显示方式。
 
-### 顶部行
+### 顶部
 
 从左到右，显示元素包括：
 
-- [输入模式](../../usage.mdx#input-modes) - 显示当前的输入模式：
+- [输入模式](../../usage.mdx#输入模式) - 显示当前的输入模式：
   - `XINPUT` - XInput
   - `SWITCH` - 任天堂 Switch
   - `DINPUT` - PS3/DirectInput
   - `HID-KB` - 键盘
   - `PS4` - 控制器模式设置为 `Controller`，认证成功后显示为 `PS4:AS`
-  - `PS4:AS` - [PS4 输入模式](../../web-configurator/menu-pages/01-settings.mdx#additional-ps4-settings) 插件认证成功
+  - `PS4:AS` - [PS4 输入模式](../../web-configurator/menu-pages/01-settings.mdx#额外的-ps4-设置) 插件认证成功
   - `PS5` - 控制器模式设置为 `Arcade Stick`，认证成功后显示为 `PS5:AS`
-  - `PS5:AS` - [PS5 输入模式](../../web-configurator/menu-pages/01-settings.mdx#additional-ps5-settings) 插件认证成功
-  - `XBONE` - 兼容 [Xbox One 输入模式](./01-settings.mdx#additional-xbox-one-settings)
+  - `PS5:AS` - [PS5 输入模式](../../web-configurator/menu-pages/01-settings.mdx#额外的-ps5-设置) 插件认证成功
+  - `XBONE` - 兼容 [Xbox One 输入模式](./01-settings.mdx#额外的-xbox-one-设置)
   - `OGXBOX` - 原版 Xbox
   - `GEN/MD` - 世嘉 Genesis/MegaDrive Mini
   - `NGMINI` - NEOGEO Mini
@@ -117,22 +117,22 @@ GP2040-CE 支持使用显示模块，例如带有 SSD1306、SH1106 或 SH1107 �
   - `PSC` - PlayStation Classic
 - [Turbo](../../add-ons/turbo.mdx) - 当启用 Turbo 时显示 `T##`，其中 ## 为每秒按下的次数。
 - 方向模式 - 显示当前的方向模式：
-  - `D` - [十字键模式](../../hotkeys.mdx#dpad-digital)
-  - `L` - [左摇杆模式](../../hotkeys.mdx#dpad-left-analog)
-  - `R` - [右摇杆模式](../../hotkeys.mdx#dpad-right-analog)
+  - `D` - [十字键模式](../../hotkeys.mdx#十字键模式)
+  - `L` - [左摇杆模式](../../hotkeys.mdx#左摇杆模式)
+  - `R` - [右摇杆模式](../../hotkeys.mdx#右摇杆模式)
 - SOCD 覆盖模式 - 显示当前的 SOCD 覆盖模式：
-  - `SOCD-U` - [SOCD 上优先](../../hotkeys.mdx#socd-up-priority)
-  - `SOCD-N` - [SOCD 回中](../../hotkeys.mdx#socd-neutral)
-  - `SOCD-L` - [SOCD 后输入优先](../../hotkeys.mdx#socd-last-win)
-  - `SOCD-F` - [SOCD 先输入优先](../../hotkeys.mdx#socd-first-wins)
-  - `SOCD-X` - [SOCD Cleaning 关闭](../../hotkeys.mdx#socd-cleaning-off)
+  - `SOCD-U` - [SOCD 上优先](../../hotkeys.mdx#socd-上优先)
+  - `SOCD-N` - [SOCD 回中](../../hotkeys.mdx#socd-回中)
+  - `SOCD-L` - [SOCD 后输入优先](../../hotkeys.mdx#socd-后输入优先)
+  - `SOCD-F` - [SOCD 先输入优先](../../hotkeys.mdx#socd-先输入优先)
+  - `SOCD-X` - [SOCD 关闭](../../hotkeys.mdx#socd-关闭)
 - [宏](./09-macros.mdx) - 如果启用宏，`M` 会显示，无法禁用。
 
-### 中间部分
+### 中间
 
-此部分的显示取决于左侧和右侧 [按钮布局](#布局选项) 的具体配置。
+此部分的显示取决于左侧和右侧 [按键布局](#布局选项) 的具体配置。
 
-- Turbo 环 - 当在单个按钮上启用 Turbo 模式时，该按钮将显示一个较小的内环作为指示器。禁用时，该按钮将消失。
+- Turbo 环 - 当在单个按键上启用 Turbo 模式时，该按键将显示一个较小的内环作为指示器。禁用时，该按键将消失。
 
 ![GP2040-CE Configurator - 显示示例 - 启用 Turbo](../../assets/images/gpc-display-example-turbo.png)
 

@@ -52,7 +52,7 @@ GP2040-CE 使用通用按键标记来表示游戏手柄状态，然后在发送�
 
 :::note
 
-与其他控制器不同，键盘的方向按键对应不同的键。您可以在[网页配置模式 > 配置 > 键盘映射](./web-configurator/menu-pages/01-settings.mdx#keyboard-mapping)中更改键盘模式的键映射。
+与其他控制器不同，键盘的方向按键对应不同的键。您可以在[网页配置模式 > 配置 > 键盘映射](./web-configurator/menu-pages/01-settings.mdx#键盘映射)中更改键盘模式的键映射。
 
 :::
 
@@ -67,7 +67,7 @@ GP2040-CE 使用通用按键标记来表示游戏手柄状态，然后在发送�
 
 Bootsel 模式是板进入可刷入固件的状态。每当进行更新或排查问题时，您都需要使用此模式。
 
-您可以通过以下方式进入 BOOTSEL 模式：在插入控制器时按住 <Hotkey buttons={["S1", "S2", "Up"]}/> 按键，通过进入 Web 配置器并在 BOOTSEL 模式下重启，或在控制器插入状态下按住 <Hotkey buttons={["S1", "B3", "B4"]}/> 五秒钟。激活后，除了刷入新固件或拔掉设备，没有其他方法可以离开 BOOTSEL 模式。
+您可以通过以下方式进入 BOOTSEL 模式：在插入控制器时按住 <Hotkey buttons={["S1", "S2", "Up"]}/> 按键，通过进入 网页配置器并在 BOOTSEL 模式下重启，或在控制器插入状态下按住 <Hotkey buttons={["S1", "B3", "B4"]}/> 五秒钟。激活后，除了刷入新固件或拔掉设备，没有其他方法可以离开 BOOTSEL 模式。
 
 通常，板上会有一个 BOOTSEL 按钮。这个按钮往往是 PCB 上露出的按钮，或者在控制器内部，需要针状物按压或拆卸控制器才能按到。
 
@@ -85,7 +85,7 @@ Bootsel 模式是板进入可刷入固件的状态。每当进行更新或排查
 
 ## 输入模式
 
-GP2040-CE兼容多个系统和输入模式。可以在网页配置器中设置按住八个按键时分配的特定输入模式，配置路径为 [设置](./web-configurator/menu-pages/01-settings.mdx#boot-input-modes)。
+GP2040-CE兼容多个系统和输入模式。可以在网页配置器中设置按住八个按键时分配的特定输入模式，配置路径为 [设置](./web-configurator/menu-pages/01-settings.mdx#输入模式引导)。
 
 不过，预编译固件中有默认输入模式。要更改输入模式，**在插入控制器时按住以下按键之一：**
 
@@ -116,7 +116,7 @@ GP2040-CE兼容多个系统和输入模式。可以在网页配置器中设置�
 
 ## 快捷键
 
-GP2040设有多个快捷键，无需访问网页配置器即可更改功能。所有快捷键和快捷键绑定可以在网页配置器的 [快捷键设置](./web-configurator/menu-pages/01-settings.mdx#hotkey-settings) 中更改或分配为不同的按键组合。
+GP2040设有多个快捷键，无需访问网页配置器即可更改功能。所有快捷键和快捷键绑定可以在网页配置器的 [快捷键设置](./web-configurator/menu-pages/01-settings.mdx#快捷键设置) 中更改或分配为不同的按键组合。
 
 常用快捷键包括将方向更改为模拟数字DPad、左模拟摇杆、右模拟摇杆或更改 [SOCD（同时相反方向）](https://glossary.infil.net/?t=SOCD) 覆盖模式。不同的 SOCD 覆盖模式将确保控制器在发送输入时遵循特定的方向输入规则。
 
@@ -124,13 +124,13 @@ GP2040设有多个快捷键，无需访问网页配置器即可更改功能。�
 
 | 默认启用的快捷键                           | 输入                              |
 | :----------------------------------------- | :-------------------------------- |
-| [Home 键](hotkeys.mdx#home-button)        | <Hotkey buttons={["S1","S2","Up"]}/> |
-| [十字键模式](hotkeys.mdx#dpad-digital)      | <Hotkey buttons={["S1","S2","Down"]}/> |
-| [左摇杆模式](hotkeys.mdx#dpad-left-analog) | <Hotkey buttons={["S1","S2","Left"]}/> |
-| [右摇杆模式](hotkeys.mdx#dpad-right-analog) | <Hotkey buttons={["S1","S2","Right"]}/> |
-| [SOCD 上优先](hotkeys.mdx#socd-up-priority) | <Hotkey buttons={["S2","A1","Up"]}/>    |
-| [SOCD 回中](hotkeys.mdx#socd-neutral)     | <Hotkey buttons={["S2","A1","Down"]}/>  |
-| [SOCD 后输入优先](hotkeys.mdx#socd-last-win) | <Hotkey buttons={["S2","A1","Left"]}/>  |
+| [Home 键](hotkeys.mdx#home-键)        | <Hotkey buttons={["S1","S2","Up"]}/> |
+| [十字键模式](hotkeys.mdx#十字键模式)      | <Hotkey buttons={["S1","S2","Down"]}/> |
+| [左摇杆模式](hotkeys.mdx#左摇杆模式) | <Hotkey buttons={["S1","S2","Left"]}/> |
+| [右摇杆模式](hotkeys.mdx#右摇杆模式) | <Hotkey buttons={["S1","S2","Right"]}/> |
+| [SOCD 上优先](hotkeys.mdx#socd-上优先) | <Hotkey buttons={["S2","A1","Up"]}/>    |
+| [SOCD 回中](hotkeys.mdx#socd-回中)     | <Hotkey buttons={["S2","A1","Down"]}/>  |
+| [SOCD 后输入优先](hotkeys.mdx#socd-后输入优先) | <Hotkey buttons={["S2","A1","Left"]}/>  |
 
 :::note
 
@@ -138,6 +138,6 @@ GP2040设有多个快捷键，无需访问网页配置器即可更改功能。�
 
 :::
 
-## 附加功能和额外功能
+## 插件和额外功能
 
-GP2040-CE有许多扩展功能的附加组件，例如[模拟摇杆模拟](./add-ons/analog.mdx)和 [Turbo 功能](./add-ons/turbo.mdx)。由于社区创建了大量附加组件，它们位于单独的文档页面。请导航到附加组件页面以获取更多信息。
+GP2040-CE有许多扩展功能的插件，例如[模拟摇杆模拟](./add-ons/analog.mdx)和 [Turbo 功能](./add-ons/turbo.mdx)。由于社区创建了大量插件，它们位于单独的文档页面。请导航到插件页面以获取更多信息。

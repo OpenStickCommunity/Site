@@ -14,7 +14,7 @@ import { ColorBlock } from "@site/src/components/LEDColors";
 
 # LED 配置
 
-如果您使用了每个按钮的 RGB LED 设置，可以在此处进行配置。
+如果您使用了每个按键的 RGB LED 设置，可以在此处进行配置。
 
 ## RGB LED 配置
 
@@ -22,24 +22,24 @@ import { ColorBlock } from "@site/src/components/LEDColors";
 
 - `数据引脚` - 驱动 RGB LED 数据线的 GPIO 引脚。设置为 `-1` 可禁用 RGB LED。
 - `LED 格式` - 与 RGB LED 通信使用的数据格式。如果不确定，默认的 `GRB` 通常是安全的选择。
-- `LED 布局` - 选择控制器/按钮的布局。这用于静态主题和某些每按钮动画。
-- `每按钮 LED 数量` - 设置链中每个按钮的 LED 数量。
+- `LED 布局` - 选择控制器/按键的布局。这用于静态主题和某些每按键动画。
+- `每按键 LED 数量` - 设置链中每个按键的 LED 数量。
 - `最大亮度` - 设置 LED 的最大亮度，范围为 0-255。
 - `亮度级别` - 调整亮度时的循环级别数量。
 
-## RGB LED 按钮顺序
+## RGB LED 按键顺序
 
 :::note
 
-请注意，RGB 按钮 LED 必须是链中配置的第一个 LED。它们将在 RGB LED 灯条的索引 0 开始。
+请注意，RGB 按键 LED 必须是链中配置的第一个 LED。它们将在 RGB LED 灯条的索引 0 开始。
 
-此外，目前每个按钮在 LED 链中只能有一个实例。即使为每个按钮分配了多个 LED，并且多个按钮分配到不同的 GPIO 引脚，这种限制仍然适用。
+此外，目前每个按键在 LED 链中只能有一个实例。即使为每个按键分配了多个 LED，并且多个按键分配到不同的 GPIO 引脚，这种限制仍然适用。
 
 :::
 
-![GP2040-CE Configurator - RGB LED 按钮顺序](../../assets/images/gpc-rgb-led-button-order.png)
+![GP2040-CE Configurator - RGB LED 按键顺序](../../assets/images/gpc-rgb-led-button-order.png)
 
-根据 LED 链的顺序重新排列按钮。这因设备不同而异，由板和 LED 的制造商决定。
+根据 LED 链的顺序重新排列按键。这因设备不同而异，由板和 LED 的制造商决定。
 
 ## 玩家 LED (XInput)
 
@@ -55,7 +55,7 @@ import { ColorBlock } from "@site/src/components/LEDColors";
 
 :::note
 
-请注意，RGB 玩家 LED 必须位于 LED 灯条上 RGB LED 按钮之后的索引位置！Web 配置界面会根据 [RGB LED 按钮顺序](#rgb-led-button-order) 中映射的按钮数量和选择的 `每按钮 LED 数量` 值建议起始索引。我们希望未来能移除此限制。
+请注意，RGB 玩家 LED 必须位于 LED 灯条上 RGB LED 按键之后的索引位置！Web 配置界面会根据 [RGB LED 按键顺序](#rgb-led-按键顺序) 中映射的按键数量和选择的 `每按键 LED 数量` 值建议起始索引。我们希望未来能移除此限制。
 
 :::
 
@@ -72,8 +72,8 @@ import { ColorBlock } from "@site/src/components/LEDColors";
 
 `颜色类型` 有以下选项：
 - `关闭` - 无机壳 RGB LED。
-- `环境` - 机壳 RGB LED 将独立于按钮 LED 设置运行。
-- `关联` - 机壳 RGB LED 将匹配按钮 LED 设置。
+- `环境` - 机壳 RGB LED 将独立于按键 LED 设置运行。
+- `关联` - 机壳 RGB LED 将匹配按键 LED 设置。
 
 :::note
 
@@ -99,6 +99,6 @@ import { ColorBlock } from "@site/src/components/LEDColors";
 
 :::note
 
-索引必须位于定义的最后一个按钮 LED 之后，但可以在玩家 LED 和涡轮 LED 的前后。
+索引必须位于定义的最后一个按键 LED 之后，但可以在玩家 LED 和涡轮 LED 的前后。
 
 ::: 

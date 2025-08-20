@@ -24,7 +24,7 @@
     "description": "The label for category Web Configurator Menu in sidebar webConfigSidebar"
   },
   "sidebar.webConfigSidebar.category.Add-Ons": {
-    "message": "附加组件",
+    "message": "插件",
     "description": "The label for category Add-Ons in sidebar webConfigSidebar"
   }
 }

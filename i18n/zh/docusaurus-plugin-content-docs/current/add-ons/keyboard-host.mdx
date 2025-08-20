@@ -17,15 +17,15 @@ import InstallUSBHostPort from "../snippets/_add-usb-host-port.mdx";
 <InputLabelSelector />
 <br />
 
-用途：此附加功能旨在允许用户将键盘与 GP2040-CE 配合使用，并与 GP2040-CE 支持的系统兼容。
+用途：此插件旨在允许用户将键盘与 GP2040-CE 配合使用，并与 GP2040-CE 支持的系统兼容。
 
 ![GP2040-CE 配置器 - 键盘主机配置](../assets/images/gpc-add-ons-keyboard-host-configuration.png)
 
-## Web 配置器选项
+## 网页配置器选项
 
 :::info GPIO 引脚分配
 
-USB 主机端口的 Data、5V Enable 和 Pin Orientation 选项现在在 [`Configuration > Peripheral Mapping - USB Host`](../web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-host) 中配置。
+USB 主机端口的 Data、5V Enable 和 Pin Orientation 选项现在在 [`Configuration > 外围设备映射 - USB 主机`](../web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-主机) 中配置。
 
 :::
 
@@ -57,7 +57,7 @@ USB 主机端口的 Data、5V Enable 和 Pin Orientation 选项现在在 [`Confi
 
 ### 要求
 
-此附加功能需要设备上有一个 USB 主机端口，并且该端口连接到 RP2040 板上的 GPIO 引脚。实现此功能有多种方法。
+此插件需要设备上有一个 USB 主机端口，并且该端口连接到 RP2040 板上的 GPIO 引脚。实现此功能有多种方法。
 
 请参阅 [USB 主机端口安装](../controller-build/usb-host.mdx) 了解有关将 USB 主机端口添加到控制器的详细要求。
 
@@ -67,9 +67,9 @@ USB 主机端口的 Data、5V Enable 和 Pin Orientation 选项现在在 [`Confi
 
 ## 其他说明
 
-只要键盘带有 USB 插头，任何键盘都可以与此附加功能配合使用，包括无线 USB 键盘。
+只要键盘带有 USB 插头，任何键盘都可以与此插件配合使用，包括无线 USB 键盘。
 
-由于当前 Pico-PIO-USB 和附加功能系统的实现方式，存在以下限制：
+由于当前 Pico-PIO-USB 和插件系统的实现方式，存在以下限制：
 
 - 键盘仅限于上述列出的输入数量。键盘上的其他按键将无法使用，并且不会向系统发送任何输入信号。
 - 键盘受限于 6 键无冲（6 key rollover），这意味着最多只能同时激活 6 个键盘按键。即使所使用的键盘通常支持全键无冲（NKRO），此限制仍然适用。

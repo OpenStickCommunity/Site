@@ -14,24 +14,24 @@ import SPITable from "../../snippets/_spi-block-table.mdx";
 
 ![GP2040-CE Configurator - 外围设备映射](../../assets/images/gpc-peripheral-mapping.png)
 
-在这里，您可以分配使用输入模式、外围设备和需要 I2C 及 USB 主机端口的附加功能所需的 GPIO 引脚。这些功能包括但不限于：
+在这里，您可以分配使用输入模式、外围设备和需要 I2C 及 USB 主机端口的插件所需的 GPIO 引脚。这些功能包括但不限于：
 
-- [PS4 输入模式](./01-settings.mdx#additional-ps4-settings)
-- [PS5 输入模式](./01-settings.mdx#additional-ps5-settings)
+- [PS4 输入模式](./01-settings.mdx#额外的-ps4-设置)
+- [PS5 输入模式](./01-settings.mdx#额外的-ps5-设置)
 - [OLED 显示屏](./07-display-configuration.mdx)
 - [I2C 模拟 ADS1219](../../add-ons/i2c-analog-ads1219.mdx)
-- [Xbox One 输入模式](./01-settings.mdx#additional-xbox-one-settings)
-- [键盘主机附加功能](../../add-ons/keyboard-host.mdx)
+- [Xbox One 输入模式](./01-settings.mdx#额外的-xbox-one-设置)
+- [键盘主机插件](../../add-ons/keyboard-host.mdx)
 
 :::info
 
-点击 Web 配置器中的 (i) 工具提示以获取有关各种设置的更多信息。
+点击 网页配置器中的 (i) 工具提示以获取有关各种设置的更多信息。
 
 :::
 
 ## I2C
 
-每个 I2C 模块（`I2C0` 和 `I2C1`）都有独立的设置，在使用相应的 I2C 模块之前必须正确配置。这些设置必须正确完成，才能使用任何依赖 I2C 的功能或附加功能。
+每个 I2C 模块（`I2C0` 和 `I2C1`）都有独立的设置，在使用相应的 I2C 模块之前必须正确配置。这些设置必须正确完成，才能使用任何依赖 I2C 的功能或插件。
 
 - `切换` - 开启或关闭指定的 I2C 模块。
 - `SDA` - 用于串行数据 (SDA) 的 GPIO 引脚。
@@ -51,7 +51,7 @@ SDA 和 SCL 引脚必须与下表中为每个 I2C 模块列出的引脚对之一
 
 ## SPI
 
-每个 SPI 模块（SPI0 和 SPI1）都有独立的设置，在使用相应的 SPI 模块之前必须正确配置。这些设置必须正确完成，才能使用任何依赖 SPI 的功能或附加功能。
+每个 SPI 模块（SPI0 和 SPI1）都有独立的设置，在使用相应的 SPI 模块之前必须正确配置。这些设置必须正确完成，才能使用任何依赖 SPI 的功能或插件。
 
 - `切换` - 开启或关闭指定的 SPI 模块。
 - `RX` - 用于接收数据的 GPIO 引脚 (MISO)。
