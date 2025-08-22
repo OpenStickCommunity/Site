@@ -39,7 +39,7 @@ description: "Add-on to use hardware analog joysticks with GP2040-CE"
 - Y 轴输入电压 (Vy)
 - 接地 (GND)
 
-每个轴输入电压引脚都需要一个模拟到数字转换器 (ADC) 引脚来运行。因此，某些板可能对可用摇杆的最大数量有限制（例如，Raspberry Pi Pico 只有 3 个 ADC 引脚可用，因此只能使用 1 个摇杆）。
+每个轴输入电压引脚都需要一个模拟到数字转换器 (ADC) 引脚来运行。因此，某些板可能对可用摇杆的最大数量有限制（例如，树莓派 Pico 只有 3 个 ADC 引脚可用，因此只能使用 1 个摇杆）。
 
 :::note 摇杆按钮
 
@@ -49,7 +49,7 @@ description: "Add-on to use hardware analog joysticks with GP2040-CE"
 
 ### 安装
 
-将模拟摇杆的引脚连接到开发板，如下所示，然后在 `Web Configurator > Configurations > Add-Ons > Analog` 中设置 GPIO 引脚值：
+将模拟摇杆的引脚连接到开发板，如下所示，然后在 `网页配置器 > 功能配置 > 插件配置 > 模拟摇杆` 中设置 GPIO 引脚值：
 
 - 参考电压 (ADC_VREF/3.3V) -> ADC_VREF/3.3V 引脚
 - X 轴输入电压 (Vx) -> 任意 ADC GPIO 引脚

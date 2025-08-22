@@ -4,81 +4,81 @@ import TabItem from "@theme/TabItem";
 <Tabs groupId="boards" defaultValue="Generic USB Host Port">
 <TabItem value="Generic USB Host Port" label="Generic USB 2.0 Host Port" default>
 
-### Example Wiring
+### 示例接线
 
 :::note
 
-While this example wiring guide uses a Raspberry Pi Pico, the general principle applies to **ALL** RP2040 based boards.
+虽然此示例接线指南使用的是树莓派 Pico，但该原则适用于**所有**基于 RP2040 的板子。
 
 :::
 
-![USB Host Wiring Diagram](../assets/images/gpc-add-ons-example-wiring-diagram-usb-host-port.png)
+![USB 主机接线图](../assets/images/gpc-add-ons-example-wiring-diagram-usb-host-port.png)
 
-- `VCC` - Connects to 5V power (Example: VBUS on the Raspberry Pi Pico)
-- `D+` - Connects to the `D+` GPIO Pin above, set in the Web Configurator. (Example: GPIO0 on the Raspberry Pi Pico)
-- `D-` - Connects to the `D-` GPIO Pin above, automatically set based on D+. (Example: GPIO1 on the Raspberry Pi Pico)
-- `GND` - Connects to a ground pin, any `GND` pin will work. (Example: GND on the Raspberry Pi Pico)
+- `VCC` - 连接到 5V 电源（示例：树莓派 Pico 的 VBUS）
+- `D+` - 连接到上面 Web 配置器中设置的 `D+` GPIO 引脚。（示例：树莓派 Pico 的 GPIO0）
+- `D-` - 连接到上面 Web 配置器中基于 D+ 自动设置的 `D-` GPIO 引脚。（示例：树莓派 Pico 的 GPIO1）
+- `GND` - 连接到任意接地引脚（`GND` 引脚）。（示例：树莓派 Pico 的 GND）
 
 <br />
 
 :::note
 
-For `D+` and `D-`, any set of GPIO pins can be used from the RP2040. However, there is a requirement that `D-` GPIO must immediately precede or follow `D+` (i.e. `D+` = GPIO Pin X -> `D-` must be X+1 or X-1).
+对于 `D+` 和 `D-`，RP2040 上的任意 GPIO 引脚都可以使用。但有一个要求，即 `D-` GPIO 必须紧接在 `D+` 之前或之后（即 `D+` = GPIO 引脚 X -> `D-` 必须是 X+1 或 X-1）。
 
 :::
 
 </TabItem>
 <TabItem value="USB Passthrough Board" label="USB Passthrough Board" default>
 
-### Example Wiring
+### 示例接线
 
-Step 1: Take the USB passthrough board and place it on a clean surface.
+步骤 1：将 USB 通路板放置在干净的表面上。
 
 ---
 
-Step 2: Take one of the cables and place it on a clean surface.
+步骤 2：取出一根连接线并将其放置在干净的表面上。
 
 :::note
 
-The cables are JST 2.00mm 2pin same direction cables that are 10cm (100mm) in length. They can be made by hand or purchased directly from a variety of sellers on AliExpress. If you plan on installing the USB passthrough board somewhere else in your case you may want to get longer cables. For this install guide you will need three of the cables.
+这些连接线是 JST 2.00mm 2 针同向连接线，长度为 10cm（100mm）。可以手工制作，也可以直接从淘宝等多个卖家处购买。如果计划将 USB 通路板安装在机箱内的其他位置，建议使用更长的连接线。此安装指南需要三根连接线。
 
 :::
 
 ---
 
-Step 3: Connect one end of the first JST 2.00mm 2pin cable into the socket labeled 5V IN on the USB passthrough board.
+步骤 3：将第一根 JST 2.00mm 2 针连接线的一端连接到 USB 通路板上标记为 5V IN 的插座。
 
 :::note
 
-The direction of the cable does not matter as they are all same direction cables.
+由于这些连接线是同方向的，因此连接线方向无关紧要。
 
 :::
 
 ---
 
-Step 4: Connect the other end of the first JST 2.00mm 2pin cable to the socket labeled 5v OUT on the RP2040 Advanced Breakout Board.
+步骤 4：将第一根 JST 2.00mm 2 针连接线的另一端连接到 RP2040 高级扩展板上标记为 5V OUT 的插座。
 
 ---
 
-Step 5: Connect one end of the second JST 2.00mm 2pin cable into the socket labeled D+ OUT on the USB passthrough board.
+步骤 5：将第二根 JST 2.00mm 2 针连接线的一端连接到 USB 通路板上标记为 D+ OUT 的插座。
 
 ---
 
-Step 6: Connect the other end of the second JST 2.00mm 2pin cable to the socket labeled OPTION 5 on the RP2040 Advanced Breakout Board.
+步骤 6：将第二根 JST 2.00mm 2 针连接线的另一端连接到 RP2040 高级扩展板上标记为 OPTION 5 的插座。
 
 :::note
 
-You can use other option sockets for this as well, but for the sake of this installation guide we will be using Option 5 and Option 6.
+您也可以使用其他选项插座，但为了本安装指南，我们将使用 Option 5 和 Option 6。
 
 :::
 
 ---
 
-Step 7: Connect one end of the third JST 2.00mm 2pin cable into the socket labeled D- OUT on the USB passthrough board.
+步骤 7：将第三根 JST 2.00mm 2 针连接线的一端连接到 USB 通路板上标记为 D- OUT 的插座。
 
 ---
 
-Step 8: Connect the other end of the third JST 2.00mm 2pin cable to the socket labeled OPTION 6 on the RP2040 Advanced Breakout Board.
+步骤 8：将第三根 JST 2.00mm 2 针连接线的另一端连接到 RP2040 高级扩展板上标记为 OPTION 6 的插座。
 
 </TabItem>
 </Tabs>
