@@ -88,7 +88,7 @@ Select the button labels to be displayed in the usage guide:
 
 #### **2. 网页配置器**
 
-使用 网页配置器时，控制器会初始化为 RNDIS 设备，PC/主机会无法将其识别为控制器。检查控制器是否已启动到 网页配置器模式，并确保开机时未触发快捷键 <Hotkey buttons={["S2"]}/>。
+使用网页配置器时，控制器会初始化为 RNDIS 设备，PC/主机会无法将其识别为控制器。检查控制器是否已启动到网页配置模式，并确保开机时未触发快捷键 <Hotkey buttons={["S2"]}/>。
 
 ### **为什么使用 USB Type-C 转 Type-C 无法连接到 PC/主机？**
 
@@ -101,13 +101,13 @@ Select the button labels to be displayed in the usage guide:
 
 有关更多信息，请参阅 [PS4/PS5 兼容性常见问题](../faq/faq-console-compatibility.mdx)。
 
-### **为什么我无法访问 网页配置器？**
+### **为什么我无法访问网页配置器？**
 
-#### **1. 控制器未启动到 网页配置器模式**
+#### **1. 控制器未启动到网页配置模式**
 
-如果 网页配置器页面超时，请确认控制器是否已启动到 网页配置器模式。
+如果网页配置器页面超时，请确认控制器是否已启动到网页配置模式。
 
-:::info 如何进入 Web 配置模式
+:::info 如何进入网页配置器配置模式
 
 - 插入设备时按住 <Hotkey buttons={["S2"]} />。
 - 按住 <Hotkey buttons={["S2", "B3", "B4"]} /> 持续 5 秒。
@@ -118,9 +118,9 @@ Select the button labels to be displayed in the usage guide:
 
 #### **2. 网络中其他设备占用了 192.168.7.1 的 IPV4 地址**
 
-如果网络中其他设备（例如路由器、交换机、IoT 设备等）占用了相同的 IP 地址，则会发生 IP 地址冲突，导致无法访问 网页配置器。
+如果网络中其他设备（例如路由器、交换机、IoT 设备等）占用了相同的 IP 地址，则会发生 IP 地址冲突，导致无法访问网页配置器。
 
-断开电脑与本地网络的连接（例如拔掉网线），然后重新尝试访问 网页配置器。
+断开电脑与本地网络的连接（例如拔掉网线），然后重新尝试访问网页配置器。
 
 --- 
 
@@ -140,7 +140,7 @@ Select the button labels to be displayed in the usage guide:
 
 #### **3. USB 主机端口未正确配置**
 
-在 网页配置器的 [外围设备映射](../web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-主机) 中，确认您的 USB 主机端口配置正确。不同设备制造商提供的 Data+ 和 Data- 的特定引脚可能会有所不同，请参考供应商的文档。
+在配置器的 [外围设备映射](../web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-主机) 中，确认您的 USB 主机端口配置正确。不同设备制造商提供的 Data+ 和 Data- 的特定引脚可能会有所不同，请参考供应商的文档。
 
 #### **4. 使用的控制器或适配器不兼容**
 
@@ -148,24 +148,24 @@ Select the button labels to be displayed in the usage guide:
 
 有关更多信息，请参阅 [PS4/PS5 兼容性常见问题](../faq/faq-console-compatibility.mdx)。
 
-### **我无法通过快捷方式进入 网页配置器。如何手动进入 网页配置器？**
+### **我无法通过快捷方式进入网页配置器。如何手动进入网页配置器？**
 
 如果 **不擦除您的设备固件**，请按以下步骤操作：
 
 1. 使用本 [强制 WebConfig 固件文件](/assets/force_webconfig.uf2) 并按照 [固件安装说明](../installation.mdx) 运行。  
-2. 这会强制您的设备以 网页配置器模式进行启动。
+2. 这会强制您的设备以网页配置模式进行启动。
 
 ### **为什么我的 RGB LED 显示的颜色不对？**
 
 确认 `LED 格式` 设置正确，不同的 LED 类型使用的 RGB 数据顺序可能不同。
 
-有关更多信息，请参阅 网页配置器菜单中的 [RGB LED 按键顺序](../web-configurator/menu-pages/05-led-configuration.mdx#rgb-led-按键顺序) 部分。
+有关更多信息，请参阅网页配置器菜单中的 [RGB LED 按键顺序](../web-configurator/menu-pages/05-led-configuration.mdx#rgb-led-按键顺序) 部分。
 
 ### **为什么我的 RGB LED 顺序不对？**
 
-RGB LED 的顺序可以在 网页配置器中设置，正确的配置取决于硬件和用户如何布线 LED 链，或设备设计师如何在电路板上设置 LED 链。
+RGB LED 的顺序可以在网页配置器中设置，正确的配置取决于硬件和用户如何布线 LED 链，或设备设计师如何在电路板上设置 LED 链。
 
-有关更多信息，请参阅 网页配置器菜单中的 [RGB LED 按键顺序](../web-configurator/menu-pages/05-led-configuration.mdx#rgb-led-按键顺序) 部分。
+有关更多信息，请参阅网页配置器菜单中的 [RGB LED 按键顺序](../web-configurator/menu-pages/05-led-configuration.mdx#rgb-led-按键顺序) 部分。
 
 ### **更新设备后，为什么我的控制器停止工作了？**
 
@@ -182,8 +182,8 @@ RGB LED 的顺序可以在 网页配置器中设置，正确的配置取决于�
 如果供应商无法为设备提供支持，您需要自行研究并正确设置您的设备：
 
 1. 从下载页面获取 **Pico GP2040 固件** 并按照 [固件安装说明](../installation.mdx) 操作刷入设备。
-2. 不擦除设备固件，刷入 [强制 WebConfig 固件文件](/assets/force_webconfig.uf2)，强制设备以 网页配置器模式启动。
-3. 进入 网页配置器，转到“配置 > GPIO 引脚映射”。
+2. 不擦除设备固件，刷入 [强制 WebConfig 固件文件](/assets/force_webconfig.uf2)，强制设备以网页配置模式启动。
+3. 进入网页配置器，转到“配置 > GPIO 引脚映射”。
 4. 对于每个游戏手柄输入，使用“按键映射功能”将输入映射到连接按钮的 GPIO 引脚，重复进行所有输入的映射操作。
 5. 对于任何插件（如 RGB LED、OLED 显示屏、USB 主机端口等），需要确定其关联的 GPIO 引脚。这可以通过追踪 PCB 上的物理铜箔路径找到。
 
