@@ -66,7 +66,7 @@ const config = {
       },
       announcementBar: {
         id: "new_release",
-        content: `New Version Available! To get the v${releaseVersion} update, go to <a href="https://github.com/OpenStickCommunity/GP2040-CE/releases/tag/v${releaseVersion}" target="_blank">GP2040-CE Releases<a/>`,
+        content: `New Version Available! To get the v${releaseVersion} update, go to <a href="https://github.com/OpenStickCommunity/GP2040-CE/releases/tag/v${releaseVersion}" target="_blank">GP2040-CE Releases</a>`,
         backgroundColor: "#ec008c",
         textColor: "#FFFFFF",
         isCloseable: true,
