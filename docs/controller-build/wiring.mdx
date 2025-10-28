@@ -53,10 +53,20 @@ The Raspberry Pi Pico pinout can also be used on clone boards with the same form
 
 ![Adafruit KB2040 Pinout](../assets/wiring/SeeedXIAORP2040_Pinout.png)
 
-# LEDs and buttons
+# Buttons
 
-GP2040-CE cofigures the input GPIO pins to be pulled up, expecting the button to short the pin to the ground when pressed.
+GP2040-CE configures the input GPIO pins to be pulled up, expecting the button to short the pin to the ground when pressed.
 
-The PWM player LED pins are configured similarly: the pin is shorted to the ground when active and pulled up otherwise. This means the LED anodes must be connected to the +3.3V output of the microcontroller and each cathode to its GPIO pin, in an arrangement called common anode. A current-limiting resistor must be inserted into the circuit to protect the GPIO pins; use a online calculator to compute its minimum value if unsure. The maximum safe current is cca 20mA.
+You can either wire each button using two wires (one to the GPIO pin, the other to the ground):
 
-![How to conect LEDs and buttons to the GPIO](../assets/wiring/Buttons_LEDs_Schematics.png)
+![Buttons connected separately to GPIO and ground](../assets/wiring/Separate_buttons_schematic.png)
+
+Or you can chain the groud wire from button to button, e. g. by crimping two wires at once to a FASTON terminal or by soldering two wires to a button pin. The other contact of each button must be connected to a separate GPIO pin:
+
+![Buttons connected using chained ground wire](../assets/wiring/Chained_button_schematic.png)
+
+# PWM LEDs
+
+The PWM player LED pins are configured similarly: the pin is shorted to the ground when active and pulled up otherwise. This means the LED anodes must be connected to the +3.3V output of the microcontroller and each cathode to its GPIO pin, in an arrangement called common anode. A current-limiting resistor must be inserted into the circuit to protect the GPIO pins; use an online calculator to compute its value if unsure. The maximum safe current is cca 20mA.
+
+![How to conect LEDs and buttons to the GPIO](../assets/wiring/LEDs_schematic.png)
