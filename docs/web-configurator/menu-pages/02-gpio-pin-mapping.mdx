@@ -27,6 +27,11 @@ The following options are available for assignment to each GPIO Pin.
 - [Macro](./09-macros.mdx)
 - Function
 - Extras
+- Analog directions (Analog max vlaue input X[-/+] and Y[-/+])
+- Mini-menu interaction and navigation
+- Tilt
+- Focus Mode enable
+- Toggle 4-Way joystick mode
 
 :::note
 - Multiple [Buttons](../../usage.mdx#buttons) can be assigned to a single GPIO pin (SOCD Cleaning, [Hotkeys](../../hotkeys.mdx), can both be activated).
@@ -53,7 +58,7 @@ If you do not know what pins are mapped to which button on your device, there is
 
 You can configure profiles that will change the GPIO to GP2040-CE button mappings based on what profile number you have set. This means that you can have button layouts for different use cases and change between them without the need to enter the Web Configurator and remap GPIO pins.
 
-The profile number can be changed by either using the Web Configurator on the [Settings page](../../web-configurator/menu-pages/01-settings.mdx) or using a [hotkey shortcut](../../hotkeys.mdx#load-profile-1-4). There is not a default input combination associated with these `Load Profile #1-4`, `Next Profile`, or `Previous Profile` hotkey shortcuts so you will likely need to set them up in the Settings page under [Hotkey Settings](../../web-configurator/menu-pages/01-settings.mdx#hotkey-settings). The default is profile #1 on first boot, but will remember the last set profile between boots.
+The profile number can be changed by either using the Web Configurator on the [Settings page](../../web-configurator/menu-pages/01-settings.mdx) or using a [hotkey shortcut](../../hotkeys.mdx#load-profile-1-4). There is not a default input combination associated with these `Load Profile #1-6`, `Next Profile`, or `Previous Profile` hotkey shortcuts so you will likely need to set them up in the Settings page under [Hotkey Settings](../../web-configurator/menu-pages/01-settings.mdx#hotkey-settings). The default is profile #1 on first boot, but will remember the last set profile between boots.
 
 ### Profile Name
 Profile name can be set to help identify what the profile is used for. This is especially useful if you have multiple profiles set up for different use cases.
@@ -79,7 +84,3 @@ At this time, profiles are limited to changing GPIO pin assignment and cannot be
 - Keyboard Host Button-to-Key mapping
 
 :::
-
-## Custom builds
-
-How to wire buttons to GPIO pins is described in the [Wiring section](../../controller-build/wiring.mdx).
