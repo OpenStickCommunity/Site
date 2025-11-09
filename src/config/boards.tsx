@@ -32,6 +32,20 @@ const boards = {
 			),
 		},
 		{
+			name: 'Raspberry Pi Pico 2',
+			configName: 'Pico2',
+			pinout: '/controller-build/wiring#raspberry-pi-pico',
+			website: 'https://www.raspberrypi.com/products/raspberry-pi-pico-2/',
+			image: '/img/boards/Pico2.jpg',
+			supported: true,
+			desc: () => (
+				<p>
+					The Raspberry Pi Pico 2 is a powerful, low-cost board based on the
+					Raspberry Pi RP2350 microcontroller.
+				</p>
+			),
+		},
+		{
 			name: 'Adafruit KB2040',
 			configName: 'KB2040',
 			pinout: '/controller-build/wiring#adafruit-kb2040',
@@ -129,6 +143,32 @@ const boards = {
 					The ARC Controller is an accessibility controller.{' '}
 					This was designed by TheTrain taking some design ideas from <a href="https://github.com/jfedor2">jfedor2</a>{' '}
 					as well as the universal standards for accessibility controller connectors.
+				</p>
+			),
+		},
+		{
+			name: 'ASi LVL ABC',
+			configName: 'ASiLVLABC',
+			pinout: null,
+			website: 'https://asindo.pro/products/lvl-abc',
+			image: '/img/boards/ASiLVLABC.jpg',
+			category: 'closed',
+			desc: () => (
+				<p>
+					The ASi LVL ABC Controller is a compact leverless controller created by ASIndo.
+				</p>
+			),
+		},
+		{
+			name: 'ASi LVL WASD',
+			configName: 'ASiLVLWASD',
+			pinout: null,
+			website: 'https://asindo.pro/collections/lvl/products/lvl-wasd',
+			image: '/img/boards/ASiLVLWASD.jpg',
+			category: 'closed',
+			desc: () => (
+				<p>
+					The ASi LVL WASD Controller is a compact leverless controller created by ASIndo.
 				</p>
 			),
 		},
@@ -243,6 +283,22 @@ const boards = {
 			),
 		},
 		{
+			name: 'Granola Beacon',
+			configName: 'GranolaBeacon',
+			pinout: null,
+			website: 'https://granola.games/products/beacon',
+			image: '/img/boards/GranolaBeacon.jpg',
+			category: 'closed',
+			desc: () => (
+				<p>
+					Configuration for the {' '}
+					<a href="https://granola.games/products/beacon">
+					   Granola Beacon
+					</a>
+				</p>
+			),
+		},
+		{
 			name: 'Haute42 Series',
 			configName: 'Haute42COSMOX',
 			pinout: null,
@@ -344,6 +400,24 @@ const boards = {
 					Configuration for the{' '}
 					<a href="https://mavercade.com/">
 						Mavercade Rev2
+					</a>
+					. These revisions use a Waveshare RP2040-Zero board.
+				</p>
+			),
+		},
+		{
+			name: 'Mavercade Rev3',
+			configName: 'MavercadeRev3',
+			pinout: null,
+			website:
+				'https://mavercade.com/',
+			image: '/img/boards/MavercadeRev3.jpg',
+			category: 'closed',
+			desc: () => (
+				<p>
+					Configuration for the{' '}
+					<a href="https://mavercade.com/">
+						Mavercade Rev3
 					</a>
 					. These revisions use a Waveshare RP2040-Zero board.
 				</p>
