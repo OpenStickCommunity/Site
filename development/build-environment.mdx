@@ -192,6 +192,19 @@ We will be using Homebrew and nvm (Node Version Manager) to install the required
    ```
 
 </TabItem>
+<TabItem value="Docker" label="Docker" default>
+This setup assumes an understanding of Docker usage.
+
+1. Install [Docker](https://docs.docker.com/engine/install/) with `docker-compose`
+
+2. Get GP2040-CE:
+
+   ```bash
+   git clone https://github.com/OpenStickCommunity/GP2040-CE.git
+   cd GP2040-CE
+   git submodule update --init
+   ```
+</TabItem>
 </Tabs>
 
 ## Building
@@ -324,5 +337,22 @@ Start in the GP2040-CE folder
 
 4. Your UF2 file should be in the build directory.
 
+</TabItem>
+<TabItem value="Docker" label="Docker" default>
+
+Start in the GP2040-CE folder
+
+1. Start build:
+
+   - Without environment variables (using default values):
+      ```bash
+      docker compose up --build
+      ```
+   - With environment variables:
+      ```bash
+      GP2040_BOARDCONFIG='Pico' PICO_BOARD='pico' docker compose up --build
+      ```
+
+2. Your UF2 file should be in the build directory.
 </TabItem>
 </Tabs>
