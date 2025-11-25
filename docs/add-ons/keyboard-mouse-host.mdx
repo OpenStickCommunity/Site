@@ -1,5 +1,5 @@
 ---
-title: Keyboard Host Configuration
+title: Keyboard/Mouse Host Configuration
 # tags:
 # -
 pagination_next: null
@@ -17,9 +17,9 @@ Select the button labels to be displayed in the usage guide:
 <InputLabelSelector />
 <br />
 
-Purpose: This add-on is intended to allow you to use a keyboard with GP2040-CE to be used with GP2040-CE supported systems.
+Purpose: This add-on is intended to allow usage of keyboard and/or mouse as inputs to GP2040-CE which in turn can be mapped to other inputs to supported systems.
 
-![GP2040-CE Configurator - Keyboard Host Configuration](../assets/images/gpc-add-ons-keyboard-host-configuration.png)
+![GP2040-CE Configurator - Keyboard/Mouse Host Configuration](../assets/images/gpc-add-ons-keyboard-mouse-host-configuration.png)
 
 ## Web Configurator Options
 
@@ -28,6 +28,8 @@ Purpose: This add-on is intended to allow you to use a keyboard with GP2040-CE t
 The Data, 5V Enable, and Pin Orientation options for USB host ports are now configured in [`Configuration > Peripheral Mapping - USB Host`](../web-configurator/menu-pages/03-peripheral-mapping.mdx#usb-host).
 
 :::
+
+## Keyboard
 
 ### Default Keybindings
 
@@ -52,6 +54,18 @@ The Data, 5V Enable, and Pin Orientation options for USB host ports are now conf
 | <Hotkey buttons={["A1"]}/>       | 9            |
 | <Hotkey buttons={["A2"]}/>       | F2           |
 | <Hotkey buttons={["Function"]}/> | None         |
+
+## Mouse
+
+Mouse movement is not mapped by default. Can be mapped to right, left analog stick.
+
+### Default Bindings
+
+| GP2040 | Mouse  |
+| ------ | ------ |
+| None   | Left   |
+| None   | Middle |
+| None   | Right  |
 
 ## Hardware
 
