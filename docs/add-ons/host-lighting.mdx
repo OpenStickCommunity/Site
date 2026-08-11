@@ -1,0 +1,64 @@
+---
+title: Host Lighting
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "Add-on that lets PC software drive the board's RGB LEDs live over USB"
+---
+
+# Host Lighting
+
+Purpose: This add-on lets host software on a PC drive the board's RGB LEDs in
+real time over a dedicated USB interface, alongside the normal controller
+interface. A lighting application can colour individual buttons, the case
+strip and the player LEDs, for example to follow game state. The board's own
+animations return when the host disconnects or goes quiet.
+
+The board describes its LED layout to the host, taken live from your
+configuration. It reports which buttons have LEDs, where the case strip is
+and the colour order. Host software needs no per-board setup and follows any
+remapping you do in the Web Configurator.
+
+Host software can also change the input profile, the LED animation, its
+speed and the brightness, as the board's hotkeys do. It can switch the input
+mode too.
+
+## Web Configurator Options
+
+- `Enabled` - Enables the Host Lighting interface. Disabled by default. While
+  disabled the board presents its stock USB identity in every mode.
+- `XInput Lighting` - How XInput mode carries the lighting interface:
+  - `Auto` - The default. The board boots with its stock identity, the one a
+    console expects. On a console nothing changes. On a PC the board detects
+    the host after a few seconds and re-enumerates with the lighting
+    interface alongside the controller. The operating system's standard
+    Xbox 360 driver binds the controller.
+  - `Always On` - The lighting identity from boot. For a PC only. Do not use
+    this setting on a console.
+  - `Off` - Stock XInput behaviour, with no lighting interface in XInput mode.
+
+The lighting interface is available in the XInput, Generic HID, Keyboard and
+SInput input modes. The console modes never expose it.
+
+## Hardware
+
+### Requirements
+
+No additional hardware. The add-on uses the RGB LEDs already configured on
+the [RGB LEDs](../rgb-leds.mdx) page. Host software that supports the
+protocol is required on the PC.
+
+### Installation
+
+None beyond enabling the option in the Web Configurator.
+
+## Miscellaneous Notes
+
+The protocol reference for developers of host software is in the firmware
+repository under `docs/host-lighting.md`. It covers the commands, the pages
+a board describes itself with and a typical host flow.
+
+In `Auto` XInput lighting mode the lighting interface appears a few seconds
+after plugging into a PC, after a brief reconnect. Host software is expected
+to tolerate this delay.
