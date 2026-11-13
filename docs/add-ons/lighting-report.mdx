@@ -1,0 +1,57 @@
+---
+title: Lighting Report
+# tags:
+# -
+pagination_next: null
+pagination_prev: null
+description: "Add-on that gives lighting software a standard HID output for each light's colour"
+---
+
+# Lighting Report
+
+Purpose: This add-on is for lighting software that drives lights through
+standard HID output values. It adds a red, green and blue value for each of
+the board's lights, each named after its light and channel, such as `B1 R` or
+`Case 2 G`. The lighting software lists these outputs, and you bind its lights
+to them. It does not need the [Host Lighting](host-lighting.mdx) add-on, which
+is intended for more advanced lighting control.
+
+The board shows the values from the first report it receives, at the board's
+brightness, until USB suspends, unmounts or resets. Lights the software does
+not set stay off. A Host Lighting app that takes control shows over the
+values.
+
+## Web Configurator Options
+
+- `Enabled` - Enables the lighting report. Disabled by default.
+- `XInput Lighting` - How XInput mode presents the lighting report:
+  - `Auto` - The default. The board boots with its stock identity, the one a
+    console expects. On a console nothing changes. On a PC the board detects
+    the host after a few seconds and re-enumerates with the lighting report
+    alongside the controller.
+  - `Always On` - The lighting report from boot. For a PC only. Do not use
+    this setting on a console.
+  - `Off` - Stock XInput behaviour, with no lighting report in XInput mode.
+
+Keyboard, Generic HID and SInput modes present the lighting report whenever
+it is enabled. The console modes never do.
+
+## Hardware
+
+### Requirements
+
+No additional hardware. The add-on uses the RGB LEDs already configured on
+the Web Configurator's [LED Configuration](../web-configurator/menu-pages/05-led-configuration.mdx)
+page. Lighting software that drives HID output values is required on the PC.
+
+### Installation
+
+None beyond enabling the Lighting Report add-on in the Web Configurator.
+
+## Miscellaneous Notes
+
+The report layout and the value names are in the firmware repository's
+`docs/host-lighting.md`, in its Lighting report section.
+
+In `Auto` XInput lighting mode the lighting report appears a few seconds after
+plugging into a PC, after a brief reconnect.
